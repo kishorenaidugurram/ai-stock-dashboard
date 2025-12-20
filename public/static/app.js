@@ -413,6 +413,13 @@ async function renderTechnicalInsights() {
                             <div class="text-xs text-gray-500 mt-1">Confidence: ${recommendation.confidence}%</div>
                         </div>
                         ` : ''}
+                        
+                        <!-- View Chart Button -->
+                        <button onclick="window.chartManager.showChartModal('${stock.symbol}', ${JSON.stringify({name: stock.name || stock.symbol})})" 
+                                class="mt-4 w-full btn-primary flex items-center justify-center gap-2 text-sm py-2">
+                            <i class="fas fa-chart-candlestick"></i>
+                            View Chart
+                        </button>
                     </div>
                 `;
             }).join('');

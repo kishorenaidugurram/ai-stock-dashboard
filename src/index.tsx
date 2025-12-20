@@ -114,7 +114,19 @@ app.get('/api/ai/top-picks', (c) => {
       ...(stocksData.brokerageRecommendations || [])
     ];
 
-    const analyzed = allStocks
+    // Remove duplicates by symbol
+    const uniqueStocks = [];
+    const seenSymbols = new Set();
+    
+    for (const stock of allStocks) {
+      const symbol = stock.symbol || stock.stock;
+      if (!seenSymbols.has(symbol)) {
+        seenSymbols.add(symbol);
+        uniqueStocks.push(stock);
+      }
+    }
+
+    const analyzed = uniqueStocks
       .map(stock => ({
         ...stock,
         aiAnalysis: tradingAI.analyzeStock(stock)
@@ -151,7 +163,19 @@ app.get('/api/ai/alerts', (c) => {
       ...(stocksData.brokerageRecommendations || [])
     ];
 
-    const alerts = allStocks
+    // Remove duplicates by symbol
+    const uniqueStocks = [];
+    const seenSymbols = new Set();
+    
+    for (const stock of allStocks) {
+      const symbol = stock.symbol || stock.stock;
+      if (!seenSymbols.has(symbol)) {
+        seenSymbols.add(symbol);
+        uniqueStocks.push(stock);
+      }
+    }
+
+    const alerts = uniqueStocks
       .filter(stock => tradingAI.shouldAlert(stock, {
         minUpside: 20,
         maxRiskScore: 4,
@@ -455,6 +479,7 @@ app.get('/', (c) => {
         <script src="https://cdn.tailwindcss.com"></script>
         <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
         <style>
             /* Modern Design System */
             :root {
@@ -1187,6 +1212,7 @@ app.get('/', (c) => {
         </footer>
 
         <script src="https://cdn.jsdelivr.net/npm/axios@1.6.0/dist/axios.min.js"></script>
+        <script src="/static/charts.js"></script>
         <script src="/static/app.js"></script>
         <script>
             // Trigger AI Update - Main function called from frontend button
