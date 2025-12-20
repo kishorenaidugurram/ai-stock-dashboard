@@ -19,12 +19,8 @@ app.post('/api/trigger-update', async (c) => {
     // Log the update request
     const timestamp = new Date().toISOString();
     
-    // IMPORTANT: Update this URL with your specific chat thread URL
-    // To get your thread URL:
-    // 1. Look at the browser address bar while in this chat
-    // 2. Copy the full URL (should look like: https://www.genspark.ai/chat/THREAD_ID)
-    // 3. Replace the placeholder below
-    const specificThreadUrl = 'REPLACE_WITH_YOUR_THREAD_URL';
+    // Configured thread URL - opens this specific chat thread
+    const specificThreadUrl = 'https://www.genspark.ai/agents?id=6b4fab73-6af0-428f-b6ad-a03d83e87586';
     
     // Return instructions for user
     return c.json({
