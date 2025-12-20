@@ -10,8 +10,19 @@ A **dynamic, JSON-based stock market dashboard** showcasing NSE F&O breakout sto
 - **Web Search Integration**: Data sourced from real web searches (Dec 13-20, 2025)
 - **Refresh API**: `/api/refresh` endpoint ready for automated updates
 - **Real-time Display**: Frontend dynamically loads data via REST API
+- **🆕 Social Sentiment Tracking**: Twitter, Reddit & StockTwits integration
 
-### 2. **NSE F&O Breakout Stocks (6 Stocks - Dec 20, 2025)**
+### 2. **🐦🔴 Social Media Tracking (NEW!)**
+Track what retail investors are saying on social media:
+- **Twitter/X** - Real-time stock discussions and sentiment
+- **Reddit** - r/IndianStreetBets & r/IndianStockMarket communities
+- **StockTwits** - Dedicated stock sentiment platform
+- **Top 5 Trending Stocks** - Most discussed stocks today
+- **Sentiment Analysis** - Bullish/Bearish/Neutral with confidence scores
+- **Social Volume** - Number of mentions across platforms
+- **Discussion Quotes** - Actual social media commentary
+
+### 3. **NSE F&O Breakout Stocks (6 Stocks - Dec 20, 2025)**
 - **Hindustan Copper** - ₹387.55 (+8.5%) → Target: ₹450 | Screener
 - **SJS Enterprises** - ₹1,711.80 (+6.8%) → Target: ₹1,900 | Screener
 - **Federal Bank** - ₹267.85 (+0.92%) → Target: ₹295 | Trendlyne (52-week high F&O)
@@ -316,6 +327,16 @@ The system can be enhanced with:
 - **Last Deployment**: December 20, 2025
 
 ## 🔄 Next Steps
+
+### Latest Additions ✨
+1. ✅ **Twitter & Reddit Tracking** (DONE - Dec 20, 2025)
+   - Real-time social sentiment from Twitter/X
+   - Reddit discussions from r/IndianStreetBets & r/IndianStockMarket
+   - Top 5 trending stocks on social media
+   - Bullish/Bearish/Neutral sentiment with scores
+   - Platform breakdown (Twitter/Reddit/StockTwits)
+   - Discussion quotes from actual posts
+   - See full details in `TWITTER_REDDIT_TRACKING_SUMMARY.md`
 
 ### Immediate Enhancements
 1. ✅ Dynamic JSON-based data (DONE)
