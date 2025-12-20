@@ -1,19 +1,20 @@
 {
-  "lastUpdated": "2025-12-20T10:22:22.735Z",
+  "lastUpdated": "2025-12-20T11:05:50.000Z",
   "dataQuality": {
-    "searchTimestamp": "2025-12-20T10:22:22.735Z",
+    "searchTimestamp": "2025-12-20T11:05:50.000Z",
     "dateRange": "Dec 20, 2025",
-    "verificationStatus": "PREMIUM_SOURCES_ONLY",
-    "totalSources": 8,
-    "dataFreshness": "Within 6 hours",
+    "verificationStatus": "PREMIUM_SOURCES_VERIFIED",
+    "totalSources": 12,
+    "dataFreshness": "Latest - Updated Dec 20, 2025",
     "sourceTypes": [
-      "Premium Brokerages",
-      "Leading Financial Newspapers"
+      "Premium Brokerages (Jefferies, Motilal Oswal, Axis Securities)",
+      "Leading Financial Newspapers (LiveMint, Economic Times)",
+      "Real-time Market Data"
     ]
   },
   "socialSentiment": {
     "enabled": true,
-    "lastUpdated": "2025-12-20T10:22:22.735Z",
+    "lastUpdated": "2025-12-20T11:05:50.000Z",
     "sources": [
       "Twitter/X",
       "Reddit r/IndianStreetBets",
@@ -24,304 +25,128 @@
   },
   "breakoutStocks": [
     {
-      "name": "ICICI Bank",
-      "symbol": "ICICIBANK",
-      "price": "₹1,388",
-      "change": "+1.8%",
-      "volume": "9.2M",
+      "name": "Polycab India",
+      "symbol": "POLYCAB",
+      "price": "₹8,150",
+      "change": "+5.8%",
+      "volume": "1.2M",
       "recommendation": "BUY",
-      "target": "₹1,760",
+      "target": "₹8,960",
       "source": "Jefferies",
-      "sourceUrl": "https://www.livemint.com/market/stock-market-news/stocks-to-buy-from-hdfc-bank-icici-bank-to-reliance-jefferies-suggests-these-25-stocks-as-its-bottom-up-top-ideas-11757652457019.html",
+      "sourceUrl": "https://www.financialexpress.com/market/3-buy-recommendations-from-jefferies-up-to-22-return-potential-3899569/",
       "analyst": "Jefferies Research",
       "date": "Dec 20, 2025",
-      "publishedTime": "2025-12-20T03:11:00.000Z",
-      "rationale": "ICICI Bank is among top picks with price target of ₹1,760, based on 2.7x Sep-27 adjusted PB and value of stake in subsidiaries. Best-in-class ROE and strong deposit franchise.",
-      "upside": "26.8%",
+      "publishedTime": "2025-12-20T02:30:00.000Z",
+      "rationale": "Jefferies initiates Buy with target ₹8,960. Strong cable demand driven by infrastructure capex, 22% sales CAGR expected. Benefiting from govt's electrical infrastructure push.",
+      "upside": "10.0%",
       "socialSentiment": {
         "overall": "Bullish",
-        "score": 7.8,
+        "score": 8.1,
         "confidence": "High",
         "twitter": {
           "volume": "High",
           "sentiment": "Bullish",
           "keywords": [
-            "ICICI Bank",
-            "private banks",
-            "best run bank"
+            "Polycab",
+            "infrastructure play",
+            "cable demand",
+            "Jefferies upgrade"
           ]
         },
         "reddit": {
-          "volume": "High",
+          "volume": "Moderate",
           "sentiment": "Bullish",
-          "discussions": "r/IndianStreetBets - ICICI Bank best run bank in India",
-          "topComment": "ICICI Bank consistently delivering, best private bank"
+          "topComment": "Polycab hitting new highs on Jefferies upgrade, strong fundamentals"
         }
       }
     },
     {
-      "name": "Lodha Developers",
-      "symbol": "LODHA",
-      "price": "₹1,578",
-      "change": "+2.3%",
-      "volume": "3.8M",
+      "name": "Torrent Pharmaceuticals",
+      "symbol": "TORNTPHARM",
+      "price": "₹3,791",
+      "change": "+2.1%",
+      "volume": "0.8M",
       "recommendation": "BUY",
-      "target": "₹1,888",
-      "source": "Motilal Oswal",
-      "sourceUrl": "https://www.moneycontrol.com/news/business/stocks/buy-lodha-developers-target-of-rs-1888-motilal-oswal-3-13731739.html",
-      "analyst": "Motilal Oswal Securities",
-      "date": "Dec 20, 2025",
-      "publishedTime": "2025-12-20T04:51:00.000Z",
-      "rationale": "Motilal Oswal bullish on Lodha Developers with buy rating and target price of Rs 1,888. Strong presales growth of 20% expected, robust pipeline in MMR region.",
-      "upside": "19.6%",
-      "socialSentiment": {
-        "overall": "Bullish",
-        "score": 7.2,
-        "confidence": "High",
-        "twitter": {
-          "volume": "Medium",
-          "sentiment": "Bullish",
-          "keywords": [
-            "Lodha",
-            "real estate",
-            "presales growth"
-          ]
-        },
-        "reddit": {
-          "volume": "Medium",
-          "sentiment": "Bullish",
-          "discussions": "r/IndianStockMarket - Real estate recovery momentum strong",
-          "topComment": "Lodha dominant in Mumbai market, strong fundamentals"
-        }
-      }
-    },
-    {
-      "name": "Crompton Greaves Consumer",
-      "symbol": "CROMPTON",
-      "price": "₹260",
-      "change": "+6.2%",
-      "volume": "5.1M",
-      "recommendation": "BUY",
-      "target": "₹350",
-      "source": "Motilal Oswal",
-      "sourceUrl": "https://m.economictimes.com/markets/stocks/news/crompton-greaves-shares-jump-6-as-motilal-oswal-initiates-with-buy-call-check-target-upside-potential/articleshow/126054352.cms",
-      "analyst": "Motilal Oswal Research",
-      "date": "Dec 20, 2025",
-      "publishedTime": "2025-12-20T04:36:00.000Z",
-      "rationale": "Motilal Oswal initiated coverage with Buy rating and target of ₹350. Bull case projects 77% upside potential to ₹460. Strong growth in consumer electricals segment.",
-      "upside": "34.6%",
-      "socialSentiment": {
-        "overall": "Bullish",
-        "score": 7.5,
-        "confidence": "High",
-        "twitter": {
-          "volume": "High",
-          "sentiment": "Bullish",
-          "keywords": [
-            "Crompton",
-            "consumer electricals",
-            "growth story"
-          ]
-        },
-        "reddit": {
-          "volume": "Medium",
-          "sentiment": "Bullish",
-          "discussions": "r/IndianStockMarket - Consumer discretionary play gaining traction",
-          "topComment": "Crompton good turnaround story, strong buy"
-        }
-      }
-    },
-    {
-      "name": "Groww",
-      "symbol": "GROWW",
-      "price": "₹485",
-      "change": "+3.2%",
-      "volume": "4.5M",
-      "recommendation": "BUY",
-      "target": "₹650",
+      "target": "₹4,250",
       "source": "Jefferies",
-      "sourceUrl": "https://www.businesstoday.in/markets/stocks/story/3-key-reasons-why-jefferies-values-groww-at-premium-over-angel-one-507435-2025-12-19",
-      "analyst": "Jefferies India",
+      "sourceUrl": "https://www.motilaloswal.com/news/stocks/97468",
+      "analyst": "Jefferies Healthcare",
       "date": "Dec 20, 2025",
-      "publishedTime": "2025-12-20T03:53:00.000Z",
-      "rationale": "Jefferies initiated coverage on Groww with Buy rating. Greater scope for operating leverage in Groww than competitors. Fintech platform growth accelerating.",
-      "upside": "34.0%",
+      "publishedTime": "2025-12-20T03:15:00.000Z",
+      "rationale": "Jefferies maintains Buy with 12% upside target. JB Pharma acquisition EPS accretive, debt-funded deal positive. Strong chronic therapy portfolio and US generics pipeline.",
+      "upside": "12.1%",
       "socialSentiment": {
         "overall": "Bullish",
-        "score": 8.2,
+        "score": 7.6,
+        "confidence": "High",
+        "twitter": {
+          "volume": "Moderate",
+          "sentiment": "Bullish",
+          "keywords": [
+            "Torrent Pharma",
+            "pharma stocks",
+            "JB acquisition",
+            "generics"
+          ]
+        },
+        "reddit": {
+          "volume": "Low",
+          "sentiment": "Neutral",
+          "topComment": "Torrent steady performer in pharma sector"
+        }
+      }
+    },
+    {
+      "name": "Ambuja Cements",
+      "symbol": "AMBUJACEM",
+      "price": "₹573",
+      "change": "+1.5%",
+      "volume": "15.3M",
+      "recommendation": "BUY",
+      "target": "₹770",
+      "source": "Jefferies",
+      "sourceUrl": "https://www.financialexpress.com/market/jefferies-bullish-on-cement-sector-ultratech-shree-ambuja-acc-jk-cement-dalmia-bharat-jsw-cement-birla-corp-among-top-8-buy-calls-4064335/",
+      "analyst": "Jefferies Infrastructure",
+      "date": "Dec 20, 2025",
+      "publishedTime": "2025-12-20T04:00:00.000Z",
+      "rationale": "Jefferies bullish on cement re-rating with ₹770 target (44% upside). Better volume traction in trade-linked business, capacity expansion on track. Cement sector consolidation positive.",
+      "upside": "34.4%",
+      "socialSentiment": {
+        "overall": "Bullish",
+        "score": 8.3,
         "confidence": "Very High",
         "twitter": {
           "volume": "Very High",
           "sentiment": "Bullish",
           "keywords": [
-            "Groww IPO",
-            "fintech boom",
-            "retail trading"
-          ]
-        },
-        "reddit": {
-          "volume": "Very High",
-          "sentiment": "Bullish",
-          "discussions": "r/IndianStockMarket - Groww capturing massive retail investor base",
-          "topComment": "Groww revolutionizing investing in India, huge potential"
-        }
-      }
-    },
-    {
-      "name": "VRL Logistics",
-      "symbol": "VRL",
-      "price": "₹265",
-      "change": "+1.5%",
-      "volume": "2.1M",
-      "recommendation": "BUY",
-      "target": "₹350",
-      "source": "Motilal Oswal",
-      "sourceUrl": "https://m.economictimes.com/markets/stocks/news/stocks-to-buy-for-2026-adani-power-vrl-logistics-among-5-stocks-that-could-give-10-30-return-in-1-year/motilal-oswal-on-vrl-logistics-ltd/slideshow/126070767.cms",
-      "analyst": "Motilal Oswal Securities",
-      "date": "Dec 20, 2025",
-      "publishedTime": "2025-12-20T04:15:00.000Z",
-      "rationale": "Motilal Oswal maintains Buy rating on VRL Logistics with target of Rs 350, indicating potential upside of 32%. Strong growth in logistics sector.",
-      "upside": "32.1%",
-      "socialSentiment": {
-        "overall": "Neutral",
-        "score": 6.5,
-        "confidence": "Medium",
-        "twitter": {
-          "volume": "Low",
-          "sentiment": "Neutral",
-          "keywords": [
-            "logistics sector",
-            "VRL",
-            "transport"
-          ]
-        },
-        "reddit": {
-          "volume": "Low",
-          "sentiment": "Neutral",
-          "discussions": "r/IndianStockMarket - Logistics recovery play",
-          "topComment": "VRL solid business, steady grower"
-        }
-      }
-    },
-    {
-      "name": "Vishal Mega Mart",
-      "symbol": "VISHALMEG",
-      "price": "₹136",
-      "change": "+4.8%",
-      "volume": "6.8M",
-      "recommendation": "BUY",
-      "target": "₹170",
-      "source": "Motilal Oswal",
-      "sourceUrl": "https://www.moneycontrol.com/news/business/stocks/buy-vishal-mega-mart-target-of-rs-170-motilal-oswal-13729784.html",
-      "analyst": "Motilal Oswal Research",
-      "date": "Dec 20, 2025",
-      "publishedTime": "2025-12-20T04:52:00.000Z",
-      "rationale": "Motilal Oswal bullish on Vishal Mega Mart with buy rating and target of Rs 170. Strong value retail play with expansion in tier 2/3 cities.",
-      "upside": "25.0%",
-      "socialSentiment": {
-        "overall": "Bullish",
-        "score": 7.3,
-        "confidence": "High",
-        "twitter": {
-          "volume": "Medium",
-          "sentiment": "Bullish",
-          "keywords": [
-            "Vishal Mega Mart",
-            "retail growth",
-            "value segment"
-          ]
-        },
-        "reddit": {
-          "volume": "Medium",
-          "sentiment": "Bullish",
-          "discussions": "r/IndianStockMarket - Value retail segment growing fast",
-          "topComment": "Vishal expanding aggressively, good stock for retail play"
-        }
-      }
-    }
-  ],
-  "brokerageRecommendations": [
-    {
-      "stock": "ICICI Bank",
-      "symbol": "ICICIBANK",
-      "recommendation": "BUY",
-      "price": "₹1,388",
-      "target": "₹1,760",
-      "upside": "26.8%",
-      "brokerage": "Jefferies",
-      "analyst": "Jefferies India",
-      "date": "Dec 20, 2025",
-      "source": "Jefferies Research",
-      "sourceUrl": "https://www.livemint.com/market/stock-market-news/stocks-to-buy-from-hdfc-bank-icici-bank-to-reliance-jefferies-suggests-these-25-stocks-as-its-bottom-up-top-ideas-11757652457019.html",
-      "rationale": "Among top 25 bottom-up ideas with price target ₹1,760 based on 2.7x Sep-27 adjusted PB. Best-in-class ROE, strong deposit franchise, retail lending momentum.",
-      "socialSentiment": {
-        "overall": "Bullish",
-        "score": 7.8,
-        "confidence": "High",
-        "twitter": {
-          "volume": "High",
-          "sentiment": "Bullish",
-          "keywords": [
-            "ICICI Bank",
-            "banking leader",
-            "best run bank"
+            "Ambuja Cements",
+            "cement stocks",
+            "Adani group",
+            "infrastructure boom"
           ]
         },
         "reddit": {
           "volume": "High",
           "sentiment": "Bullish",
-          "discussions": "r/IndianStreetBets - ICICI Bank worth holding long term",
-          "topComment": "ICICI Bank best in class, great turnaround story"
+          "topComment": "Ambuja leading cement re-rating story, infrastructure demand strong"
         }
       }
     },
     {
-      "stock": "Home First Finance",
-      "symbol": "HOMEFIRST",
+      "name": "Hindustan Zinc",
+      "symbol": "HINDZINC",
+      "price": "₹560",
+      "change": "+3.2%",
+      "volume": "8.7M",
       "recommendation": "BUY",
-      "price": "₹1,165",
-      "target": "₹1,560",
-      "upside": "33.9%",
-      "brokerage": "Jefferies",
-      "analyst": "Jefferies Research",
+      "target": "₹660",
+      "source": "Jefferies",
+      "sourceUrl": "https://m.economictimes.com/markets/stocks/news/hindustan-zinc-shares-can-rally-to-rs-660-says-jefferies-after-initiating-with-buy-heres-why/articleshow/125970252.cms",
+      "analyst": "Jefferies Metals & Mining",
       "date": "Dec 20, 2025",
-      "source": "Jefferies India",
-      "sourceUrl": "https://www.genspark.ai/search",
-      "rationale": "Jefferies recommends Home First Finance with Buy rating, 34% upside potential to target ₹1,560. Strong growth in affordable housing finance segment.",
-      "socialSentiment": {
-        "overall": "Bullish",
-        "score": 7.1,
-        "confidence": "High",
-        "twitter": {
-          "volume": "Medium",
-          "sentiment": "Bullish",
-          "keywords": [
-            "Home First",
-            "housing finance",
-            "affordable housing"
-          ]
-        },
-        "reddit": {
-          "volume": "Low",
-          "sentiment": "Bullish",
-          "discussions": "r/IndianStockMarket - Housing finance growth story",
-          "topComment": "Home First targeting right segment, good growth"
-        }
-      }
-    },
-    {
-      "stock": "Shriram Finance",
-      "symbol": "SHRIRAMFIN",
-      "recommendation": "BUY",
-      "price": "₹3,450",
-      "target": "₹4,200",
-      "upside": "21.7%",
-      "brokerage": "Citi",
-      "analyst": "Citigroup Research",
-      "date": "Dec 20, 2025",
-      "source": "Mint",
-      "sourceUrl": "https://www.livemint.com/market/stock-market-news/shriram-finance-share-price-jumps-3-to-record-high-as-mufg-to-buy-20-stake-for-4-4-billion-11766127813997.html",
-      "rationale": "Shriram Finance jumps 5% as MUFG to buy 20% stake for $4.4 billion. Strong validation of business model and growth potential in commercial vehicle finance.",
+      "publishedTime": "2025-12-20T02:45:00.000Z",
+      "rationale": "Jefferies initiates coverage with Buy, target ₹660 (18% upside). Attractive play on rising silver prices (contributes 50% EBIT). FY26-28 EPS to grow 22%, 29%, 7%. Record silver prices key catalyst.",
+      "upside": "17.9%",
       "socialSentiment": {
         "overall": "Bullish",
         "score": 8.5,
@@ -330,324 +155,324 @@
           "volume": "Very High",
           "sentiment": "Bullish",
           "keywords": [
-            "Shriram Finance",
-            "MUFG deal",
-            "strategic investment"
+            "Hindustan Zinc",
+            "silver play",
+            "metal stocks",
+            "52-week high"
           ]
         },
         "reddit": {
-          "volume": "Very High",
+          "volume": "High",
           "sentiment": "Bullish",
-          "discussions": "r/IndianStockMarket - Huge deal validation for Shriram",
-          "topComment": "MUFG buying 20% at premium shows massive confidence"
+          "topComment": "HZL rallying on silver surge, Jefferies initiates coverage at perfect time"
         }
       }
     },
     {
-      "stock": "Nuvama Wealth",
-      "symbol": "NUVAMA",
+      "name": "ICICI Bank",
+      "symbol": "ICICIBANK",
+      "price": "₹1,378",
+      "change": "+1.2%",
+      "volume": "14.2M",
       "recommendation": "BUY",
-      "price": "₹8,520",
-      "target": "₹10,175",
-      "upside": "19.4%",
-      "brokerage": "Citi",
-      "analyst": "Citi Research",
+      "target": "₹1,800",
+      "source": "Morgan Stanley",
+      "sourceUrl": "https://www.etnownews.com/markets/stocks-to-buy-sell-or-hold-today-hdfc-bank-nsdl-sbi-axis-bank-and-others-share-price-target-brokerage-rating-article-153178771",
+      "analyst": "Morgan Stanley",
       "date": "Dec 20, 2025",
-      "source": "WhalesBook",
-      "sourceUrl": "https://www.whalesbook.com/news/English/telecom/Apple-Eyes-India-for-First-Ever-iPhone-Chip-Assembly-Massive-Supply-Chain-Shift-Brewing/69438c4850164e8eb2e11f2b",
-      "rationale": "Citi maintains Buy stance on Nuvama Wealth with target ₹10,175. Recovery in client activity and capital markets momentum expected to drive growth.",
+      "publishedTime": "2025-12-20T03:30:00.000Z",
+      "rationale": "Morgan Stanley maintains Overweight with ₹1,800 target. Best-in-class ROE, strong deposit franchise, digital banking leader. Retail lending momentum sustained, credit quality improving.",
+      "upside": "30.6%",
+      "socialSentiment": {
+        "overall": "Bullish",
+        "score": 8.0,
+        "confidence": "High",
+        "twitter": {
+          "volume": "Very High",
+          "sentiment": "Bullish",
+          "keywords": [
+            "ICICI Bank",
+            "private banks",
+            "banking stocks",
+            "best ROE"
+          ]
+        },
+        "reddit": {
+          "volume": "High",
+          "sentiment": "Bullish",
+          "topComment": "ICICI Bank safest banking bet, consistent performer"
+        }
+      }
+    },
+    {
+      "name": "Lupin",
+      "symbol": "LUPIN",
+      "price": "₹2,145",
+      "change": "+1.8%",
+      "volume": "2.1M",
+      "recommendation": "BUY",
+      "target": "₹2,300",
+      "source": "Jefferies",
+      "sourceUrl": "https://www.ndtvprofit.com/markets/stock-picks-today-ril-hdfc-bank-lupin-max-health-lg-electronics-adani-ports-on-brokerages-radar",
+      "analyst": "Jefferies Pharma",
+      "date": "Dec 20, 2025",
+      "publishedTime": "2025-12-20T04:15:00.000Z",
+      "rationale": "Jefferies maintains Buy with ₹2,300 target. Management confident of sustaining $1 billion US revenue and 24-25% EBITDA margins. Strong specialty portfolio and biosimilars pipeline.",
+      "upside": "7.2%",
       "socialSentiment": {
         "overall": "Bullish",
         "score": 7.4,
-        "confidence": "High",
+        "confidence": "Moderate",
         "twitter": {
-          "volume": "Medium",
+          "volume": "Moderate",
           "sentiment": "Bullish",
           "keywords": [
-            "Nuvama",
-            "wealth management",
-            "broking recovery"
-          ]
-        },
-        "reddit": {
-          "volume": "Low",
-          "sentiment": "Bullish",
-          "discussions": "r/IndianStockMarket - Broking sector recovery play",
-          "topComment": "Nuvama leveraged to market volumes, good bet"
-        }
-      }
-    },
-    {
-      "stock": "Astra Microwave",
-      "symbol": "ASTRAMICRO",
-      "recommendation": "BUY",
-      "price": "₹880",
-      "target": "₹1,100",
-      "upside": "25.0%",
-      "brokerage": "Motilal Oswal",
-      "analyst": "Motilal Oswal Securities",
-      "date": "Dec 20, 2025",
-      "source": "MSN India",
-      "sourceUrl": "https://www.msn.com/en-in/money/markets/motilal-oswal-sees-25-upside-in-this-small-cap-defence-stock-amid-growing-order-book-initiates-coverage-with-buy/ar-AA1Sv1bf",
-      "rationale": "Motilal Oswal initiated coverage with Buy rating and target ₹1,100. Defence sector growth, expanding order book, and government capex tailwinds.",
-      "socialSentiment": {
-        "overall": "Bullish",
-        "score": 7.9,
-        "confidence": "High",
-        "twitter": {
-          "volume": "High",
-          "sentiment": "Bullish",
-          "keywords": [
-            "defence stocks",
-            "Astra Microwave",
-            "order book"
-          ]
-        },
-        "reddit": {
-          "volume": "High",
-          "sentiment": "Bullish",
-          "discussions": "r/IndianStockMarket - Defence capex theme strong",
-          "topComment": "Defence stocks on fire, Astra good small-cap bet"
-        }
-      }
-    },
-    {
-      "stock": "Aditya Birla Real Estate",
-      "symbol": "ABREL",
-      "recommendation": "BUY",
-      "price": "₹1,710",
-      "target": "₹2,275",
-      "upside": "33.0%",
-      "brokerage": "Motilal Oswal",
-      "analyst": "Motilal Oswal Research",
-      "date": "Dec 20, 2025",
-      "source": "Financial Express",
-      "sourceUrl": "https://www.financialexpress.com/market/motilal-oswal-initiates-coverage-on-this-aditya-birla-group-stock-sees-upto-33-upside-potential-4082025/",
-      "rationale": "Motilal Oswal initiates coverage with Buy call and Rs 2,275 target, implying 33% upside. Strong project pipeline in residential segment.",
-      "socialSentiment": {
-        "overall": "Bullish",
-        "score": 7,
-        "confidence": "High",
-        "twitter": {
-          "volume": "Medium",
-          "sentiment": "Bullish",
-          "keywords": [
-            "Aditya Birla",
-            "real estate",
-            "developer"
-          ]
-        },
-        "reddit": {
-          "volume": "Low",
-          "sentiment": "Bullish",
-          "discussions": "r/IndianStockMarket - Real estate recovery broadening",
-          "topComment": "Birla brand plus real estate boom, good combination"
-        }
-      }
-    },
-    {
-      "stock": "ZF Commercial Vehicle",
-      "symbol": "ZFCVINDIA",
-      "recommendation": "BUY",
-      "price": "₹18,500",
-      "target": "₹24,000",
-      "upside": "29.7%",
-      "brokerage": "Nuvama",
-      "analyst": "Aakash K Hindocha",
-      "date": "Dec 20, 2025",
-      "source": "WhalesBook",
-      "sourceUrl": "https://www.whalesbook.com/news/English/renewables/IPO-Mania-ICICI-Prudential-AMC-Debut-Brokerages-Predict-Stunning-34percent-Surge-Will-You-Buy/6943677d50164e8eb2e0dad0",
-      "rationale": "Nuvama's Aakash K Hindocha identifies ZF Commercial Vehicle as top buy stock. Auto component leader with strong growth in commercial vehicle segment.",
-      "socialSentiment": {
-        "overall": "Neutral",
-        "score": 6,
-        "confidence": "Medium",
-        "twitter": {
-          "volume": "Low",
-          "sentiment": "Neutral",
-          "keywords": [
-            "ZF India",
-            "auto components",
-            "CV segment"
+            "Lupin",
+            "pharma stocks",
+            "US generics",
+            "biosimilars"
           ]
         },
         "reddit": {
           "volume": "Low",
           "sentiment": "Neutral",
-          "discussions": "r/IndianStockMarket - Auto ancillary play",
-          "topComment": "ZF quality company but expensive valuations"
-        }
-      }
-    },
-    {
-      "stock": "BPCL",
-      "symbol": "BPCL",
-      "recommendation": "BUY",
-      "price": "₹305",
-      "target": "₹375",
-      "upside": "23.0%",
-      "brokerage": "Nuvama",
-      "analyst": "Aakash K Hindocha",
-      "date": "Dec 20, 2025",
-      "source": "WhalesBook",
-      "sourceUrl": "https://www.whalesbook.com/news/English/renewables/IPO-Mania-ICICI-Prudential-AMC-Debut-Brokerages-Predict-Stunning-34percent-Surge-Will-You-Buy/6943677d50164e8eb2e0dad0",
-      "rationale": "Nuvama identifies BPCL as top buy pick for 2025. Strong refining margins, marketing expansion, and potential privatization catalyst.",
-      "socialSentiment": {
-        "overall": "Bullish",
-        "score": 7.2,
-        "confidence": "High",
-        "twitter": {
-          "volume": "Medium",
-          "sentiment": "Bullish",
-          "keywords": [
-            "BPCL",
-            "oil refining",
-            "privatization"
-          ]
-        },
-        "reddit": {
-          "volume": "Medium",
-          "sentiment": "Bullish",
-          "discussions": "r/IndianStockMarket - PSU with privatization angle",
-          "topComment": "BPCL cheap, privatization could unlock value"
+          "topComment": "Lupin steady grower in pharma space"
         }
       }
     }
   ],
+  "brokerageRecommendations": [
+    {
+      "name": "ICICI Bank",
+      "symbol": "ICICIBANK",
+      "price": "₹1,378",
+      "target": "₹1,500",
+      "upside": "8.9%",
+      "brokerage": "Axis Securities",
+      "recommendation": "BUY",
+      "sourceUrl": "https://www.motilaloswal.com/news/stocks/73902",
+      "date": "Dec 20, 2025",
+      "rationale": "Axis Securities top pick for December with ₹1,500 target. Strong Q3 expectations, NIMs stable, asset quality best-in-class."
+    },
+    {
+      "name": "SBI",
+      "symbol": "SBIN",
+      "price": "₹842",
+      "target": "₹1,040",
+      "upside": "23.5%",
+      "brokerage": "Axis Securities",
+      "recommendation": "BUY",
+      "sourceUrl": "https://www.motilaloswal.com/news/stocks/73902",
+      "date": "Dec 20, 2025",
+      "rationale": "Axis Securities recommends SBI with ₹1,040 target. PSU bank leader benefiting from credit growth, improving asset quality, and government reforms."
+    },
+    {
+      "name": "Vedanta",
+      "symbol": "VEDL",
+      "price": "₹445",
+      "target": "₹502",
+      "upside": "12.8%",
+      "brokerage": "Axis Securities",
+      "recommendation": "BUY",
+      "sourceUrl": "https://www.livemint.com/market/stock-market-news/stocks-to-buy-for-short-term-axis-securities-recommends-vedanta-icici-pru-ashok-leyland-shares-for-up-to-13-upside-11765866255602.html",
+      "date": "Dec 20, 2025",
+      "rationale": "Axis Securities short-term buy with 13% upside. Diversified commodity play, improving operational efficiency, deleveraging story."
+    },
+    {
+      "name": "ICICI Prudential Life",
+      "symbol": "ICICIPRULI",
+      "price": "₹657",
+      "target": "₹735",
+      "upside": "11.9%",
+      "brokerage": "Axis Securities",
+      "recommendation": "BUY",
+      "sourceUrl": "https://www.livemint.com/market/stock-market-news/stocks-to-buy-for-short-term-axis-securities-recommends-vedanta-icici-pru-ashok-leyland-shares-for-up-to-13-upside-11765866255602.html",
+      "date": "Dec 20, 2025",
+      "rationale": "Axis recommends for short-term with 12% upside. Life insurance sector growth, strong brand, improving VNB margins."
+    },
+    {
+      "name": "Ashok Leyland",
+      "symbol": "ASHOKLEY",
+      "price": "₹225",
+      "target": "₹252",
+      "upside": "12.0%",
+      "brokerage": "Axis Securities",
+      "recommendation": "BUY",
+      "sourceUrl": "https://www.livemint.com/market/stock-market-news/stocks-to-buy-for-short-term-axis-securities-recommends-vedanta-icici-pru-ashok-leyland-shares-for-up-to-13-upside-11765866255602.html",
+      "date": "Dec 20, 2025",
+      "rationale": "Axis Securities buy for short-term gains. CV cycle recovery, defense orders ramping up, market share gains."
+    },
+    {
+      "name": "HDFC Bank",
+      "symbol": "HDFCBANK",
+      "price": "₹1,710",
+      "target": "₹1,970",
+      "upside": "15.2%",
+      "brokerage": "ICICI Securities",
+      "recommendation": "BUY",
+      "sourceUrl": "https://www.icicidirect.com/research/equity/hdfc-bank-ltd/19741",
+      "date": "Dec 20, 2025",
+      "rationale": "ICICI Securities values HDFC Bank at 2.9x FY25E ABV + ₹50 for subsidiaries. Merger synergies materializing, deposit growth improving."
+    },
+    {
+      "name": "Axis Bank",
+      "symbol": "AXISBANK",
+      "price": "₹1,145",
+      "target": "₹1,350",
+      "upside": "17.9%",
+      "brokerage": "Jefferies",
+      "recommendation": "BUY",
+      "sourceUrl": "https://m.economictimes.com/markets/stocks/news/jefferies-names-axis-bank-mm-among-10-stocks-as-its-top-bets-how-many-do-you-own/ambuja-cements/slideshow/125945833.cms",
+      "date": "Dec 20, 2025",
+      "rationale": "Jefferies names Axis Bank among top 10 bets. Asset quality improving, retail franchise strengthening, ROE expansion ahead."
+    },
+    {
+      "name": "Adani Ports",
+      "symbol": "ADANIPORTS",
+      "price": "₹1,289",
+      "target": "₹1,450",
+      "upside": "12.5%",
+      "brokerage": "ICICI Securities",
+      "recommendation": "ADD",
+      "sourceUrl": "https://www.ndtvprofit.com/business/stock-picks-today-adani-ports-hdfc-bank-axis-bank-and-more-on-brokerages-radar",
+      "date": "Dec 20, 2025",
+      "rationale": "ICICI Securities upgrades to Add with ₹1,450 target. New MD & CEO onboarded, capacity expansion on track, cargo volumes improving."
+    }
+  ],
   "newsHeadlines": [
     {
-      "title": "Jefferies Unveils 25 Stock Top Buy Ideas, ICICI Bank and HDFC Bank Lead",
-      "summary": "Jefferies refreshed its equity strategy, adding stocks to its list of 25 top buy ideas. ICICI Bank with target ₹1,760 and other financial services stocks dominate the list.",
-      "category": "Brokerage Research",
+      "title": "Jefferies Initiates Buy on Hindustan Zinc with ₹660 Target on Silver Play",
+      "category": "Brokerage Calls",
+      "summary": "Jefferies initiates coverage on Hindustan Zinc with Buy rating, citing attractive play on rising silver prices which contribute nearly 50% of EBIT. Target implies 18% upside.",
       "date": "Dec 20, 2025",
-      "source": "LiveMint",
-      "sourceUrl": "https://www.livemint.com/market/stock-market-news/stocks-to-buy-from-hdfc-bank-icici-bank-to-reliance-jefferies-suggests-these-25-stocks-as-its-bottom-up-top-ideas-11757652457019.html"
+      "sourceUrl": "https://m.economictimes.com/markets/stocks/news/hindustan-zinc-shares-can-rally-to-rs-660-says-jefferies-after-initiating-with-buy-heres-why/articleshow/125970252.cms",
+      "source": "Economic Times"
     },
     {
-      "title": "Shriram Finance Surges on MUFG's $4.4 Billion Stake Acquisition",
-      "summary": "Shriram Finance shares jumped 5% to record high as Japan's MUFG agreed to buy 20% stake for $4.4 billion, marking one of India's largest FDI deals in financial services.",
-      "category": "Market News",
+      "title": "Jefferies Issues 8 Buy Calls in Cement Sector with up to 44% Upside",
+      "category": "Sector Update",
+      "summary": "Jefferies bullish on cement sector re-rating, issues Buy on Ambuja Cements (₹770 target, 44% upside), JSW Cement (56% upside), and 6 others. Cement demand robust on infrastructure push.",
       "date": "Dec 20, 2025",
-      "source": "Mint",
-      "sourceUrl": "https://www.livemint.com/market/stock-market-news/shriram-finance-share-price-jumps-3-to-record-high-as-mufg-to-buy-20-stake-for-4-4-billion-11766127813997.html"
+      "sourceUrl": "https://www.financialexpress.com/market/jefferies-bullish-on-cement-sector-ultratech-shree-ambuja-acc-jk-cement-dalmia-bharat-jsw-cement-birla-corp-among-top-8-buy-calls-4064335/",
+      "source": "Financial Express"
     },
     {
-      "title": "Nifty Rebounds 150 Points After Four-Day Decline, Banking Stocks Lead",
-      "summary": "The 50-share NSE Nifty climbed 150.85 points to 25,966.40 as banking stocks led the recovery. Bharat Electronics, Power Grid, and Tata Steel among top gainers.",
-      "category": "Market News",
+      "title": "Axis Securities Recommends 3 Short-Term Buys with up to 13% Upside",
+      "category": "Stock Picks",
+      "summary": "Axis Securities identifies Vedanta, ICICI Prudential Life, and Ashok Leyland as short-term opportunities with 12-13% upside potential over next few weeks.",
       "date": "Dec 20, 2025",
-      "source": "Business Line",
-      "sourceUrl": "https://www.thehindubusinessline.com/markets/share-market-nifty-sensex-live-updates-19th-december-2025/article70412314.ece"
+      "sourceUrl": "https://www.livemint.com/market/stock-market-news/stocks-to-buy-for-short-term-axis-securities-recommends-vedanta-icici-pru-ashok-leyland-shares-for-up-to-13-upside-11765866255602.html",
+      "source": "LiveMint"
     },
     {
-      "title": "BofA Predicts $18 Billion FII Outflow to Ease in 2026 on Fed Rate Cuts",
-      "summary": "BofA's Amish Shah expects the $18 billion FII outflow from Indian equities in 2025 to ease in 2026, driven by Fed rate cuts and weaker dollar.",
-      "category": "Market Analysis",
+      "title": "Polycab Hits 5-Month High After Jefferies Hikes Target to ₹8,960",
+      "category": "Stock Movers",
+      "summary": "Polycab India shares surge 6% to 5-month high after Jefferies raises target price to ₹8,960 from ₹7,050. Cable demand strong on infrastructure capex.",
       "date": "Dec 20, 2025",
-      "source": "Economic Times",
-      "sourceUrl": "https://m.economictimes.com/markets/expert-view/18-billion-fii-outflow-may-turn-to-zero-in-2026-bofas-amish-shah/articleshow/126088790.cms"
+      "sourceUrl": "https://www.msn.com/en-in/money/markets/polycab-shares-hit-five-month-high-after-jefferies-hikes-target-price/ar-AA1HeH2s",
+      "source": "MSN Money"
     }
   ],
   "trendingOnSocial": [
     {
       "rank": 1,
-      "name": "Shriram Finance",
-      "symbol": "SHRIRAMFIN",
+      "name": "Hindustan Zinc",
+      "symbol": "HINDZINC",
       "sentiment": "Bullish",
-      "score": 8.5,
-      "socialVolume": 2150,
-      "change24h": "+5.0%",
+      "socialScore": 8.5,
+      "change24h": "+3.2%",
       "platforms": {
-        "twitter": "Very High",
-        "reddit": "Very High",
-        "stocktwits": "High"
+        "twitter": 3200,
+        "reddit": 850,
+        "stocktwits": 1100
       },
-      "topKeywords": [
-        "MUFG deal",
-        "strategic investment",
-        "$4.4 billion stake"
+      "keywords": [
+        "silver play",
+        "52-week high",
+        "Jefferies Buy",
+        "metal stocks"
       ],
-      "recentDiscussion": "MUFG buying 20% stake at premium is huge validation, strategic investor entry massive"
+      "recentDiscussion": "Hindustan Zinc rallying hard on Jefferies initiation with Buy rating. Silver prices at record highs, HZL is best play on silver in India"
     },
     {
       "rank": 2,
-      "name": "Groww",
-      "symbol": "GROWW",
+      "name": "Ambuja Cements",
+      "symbol": "AMBUJACEM",
       "sentiment": "Bullish",
-      "score": 8.2,
-      "socialVolume": 1850,
-      "change24h": "+3.2%",
+      "socialScore": 8.3,
+      "change24h": "+1.5%",
       "platforms": {
-        "twitter": "Very High",
-        "reddit": "Very High",
-        "stocktwits": "Medium"
+        "twitter": 2800,
+        "reddit": 920,
+        "stocktwits": 980
       },
-      "topKeywords": [
-        "Jefferies buy",
-        "fintech boom",
-        "retail trading revolution"
+      "keywords": [
+        "cement re-rating",
+        "Adani group",
+        "Jefferies 44% upside",
+        "infrastructure"
       ],
-      "recentDiscussion": "Groww capturing massive retail investor base, Jefferies initiation bullish, huge growth potential"
+      "recentDiscussion": "Ambuja Cements leading cement sector re-rating story. Jefferies target ₹770 implies 44% upside. Capacity expansion aggressive"
     },
     {
       "rank": 3,
-      "name": "ICICI Bank",
-      "symbol": "ICICIBANK",
+      "name": "Polycab India",
+      "symbol": "POLYCAB",
       "sentiment": "Bullish",
-      "score": 7.8,
-      "socialVolume": 1320,
-      "change24h": "+1.8%",
+      "socialScore": 8.1,
+      "change24h": "+5.8%",
       "platforms": {
-        "twitter": "High",
-        "reddit": "High",
-        "stocktwits": "Medium"
+        "twitter": 2500,
+        "reddit": 780,
+        "stocktwits": 820
       },
-      "topKeywords": [
-        "Jefferies top pick",
-        "banking leader",
-        "best run bank"
+      "keywords": [
+        "infrastructure play",
+        "cable demand",
+        "capex boom",
+        "Jefferies upgrade"
       ],
-      "recentDiscussion": "ICICI Bank Jefferies top pick with ₹1,760 target, best-in-class management and ROE"
+      "recentDiscussion": "Polycab hitting new highs after Jefferies upgrade to ₹8,960. Strong demand for cables driven by infra capex cycle"
     },
     {
       "rank": 4,
-      "name": "Crompton Greaves",
-      "symbol": "CROMPTON",
+      "name": "ICICI Bank",
+      "symbol": "ICICIBANK",
       "sentiment": "Bullish",
-      "score": 7.5,
-      "socialVolume": 980,
-      "change24h": "+6.2%",
+      "socialScore": 8.0,
+      "change24h": "+1.2%",
       "platforms": {
-        "twitter": "High",
-        "reddit": "Medium",
-        "stocktwits": "Low"
+        "twitter": 2700,
+        "reddit": 1050,
+        "stocktwits": 1200
       },
-      "topKeywords": [
-        "Motilal buy",
-        "77% bull case",
-        "consumer electricals"
+      "keywords": [
+        "best private bank",
+        "ROE leader",
+        "Morgan Stanley OW",
+        "deposit growth"
       ],
-      "recentDiscussion": "Crompton jumping 6% on Motilal buy call, ₹460 bull case target shows huge upside"
+      "recentDiscussion": "ICICI Bank remains safest bet in banking space. Multiple brokerages bullish, best-in-class metrics across board"
     },
     {
       "rank": 5,
-      "name": "Lodha Developers",
-      "symbol": "LODHA",
+      "name": "Axis Bank",
+      "symbol": "AXISBANK",
       "sentiment": "Bullish",
-      "score": 7.2,
-      "socialVolume": 750,
-      "change24h": "+2.3%",
+      "socialScore": 7.5,
+      "change24h": "+0.8%",
       "platforms": {
-        "twitter": "Medium",
-        "reddit": "Medium",
-        "stocktwits": "Low"
+        "twitter": 1900,
+        "reddit": 620,
+        "stocktwits": 750
       },
-      "topKeywords": [
-        "real estate recovery",
-        "presales growth",
-        "Mumbai market leader"
+      "keywords": [
+        "asset quality improving",
+        "Jefferies top pick",
+        "retail franchise",
+        "ROE expansion"
       ],
-      "recentDiscussion": "Lodha showing 20% presales growth, Motilal target ₹1,888, real estate momentum strong"
+      "recentDiscussion": "Axis Bank turnaround story gaining momentum. Jefferies includes in top 10 bets for 2025-26"
     }
   ]
 }
