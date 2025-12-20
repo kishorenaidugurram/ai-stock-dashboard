@@ -338,6 +338,61 @@ app.get('/api/technical/stock/:symbol', (c) => {
   }
 });
 
+// Get historical stock data (OHLCV) - Yahoo Finance proxy
+app.get('/api/historical/:symbol', async (c) => {
+  try {
+    const symbol = c.req.param('symbol');
+    const days = c.req.query('days') || '60';
+    
+    // Use Yahoo Finance API
+    const yahooSymbol = symbol + '.NS'; // NSE stocks
+    const endDate = Math.floor(Date.now() / 1000);
+    const startDate = endDate - (parseInt(days) * 24 * 60 * 60);
+    
+    const url = `https://query1.finance.yahoo.com/v8/finance/chart/${yahooSymbol}?period1=${startDate}&period2=${endDate}&interval=1d`;
+    
+    const response = await fetch(url);
+    const data = await response.json();
+    
+    if (!data.chart?.result?.[0]) {
+      return c.json({
+        success: false,
+        error: 'No data available',
+        symbol: symbol
+      }, 404);
+    }
+    
+    const result = data.chart.result[0];
+    const timestamps = result.timestamp;
+    const quote = result.indicators.quote[0];
+    
+    const ohlcv = timestamps.map((ts, idx) => ({
+      date: new Date(ts * 1000).toISOString().split('T')[0],
+      timestamp: ts,
+      open: quote.open[idx],
+      high: quote.high[idx],
+      low: quote.low[idx],
+      close: quote.close[idx],
+      volume: quote.volume[idx]
+    })).filter(d => d.open && d.high && d.low && d.close); // Remove null values
+    
+    return c.json({
+      success: true,
+      symbol: symbol,
+      yahooSymbol: yahooSymbol,
+      data: ohlcv,
+      count: ohlcv.length,
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    return c.json({
+      success: false,
+      error: error.message,
+      message: 'Failed to fetch historical data'
+    }, 500);
+  }
+});
+
 // Auto-update page route
 app.get('/auto-update', serveStatic({ path: './public/auto-update.html' }));
 

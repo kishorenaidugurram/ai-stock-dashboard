@@ -6,7 +6,25 @@ class StockChartManager {
         this.charts = {};
     }
 
-    // Generate mock OHLC data (in production, fetch from real API)
+    // Fetch real OHLC data from API
+    async fetchOHLCData(symbol, days = 60) {
+        try {
+            const response = await fetch(`/api/historical/${symbol}?days=${days}`);
+            const result = await response.json();
+            
+            if (!result.success || !result.data || result.data.length === 0) {
+                console.warn(`No historical data for ${symbol}, using mock data`);
+                return this.generateOHLCData(symbol, days);
+            }
+            
+            return result.data;
+        } catch (error) {
+            console.error(`Error fetching data for ${symbol}:`, error);
+            return this.generateOHLCData(symbol, days);
+        }
+    }
+    
+    // Generate mock OHLC data (fallback when API fails)
     generateOHLCData(symbol, days = 60) {
         const data = [];
         let basePrice = 1000 + Math.random() * 500;
@@ -118,8 +136,8 @@ class StockChartManager {
     }
 
     // Create candlestick chart with support/resistance
-    createCandlestickChart(containerId, symbol, stockData) {
-        const ohlcData = this.generateOHLCData(symbol);
+    async createCandlestickChart(containerId, symbol, stockData) {
+        const ohlcData = await this.fetchOHLCData(symbol);
         const srLevels = this.detectSupportResistance(ohlcData);
         
         // Candlestick trace
@@ -246,7 +264,7 @@ class StockChartManager {
     }
 
     // Show chart in modal
-    showChartModal(symbol, stockData) {
+    async showChartModal(symbol, stockData) {
         const modalHTML = `
             <div id="chartModal" class="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center p-4" onclick="closeChartModal(event)">
                 <div class="glass-card rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
@@ -261,7 +279,12 @@ class StockChartManager {
                             </button>
                         </div>
                         
-                        <div id="plotlyChart" style="width: 100%; height: 600px;"></div>
+                        <div id="plotlyChart" style="width: 100%; height: 600px;">
+                            <div class="flex items-center justify-center h-full">
+                                <i class="fas fa-spinner fa-spin text-4xl text-purple-600"></i>
+                                <span class="ml-3 text-gray-600">Loading chart data...</span>
+                            </div>
+                        </div>
                         
                         <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
                             <div class="glass-card rounded-xl p-4">
@@ -284,8 +307,8 @@ class StockChartManager {
         
         document.body.insertAdjacentHTML('beforeend', modalHTML);
         
-        // Create chart
-        const srLevels = this.createCandlestickChart('plotlyChart', symbol, stockData);
+        // Create chart (async)
+        const srLevels = await this.createCandlestickChart('plotlyChart', symbol, stockData);
         
         // Populate support levels
         const supportDiv = document.getElementById('supportLevels');
