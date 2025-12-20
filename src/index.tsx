@@ -1711,13 +1711,13 @@ app.get('/', (c) => {
                     // Render breakout stocks
                     const breakoutContainer = document.getElementById('breakoutStocks');
                     breakoutContainer.innerHTML = data.breakoutStocks.map(stock => \`
-                        <div class="bg-white rounded-lg shadow-lg p-6 card-hover card-animate">
+                        <div class="premium-card p-6 card-animate" data-symbol="\${stock.symbol}">
                             <div class="flex justify-between items-start mb-4">
                                 <div>
                                     <h3 class="text-xl font-bold text-gray-800">\${stock.name}</h3>
                                     <p class="text-gray-500 text-sm">\${stock.symbol}</p>
                                 </div>
-                                <span class="badge-buy text-white text-xs font-bold px-3 py-1 rounded-full">
+                                <span class="badge-modern gradient-success text-white text-xs px-3 py-1 rounded-full">
                                     \${stock.recommendation}
                                 </span>
                             </div>
@@ -1791,14 +1791,14 @@ app.get('/', (c) => {
                     // Render brokerage recommendations
                     const brokerageContainer = document.getElementById('brokerageRecommendations');
                     brokerageContainer.innerHTML = data.brokerageRecommendations.map(rec => \`
-                        <div class="bg-white rounded-lg shadow-lg p-6 card-hover card-animate">
+                        <div class="premium-card p-6 card-animate" data-symbol="\${rec.symbol}">
                             <div class="flex justify-between items-start mb-4">
                                 <div>
                                     <h3 class="text-xl font-bold text-gray-800">\${rec.stock}</h3>
                                     <p class="text-gray-500 text-sm">\${rec.symbol}</p>
                                 </div>
-                                <span class="\${rec.recommendation === 'BUY' ? 'badge-buy' : 'badge-sell'} 
-                                             text-white text-xs font-bold px-3 py-1 rounded-full">
+                                <span class="\${rec.recommendation === 'BUY' ? 'badge-modern gradient-success' : 'badge-modern gradient-danger'} 
+                                             text-white text-xs px-3 py-1 rounded-full">
                                     \${rec.recommendation}
                                 </span>
                             </div>
@@ -1909,7 +1909,7 @@ app.get('/', (c) => {
                     const trendingContainer = document.getElementById('trendingStocks');
                     if (data.trendingOnSocial) {
                         trendingContainer.innerHTML = data.trendingOnSocial.map(stock => \`
-                            <div class="bg-white rounded-lg shadow-lg p-6 card-hover card-animate border-l-4 border-\${stock.sentiment === 'Bullish' ? 'green' : stock.sentiment === 'Bearish' ? 'red' : 'yellow'}-500">
+                            <div class="premium-card p-6 card-animate border-l-4 border-\${stock.sentiment === 'Bullish' ? 'green' : stock.sentiment === 'Bearish' ? 'red' : 'yellow'}-500" data-symbol="\${stock.symbol}">
                                 <div class="flex justify-between items-start mb-4">
                                     <div>
                                         <div class="flex items-center gap-2 mb-1">
@@ -1918,7 +1918,7 @@ app.get('/', (c) => {
                                         </div>
                                         <p class="text-gray-500 text-sm">\${stock.symbol}</p>
                                     </div>
-                                    <span class="sentiment-\${stock.sentiment.toLowerCase()} social-badge">
+                                    <span class="badge-modern gradient-\${stock.sentiment === 'Bullish' ? 'success' : stock.sentiment === 'Bearish' ? 'danger' : 'warning'} text-white">
                                         \${stock.sentiment} \${stock.sentiment === 'Bullish' ? '📈' : stock.sentiment === 'Bearish' ? '📉' : '➡️'}
                                     </span>
                                 </div>

@@ -611,22 +611,22 @@ function initFilters() {
 
     const filterBar = document.createElement('div');
     filterBar.id = 'aiFilterBar';
-    filterBar.className = 'bg-white rounded-lg shadow-lg p-4 mb-8 sticky top-4 z-40';
+    filterBar.className = 'glass-card rounded-2xl shadow-lg p-6 mb-8 sticky top-20 z-30';
     filterBar.innerHTML = `
         <div class="flex flex-wrap gap-4 items-center">
             <div class="flex items-center gap-2">
-                <i class="fas fa-filter text-purple-600"></i>
-                <span class="font-semibold text-gray-700">Smart Filters:</span>
+                <i class="fas fa-filter text-purple-600 text-xl"></i>
+                <span class="font-bold text-gray-800 text-lg">Smart Filters:</span>
             </div>
             
-            <select id="riskFilter" onchange="applyFilters()" class="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-purple-500">
+            <select id="riskFilter" class="px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:outline-none">
                 <option value="">All Risk Levels</option>
                 <option value="low">Low Risk (≤3)</option>
                 <option value="medium">Medium Risk (4-6)</option>
                 <option value="high">High Risk (≥7)</option>
             </select>
             
-            <select id="momentumFilter" onchange="applyFilters()" class="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-purple-500">
+            <select id="momentumFilter" class="px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:outline-none">
                 <option value="">All Momentum</option>
                 <option value="strong">Strong (≥8)</option>
                 <option value="moderate">Moderate (5-7)</option>
@@ -636,38 +636,150 @@ function initFilters() {
             <input 
                 type="text" 
                 id="searchFilter" 
-                placeholder="Search stocks..." 
-                oninput="applyFilters()"
-                class="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-purple-500 flex-1 min-w-[200px]"
+                placeholder="🔍 Search by symbol or name..." 
+                class="px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:outline-none flex-1 min-w-[200px]"
             />
             
-            <button onclick="clearFilters()" class="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">
+            <button onclick="applyFilters()" class="btn-primary flex items-center gap-2 px-6 py-2">
+                <i class="fas fa-play"></i>
+                <span>Go</span>
+            </button>
+            
+            <button onclick="clearFilters()" class="px-6 py-2 bg-gray-200 text-gray-700 rounded-xl hover:bg-gray-300 transition font-semibold">
                 <i class="fas fa-times mr-1"></i> Clear
             </button>
         </div>
+        
+        <!-- Filter Results Display -->
+        <div id="filterResults" class="mt-4 hidden">
+            <div class="flex items-center gap-2 text-sm text-gray-600">
+                <i class="fas fa-check-circle text-green-500"></i>
+                <span id="filterResultsText">Showing all stocks</span>
+            </div>
+        </div>
     `;
 
-    // Insert after top picks or summary
-    const topPicksSection = document.getElementById('aiTopPicksSection');
-    const summaryCard = document.getElementById('aiMarketSummary');
+    // Insert after alerts banner or at top of main content
+    const alertsBanner = document.getElementById('aiAlertsBanner');
+    const mainContent = document.querySelector('main .page-view.active');
     
-    if (topPicksSection) {
-        topPicksSection.insertAdjacentElement('afterend', filterBar);
-    } else if (summaryCard) {
-        summaryCard.insertAdjacentElement('afterend', filterBar);
+    if (alertsBanner) {
+        alertsBanner.insertAdjacentElement('afterend', filterBar);
+    } else if (mainContent) {
+        mainContent.insertAdjacentElement('afterbegin', filterBar);
     }
+    
     console.log('✅ Filters initialized');
 }
 
 function applyFilters() {
     const riskFilter = document.getElementById('riskFilter')?.value || '';
     const momentumFilter = document.getElementById('momentumFilter')?.value || '';
-    const searchQuery = document.getElementById('searchFilter')?.value.toLowerCase() || '';
+    const searchQuery = document.getElementById('searchFilter')?.value.toLowerCase().trim() || '';
     
     console.log('🔍 Applying filters:', { riskFilter, momentumFilter, searchQuery });
     
-    // Filter logic would go here
-    // For now, just log the filters
+    if (!aiData || aiData.length === 0) {
+        console.warn('No stock data available for filtering');
+        return;
+    }
+    
+    // Filter stocks
+    let filteredStocks = aiData.filter(stock => {
+        const aiAnalysis = stock.aiAnalysis || {};
+        const symbol = (stock.symbol || stock.stock || '').toLowerCase();
+        const name = (stock.name || stock.company || '').toLowerCase();
+        
+        // Risk filter
+        if (riskFilter) {
+            const riskScore = aiAnalysis.riskScore || 5;
+            if (riskFilter === 'low' && riskScore > 3) return false;
+            if (riskFilter === 'medium' && (riskScore < 4 || riskScore > 6)) return false;
+            if (riskFilter === 'high' && riskScore < 7) return false;
+        }
+        
+        // Momentum filter
+        if (momentumFilter) {
+            const momentum = aiAnalysis.momentum || 5;
+            if (momentumFilter === 'strong' && momentum < 8) return false;
+            if (momentumFilter === 'moderate' && (momentum < 5 || momentum > 7)) return false;
+            if (momentumFilter === 'weak' && momentum > 4) return false;
+        }
+        
+        // Search filter
+        if (searchQuery) {
+            if (!symbol.includes(searchQuery) && !name.includes(searchQuery)) {
+                return false;
+            }
+        }
+        
+        return true;
+    });
+    
+    // Update UI with filtered results
+    updateFilteredStocksDisplay(filteredStocks, { riskFilter, momentumFilter, searchQuery });
+    
+    // Show filter results
+    const resultsDiv = document.getElementById('filterResults');
+    const resultsText = document.getElementById('filterResultsText');
+    if (resultsDiv && resultsText) {
+        resultsDiv.classList.remove('hidden');
+        
+        const filterCount = [riskFilter, momentumFilter, searchQuery].filter(f => f).length;
+        resultsText.textContent = `Showing ${filteredStocks.length} stocks${filterCount > 0 ? ` (${filterCount} filter${filterCount > 1 ? 's' : ''} active)` : ''}`;
+    }
+}
+
+function updateFilteredStocksDisplay(filteredStocks, filters) {
+    // Find all stock card containers
+    const containers = [
+        document.getElementById('breakoutStocks'),
+        document.getElementById('brokerageRecommendations'),
+        document.getElementById('trendingStocks')
+    ].filter(c => c);
+    
+    if (containers.length === 0) {
+        console.warn('No stock containers found');
+        return;
+    }
+    
+    containers.forEach(container => {
+        const cards = container.querySelectorAll('[data-symbol]');
+        let visibleCount = 0;
+        
+        cards.forEach(card => {
+            const symbol = card.getAttribute('data-symbol');
+            const isVisible = filteredStocks.some(s => 
+                (s.symbol || s.stock) === symbol
+            );
+            
+            if (isVisible) {
+                card.style.display = '';
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+        
+        // Show "no results" message if needed
+        let noResultsMsg = container.querySelector('.no-results-message');
+        if (visibleCount === 0) {
+            if (!noResultsMsg) {
+                noResultsMsg = document.createElement('div');
+                noResultsMsg.className = 'no-results-message col-span-full text-center py-8';
+                noResultsMsg.innerHTML = `
+                    <i class="fas fa-search text-4xl text-gray-300 mb-3"></i>
+                    <p class="text-gray-500 text-lg">No stocks match your filters</p>
+                    <button onclick="clearFilters()" class="mt-4 px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700">
+                        Clear Filters
+                    </button>
+                `;
+                container.appendChild(noResultsMsg);
+            }
+        } else if (noResultsMsg) {
+            noResultsMsg.remove();
+        }
+    });
 }
 
 function clearFilters() {
@@ -679,7 +791,31 @@ function clearFilters() {
     if (momentum) momentum.value = '';
     if (search) search.value = '';
     
-    applyFilters();
+    // Show all stocks
+    const containers = [
+        document.getElementById('breakoutStocks'),
+        document.getElementById('brokerageRecommendations'),
+        document.getElementById('trendingStocks')
+    ].filter(c => c);
+    
+    containers.forEach(container => {
+        const cards = container.querySelectorAll('[data-symbol]');
+        cards.forEach(card => {
+            card.style.display = '';
+        });
+        
+        // Remove no results message
+        const noResultsMsg = container.querySelector('.no-results-message');
+        if (noResultsMsg) noResultsMsg.remove();
+    });
+    
+    // Hide filter results
+    const resultsDiv = document.getElementById('filterResults');
+    if (resultsDiv) {
+        resultsDiv.classList.add('hidden');
+    }
+    
+    console.log('✅ Filters cleared');
 }
 
 // Make filter functions globally available
