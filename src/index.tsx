@@ -204,7 +204,7 @@ app.get('/', (c) => {
                     Data sourced from LiveMint, Economic Times, Moneycontrol, Business Standard and leading brokerage houses
                 </p>
                 <p class="text-gray-500 mt-2 text-sm">
-                    Data from Dec 15-20, 2024 | Always do your own research before investing
+                    Data from Dec 13-20, 2025 (Last Week) | Always do your own research before investing
                 </p>
             </div>
         </footer>
