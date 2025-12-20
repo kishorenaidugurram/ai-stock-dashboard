@@ -116,9 +116,14 @@ app.get('/', (c) => {
                     <div class="text-right">
                         <div class="text-sm text-purple-100">Last Updated</div>
                         <div class="text-lg font-semibold" id="lastUpdated"></div>
-                        <button onclick="refreshData()" class="refresh-btn text-white px-4 py-2 rounded mt-2 text-sm">
-                            <i class="fas fa-sync-alt mr-1"></i> Refresh Data
-                        </button>
+                        <div class="flex gap-2 mt-2">
+                            <button onclick="refreshData()" class="refresh-btn text-white px-4 py-2 rounded text-sm">
+                                <i class="fas fa-sync-alt mr-1"></i> Refresh Display
+                            </button>
+                            <button onclick="showUpdateInstructions()" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm">
+                                <i class="fas fa-search mr-1"></i> Update Data
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -129,6 +134,122 @@ app.get('/', (c) => {
             <div class="bg-white rounded-lg p-8 flex flex-col items-center">
                 <i class="fas fa-spinner fa-spin text-4xl text-blue-600 mb-4"></i>
                 <p class="text-gray-700 font-semibold">Loading latest data...</p>
+            </div>
+        </div>
+
+        <!-- Update Instructions Modal -->
+        <div id="updateModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+            <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <h2 class="text-2xl font-bold text-gray-800 flex items-center">
+                            <i class="fas fa-robot text-purple-600 mr-3"></i>
+                            AI-Powered Data Update
+                        </h2>
+                        <button onclick="closeUpdateModal()" class="text-gray-400 hover:text-gray-600">
+                            <i class="fas fa-times text-2xl"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg p-4">
+                            <p class="text-gray-700 mb-2">
+                                <i class="fas fa-info-circle text-blue-600 mr-2"></i>
+                                To update this dashboard with the latest stock data, send a message to your AI assistant.
+                            </p>
+                        </div>
+
+                        <div class="bg-white border-2 border-purple-200 rounded-lg p-4">
+                            <h3 class="font-bold text-gray-800 mb-2 flex items-center">
+                                <i class="fas fa-comment-dots text-purple-600 mr-2"></i>
+                                Quick Update Command
+                            </h3>
+                            <div class="bg-gray-50 rounded p-3 mb-2 font-mono text-sm">
+                                "Update the stock dashboard with latest data"
+                            </div>
+                            <button onclick="copyUpdateCommand()" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded text-sm">
+                                <i class="fas fa-copy mr-2"></i>Copy Command
+                            </button>
+                        </div>
+
+                        <div class="border rounded-lg p-4">
+                            <h3 class="font-bold text-gray-800 mb-3">📋 What the AI Will Do:</h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                                    <span>Search for latest NSE F&O breakout stocks</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                                    <span>Get fresh brokerage recommendations (ICICI, Motilal Oswal, etc.)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                                    <span>Fetch social sentiment from Twitter & Reddit</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                                    <span>Update market news headlines</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                                    <span>Rebuild and restart the dashboard</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="border rounded-lg p-4">
+                            <h3 class="font-bold text-gray-800 mb-3">⏱️ Update Frequency:</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                                <div class="bg-blue-50 rounded p-3">
+                                    <div class="font-semibold text-blue-800">Market Open (9:30 AM)</div>
+                                    <div class="text-gray-600">"Update dashboard - market open"</div>
+                                </div>
+                                <div class="bg-green-50 rounded p-3">
+                                    <div class="font-semibold text-green-800">Mid-day (2:00 PM)</div>
+                                    <div class="text-gray-600">"Update dashboard - mid-day"</div>
+                                </div>
+                                <div class="bg-purple-50 rounded p-3">
+                                    <div class="font-semibold text-purple-800">Market Close (4:30 PM)</div>
+                                    <div class="text-gray-600">"Update dashboard - close"</div>
+                                </div>
+                                <div class="bg-orange-50 rounded p-3">
+                                    <div class="font-semibold text-orange-800">Anytime</div>
+                                    <div class="text-gray-600">"Update dashboard for today"</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                            <h3 class="font-bold text-yellow-800 mb-2 flex items-center">
+                                <i class="fas fa-stopwatch mr-2"></i>
+                                Update Time
+                            </h3>
+                            <p class="text-gray-700">Each update takes approximately 2-3 minutes to complete.</p>
+                        </div>
+
+                        <div class="border rounded-lg p-4">
+                            <h3 class="font-bold text-gray-800 mb-2">🔗 How to Access AI Assistant:</h3>
+                            <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                                <li>Open your GenSpark AI chat interface</li>
+                                <li>Copy the update command above</li>
+                                <li>Paste and send the message</li>
+                                <li>Wait 2-3 minutes for the update to complete</li>
+                                <li>Refresh this dashboard to see new data</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 flex justify-end gap-3">
+                        <button onclick="closeUpdateModal()" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-2 rounded">
+                            Close
+                        </button>
+                        <a href="https://www.genspark.ai" target="_blank" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded inline-flex items-center">
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                            Open GenSpark AI
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -260,6 +381,35 @@ app.get('/', (c) => {
 
         <script src="https://cdn.jsdelivr.net/npm/axios@1.6.0/dist/axios.min.js"></script>
         <script>
+            // Show update instructions modal
+            function showUpdateInstructions() {
+                document.getElementById('updateModal').classList.remove('hidden');
+            }
+
+            // Close update modal
+            function closeUpdateModal() {
+                document.getElementById('updateModal').classList.add('hidden');
+            }
+
+            // Copy update command to clipboard
+            function copyUpdateCommand() {
+                const command = "Update the stock dashboard with latest data";
+                navigator.clipboard.writeText(command).then(() => {
+                    const btn = event.target.closest('button');
+                    const originalHTML = btn.innerHTML;
+                    btn.innerHTML = '<i class="fas fa-check mr-2"></i>Copied!';
+                    btn.classList.add('bg-green-600');
+                    btn.classList.remove('bg-purple-600');
+                    setTimeout(() => {
+                        btn.innerHTML = originalHTML;
+                        btn.classList.remove('bg-green-600');
+                        btn.classList.add('bg-purple-600');
+                    }, 2000);
+                }).catch(err => {
+                    alert('Failed to copy command. Please copy manually.');
+                });
+            }
+
             // Fetch and display stock data
             async function loadData() {
                 try {
