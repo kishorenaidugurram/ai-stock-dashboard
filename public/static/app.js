@@ -6,6 +6,7 @@ console.log('🤖 AI Dashboard Script Loading...');
 // Global state
 let aiData = null;
 let stocksData = null;
+let technicalData = null;
 let isInitialized = false;
 
 // Wait for page to be fully loaded
@@ -23,24 +24,29 @@ async function initAIDashboard() {
     console.log('🚀 Initializing AI Dashboard...');
     
     try {
-        // Load AI analysis data
-        const aiResponse = await axios.get('/api/ai/analyze');
-        aiData = aiResponse.data.stocks;
+        // Load AI analysis data and technical analysis in parallel
+        const [aiResponse, stocksResponse, technicalResponse] = await Promise.all([
+            axios.get('/api/ai/analyze'),
+            axios.get('/api/stocks'),
+            axios.get('/api/technical/analyze')
+        ]);
         
-        // Load stock data
-        const stocksResponse = await axios.get('/api/stocks');
+        aiData = aiResponse.data.stocks;
         stocksData = stocksResponse.data;
+        technicalData = technicalResponse.data.stocks;
         
         console.log('✅ Data loaded:', {
             stocks: aiData.length,
             breakout: stocksData.breakoutStocks?.length || 0,
-            brokerage: stocksData.brokerageRecommendations?.length || 0
+            brokerage: stocksData.brokerageRecommendations?.length || 0,
+            technical: technicalData.length
         });
         
-        // Initialize all AI features
+        // Initialize all features
         await renderAlertsBanner();
         await renderMarketSummary();
         await renderTopPicks();
+        await renderTechnicalInsights(); // NEW: Technical analysis section
         initChatbot();
         initFilters();
         
@@ -265,6 +271,197 @@ async function renderTopPicks() {
     } catch (error) {
         console.error('Error rendering top picks:', error);
     }
+}
+
+// ========================================
+// 3.5. TECHNICAL INSIGHTS SECTION
+// ========================================
+async function renderTechnicalInsights() {
+    try {
+        if (!technicalData || technicalData.length === 0) {
+            console.log('ℹ️ No technical data available');
+            return;
+        }
+
+        // Get stocks with strong technical signals
+        const strongSignals = technicalData
+            .filter(stock => stock.technical?.recommendation?.action === 'STRONG_BUY' || stock.technical?.recommendation?.action === 'BUY')
+            .sort((a, b) => (b.technical?.overallScore || 0) - (a.technical?.overallScore || 0))
+            .slice(0, 6);
+
+        if (strongSignals.length === 0) return;
+
+        console.log('📊 Technical Insights:', strongSignals.length, 'strong signals');
+
+        // Remove existing section if any
+        const existing = document.getElementById('technicalInsightsSection');
+        if (existing) existing.remove();
+
+        const section = document.createElement('section');
+        section.id = 'technicalInsightsSection';
+        section.className = 'mb-8';
+        section.innerHTML = `
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl font-bold text-gray-800 flex items-center">
+                    <i class="fas fa-chart-line text-teal-500 mr-3"></i>
+                    Technical Analysis Insights
+                </h2>
+                <span class="text-sm text-gray-500">Pattern & breakout detection</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="technicalInsightsContainer"></div>
+        `;
+
+        // Insert after top picks
+        const topPicksSection = document.getElementById('aiTopPicksSection');
+        const filterBar = document.getElementById('aiFilterBar');
+        
+        if (filterBar) {
+            filterBar.insertAdjacentElement('afterend', section);
+        } else if (topPicksSection) {
+            topPicksSection.insertAdjacentElement('afterend', section);
+        }
+
+        // Render technical cards
+        const container = document.getElementById('technicalInsightsContainer');
+        if (container) {
+            container.innerHTML = strongSignals.map(stock => {
+                const tech = stock.technical;
+                if (!tech) return '';
+
+                const breakout = tech.breakout;
+                const volume = tech.volume;
+                const pattern = tech.pattern;
+                const indicators = tech.indicators;
+                const recommendation = tech.recommendation;
+
+                return `
+                    <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 ${getBorderColor(recommendation?.action)} card-hover">
+                        <div class="mb-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-lg font-bold text-gray-800">${stock.symbol}</h3>
+                                <span class="text-xs ${getRecommendationBadgeClass(recommendation?.action)} px-2 py-1 rounded font-semibold">
+                                    ${recommendation?.action || 'HOLD'}
+                                </span>
+                            </div>
+                            <p class="text-gray-600 text-sm">${stock.name || 'N/A'}</p>
+                        </div>
+
+                        ${breakout?.detected ? `
+                        <div class="bg-green-50 border border-green-200 rounded-lg p-3 mb-3">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i class="fas fa-arrow-trend-up text-green-600"></i>
+                                <span class="text-sm font-semibold text-green-800">Breakout Detected</span>
+                            </div>
+                            <div class="text-xs text-green-700">
+                                ${breakout.type.replace(/_/g, ' ')} • Target: ${breakout.upsideTarget}%
+                            </div>
+                        </div>
+                        ` : ''}
+
+                        ${pattern ? `
+                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-3">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i class="fas fa-chart-area text-blue-600"></i>
+                                <span class="text-sm font-semibold text-blue-800">${pattern.type.replace(/_/g, ' ')}</span>
+                            </div>
+                            <div class="text-xs text-blue-700">${pattern.description}</div>
+                        </div>
+                        ` : ''}
+
+                        <div class="grid grid-cols-2 gap-3 mb-3">
+                            ${volume ? `
+                            <div class="text-center">
+                                <div class="text-xs text-gray-600">Volume</div>
+                                <div class="text-lg font-bold ${getVolumeColor(volume.level)}">${volume.level}</div>
+                            </div>
+                            ` : ''}
+                            ${indicators ? `
+                            <div class="text-center">
+                                <div class="text-xs text-gray-600">RSI</div>
+                                <div class="text-lg font-bold ${getRSIColor(indicators.rsi)}">${indicators.rsi}</div>
+                            </div>
+                            ` : ''}
+                        </div>
+
+                        ${indicators ? `
+                        <div class="space-y-2">
+                            <div>
+                                <div class="flex items-center justify-between mb-1">
+                                    <span class="text-xs text-gray-600">Momentum</span>
+                                    <span class="text-xs font-bold">${indicators.momentum}/100</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-teal-500 to-teal-600 h-2 rounded-full" style="width: ${indicators.momentum}%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex items-center justify-between mb-1">
+                                    <span class="text-xs text-gray-600">Trend Strength</span>
+                                    <span class="text-xs font-bold">${indicators.trendStrength}/100</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-purple-500 to-purple-600 h-2 rounded-full" style="width: ${indicators.trendStrength}%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        ` : ''}
+
+                        ${recommendation ? `
+                        <div class="mt-4 pt-4 border-t">
+                            <div class="text-xs text-gray-600 mb-1">AI Recommendation:</div>
+                            <div class="text-sm text-gray-800">${recommendation.reason}</div>
+                            <div class="text-xs text-gray-500 mt-1">Confidence: ${recommendation.confidence}%</div>
+                        </div>
+                        ` : ''}
+                    </div>
+                `;
+            }).join('');
+            console.log('✅ Technical insights rendered');
+        }
+    } catch (error) {
+        console.error('Error rendering technical insights:', error);
+    }
+}
+
+function getBorderColor(action) {
+    const colors = {
+        'STRONG_BUY': 'border-green-500',
+        'BUY': 'border-teal-500',
+        'HOLD': 'border-yellow-500',
+        'WATCH': 'border-blue-500',
+        'OVERSOLD': 'border-purple-500'
+    };
+    return colors[action] || 'border-gray-300';
+}
+
+function getRecommendationBadgeClass(action) {
+    const classes = {
+        'STRONG_BUY': 'bg-green-600 text-white',
+        'BUY': 'bg-teal-600 text-white',
+        'HOLD': 'bg-yellow-600 text-white',
+        'WATCH': 'bg-blue-600 text-white',
+        'OVERSOLD': 'bg-purple-600 text-white'
+    };
+    return classes[action] || 'bg-gray-600 text-white';
+}
+
+function getVolumeColor(level) {
+    const colors = {
+        'HIGH': 'text-green-600',
+        'ABOVE_AVERAGE': 'text-teal-600',
+        'MEDIUM': 'text-blue-600',
+        'BELOW_AVERAGE': 'text-yellow-600',
+        'LOW': 'text-gray-600'
+    };
+    return colors[level] || 'text-gray-600';
+}
+
+function getRSIColor(rsi) {
+    if (rsi >= 70) return 'text-red-600'; // Overbought
+    if (rsi >= 60) return 'text-orange-600';
+    if (rsi >= 40) return 'text-green-600';
+    if (rsi >= 30) return 'text-yellow-600';
+    return 'text-purple-600'; // Oversold
 }
 
 // ========================================

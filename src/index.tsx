@@ -3,6 +3,7 @@ import { cors } from 'hono/cors'
 import { serveStatic } from 'hono/cloudflare-workers'
 import stocksData from '../data/stocks-data.json'
 import TradingEdgeAI from './trading-edge-ai.js'
+import TechnicalAnalysis from './technical-analysis.js'
 
 const app = new Hono()
 
@@ -239,6 +240,75 @@ app.post('/api/ai/chat', async (c) => {
     return c.json({ 
       success: false, 
       response: 'Sorry, I encountered an error processing your request.',
+      error: error.message 
+    }, 500);
+  }
+});
+
+// 📊 TECHNICAL ANALYSIS ENDPOINT
+// Provides breakout detection, volume analysis, support/resistance, patterns
+app.get('/api/technical/analyze', (c) => {
+  try {
+    const allStocks = [
+      ...(stocksData.breakoutStocks || []),
+      ...(stocksData.brokerageRecommendations || [])
+    ];
+
+    const technicalData = allStocks.map(stock => {
+      const technical = TechnicalAnalysis.analyze(stock);
+      return {
+        symbol: stock.symbol || stock.stock,
+        name: stock.name || stock.company || stock.stock,
+        ...stock,
+        technical
+      };
+    });
+
+    return c.json({
+      success: true,
+      count: technicalData.length,
+      stocks: technicalData,
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    return c.json({ 
+      success: false, 
+      error: error.message 
+    }, 500);
+  }
+});
+
+// Technical analysis for single stock
+app.get('/api/technical/stock/:symbol', (c) => {
+  try {
+    const symbol = c.req.param('symbol');
+    const allStocks = [
+      ...(stocksData.breakoutStocks || []),
+      ...(stocksData.brokerageRecommendations || [])
+    ];
+
+    const stock = allStocks.find(s => 
+      (s.symbol || s.stock) === symbol
+    );
+
+    if (!stock) {
+      return c.json({ 
+        success: false, 
+        error: 'Stock not found' 
+      }, 404);
+    }
+
+    const technical = TechnicalAnalysis.analyze(stock);
+
+    return c.json({
+      success: true,
+      symbol,
+      technical,
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    return c.json({ 
+      success: false, 
       error: error.message 
     }, 500);
   }
