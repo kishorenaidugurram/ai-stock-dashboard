@@ -9,6 +9,287 @@ let stocksData = null;
 let technicalData = null;
 let isInitialized = false;
 
+// ========================================
+// NAVIGATION SYSTEM
+// ========================================
+// View Switching Function
+function switchView(viewName) {
+    console.log('🔀 Switching to view:', viewName);
+    
+    // Hide all views
+    document.querySelectorAll('.page-view').forEach(view => {
+        view.classList.remove('active');
+        view.style.display = 'none';
+    });
+    
+    // Show selected view
+    const selectedView = document.getElementById(`view-${viewName}`);
+    if (selectedView) {
+        selectedView.classList.add('active');
+        selectedView.style.display = 'block';
+        console.log('✅ View switched to:', viewName);
+        
+        // Load view-specific data
+        if (viewName === 'technical' && !selectedView.dataset.loaded) {
+            loadTechnicalView();
+            selectedView.dataset.loaded = 'true';
+        } else if (viewName === 'ai-insights' && !selectedView.dataset.loaded) {
+            loadAIInsightsView();
+            selectedView.dataset.loaded = 'true';
+        } else if (viewName === 'alerts' && !selectedView.dataset.loaded) {
+            loadAlertsView();
+            selectedView.dataset.loaded = 'true';
+        }
+    }
+    
+    // Update navigation buttons
+    document.querySelectorAll('.nav-item').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.dataset.view === viewName) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Update dropdown if exists
+    const dropdown = document.getElementById('viewSelector');
+    if (dropdown) {
+        dropdown.value = viewName;
+    }
+}
+
+// Load Technical Analysis View
+async function loadTechnicalView() {
+    const container = document.getElementById('technicalContent');
+    if (!container) return;
+    
+    container.innerHTML = '<div class="text-center py-8"><i class="fas fa-spinner fa-spin text-3xl text-purple-600"></i><p class="mt-2 text-gray-600">Loading technical analysis...</p></div>';
+    
+    try {
+        const response = await axios.get('/api/technical/analyze');
+        const stocks = response.data.stocks || [];
+        
+        if (stocks.length === 0) {
+            container.innerHTML = '<div class="text-center py-8 text-gray-600">No technical data available</div>';
+            return;
+        }
+        
+        container.innerHTML = `
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                ${stocks.map(stock => `
+                    <div class="premium-card p-6 border-l-4 ${
+                        stock.recommendation === 'STRONG_BUY' ? 'border-green-600' : 
+                        stock.recommendation === 'BUY' ? 'border-green-400' : 
+                        stock.recommendation === 'HOLD' ? 'border-yellow-500' : 
+                        'border-gray-400'
+                    }">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">${stock.symbol}</h3>
+                                <p class="text-sm text-gray-600">${stock.name}</p>
+                            </div>
+                            <span class="badge ${
+                                stock.recommendation === 'STRONG_BUY' ? 'bg-green-600' : 
+                                stock.recommendation === 'BUY' ? 'bg-green-500' : 
+                                'bg-yellow-500'
+                            } text-white px-3 py-1 rounded-full text-xs font-bold">${stock.recommendation}</span>
+                        </div>
+                        
+                        <div class="grid grid-cols-3 gap-3 mb-4">
+                            <div>
+                                <div class="text-lg font-bold text-gray-800">${stock.price}</div>
+                                <div class="text-xs text-gray-500">Price</div>
+                            </div>
+                            <div>
+                                <div class="text-lg font-bold ${stock.change?.startsWith('+') ? 'text-green-600' : 'text-red-600'}">
+                                    ${stock.change || 'N/A'}
+                                </div>
+                                <div class="text-xs text-gray-500">Change</div>
+                            </div>
+                            <div>
+                                <div class="text-lg font-bold text-purple-600">${stock.volume || 'N/A'}</div>
+                                <div class="text-xs text-gray-500">Volume</div>
+                            </div>
+                        </div>
+                        
+                        ${stock.target ? `
+                            <div class="bg-green-50 rounded-lg p-3 mb-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-600">Target</span>
+                                    <span class="text-lg font-bold text-green-700">${stock.target}</span>
+                                </div>
+                            </div>
+                        ` : ''}
+                        
+                        <button 
+                            onclick="showChart('${stock.symbol}', '${stock.name}')" 
+                            class="w-full mt-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-2 rounded-lg hover:opacity-90 transition font-semibold text-sm"
+                        >
+                            <i class="fas fa-chart-line mr-2"></i>
+                            View Chart
+                        </button>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+    } catch (error) {
+        console.error('Error loading technical view:', error);
+        container.innerHTML = '<div class="text-center py-8 text-red-600">Error loading technical data</div>';
+    }
+}
+
+// Load AI Insights View
+async function loadAIInsightsView() {
+    const container = document.getElementById('aiInsightsContent');
+    if (!container) return;
+    
+    container.innerHTML = '<div class="text-center py-8"><i class="fas fa-spinner fa-spin text-3xl text-purple-600"></i><p class="mt-2 text-gray-600">Loading AI insights...</p></div>';
+    
+    try {
+        const [summaryRes, picksRes] = await Promise.all([
+            axios.get('/api/ai/summary'),
+            axios.get('/api/ai/top-picks')
+        ]);
+        
+        const summary = summaryRes.data;
+        const picks = picksRes.data.topPicks || [];
+        
+        container.innerHTML = `
+            <!-- Market Summary -->
+            <div class="glass-card p-6 mb-6 bg-gradient-to-r from-purple-600 to-blue-600 text-white">
+                <h3 class="text-2xl font-bold mb-4 flex items-center">
+                    <i class="fas fa-brain mr-3"></i>
+                    AI Market Summary
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div>
+                        <div class="text-3xl font-bold">${summary.summary?.totalStocks || 0}</div>
+                        <div class="text-sm opacity-90">Total Stocks</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold">${summary.summary?.averageUpside || 0}%</div>
+                        <div class="text-sm opacity-90">Avg Upside</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold">${summary.summary?.highConfidenceCount || 0}</div>
+                        <div class="text-sm opacity-90">High Confidence</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold">${summary.summary?.marketSentiment || 'N/A'}</div>
+                        <div class="text-sm opacity-90">Sentiment</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Top AI Picks -->
+            <h3 class="text-2xl font-bold text-white mb-4 flex items-center">
+                <i class="fas fa-star text-yellow-400 mr-3"></i>
+                Top 10 AI Picks
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                ${picks.slice(0, 10).map((pick, index) => `
+                    <div class="premium-card p-6 border-l-4 border-purple-600">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <span class="text-2xl font-bold text-purple-600">#${index + 1}</span>
+                                <h4 class="text-xl font-bold text-gray-800">${pick.symbol}</h4>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-bold text-green-600">${pick.upside}%</div>
+                                <div class="text-xs text-gray-500">Upside</div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-2 mb-3">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-600">Risk:</span>
+                                <span class="font-bold ${pick.riskScore <= 3 ? 'text-green-600' : pick.riskScore <= 6 ? 'text-yellow-600' : 'text-red-600'}">
+                                    ${pick.riskScore}/10
+                                </span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-600">Momentum:</span>
+                                <span class="font-bold text-blue-600">${pick.momentum}/10</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-purple-50 rounded p-2 text-sm">
+                            <div class="font-semibold text-gray-700">Source:</div>
+                            <div class="text-gray-600">${pick.source}</div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+    } catch (error) {
+        console.error('Error loading AI insights:', error);
+        container.innerHTML = '<div class="text-center py-8 text-red-600">Error loading AI insights</div>';
+    }
+}
+
+// Load Alerts View
+async function loadAlertsView() {
+    const container = document.getElementById('alertsContent');
+    if (!container) return;
+    
+    container.innerHTML = '<div class="text-center py-8"><i class="fas fa-spinner fa-spin text-3xl text-purple-600"></i><p class="mt-2 text-gray-600">Loading alerts...</p></div>';
+    
+    try {
+        const response = await axios.get('/api/ai/alerts');
+        const alerts = response.data.alerts || [];
+        
+        if (alerts.length === 0) {
+            container.innerHTML = '<div class="text-center py-8 text-gray-600">No alerts available</div>';
+            return;
+        }
+        
+        container.innerHTML = `
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                ${alerts.map(alert => `
+                    <div class="premium-card p-6 border-l-4 border-red-600">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">${alert.symbol}</h3>
+                                <p class="text-sm text-gray-600">${alert.name}</p>
+                            </div>
+                            <span class="badge bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold">
+                                <i class="fas fa-bell mr-1"></i>ALERT
+                            </span>
+                        </div>
+                        
+                        <div class="grid grid-cols-3 gap-3 mb-4">
+                            <div>
+                                <div class="text-lg font-bold text-green-600">${alert.upside}%</div>
+                                <div class="text-xs text-gray-500">Upside</div>
+                            </div>
+                            <div>
+                                <div class="text-lg font-bold ${alert.riskScore <= 3 ? 'text-green-600' : 'text-yellow-600'}">
+                                    ${alert.riskScore}/10
+                                </div>
+                                <div class="text-xs text-gray-500">Risk</div>
+                            </div>
+                            <div>
+                                <div class="text-lg font-bold text-blue-600">${alert.momentum}/10</div>
+                                <div class="text-xs text-gray-500">Momentum</div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-red-50 rounded-lg p-3">
+                            <div class="text-xs font-semibold text-red-900 mb-1">Alert Reason:</div>
+                            <div class="text-sm text-gray-700">${alert.reason}</div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+    } catch (error) {
+        console.error('Error loading alerts:', error);
+        container.innerHTML = '<div class="text-center py-8 text-red-600">Error loading alerts</div>';
+    }
+}
+
+// Make switchView globally accessible
+window.switchView = switchView;
+
 // Wait for page to be fully loaded
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initAIDashboard);

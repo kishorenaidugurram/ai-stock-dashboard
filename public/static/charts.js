@@ -367,6 +367,12 @@ class StockChartManager {
 // Global chart manager instance
 window.chartManager = new StockChartManager();
 
+// Global showChart function
+window.showChart = async function(symbol, name) {
+    console.log('📊 Opening chart for:', symbol, name);
+    await window.chartManager.showChartModal(symbol, name);
+};
+
 // Close chart modal
 window.closeChartModal = function(event) {
     if (!event || event.target.id === 'chartModal' || !event) {
