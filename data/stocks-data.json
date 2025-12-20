@@ -1,17 +1,25 @@
 {
-  "lastUpdated": "2025-12-20T12:17:00Z",
+  "lastUpdated": "2025-12-20T09:19:22.811Z",
   "dataQuality": {
-    "searchTimestamp": "2025-12-20T12:17:00Z",
+    "searchTimestamp": "2025-12-20T09:19:22.811Z",
     "dateRange": "Dec 20, 2025",
     "verificationStatus": "PREMIUM_SOURCES_ONLY",
     "totalSources": 8,
     "dataFreshness": "Within 6 hours",
-    "sourceTypes": ["Premium Brokerages", "Leading Financial Newspapers"]
+    "sourceTypes": [
+      "Premium Brokerages",
+      "Leading Financial Newspapers"
+    ]
   },
   "socialSentiment": {
     "enabled": true,
-    "lastUpdated": "2025-12-20T12:17:00Z",
-    "sources": ["Twitter/X", "Reddit r/IndianStreetBets", "Reddit r/IndianStockMarket", "StockTwits"],
+    "lastUpdated": "2025-12-20T09:19:22.811Z",
+    "sources": [
+      "Twitter/X",
+      "Reddit r/IndianStreetBets",
+      "Reddit r/IndianStockMarket",
+      "StockTwits"
+    ],
     "methodology": "Web search-based sentiment analysis using keyword extraction and discussion volume tracking"
   },
   "breakoutStocks": [
@@ -27,7 +35,7 @@
       "sourceUrl": "https://www.livemint.com/market/stock-market-news/stocks-to-buy-from-hdfc-bank-icici-bank-to-reliance-jefferies-suggests-these-25-stocks-as-its-bottom-up-top-ideas-11757652457019.html",
       "analyst": "Jefferies Research",
       "date": "Dec 20, 2025",
-      "publishedTime": "2025-12-20T10:30:00Z",
+      "publishedTime": "2025-12-20T08:28:00.000Z",
       "rationale": "ICICI Bank is among top picks with price target of ₹1,760, based on 2.7x Sep-27 adjusted PB and value of stake in subsidiaries. Best-in-class ROE and strong deposit franchise.",
       "upside": "26.8%",
       "socialSentiment": {
@@ -37,7 +45,11 @@
         "twitter": {
           "volume": "High",
           "sentiment": "Bullish",
-          "keywords": ["ICICI Bank", "private banks", "best run bank"]
+          "keywords": [
+            "ICICI Bank",
+            "private banks",
+            "best run bank"
+          ]
         },
         "reddit": {
           "volume": "High",
@@ -59,7 +71,7 @@
       "sourceUrl": "https://www.moneycontrol.com/news/business/stocks/buy-lodha-developers-target-of-rs-1888-motilal-oswal-3-13731739.html",
       "analyst": "Motilal Oswal Securities",
       "date": "Dec 20, 2025",
-      "publishedTime": "2025-12-20T09:00:00Z",
+      "publishedTime": "2025-12-20T08:27:00.000Z",
       "rationale": "Motilal Oswal bullish on Lodha Developers with buy rating and target price of Rs 1,888. Strong presales growth of 20% expected, robust pipeline in MMR region.",
       "upside": "19.6%",
       "socialSentiment": {
@@ -69,7 +81,11 @@
         "twitter": {
           "volume": "Medium",
           "sentiment": "Bullish",
-          "keywords": ["Lodha", "real estate", "presales growth"]
+          "keywords": [
+            "Lodha",
+            "real estate",
+            "presales growth"
+          ]
         },
         "reddit": {
           "volume": "Medium",
@@ -91,7 +107,7 @@
       "sourceUrl": "https://m.economictimes.com/markets/stocks/news/crompton-greaves-shares-jump-6-as-motilal-oswal-initiates-with-buy-call-check-target-upside-potential/articleshow/126054352.cms",
       "analyst": "Motilal Oswal Research",
       "date": "Dec 20, 2025",
-      "publishedTime": "2025-12-20T08:30:00Z",
+      "publishedTime": "2025-12-20T09:38:00.000Z",
       "rationale": "Motilal Oswal initiated coverage with Buy rating and target of ₹350. Bull case projects 77% upside potential to ₹460. Strong growth in consumer electricals segment.",
       "upside": "34.6%",
       "socialSentiment": {
@@ -101,7 +117,11 @@
         "twitter": {
           "volume": "High",
           "sentiment": "Bullish",
-          "keywords": ["Crompton", "consumer electricals", "growth story"]
+          "keywords": [
+            "Crompton",
+            "consumer electricals",
+            "growth story"
+          ]
         },
         "reddit": {
           "volume": "Medium",
@@ -123,7 +143,7 @@
       "sourceUrl": "https://www.businesstoday.in/markets/stocks/story/3-key-reasons-why-jefferies-values-groww-at-premium-over-angel-one-507435-2025-12-19",
       "analyst": "Jefferies India",
       "date": "Dec 20, 2025",
-      "publishedTime": "2025-12-20T11:00:00Z",
+      "publishedTime": "2025-12-20T10:24:00.000Z",
       "rationale": "Jefferies initiated coverage on Groww with Buy rating. Greater scope for operating leverage in Groww than competitors. Fintech platform growth accelerating.",
       "upside": "34.0%",
       "socialSentiment": {
@@ -133,7 +153,11 @@
         "twitter": {
           "volume": "Very High",
           "sentiment": "Bullish",
-          "keywords": ["Groww IPO", "fintech boom", "retail trading"]
+          "keywords": [
+            "Groww IPO",
+            "fintech boom",
+            "retail trading"
+          ]
         },
         "reddit": {
           "volume": "Very High",
@@ -155,7 +179,7 @@
       "sourceUrl": "https://m.economictimes.com/markets/stocks/news/stocks-to-buy-for-2026-adani-power-vrl-logistics-among-5-stocks-that-could-give-10-30-return-in-1-year/motilal-oswal-on-vrl-logistics-ltd/slideshow/126070767.cms",
       "analyst": "Motilal Oswal Securities",
       "date": "Dec 20, 2025",
-      "publishedTime": "2025-12-20T07:30:00Z",
+      "publishedTime": "2025-12-20T08:51:00.000Z",
       "rationale": "Motilal Oswal maintains Buy rating on VRL Logistics with target of Rs 350, indicating potential upside of 32%. Strong growth in logistics sector.",
       "upside": "32.1%",
       "socialSentiment": {
@@ -165,7 +189,11 @@
         "twitter": {
           "volume": "Low",
           "sentiment": "Neutral",
-          "keywords": ["logistics sector", "VRL", "transport"]
+          "keywords": [
+            "logistics sector",
+            "VRL",
+            "transport"
+          ]
         },
         "reddit": {
           "volume": "Low",
@@ -187,7 +215,7 @@
       "sourceUrl": "https://www.moneycontrol.com/news/business/stocks/buy-vishal-mega-mart-target-of-rs-170-motilal-oswal-13729784.html",
       "analyst": "Motilal Oswal Research",
       "date": "Dec 20, 2025",
-      "publishedTime": "2025-12-20T08:00:00Z",
+      "publishedTime": "2025-12-20T10:41:00.000Z",
       "rationale": "Motilal Oswal bullish on Vishal Mega Mart with buy rating and target of Rs 170. Strong value retail play with expansion in tier 2/3 cities.",
       "upside": "25.0%",
       "socialSentiment": {
@@ -197,7 +225,11 @@
         "twitter": {
           "volume": "Medium",
           "sentiment": "Bullish",
-          "keywords": ["Vishal Mega Mart", "retail growth", "value segment"]
+          "keywords": [
+            "Vishal Mega Mart",
+            "retail growth",
+            "value segment"
+          ]
         },
         "reddit": {
           "volume": "Medium",
@@ -229,7 +261,11 @@
         "twitter": {
           "volume": "High",
           "sentiment": "Bullish",
-          "keywords": ["ICICI Bank", "banking leader", "best run bank"]
+          "keywords": [
+            "ICICI Bank",
+            "banking leader",
+            "best run bank"
+          ]
         },
         "reddit": {
           "volume": "High",
@@ -259,7 +295,11 @@
         "twitter": {
           "volume": "Medium",
           "sentiment": "Bullish",
-          "keywords": ["Home First", "housing finance", "affordable housing"]
+          "keywords": [
+            "Home First",
+            "housing finance",
+            "affordable housing"
+          ]
         },
         "reddit": {
           "volume": "Low",
@@ -289,7 +329,11 @@
         "twitter": {
           "volume": "Very High",
           "sentiment": "Bullish",
-          "keywords": ["Shriram Finance", "MUFG deal", "strategic investment"]
+          "keywords": [
+            "Shriram Finance",
+            "MUFG deal",
+            "strategic investment"
+          ]
         },
         "reddit": {
           "volume": "Very High",
@@ -319,7 +363,11 @@
         "twitter": {
           "volume": "Medium",
           "sentiment": "Bullish",
-          "keywords": ["Nuvama", "wealth management", "broking recovery"]
+          "keywords": [
+            "Nuvama",
+            "wealth management",
+            "broking recovery"
+          ]
         },
         "reddit": {
           "volume": "Low",
@@ -349,7 +397,11 @@
         "twitter": {
           "volume": "High",
           "sentiment": "Bullish",
-          "keywords": ["defence stocks", "Astra Microwave", "order book"]
+          "keywords": [
+            "defence stocks",
+            "Astra Microwave",
+            "order book"
+          ]
         },
         "reddit": {
           "volume": "High",
@@ -374,12 +426,16 @@
       "rationale": "Motilal Oswal initiates coverage with Buy call and Rs 2,275 target, implying 33% upside. Strong project pipeline in residential segment.",
       "socialSentiment": {
         "overall": "Bullish",
-        "score": 7.0,
+        "score": 7,
         "confidence": "High",
         "twitter": {
           "volume": "Medium",
           "sentiment": "Bullish",
-          "keywords": ["Aditya Birla", "real estate", "developer"]
+          "keywords": [
+            "Aditya Birla",
+            "real estate",
+            "developer"
+          ]
         },
         "reddit": {
           "volume": "Low",
@@ -404,12 +460,16 @@
       "rationale": "Nuvama's Aakash K Hindocha identifies ZF Commercial Vehicle as top buy stock. Auto component leader with strong growth in commercial vehicle segment.",
       "socialSentiment": {
         "overall": "Neutral",
-        "score": 6.0,
+        "score": 6,
         "confidence": "Medium",
         "twitter": {
           "volume": "Low",
           "sentiment": "Neutral",
-          "keywords": ["ZF India", "auto components", "CV segment"]
+          "keywords": [
+            "ZF India",
+            "auto components",
+            "CV segment"
+          ]
         },
         "reddit": {
           "volume": "Low",
@@ -439,7 +499,11 @@
         "twitter": {
           "volume": "Medium",
           "sentiment": "Bullish",
-          "keywords": ["BPCL", "oil refining", "privatization"]
+          "keywords": [
+            "BPCL",
+            "oil refining",
+            "privatization"
+          ]
         },
         "reddit": {
           "volume": "Medium",
@@ -498,7 +562,11 @@
         "reddit": "Very High",
         "stocktwits": "High"
       },
-      "topKeywords": ["MUFG deal", "strategic investment", "$4.4 billion stake"],
+      "topKeywords": [
+        "MUFG deal",
+        "strategic investment",
+        "$4.4 billion stake"
+      ],
       "recentDiscussion": "MUFG buying 20% stake at premium is huge validation, strategic investor entry massive"
     },
     {
@@ -514,7 +582,11 @@
         "reddit": "Very High",
         "stocktwits": "Medium"
       },
-      "topKeywords": ["Jefferies buy", "fintech boom", "retail trading revolution"],
+      "topKeywords": [
+        "Jefferies buy",
+        "fintech boom",
+        "retail trading revolution"
+      ],
       "recentDiscussion": "Groww capturing massive retail investor base, Jefferies initiation bullish, huge growth potential"
     },
     {
@@ -530,7 +602,11 @@
         "reddit": "High",
         "stocktwits": "Medium"
       },
-      "topKeywords": ["Jefferies top pick", "banking leader", "best run bank"],
+      "topKeywords": [
+        "Jefferies top pick",
+        "banking leader",
+        "best run bank"
+      ],
       "recentDiscussion": "ICICI Bank Jefferies top pick with ₹1,760 target, best-in-class management and ROE"
     },
     {
@@ -546,7 +622,11 @@
         "reddit": "Medium",
         "stocktwits": "Low"
       },
-      "topKeywords": ["Motilal buy", "77% bull case", "consumer electricals"],
+      "topKeywords": [
+        "Motilal buy",
+        "77% bull case",
+        "consumer electricals"
+      ],
       "recentDiscussion": "Crompton jumping 6% on Motilal buy call, ₹460 bull case target shows huge upside"
     },
     {
@@ -562,7 +642,11 @@
         "reddit": "Medium",
         "stocktwits": "Low"
       },
-      "topKeywords": ["real estate recovery", "presales growth", "Mumbai market leader"],
+      "topKeywords": [
+        "real estate recovery",
+        "presales growth",
+        "Mumbai market leader"
+      ],
       "recentDiscussion": "Lodha showing 20% presales growth, Motilal target ₹1,888, real estate momentum strong"
     }
   ]
