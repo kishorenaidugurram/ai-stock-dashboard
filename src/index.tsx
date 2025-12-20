@@ -1,5 +1,6 @@
 import { Hono } from 'hono'
 import { cors } from 'hono/cors'
+import { serveStatic } from 'hono/cloudflare-workers'
 import stocksData from '../data/stocks-data.json'
 
 const app = new Hono()
@@ -26,6 +27,9 @@ app.post('/api/refresh', async (c) => {
     lastUpdated: new Date().toISOString()
   });
 });
+
+// Auto-update page route
+app.get('/auto-update', serveStatic({ path: './public/auto-update.html' }));
 
 // Main dashboard route
 app.get('/', (c) => {
