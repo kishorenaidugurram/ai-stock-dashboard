@@ -10,7 +10,7 @@ Your stock dashboard now has **automated daily updates** configured with GitHub 
 
 ✅ **GitHub Actions Workflow** - `.github/workflows/update-stocks.yml`
 ✅ **Data Fetcher Script** - `scripts/fetch-latest-stocks.js`
-✅ **Schedule**: Every day at **9:00 AM IST**
+✅ **Schedule**: 4 times daily at **7:00 AM, 9:00 AM, 2:00 PM, 4:00 PM IST**
 ✅ **Auto-Deploy**: Pushes to GitHub → Cloudflare Pages deploys automatically
 
 ---
@@ -47,7 +47,7 @@ git push origin main
 ## ✨ How It Works Daily
 
 ```
-9:00 AM IST
+7:00 AM, 9:00 AM, 2:00 PM, 4:00 PM IST (4 times daily)
     ↓
 GitHub Actions triggers
     ↓
@@ -84,19 +84,25 @@ Dashboard shows fresh data!
 
 ## ⚙️ Customize Schedule
 
-Want different update times? Edit `.github/workflows/update-stocks.yml`:
+Currently running 4 times daily at 7AM, 9AM, 2PM, 4PM IST.
+
+Edit `.github/workflows/update-stocks.yml` to change times:
 
 ```yaml
 schedule:
-  - cron: '30 3 * * *'  # 9:00 AM IST (default)
+  # Current schedule (4 times daily)
+  - cron: '30 1 * * *'   # 7:00 AM IST (1:30 AM UTC)
+  - cron: '30 3 * * *'   # 9:00 AM IST (3:30 AM UTC)
+  - cron: '30 8 * * *'   # 2:00 PM IST (8:30 AM UTC)
+  - cron: '30 10 * * *'  # 4:00 PM IST (10:30 AM UTC)
 ```
 
-**Popular schedules:**
+**Other example schedules:**
 ```yaml
-- cron: '30 0 * * *'  # 6:00 AM IST
-- cron: '0 6 * * *'   # 11:30 AM IST
-- cron: '30 3 * * 1-5'  # 9 AM IST, weekdays only
-- cron: '30 3,9 * * *'  # 9 AM & 3 PM IST (twice daily)
+- cron: '30 0 * * *'       # 6:00 AM IST (once daily)
+- cron: '0 6 * * *'        # 11:30 AM IST (once daily)
+- cron: '30 3 * * 1-5'     # 9 AM IST, weekdays only
+- cron: '30 3,9,15 * * *'  # 9 AM, 3 PM, 9 PM IST (3 times daily)
 ```
 
 After editing, commit and push:
@@ -137,8 +143,9 @@ git push origin main
 
 **GitHub Actions Free Tier:**
 - 2,000 minutes/month FREE
-- This workflow uses ~2 minutes/day
-- Monthly usage: ~60 minutes
+- This workflow uses ~2 minutes per run
+- 4 runs/day × 30 days = 120 runs/month
+- Monthly usage: ~240 minutes (well within free tier)
 - **Cost: $0 (completely free!)**
 
 **Cloudflare Pages:**

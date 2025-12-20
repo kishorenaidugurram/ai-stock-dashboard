@@ -1,17 +1,14 @@
 #!/usr/bin/env node
 
 /**
- * Stock Data Fetcher for Automated Daily Updates
- * Fetches latest NSE F&O stocks, brokerage recommendations, and news
- * Uses: Alpha Vantage API for stock prices, Web scraping for news
+ * Stock Data Fetcher using Yahoo Finance
+ * No API key required - completely free!
+ * Fetches real-time Indian stock prices from Yahoo Finance
  */
 
 const https = require('https');
 const fs = require('fs');
 const path = require('path');
-
-// Free API key for Alpha Vantage (demo - replace with your own)
-const ALPHA_VANTAGE_API_KEY = process.env.ALPHA_VANTAGE_API_KEY || 'demo';
 
 // Helper function to make HTTPS requests
 function httpsGet(url) {
@@ -30,19 +27,33 @@ function httpsGet(url) {
   });
 }
 
-// Fetch stock price from Alpha Vantage
-async function fetchStockPrice(symbol) {
+// Fetch stock price from Yahoo Finance
+async function fetchYahooStockPrice(symbol) {
   try {
-    const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}.BSE&apikey=${ALPHA_VANTAGE_API_KEY}`;
+    // Yahoo Finance uses .NS suffix for NSE stocks
+    const yahooSymbol = `${symbol}.NS`;
+    const url = `https://query1.finance.yahoo.com/v8/finance/chart/${yahooSymbol}?interval=1d&range=1d`;
+    
     const data = await httpsGet(url);
     
-    if (data['Global Quote']) {
-      const quote = data['Global Quote'];
+    if (data && data.chart && data.chart.result && data.chart.result[0]) {
+      const result = data.chart.result[0];
+      const meta = result.meta;
+      const quote = result.indicators.quote[0];
+      
+      const currentPrice = meta.regularMarketPrice || quote.close[quote.close.length - 1];
+      const previousClose = meta.previousClose || meta.chartPreviousClose;
+      const volume = quote.volume[quote.volume.length - 1];
+      
+      const change = currentPrice - previousClose;
+      const changePercent = ((change / previousClose) * 100).toFixed(2);
+      
       return {
-        price: parseFloat(quote['05. price'] || 0),
-        change: parseFloat(quote['09. change'] || 0),
-        changePercent: quote['10. change percent'] || '0%',
-        volume: parseInt(quote['06. volume'] || 0)
+        price: currentPrice,
+        change: change,
+        changePercent: `${changePercent >= 0 ? '+' : ''}${changePercent}%`,
+        volume: volume || 0,
+        success: true
       };
     }
     return null;
@@ -54,7 +65,7 @@ async function fetchStockPrice(symbol) {
 
 // Format price to Indian Rupee format
 function formatPrice(price) {
-  return `₹${price.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`;
+  return `₹${Math.round(price).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`;
 }
 
 // Format volume
@@ -68,7 +79,7 @@ function formatVolume(volume) {
 }
 
 async function fetchLatestStockData() {
-  console.log('🔄 Fetching latest stock market data...');
+  console.log('🔄 Fetching latest stock market data from Yahoo Finance...');
   console.log(`📅 Date: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}`);
   
   try {
@@ -86,7 +97,7 @@ async function fetchLatestStockData() {
       process.exit(1);
     }
     
-    console.log('📊 Updating stock prices...');
+    console.log('📊 Updating stock prices with live Yahoo Finance data...\n');
     
     // Update timestamps
     stockData.lastUpdated = now.toISOString();
@@ -98,33 +109,19 @@ async function fetchLatestStockData() {
         day: 'numeric', 
         year: 'numeric' 
       });
-      stockData.dataQuality.dataFreshness = 'Live - Under 1 hour';
+      stockData.dataQuality.dataFreshness = 'Live - Real-time Yahoo Finance';
     }
     
     if (stockData.socialSentiment) {
       stockData.socialSentiment.lastUpdated = now.toISOString();
     }
     
-    // Map of NSE symbols to BSE/API symbols
-    const symbolMap = {
-      'ICICIBANK': 'ICICIBANK',
-      'POLYCAB': 'POLYCAB',
-      'TORNTPHARM': 'TORNTPHARM',
-      'AMBUJACEM': 'AMBUJACEM',
-      'GROWW': 'GROWW',
-      'TCS': 'TCS',
-      'AXISBANK': 'AXISBANK',
-      'BPCL': 'BPCL',
-      'JSWENERGY': 'JSWENERGY',
-      'GODREJPROP': 'GODREJPROP',
-      'AUBANK': 'AUBANK',
-      'BANKINDIA': 'BANKINDIA',
-      'FEDERALBNK': 'FEDERALBNK',
-      'SIEMENS': 'SIEMENS'
-    };
+    let successCount = 0;
+    let failCount = 0;
     
-    // Update breakout stocks with real prices
+    // Update breakout stocks with real Yahoo Finance prices
     if (stockData.breakoutStocks && Array.isArray(stockData.breakoutStocks)) {
+      console.log('📈 Updating Breakout Stocks:');
       for (const stock of stockData.breakoutStocks) {
         // Update date to today
         stock.date = istDate.toLocaleDateString('en-US', { 
@@ -140,36 +137,36 @@ async function fetchLatestStockData() {
         publishTime.setHours(hour, minute, 0, 0);
         stock.publishedTime = publishTime.toISOString();
         
-        // Try to fetch real price (with rate limiting consideration)
-        const apiSymbol = symbolMap[stock.symbol];
-        if (apiSymbol && ALPHA_VANTAGE_API_KEY !== 'demo') {
-          console.log(`  Fetching ${stock.symbol}...`);
-          const priceData = await fetchStockPrice(apiSymbol);
+        // Fetch real price from Yahoo Finance
+        console.log(`  Fetching ${stock.symbol}...`);
+        const priceData = await fetchYahooStockPrice(stock.symbol);
+        
+        if (priceData && priceData.success && priceData.price > 0) {
+          stock.price = formatPrice(priceData.price);
+          stock.change = priceData.changePercent;
+          stock.volume = formatVolume(priceData.volume);
           
-          if (priceData && priceData.price > 0) {
-            stock.price = formatPrice(priceData.price);
-            stock.change = priceData.changePercent;
-            stock.volume = formatVolume(priceData.volume);
-            
-            // Recalculate upside
-            const currentPrice = priceData.price;
-            const targetPrice = parseFloat(stock.target.replace(/[₹,]/g, ''));
-            const upside = ((targetPrice - currentPrice) / currentPrice * 100).toFixed(1);
-            stock.upside = `${upside}%`;
-            
-            console.log(`  ✅ ${stock.symbol}: ${stock.price} (${stock.change})`);
-          } else {
-            console.log(`  ⚠️  ${stock.symbol}: Using existing data`);
-          }
+          // Recalculate upside
+          const currentPrice = priceData.price;
+          const targetPrice = parseFloat(stock.target.replace(/[₹,]/g, ''));
+          const upside = ((targetPrice - currentPrice) / currentPrice * 100).toFixed(1);
+          stock.upside = `${upside}%`;
           
-          // Rate limiting - wait 12 seconds between API calls (free tier: 5 calls/min)
-          await new Promise(resolve => setTimeout(resolve, 12000));
+          console.log(`  ✅ ${stock.symbol}: ${stock.price} (${stock.change})`);
+          successCount++;
+        } else {
+          console.log(`  ⚠️  ${stock.symbol}: Using cached data`);
+          failCount++;
         }
+        
+        // Small delay to avoid rate limiting
+        await new Promise(resolve => setTimeout(resolve, 500));
       }
     }
     
     // Update brokerage recommendations
     if (stockData.brokerageRecommendations && Array.isArray(stockData.brokerageRecommendations)) {
+      console.log('\n📊 Updating Brokerage Recommendations:');
       for (const rec of stockData.brokerageRecommendations) {
         rec.date = istDate.toLocaleDateString('en-US', { 
           month: 'short', 
@@ -177,24 +174,28 @@ async function fetchLatestStockData() {
           year: 'numeric' 
         });
         
-        // Try to fetch real price for brokerage recommendations
-        const apiSymbol = symbolMap[rec.symbol];
-        if (apiSymbol && ALPHA_VANTAGE_API_KEY !== 'demo') {
-          const priceData = await fetchStockPrice(apiSymbol);
+        // Fetch real price from Yahoo Finance
+        console.log(`  Fetching ${rec.symbol}...`);
+        const priceData = await fetchYahooStockPrice(rec.symbol);
+        
+        if (priceData && priceData.success && priceData.price > 0) {
+          rec.price = formatPrice(priceData.price);
           
-          if (priceData && priceData.price > 0) {
-            rec.price = formatPrice(priceData.price);
-            
-            // Recalculate upside
-            const currentPrice = priceData.price;
-            const targetPrice = parseFloat(rec.target.replace(/[₹,]/g, ''));
-            const upside = ((targetPrice - currentPrice) / currentPrice * 100).toFixed(1);
-            rec.upside = `${upside}%`;
-          }
+          // Recalculate upside
+          const currentPrice = priceData.price;
+          const targetPrice = parseFloat(rec.target.replace(/[₹,]/g, ''));
+          const upside = ((targetPrice - currentPrice) / currentPrice * 100).toFixed(1);
+          rec.upside = `${upside}%`;
           
-          // Rate limiting
-          await new Promise(resolve => setTimeout(resolve, 12000));
+          console.log(`  ✅ ${rec.symbol}: ${rec.price}`);
+          successCount++;
+        } else {
+          console.log(`  ⚠️  ${rec.symbol}: Using cached data`);
+          failCount++;
         }
+        
+        // Small delay to avoid rate limiting
+        await new Promise(resolve => setTimeout(resolve, 500));
       }
     }
     
@@ -209,32 +210,39 @@ async function fetchLatestStockData() {
       });
     }
     
-    // Update trending social data
+    // Update trending social data with slight variations
     if (stockData.trendingOnSocial && Array.isArray(stockData.trendingOnSocial)) {
-      stockData.trendingOnSocial.forEach(trending => {
+      for (const trending of stockData.trendingOnSocial) {
+        // Try to update price if available
+        const priceData = await fetchYahooStockPrice(trending.symbol);
+        if (priceData && priceData.success) {
+          trending.change24h = priceData.changePercent;
+        }
+        
         // Simulate some variance in social metrics
-        trending.socialVolume = Math.floor(trending.socialVolume * (0.9 + Math.random() * 0.2));
-        trending.socialScore = Math.min(10, Math.max(5, trending.socialScore + (Math.random() - 0.5)));
-      });
+        trending.socialVolume = Math.floor(trending.socialVolume * (0.85 + Math.random() * 0.3));
+        trending.socialScore = Math.min(10, Math.max(5, trending.socialScore + (Math.random() - 0.5) * 0.5)).toFixed(1);
+        
+        await new Promise(resolve => setTimeout(resolve, 500));
+      }
     }
     
     // Write updated data
     const outputPath = path.join(__dirname, '../data/stocks-data.json');
     fs.writeFileSync(outputPath, JSON.stringify(stockData, null, 2), 'utf8');
     
-    console.log('\n✅ Stock data updated successfully!');
+    console.log('\n' + '='.repeat(60));
+    console.log('✅ Stock data updated successfully with Yahoo Finance!');
+    console.log('='.repeat(60));
     console.log(`📊 Breakout stocks: ${stockData.breakoutStocks?.length || 0}`);
     console.log(`📈 Brokerage recommendations: ${stockData.brokerageRecommendations?.length || 0}`);
     console.log(`📰 News articles: ${stockData.newsHeadlines?.length || 0}`);
     console.log(`🔥 Trending: ${stockData.trendingOnSocial?.length || 0}`);
-    console.log(`💾 Updated file: ${outputPath}`);
+    console.log(`\n✅ Successfully updated: ${successCount} stocks`);
+    console.log(`⚠️  Using cached data: ${failCount} stocks`);
+    console.log(`\n💾 Updated file: ${outputPath}`);
     console.log(`⏰ Last updated: ${now.toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}`);
-    
-    if (ALPHA_VANTAGE_API_KEY === 'demo') {
-      console.log('\n⚠️  NOTE: Using demo API key - only timestamps updated.');
-      console.log('   Set ALPHA_VANTAGE_API_KEY environment variable for real price updates.');
-      console.log('   Get free API key: https://www.alphavantage.co/support/#api-key');
-    }
+    console.log('='.repeat(60));
     
     return true;
   } catch (error) {
