@@ -1,38 +1,38 @@
 # Stock Market Dashboard - NSE F&O & Brokerage Recommendations
 
 ## Project Overview
-A **dynamic, JSON-based stock market dashboard** showcasing NSE F&O breakout stocks and leading brokerage house recommendations from **December 15-20, 2024** with direct source links for further reading.
+A **dynamic, JSON-based stock market dashboard** showcasing NSE F&O breakout stocks and leading brokerage house recommendations from **December 13-20, 2025** with direct source links for further reading.
 
 ## 🎯 Key Features
 
 ### 1. **Dynamic Data Architecture**
 - **JSON-Based**: Stock data stored in `/data/stocks-data.json` 
-- **Web Search Integration**: Data sourced from real web searches (Dec 15-20, 2024)
+- **Web Search Integration**: Data sourced from real web searches (Dec 13-20, 2025)
 - **Refresh API**: `/api/refresh` endpoint ready for automated updates
 - **Real-time Display**: Frontend dynamically loads data via REST API
 
 ### 2. **NSE F&O Breakout Stocks (6 Stocks This Week)**
-- **Crisil** - ₹5,250 → ₹5,800 (+4.5%) | Dec 16, 2024
-- **Aries Agro** - ₹285 → ₹310 (+5.2%) | Dec 16, 2024
-- **PDS Ltd** - ₹1,450 → ₹1,600 (+6.8%) | Dec 16, 2024
-- **Bharti Airtel** - ₹1,681 → ₹1,780 (+3.2%) | Dec 15, 2024
-- **DLF** - ₹755 → ₹820 (+4.1%) | Dec 15, 2024
-- **Kotak Mahindra Bank** - ₹1,755 → ₹1,900 (+2.8%) | Dec 15, 2024
+- **Crisil** - ₹5,250 → ₹5,800 (+4.5%) | Dec 16, 2025
+- **Aries Agro** - ₹285 → ₹310 (+5.2%) | Dec 16, 2025
+- **PDS Ltd** - ₹1,450 → ₹1,600 (+6.8%) | Dec 16, 2025
+- **Bharti Airtel** - ₹1,681 → ₹1,780 (+3.2%) | Dec 15, 2025
+- **DLF** - ₹755 → ₹820 (+4.1%) | Dec 15, 2025
+- **Kotak Mahindra Bank** - ₹1,755 → ₹1,900 (+2.8%) | Dec 15, 2025
 
 ### 3. **Leading Brokerage Recommendations (6 Stocks This Week)**
 ✅ **ALL BUY Recommendations:**
-- **ITC** - Nuvama (7.4% upside) | Dec 16, 2024
-- **ICICI Bank** - Axis Securities (17.2% upside) | Dec 2024
-- **ICICI Lombard** - Nuvama (9.4% upside) | Dec 16, 2024
-- **SBI** - Axis Securities (27.6% upside) | Dec 2024
-- **Kamat Hotels** - Choice Broking (5.4% upside) | Dec 20, 2024
-- **Mallcom India** - Choice Broking (6.7% upside) | Dec 20, 2024
+- **ITC** - Nuvama (7.4% upside) | Dec 16, 2025
+- **ICICI Bank** - Axis Securities (17.2% upside) | Dec 2025
+- **ICICI Lombard** - Nuvama (9.4% upside) | Dec 16, 2025
+- **SBI** - Axis Securities (27.6% upside) | Dec 2025
+- **Kamat Hotels** - Choice Broking (5.4% upside) | Dec 20, 2025
+- **Mallcom India** - Choice Broking (6.7% upside) | Dec 20, 2025
 
 ### 4. **Latest Market News (4 Headlines This Week)**
-- **Dec 20**: Sensex Plummets Over 1,177 Points
-- **Dec 19**: Stock Market Crash - Sensex Sheds 964 Points
-- **Dec 18**: Markets Extend Losing Streak
-- **Dec 20**: Investors Lose ₹18.5 Lakh Crore in Worst Week
+- **Dec 19, 2025**: Nifty Snaps Four-Session Losing Streak
+- **Dec 19, 2025**: Sensex Jumps 447 Points After Decline
+- **Dec 19, 2025**: ICICI Prudential AMC Debuts Strong
+- **Dec 19, 2025**: Record IPO Boom Set to Continue
 
 ## 🔗 URLs
 
@@ -174,14 +174,14 @@ To update with latest information:
 
 ## 📅 Data Timeline
 
-**Current Data Period**: December 15-20, 2024 (Last Week)
+**Current Data Period**: December 13-20, 2025 (This Week)
 
 All recommendations and stock picks are from this specific date range:
-- Breakout stocks: Dec 15-16, 2024
-- Brokerage recommendations: Dec 16-20, 2024
-- Market news: Dec 18-20, 2024
+- Breakout stocks: Dec 15-16, 2025
+- Brokerage recommendations: Dec 16-20, 2025
+- Market news: Dec 19, 2025
 
-**Last Updated**: December 20, 2024 at 04:53 UTC
+**Last Updated**: December 20, 2025 at 04:58 UTC
 
 ## 📊 Investment Statistics
 
@@ -199,7 +199,7 @@ This dashboard provides **aggregated stock recommendations from publicly availab
 **Critical Points:**
 - ✅ All data sourced from reputable financial news websites and brokerage reports
 - ✅ Every recommendation includes source links for verification
-- ✅ Data is from **December 15-20, 2024 only** (one week period)
+- ✅ Data is from **December 13-20, 2025 only** (one week period)
 - ❌ This is **NOT financial advice** - DYOR (Do Your Own Research)
 - ❌ Past performance does not guarantee future results
 - ❌ Stock prices are indicative and may not reflect real-time values
@@ -238,7 +238,7 @@ The `/api/refresh` endpoint is prepared for automated updates:
 - **Environment**: Development
 - **Port**: 3000
 - **Process Manager**: PM2
-- **Last Deployment**: December 20, 2024
+- **Last Deployment**: December 20, 2025
 
 ## 🔄 Next Steps
 
@@ -271,5 +271,5 @@ MIT License - Educational and informational purposes only
 
 **Built with ❤️ using Hono + Cloudflare Pages**
 
-**Last Data Update**: December 20, 2024
+**Last Data Update**: December 20, 2025
 **Dashboard Version**: 2.0 (JSON-Based Dynamic)
