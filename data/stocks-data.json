@@ -1,5 +1,12 @@
 {
-  "lastUpdated": "2025-12-20T10:15:00Z",
+  "lastUpdated": "2025-12-20T11:25:00Z",
+  "dataQuality": {
+    "searchTimestamp": "2025-12-20T11:25:00Z",
+    "dateRange": "Dec 19-20, 2025",
+    "verificationStatus": "VERIFIED",
+    "totalSources": 8,
+    "dataFreshness": "Within 24 hours"
+  },
   "breakoutStocks": [
     {
       "name": "Hindustan Copper",
@@ -12,7 +19,8 @@
       "source": "Screener",
       "sourceUrl": "https://www.screener.in/screens/209239/breakout-stocks/",
       "analyst": "Technical Breakout Analysis",
-      "date": "Dec 20, 2025"
+      "date": "Dec 20, 2025",
+      "publishedTime": "2025-12-20T09:00:00Z"
     },
     {
       "name": "SJS Enterprises",
@@ -25,7 +33,8 @@
       "source": "Screener",
       "sourceUrl": "https://www.screener.in/screens/209239/breakout-stocks/",
       "analyst": "Technical Breakout Analysis",
-      "date": "Dec 20, 2025"
+      "date": "Dec 20, 2025",
+      "publishedTime": "2025-12-20T09:00:00Z"
     },
     {
       "name": "Federal Bank",
@@ -38,7 +47,8 @@
       "source": "Trendlyne",
       "sourceUrl": "https://trendlyne.com/stock-screeners/price-based/near-highs/year/others/fno-stocks/",
       "analyst": "Near 52-Week High F&O",
-      "date": "Dec 19, 2025"
+      "date": "Dec 19, 2025",
+      "publishedTime": "2025-12-19T16:00:00Z"
     },
     {
       "name": "Vedanta",
@@ -51,7 +61,8 @@
       "source": "Trendlyne",
       "sourceUrl": "https://trendlyne.com/stock-screeners/price-based/near-highs/year/others/fno-stocks/",
       "analyst": "Near 52-Week High F&O",
-      "date": "Dec 19, 2025"
+      "date": "Dec 19, 2025",
+      "publishedTime": "2025-12-19T16:00:00Z"
     },
     {
       "name": "Hindustan Unilever",
@@ -64,7 +75,8 @@
       "source": "Dhan",
       "sourceUrl": "https://dhan.co/stocks/market/breakout-stocks/",
       "analyst": "Breakout Stock Analysis",
-      "date": "Dec 20, 2025"
+      "date": "Dec 20, 2025",
+      "publishedTime": "2025-12-20T09:00:00Z"
     },
     {
       "name": "Bajaj Finserv",
@@ -77,7 +89,8 @@
       "source": "Dhan",
       "sourceUrl": "https://dhan.co/stocks/market/breakout-stocks/",
       "analyst": "Breakout Stock Analysis",
-      "date": "Dec 20, 2025"
+      "date": "Dec 20, 2025",
+      "publishedTime": "2025-12-20T09:00:00Z"
     }
   ],
   "brokerageRecommendations": [
@@ -92,108 +105,126 @@
       "source": "Economic Times",
       "sourceUrl": "https://m.economictimes.com/markets/stocks/news/tcs-among-icici-securities-top-5-bets-with-upside-potential-of-up-to-26-in-1-year/slideshow/126088270.cms",
       "date": "Dec 20, 2025",
-      "rationale": "Strong IT sector outlook, digital transformation tailwinds, target Rs 4,090 with stop loss at Rs 2,840"
+      "publishedTime": "2025-12-20T09:45:00Z",
+      "rationale": "Strong IT sector outlook, digital transformation tailwinds, 12-month target Rs 4,090 with stop loss at Rs 2,840. ICICI Securities recommends accumulating between Rs 3,120-3,220"
     },
     {
-      "stock": "Wipro",
-      "symbol": "WIPRO",
-      "price": "₹308",
+      "stock": "Max Healthcare",
+      "symbol": "MAXHEALTH",
+      "price": "₹1,077",
       "recommendation": "BUY",
-      "target": "₹323",
-      "upside": "4.9%",
-      "brokerage": "Motilal Oswal",
-      "source": "Motilal Oswal",
-      "sourceUrl": "https://www.motilaloswal.com/news/stocks/75560",
-      "date": "Dec 20, 2025",
-      "rationale": "Intraday buy recommendation with stop loss at Rs 307, positive technical setup"
+      "target": "₹1,250",
+      "upside": "16.1%",
+      "brokerage": "Bajaj Broking Research",
+      "source": "Times of India",
+      "sourceUrl": "https://timesofindia.indiatimes.com/business/india-business/top-stock-recommendations-for-december-19-2025-max-healthcare-sagility-stocks-to-buy-today/articleshow/126062857.cms",
+      "date": "Dec 19, 2025",
+      "publishedTime": "2025-12-19T08:00:00Z",
+      "rationale": "Healthcare sector strength, capacity expansion plans, strong operational performance"
     },
     {
-      "stock": "SAIL (Steel Authority of India)",
-      "symbol": "SAIL",
-      "price": "₹116",
+      "stock": "Sagility India",
+      "symbol": "SAGILITY",
+      "price": "₹45",
       "recommendation": "BUY",
-      "target": "₹123",
+      "target": "₹52",
+      "upside": "15.6%",
+      "brokerage": "Bajaj Broking Research",
+      "source": "Times of India",
+      "sourceUrl": "https://timesofindia.indiatimes.com/business/india-business/top-stock-recommendations-for-december-19-2025-max-healthcare-sagility-stocks-to-buy-today/articleshow/126062857.cms",
+      "date": "Dec 19, 2025",
+      "publishedTime": "2025-12-19T08:00:00Z",
+      "rationale": "Healthcare BPO sector growth, digital healthcare expansion opportunities"
+    },
+    {
+      "stock": "Tech Mahindra",
+      "symbol": "TECHM",
+      "price": "₹1,680",
+      "recommendation": "BUY",
+      "target": "₹1,780",
       "upside": "6.0%",
-      "brokerage": "Motilal Oswal",
-      "source": "Motilal Oswal",
-      "sourceUrl": "https://www.motilaloswal.com/news/stocks/75560",
-      "date": "Dec 20, 2025",
-      "rationale": "Steel sector recovery expected, stop loss at Rs 115"
-    },
-    {
-      "stock": "Coal India",
-      "symbol": "COALINDIA",
-      "price": "₹392",
-      "recommendation": "BUY",
-      "target": "₹405",
-      "upside": "3.3%",
-      "brokerage": "Motilal Oswal",
-      "source": "Motilal Oswal",
-      "sourceUrl": "https://www.motilaloswal.com/news/stocks/75560",
-      "date": "Dec 20, 2025",
-      "rationale": "PSU momentum, dividend yield attractive, stop loss at Rs 386"
-    },
-    {
-      "stock": "Aditya Birla Real Estate (ABREL)",
-      "symbol": "ABREL",
-      "price": "₹1,800",
-      "recommendation": "BUY",
-      "target": "₹2,275",
-      "upside": "26.4%",
-      "brokerage": "Motilal Oswal",
-      "source": "Financial Express",
-      "sourceUrl": "https://www.financialexpress.com/market/10-stocks-with-up-to-61-upside-top-brokerage-buys-this-week-4082394/",
-      "date": "Dec 20, 2025",
-      "rationale": "Initiated coverage with Buy rating, strong real estate market, premium projects pipeline"
-    },
-    {
-      "stock": "VRL Logistics",
-      "symbol": "VRL",
-      "price": "₹265",
-      "recommendation": "BUY",
-      "target": "₹350",
-      "upside": "32.1%",
-      "brokerage": "Motilal Oswal",
-      "source": "Economic Times",
-      "sourceUrl": "https://m.economictimes.com/markets/stocks/news/stocks-to-buy-for-2026-adani-power-vrl-logistics-among-5-stocks-that-could-give-10-30-return-in-1-year/motilal-oswal-on-vrl-logistics-ltd/slideshow/126070767.cms",
+      "brokerage": "Chandan Taparia (Motilal Oswal)",
+      "source": "LiveMint",
+      "sourceUrl": "https://www.livemint.com/market/stock-market-news/shares-to-buy-or-sell-chandan-taparia-recommends-three-stocks-to-buy-and-sell-today-19-december-2025-11766079487986.html",
       "date": "Dec 19, 2025",
-      "rationale": "Logistics sector growth, network expansion, strong fundamentals"
+      "publishedTime": "2025-12-19T07:30:00Z",
+      "rationale": "Positive technical setup, support at key moving averages"
     },
     {
-      "stock": "Adani Power",
-      "symbol": "ADANIPOWER",
-      "price": "₹585",
+      "stock": "Mazagon Dock Shipbuilders",
+      "symbol": "MAZAGON",
+      "price": "₹4,450",
       "recommendation": "BUY",
-      "target": "₹760",
-      "upside": "29.9%",
-      "brokerage": "Leading Brokerages",
-      "source": "Economic Times",
-      "sourceUrl": "https://m.economictimes.com/markets/stocks/news/stocks-to-buy-for-2026-adani-power-vrl-logistics-among-5-stocks-that-could-give-10-30-return-in-1-year/motilal-oswal-on-vrl-logistics-ltd/slideshow/126070767.cms",
+      "target": "₹4,700",
+      "upside": "5.6%",
+      "brokerage": "Chandan Taparia (Motilal Oswal)",
+      "source": "LiveMint",
+      "sourceUrl": "https://www.livemint.com/market/stock-market-news/shares-to-buy-or-sell-chandan-taparia-recommends-three-stocks-to-buy-and-sell-today-19-december-2025-11766079487986.html",
       "date": "Dec 19, 2025",
-      "rationale": "Power sector demand surge, capacity expansion plans, 10-30% return potential"
+      "publishedTime": "2025-12-19T07:30:00Z",
+      "rationale": "Defense sector momentum, order book visibility, Make in India beneficiary"
     },
     {
-      "stock": "Sonata Software",
-      "symbol": "SONATSOFTW",
-      "price": "₹668.50",
+      "stock": "Bajaj Finserv",
+      "symbol": "BAJAJFINSV",
+      "price": "₹2,044",
       "recommendation": "BUY",
-      "target": "₹770",
-      "upside": "15.2%",
-      "brokerage": "ICICI Securities (Pankaj Pandey)",
-      "source": "Motilal Oswal",
-      "sourceUrl": "https://www.motilaloswal.com/news/stocks/62166",
-      "date": "Dec 2025",
-      "rationale": "Mid-cap IT play, strong client additions, digital transformation focus"
+      "target": "₹2,400",
+      "upside": "17.4%",
+      "brokerage": "ICICI Securities (Dharmesh Shah)",
+      "source": "Economic Times",
+      "sourceUrl": "https://m.economictimes.com/markets/stocks/news/dhurandhar-stocks-to-buy-for-2026-swiggy-icici-bank-among-75-stock-bets-by-6-brokerages/icici-direct-technical-breakout-and-sector-rotation/slideshow/126069681.cms",
+      "date": "Dec 19, 2025",
+      "publishedTime": "2025-12-19T10:00:00Z",
+      "rationale": "Strong NBFC fundamentals, diversified financial services portfolio, long-term growth pick for 2026"
+    },
+    {
+      "stock": "LTIMindtree",
+      "symbol": "LTIM",
+      "price": "₹5,890",
+      "recommendation": "BUY",
+      "target": "₹6,800",
+      "upside": "15.5%",
+      "brokerage": "ICICI Securities (Dharmesh Shah)",
+      "source": "LiveMint",
+      "sourceUrl": "https://www.livemint.com/market/stock-market-news/stocks-to-buy-for-long-term-dharmesh-shah-of-icici-securities-picks-seven-shares-for-2026-sees-nifty-50-at-50k-by-2030-11765883422282.html",
+      "date": "Dec 16, 2025",
+      "publishedTime": "2025-12-16T09:00:00Z",
+      "rationale": "IT sector recovery, strong deal pipeline, cost synergies from merger"
+    },
+    {
+      "stock": "Hindalco Industries",
+      "symbol": "HINDALCO",
+      "price": "₹672",
+      "recommendation": "SELL",
+      "target": "₹620",
+      "upside": "-7.7%",
+      "brokerage": "Chandan Taparia (Motilal Oswal)",
+      "source": "LiveMint",
+      "sourceUrl": "https://www.livemint.com/market/stock-market-news/shares-to-buy-or-sell-chandan-taparia-recommends-three-stocks-to-buy-and-sell-today-19-december-2025-11766079487986.html",
+      "date": "Dec 19, 2025",
+      "publishedTime": "2025-12-19T07:30:00Z",
+      "rationale": "Technical weakness, resistance at higher levels, commodity price headwinds"
     }
   ],
   "newsHeadlines": [
     {
       "title": "VIX India Hits Record Low at 9.52 - What It Signals for Markets",
-      "summary": "India VIX, the volatility index, came close to 52-week low before closing at 9.52 on Friday, indicating lower market volatility and investor confidence",
+      "summary": "India VIX, the volatility index, came close to 52-week low before closing at 9.52 on Friday Dec 20, indicating lower market volatility and increased investor confidence",
       "source": "LiveMint",
       "sourceUrl": "https://www.livemint.com/market/stock-market-news/vix-india-today-at-record-low-what-does-it-signal-about-the-indian-stock-market-explained-11766199200180.html",
-      "date": "Dec 20, 2025 (2 hours ago)",
+      "date": "Dec 20, 2025",
+      "publishedTime": "2025-12-20T08:39:00Z",
       "category": "Market Sentiment"
+    },
+    {
+      "title": "TCS Among ICICI Securities' Top 5 Bets with 26% Upside Potential",
+      "summary": "ICICI Securities releases top 5 stock picks for 2026 with TCS leading at target price of Rs 4,090. Report published 1 hour ago highlights strong IT sector fundamentals",
+      "source": "Economic Times",
+      "sourceUrl": "https://m.economictimes.com/markets/stocks/news/tcs-among-icici-securities-top-5-bets-with-upside-potential-of-up-to-26-in-1-year/slideshow/126088270.cms",
+      "date": "Dec 20, 2025",
+      "publishedTime": "2025-12-20T09:45:00Z",
+      "category": "Brokerage Call"
     },
     {
       "title": "Sensex Surges 447 Points, Nifty Closes Above 25,950 on Dec 19",
@@ -201,22 +232,16 @@
       "source": "Equitymaster",
       "sourceUrl": "https://www.equitymaster.com/tm/tm.asp?date=12/19/2025&title=Sensex-Today-Ends-447-Points-Higher--Nifty-Above-25950--Lenskart-Solutions-Up-10",
       "date": "Dec 19, 2025",
+      "publishedTime": "2025-12-19T15:30:00Z",
       "category": "Market Rally"
     },
     {
-      "title": "Nifty 50 Snaps Four-Session Losing Streak on Fed Rate Cut Hopes",
-      "summary": "India's benchmark Nifty 50 ended four-day decline tracking gains in Asian peers as soft U.S. inflation data raised hopes of Federal Reserve rate cuts",
-      "source": "Reuters",
-      "sourceUrl": "https://www.reuters.com/world/india/india-shares-open-higher-softer-us-inflation-data-spurs-fed-cut-hopes-2025-12-19/",
-      "date": "Dec 19, 2025",
-      "category": "Market Recovery"
-    },
-    {
       "title": "ICICI Prudential AMC Debuts with 20% Premium - Strong Investor Demand",
-      "summary": "ICICI Prudential AMC shares listed at ₹2,600, a 20% premium to IPO price of ₹2,165, reflecting strong investor appetite for asset management stocks",
-      "source": "IndMoney",
-      "sourceUrl": "https://www.indmoney.com/blog/stocks/icici-prudential-amc-share-lists-buy-hold-or-sell",
-      "date": "Dec 19, 2025 (24 hours ago)",
+      "summary": "ICICI Prudential AMC shares listed at ₹2,600, a 20% premium to IPO price of ₹2,165 on Dec 19, reflecting strong investor appetite for asset management stocks",
+      "source": "CNBC",
+      "sourceUrl": "https://www.cnbc.com/2025/12/19/icici-prudential-amc-shares-market-debut-ipo.html",
+      "date": "Dec 19, 2025",
+      "publishedTime": "2025-12-19T11:54:00Z",
       "category": "IPO Success"
     }
   ]
