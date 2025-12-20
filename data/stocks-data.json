@@ -185,7 +185,7 @@
       "upside": "30.6%",
       "socialSentiment": {
         "overall": "Bullish",
-        "score": 8.0,
+        "score": 8,
         "confidence": "High",
         "twitter": {
           "volume": "Very High",
@@ -382,9 +382,9 @@
       "socialScore": 8.5,
       "change24h": "+3.2%",
       "platforms": {
-        "twitter": 3200,
-        "reddit": 850,
-        "stocktwits": 1100
+        "twitter": "Very High",
+        "reddit": "Moderate",
+        "stocktwits": "Moderate"
       },
       "keywords": [
         "silver play",
@@ -402,9 +402,9 @@
       "socialScore": 8.3,
       "change24h": "+1.5%",
       "platforms": {
-        "twitter": 2800,
-        "reddit": 920,
-        "stocktwits": 980
+        "twitter": "Very High",
+        "reddit": "Moderate",
+        "stocktwits": "Moderate"
       },
       "keywords": [
         "cement re-rating",
@@ -422,9 +422,9 @@
       "socialScore": 8.1,
       "change24h": "+5.8%",
       "platforms": {
-        "twitter": 2500,
-        "reddit": 780,
-        "stocktwits": 820
+        "twitter": "Very High",
+        "reddit": "Low",
+        "stocktwits": "Moderate"
       },
       "keywords": [
         "infrastructure play",
@@ -439,12 +439,12 @@
       "name": "ICICI Bank",
       "symbol": "ICICIBANK",
       "sentiment": "Bullish",
-      "socialScore": 8.0,
+      "socialScore": 8,
       "change24h": "+1.2%",
       "platforms": {
-        "twitter": 2700,
-        "reddit": 1050,
-        "stocktwits": 1200
+        "twitter": "Very High",
+        "reddit": "Moderate",
+        "stocktwits": "Moderate"
       },
       "keywords": [
         "best private bank",
@@ -462,9 +462,9 @@
       "socialScore": 7.5,
       "change24h": "+0.8%",
       "platforms": {
-        "twitter": 1900,
-        "reddit": 620,
-        "stocktwits": 750
+        "twitter": "High",
+        "reddit": "Low",
+        "stocktwits": "Low"
       },
       "keywords": [
         "asset quality improving",
