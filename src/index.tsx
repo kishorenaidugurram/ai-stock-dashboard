@@ -19,6 +19,13 @@ app.post('/api/trigger-update', async (c) => {
     // Log the update request
     const timestamp = new Date().toISOString();
     
+    // IMPORTANT: Update this URL with your specific chat thread URL
+    // To get your thread URL:
+    // 1. Look at the browser address bar while in this chat
+    // 2. Copy the full URL (should look like: https://www.genspark.ai/chat/THREAD_ID)
+    // 3. Replace the placeholder below
+    const specificThreadUrl = 'REPLACE_WITH_YOUR_THREAD_URL';
+    
     // Return instructions for user
     return c.json({
       success: true,
@@ -28,12 +35,12 @@ app.post('/api/trigger-update', async (c) => {
       instructions: {
         step1: 'Copy this command to your clipboard',
         command: 'Update the stock dashboard with latest data',
-        step2: 'Open GenSpark AI chat in a new tab',
+        step2: 'This chat thread will open in a new tab',
         step3: 'Paste the command and send it',
         step4: 'Wait 2-3 minutes for AI to complete the update',
         step5: 'Refresh this dashboard to see new data'
       },
-      aiChatUrl: 'https://www.genspark.ai',
+      aiChatUrl: specificThreadUrl,
       estimatedTime: '2-3 minutes'
     });
   } catch (error) {
