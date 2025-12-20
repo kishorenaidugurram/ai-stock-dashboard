@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "webapp",
+  "name": "stock-dashboard",
   "compatibility_date": "2025-12-20",
   "pages_build_output_dir": "./dist",
   "compatibility_flags": [
