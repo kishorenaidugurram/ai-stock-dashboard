@@ -1,0 +1,197 @@
+{
+  "lastUpdated": "2024-12-20T04:53:00Z",
+  "breakoutStocks": [
+    {
+      "name": "Crisil",
+      "symbol": "CRISIL",
+      "price": "₹5,250",
+      "change": "+4.5%",
+      "volume": "1.2M",
+      "recommendation": "BUY",
+      "target": "₹5,800",
+      "source": "MSN Markets",
+      "sourceUrl": "https://www.msn.com/en-in/money/markets/breakout-stocks-to-buy-or-sell-sumeet-bagadia-recommends-five-shares-to-buy-today-16-december-2024/ar-AA1vUWF7",
+      "analyst": "Sumeet Bagadia",
+      "date": "Dec 16, 2024"
+    },
+    {
+      "name": "Aries Agro",
+      "symbol": "ARIESAGRO",
+      "price": "₹285",
+      "change": "+5.2%",
+      "volume": "850K",
+      "recommendation": "BUY",
+      "target": "₹310",
+      "source": "MSN Markets",
+      "sourceUrl": "https://www.msn.com/en-in/money/markets/breakout-stocks-to-buy-or-sell-sumeet-bagadia-recommends-five-shares-to-buy-today-16-december-2024/ar-AA1vUWF7",
+      "analyst": "Sumeet Bagadia",
+      "date": "Dec 16, 2024"
+    },
+    {
+      "name": "PDS Ltd",
+      "symbol": "PDS",
+      "price": "₹1,450",
+      "change": "+6.8%",
+      "volume": "620K",
+      "recommendation": "BUY",
+      "target": "₹1,600",
+      "source": "MSN Markets",
+      "sourceUrl": "https://www.msn.com/en-in/money/markets/breakout-stocks-to-buy-or-sell-sumeet-bagadia-recommends-five-shares-to-buy-today-16-december-2024/ar-AA1vUWF7",
+      "analyst": "Sumeet Bagadia",
+      "date": "Dec 16, 2024"
+    },
+    {
+      "name": "Bharti Airtel",
+      "symbol": "BHARTIARTL",
+      "price": "₹1,681",
+      "change": "+3.2%",
+      "volume": "5.8M",
+      "recommendation": "BUY",
+      "target": "₹1,780",
+      "source": "LiveMint",
+      "sourceUrl": "https://www.livemint.com/market/stock-market-news/buy-or-sell-sumeet-bagadia-recommends-three-stocks-to-buy-on-monday-16-december-2024-11734168515901.html",
+      "analyst": "Sumeet Bagadia",
+      "date": "Dec 15, 2024"
+    },
+    {
+      "name": "DLF",
+      "symbol": "DLF",
+      "price": "₹755",
+      "change": "+4.1%",
+      "volume": "3.2M",
+      "recommendation": "BUY",
+      "target": "₹820",
+      "source": "LiveMint",
+      "sourceUrl": "https://www.livemint.com/market/stock-market-news/buy-or-sell-sumeet-bagadia-recommends-three-stocks-to-buy-on-monday-16-december-2024-11734168515901.html",
+      "analyst": "Sumeet Bagadia",
+      "date": "Dec 15, 2024"
+    },
+    {
+      "name": "Kotak Mahindra Bank",
+      "symbol": "KOTAKBANK",
+      "price": "₹1,755",
+      "change": "+2.8%",
+      "volume": "2.4M",
+      "recommendation": "BUY",
+      "target": "₹1,900",
+      "source": "LiveMint",
+      "sourceUrl": "https://www.livemint.com/market/stock-market-news/buy-or-sell-sumeet-bagadia-recommends-three-stocks-to-buy-on-monday-16-december-2024-11734168515901.html",
+      "analyst": "Sumeet Bagadia",
+      "date": "Dec 15, 2024"
+    }
+  ],
+  "brokerageRecommendations": [
+    {
+      "stock": "ITC",
+      "symbol": "ITC",
+      "price": "₹475",
+      "recommendation": "BUY",
+      "target": "₹510",
+      "upside": "7.4%",
+      "brokerage": "Nuvama",
+      "source": "Economic Times",
+      "sourceUrl": "https://m.economictimes.com/markets/stocks/news/stocks-to-buy-today-itc-icici-bank-among-top-9-trading-ideas-for-16-december-2024/articleshow/116352250.cms",
+      "date": "Dec 16, 2024",
+      "rationale": "Strong FMCG and hotel business performance"
+    },
+    {
+      "stock": "ICICI Bank",
+      "symbol": "ICICIBANK",
+      "price": "₹1,280",
+      "recommendation": "BUY",
+      "target": "₹1,500",
+      "upside": "17.2%",
+      "brokerage": "Axis Securities",
+      "source": "Motilal Oswal",
+      "sourceUrl": "https://www.motilaloswal.com/news/stocks/73902",
+      "date": "Dec 2024",
+      "rationale": "Strong asset quality and consistent earnings"
+    },
+    {
+      "stock": "ICICI Lombard",
+      "symbol": "ICICIGI",
+      "price": "₹1,920",
+      "recommendation": "BUY",
+      "target": "₹2,100",
+      "upside": "9.4%",
+      "brokerage": "Nuvama",
+      "source": "Economic Times",
+      "sourceUrl": "https://m.economictimes.com/markets/stocks/news/stocks-to-buy-today-itc-icici-bank-among-top-9-trading-ideas-for-16-december-2024/articleshow/116352250.cms",
+      "date": "Dec 16, 2024",
+      "rationale": "Growing insurance premiums and market share"
+    },
+    {
+      "stock": "SBI",
+      "symbol": "SBIN",
+      "price": "₹815",
+      "recommendation": "BUY",
+      "target": "₹1,040",
+      "upside": "27.6%",
+      "brokerage": "Axis Securities",
+      "source": "Motilal Oswal",
+      "sourceUrl": "https://www.motilaloswal.com/news/stocks/73902",
+      "date": "Dec 2024",
+      "rationale": "Strong loan growth and improving asset quality"
+    },
+    {
+      "stock": "Kamat Hotels",
+      "symbol": "KAMATHOTEL",
+      "price": "₹242",
+      "recommendation": "BUY",
+      "target": "₹255",
+      "upside": "5.4%",
+      "brokerage": "Choice Broking",
+      "source": "Motilal Oswal",
+      "sourceUrl": "https://www.motilaloswal.com/news/stocks/75552",
+      "date": "Dec 20, 2024",
+      "rationale": "Tourism recovery and capacity expansion"
+    },
+    {
+      "stock": "Mallcom India",
+      "symbol": "MALLCOM",
+      "price": "₹890",
+      "recommendation": "BUY",
+      "target": "₹950",
+      "upside": "6.7%",
+      "brokerage": "Choice Broking",
+      "source": "Motilal Oswal",
+      "sourceUrl": "https://www.motilaloswal.com/news/stocks/75552",
+      "date": "Dec 20, 2024",
+      "rationale": "Strong order book and export opportunities"
+    }
+  ],
+  "newsHeadlines": [
+    {
+      "title": "Sensex Plummets Over 1,177 Points, Nifty Below 23,600",
+      "summary": "Indian stock market crashed on Dec 20 with Sensex falling 1,177 points and Nifty ending below 23,600 amid global concerns",
+      "source": "Moneycontrol",
+      "sourceUrl": "https://www.moneycontrol.com/news/business/markets/stock-market-live-sensex-nifty-50-share-price-gift-nifty-latest-updates-20-12-2024-liveblog-12894340.html",
+      "date": "Dec 20, 2024",
+      "category": "Market Update"
+    },
+    {
+      "title": "Sensex Falls 502 Points, Markets Extend Losing Streak",
+      "summary": "Benchmark indices declined for third consecutive session on Dec 18 with Sensex down 502 points at 80,182",
+      "source": "Times of India",
+      "sourceUrl": "https://timesofindia.indiatimes.com/business/india-business/stock-market-today-bse-sensex-nifty50-december-18-2024-dalal-street-indian-equities-global-markets/articleshow/116418106.cms",
+      "date": "Dec 18, 2024",
+      "category": "Market Update"
+    },
+    {
+      "title": "Stock Market Crash: Sensex Sheds 964 Points",
+      "summary": "Markets witnessed sharp correction on Dec 19 with Sensex falling 964 points amid weak global cues",
+      "source": "Business Standard",
+      "sourceUrl": "https://www.business-standard.com/markets/news/stock-market-today-live-updates-sensex-today-nifty-dec-19-nse-bse-equity-dam-capital-ipo-gmp-us-fed-124121900092_1.html",
+      "date": "Dec 19, 2024",
+      "category": "Market Crash"
+    },
+    {
+      "title": "Investors Lose ₹18.5 Lakh Crore in Worst Week of 2024",
+      "summary": "Nifty records worst week of 2024 with investors losing combined ₹18.5 lakh crore as of Dec 20",
+      "source": "Hindustan Times",
+      "sourceUrl": "https://www.hindustantimes.com/business/stock-market-crash-investors-lose-rs-18-5-lakh-crore-as-nifty-records-worst-2024-week-101734758730233.html",
+      "date": "Dec 20, 2024",
+      "category": "Market Loss"
+    }
+  ]
+}
