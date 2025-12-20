@@ -152,10 +152,10 @@ app.get('/api/ai/alerts', (c) => {
 
     const alerts = allStocks
       .filter(stock => tradingAI.shouldAlert(stock, {
-        minUpside: 15,
-        maxRiskScore: 5,
-        minMomentum: 6,
-        requiredSentiment: ['bullish']
+        minUpside: 20,
+        maxRiskScore: 4,
+        minMomentum: 7,
+        requiredSentiment: ['bullish', 'neutral']
       }))
       .map(stock => ({
         ...stock,
@@ -726,6 +726,7 @@ app.get('/', (c) => {
         </footer>
 
         <script src="https://cdn.jsdelivr.net/npm/axios@1.6.0/dist/axios.min.js"></script>
+        <script src="/static/app.js"></script>
         <script>
             // Trigger AI Update - Main function called from frontend button
             async function triggerAIUpdate() {
