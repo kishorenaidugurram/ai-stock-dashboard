@@ -207,11 +207,39 @@ curl https://3000-icgc5fj3ctx0aeqev243p-18e660f9.sandbox.novita.ai/api/stocks
 }
 ```
 
-### Update Data
-To update with latest information:
-1. Edit `/data/stocks-data.json` with new data from web searches
-2. Run `npm run build`
-3. Restart service: `pm2 restart stock-dashboard`
+### 🚀 Update Data (Self-Service - No Chat Thread Needed!)
+
+**NEW: You can now update the dashboard without coming to this chat thread!**
+
+#### Method 1: Use the Dashboard Button (EASIEST)
+1. **Click the green "Update Data" button** on your dashboard (top-right)
+2. **Copy the command** shown in the modal
+3. **Open GenSpark AI** (link provided in modal)
+4. **Paste and send** the command
+5. **Wait 2-3 minutes** for AI to complete the update
+6. **Refresh your dashboard** to see the new data
+
+#### Method 2: Send Direct Command to GenSpark AI
+```
+Update the stock dashboard with latest data
+```
+
+#### What Happens When You Update?
+The AI will automatically:
+- ✅ Search for latest NSE F&O breakout stocks
+- ✅ Get fresh brokerage recommendations (ICICI, Motilal Oswal, etc.)
+- ✅ Fetch social sentiment from Twitter & Reddit
+- ✅ Update market news headlines
+- ✅ Rebuild and restart the dashboard
+- ✅ Complete in 2-3 minutes
+
+#### When to Update?
+- **Morning (9:30 AM)**: `Update dashboard - market open`
+- **Mid-day (2:00 PM)**: `Update dashboard - mid-day`
+- **Evening (4:30 PM)**: `Update dashboard - market close`
+- **Anytime**: `Update the stock dashboard with latest data`
+
+**📚 Full Guide**: See `DASHBOARD_UPDATE_GUIDE.md` for complete instructions
 
 ## 📅 Data Timeline
 
