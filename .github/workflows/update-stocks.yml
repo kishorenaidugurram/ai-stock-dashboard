@@ -11,28 +11,27 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
       
-      - name: Install dependencies
-        run: |
-          cd scripts
-          npm install axios cheerio
-      
       - name: Fetch latest stock data
         run: node scripts/fetch-latest-stocks.js
         env:
           TZ: 'Asia/Kolkata'
       
-      - name: Check if data changed
+      - name: Check for changes
         id: check_changes
         run: |
-          git diff --quiet data/stocks-data.json || echo "changed=true" >> $GITHUB_OUTPUT
+          if git diff --quiet data/stocks-data.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No changes detected in stock data"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Changes detected in stock data"
+          fi
       
       - name: Commit and push changes
         if: steps.check_changes.outputs.changed == 'true'
@@ -43,12 +42,15 @@ jobs:
           git commit -m "chore: Update stock data - $(date +'%Y-%m-%d %H:%M IST')"
           git push
       
-      - name: Trigger Cloudflare Pages deployment
-        if: steps.check_changes.outputs.changed == 'true'
-        run: |
-          echo "✅ Stock data updated successfully!"
-          echo "📊 Cloudflare Pages will auto-deploy in ~2 minutes"
+      - name: No changes to commit
+        if: steps.check_changes.outputs.changed == 'false'
+        run: echo "ℹ️ Stock data is already up to date - no changes needed"
       
-      - name: No changes detected
-        if: steps.check_changes.outputs.changed != 'true'
-        run: echo "ℹ️ No new stock data available - skipping update"
+      - name: Summary
+        run: |
+          echo "✅ Workflow completed successfully!"
+          if [ "${{ steps.check_changes.outputs.changed }}" == "true" ]; then
+            echo "📊 Stock data was updated and pushed to GitHub"
+          else
+            echo "📊 Stock data is already current - no update needed"
+          fi
