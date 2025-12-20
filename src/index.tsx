@@ -1688,6 +1688,44 @@ app.get('/', (c) => {
                 });
             }
 
+            // NSE F&O Stock List (Top 175+ stocks with F&O available)
+            const fnoStocks = new Set([
+                'ICICIBANK', 'HDFCBANK', 'SBIN', 'AXISBANK', 'KOTAKBANK', 'INDUSINDBK', 'BANKBARODA', 'PNB', 'IDFCFIRSTB', 'FEDERALBNK',
+                'TCS', 'INFY', 'WIPRO', 'HCLTECH', 'TECHM', 'LTIM', 'COFORGE', 'PERSISTENT', 'MPHASIS',
+                'RELIANCE', 'ONGC', 'BPCL', 'IOC', 'HINDPETRO', 'GAIL', 'ADANIGREEN', 'ADANIPORTS', 'ADANIENT', 'ADANITRANS',
+                'TATASTEEL', 'JSWSTEEL', 'HINDALCO', 'VEDL', 'SAIL', 'JINDALSTEL', 'COALINDIA', 'NMDC',
+                'MARUTI', 'M&M', 'TATAMOTORS', 'BAJAJ-AUTO', 'EICHERMOT', 'HEROMOTOCO', 'TVSMOTOR', 'ASHOKLEY', 'ESCORTS',
+                'BHARTIARTL', 'IDEA', 'INDIGO', 'ITC', 'TITAN', 'DABUR', 'BRITANNIA', 'NESTLEIND', 'MARICO', 'TATACONSUM', 'UBL', 'GODREJCP',
+                'ASIANPAINT', 'PIDILITIND', 'BERGER', 'KANSAINER',
+                'LT', 'SIEMENS', 'ABB', 'HAVELLS', 'CROMPTON', 'VOLTAS', 'CUMMINSIND', 'BOSCHLTD',
+                'APOLLOHOSP', 'DRREDDY', 'CIPLA', 'SUNPHARMA', 'DIVISLAB', 'BIOCON', 'AUROPHARMA', 'LUPIN', 'TORNTPHARM',
+                'BAJFINANCE', 'BAJAJFINSV', 'CHOLAFIN', 'SBILIFE', 'HDFCLIFE', 'ICICIPRULI', 'LICHSGFIN', 'MUTHOOTFIN',
+                'ULTRACEMCO', 'AMBUJACEM', 'GRASIM', 'ACC', 'SHREECEM', 'RAMCOCEM',
+                'DLF', 'GODREJPROP', 'OBEROIRLTY', 'PHOENIXLTD', 'PRESTIGE', 'BRIGADE', 'LODHA',
+                'TRENT', 'DMART', 'PAGEIND', 'JUBLFOOD', 'ABFRL', 'APLAPOLLO',
+                'ZOMATO', 'NYKAA', 'PVR', 'INOXLEISUR',
+                'POWERGRID', 'NTPC', 'TATAPOWER', 'ADANIPOWER', 'RECLTD', 'PFC',
+                'SUNTV', 'ZEEL', 'STAR',
+                'VRL', 'CONCOR', 'GESHIP', 'APSEZ',
+                'IGL', 'MGL', 'GUJGASLTD',
+                'ASTRAL', 'POLYCAB', 'KEI', 'GUJGASLTD',
+                'MCDOWELL-N', 'RADICO', 'DELTACORP',
+                'COLPAL', 'HINDUNILVR', 'EMAMILTD',
+                'GROWW', 'PAYTM', 'POLICYBZR'
+            ]);
+
+            function isFNO(symbol) {
+                return fnoStocks.has(symbol);
+            }
+
+            function getFNOBadge(symbol) {
+                if (isFNO(symbol)) {
+                    return '<span class="badge-modern gradient-success text-white text-xs px-2 py-1"><i class="fas fa-chart-line mr-1"></i>F&O</span>';
+                } else {
+                    return '<span class="badge-modern bg-gray-300 text-gray-700 text-xs px-2 py-1"><i class="fas fa-ban mr-1"></i>Cash</span>';
+                }
+            }
+
             // Fetch and display stock data
             async function loadData() {
                 try {
@@ -1711,58 +1749,34 @@ app.get('/', (c) => {
                     // Render breakout stocks
                     const breakoutContainer = document.getElementById('breakoutStocks');
                     breakoutContainer.innerHTML = data.breakoutStocks.map(stock => \`
-                        <div class="premium-card p-6 card-animate" data-symbol="\${stock.symbol}">
-                            <div class="flex justify-between items-start mb-4">
-                                <div>
-                                    <h3 class="text-xl font-bold text-gray-800">\${stock.name}</h3>
-                                    <p class="text-gray-500 text-sm">\${stock.symbol}</p>
+                        <div class="premium-card p-4 card-animate" data-symbol="\${stock.symbol}">
+                            <div class="flex justify-between items-start mb-2">
+                                <div class="flex-1">
+                                    <h3 class="text-lg font-bold text-gray-800">\${stock.name}</h3>
+                                    <p class="text-gray-500 text-xs">\${stock.symbol}</p>
                                 </div>
-                                <span class="badge-modern gradient-success text-white text-xs px-3 py-1 rounded-full">
-                                    \${stock.recommendation}
-                                </span>
-                            </div>
-                            
-                            \${stock.socialSentiment ? \`
-                            <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-3 mb-4">
-                                <div class="flex items-center justify-between mb-2">
-                                    <div class="flex items-center gap-2">
-                                        <span class="sentiment-\${stock.socialSentiment.overall.toLowerCase()} social-badge">
-                                            \${stock.socialSentiment.overall} 
-                                            \${stock.socialSentiment.overall === 'Bullish' ? '📈' : stock.socialSentiment.overall === 'Bearish' ? '📉' : '➡️'}
-                                        </span>
-                                        <span class="text-xs text-gray-600">Score: <strong>\${stock.socialSentiment.score}/10</strong></span>
-                                    </div>
-                                </div>
-                                <div class="flex items-center gap-3 text-xs mb-2">
-                                    <div class="flex items-center gap-1">
-                                        <i class="fab fa-twitter text-blue-400"></i>
-                                        <span>\${stock.socialSentiment.twitter.volume}</span>
-                                    </div>
-                                    <div class="flex items-center gap-1">
-                                        <i class="fab fa-reddit text-orange-500"></i>
-                                        <span>\${stock.socialSentiment.reddit.volume}</span>
-                                    </div>
-                                </div>
-                                <div class="text-xs text-gray-600">
-                                    <i class="fas fa-hashtag text-purple-500 mr-1"></i>
-                                    \${stock.socialSentiment.twitter.keywords.slice(0, 3).join(', ')}
+                                <div class="flex flex-col gap-1 items-end">
+                                    \${getFNOBadge(stock.symbol)}
+                                    <span class="badge-modern gradient-success text-white text-xs px-2 py-1">
+                                        \${stock.recommendation}
+                                    </span>
                                 </div>
                             </div>
-                            \` : ''}
                             
-                            <div class="grid grid-cols-2 gap-4 mb-4">
-                                <div>
-                                    <p class="text-gray-500 text-xs">Current Price</p>
-                                    <p class="text-lg font-bold text-gray-800">\${stock.price}</p>
+                            <div class="grid grid-cols-3 gap-2 mb-3 text-center">
+                                <div class="bg-gray-50 rounded p-2">
+                                    <p class="text-gray-500 text-xs">Price</p>
+                                    <p class="text-sm font-bold text-gray-800">\${stock.price}</p>
                                 </div>
-                                <div>
+                                <div class="bg-green-50 rounded p-2">
                                     <p class="text-gray-500 text-xs">Target</p>
-                                    <p class="text-lg font-bold text-green-600">\${stock.target}</p>
+                                    <p class="text-sm font-bold text-green-600">\${stock.target}</p>
                                 </div>
-                                <div>
+                                <div class="bg-blue-50 rounded p-2">
                                     <p class="text-gray-500 text-xs">Change</p>
-                                    <p class="text-lg font-bold text-green-600">\${stock.change}</p>
+                                    <p class="text-sm font-bold text-green-600">\${stock.change}</p>
                                 </div>
+                            </div>
                                 <div>
                                     <p class="text-gray-500 text-xs">Volume</p>
                                     <p class="text-lg font-bold text-gray-800">\${stock.volume}</p>
@@ -1969,9 +1983,14 @@ app.get('/', (c) => {
                         \`).join('');
                     }
 
-                    // Update last updated time
+                    // Update last updated time to IST
                     const lastUpdate = new Date(data.lastUpdated);
-                    document.getElementById('lastUpdated').textContent = lastUpdate.toLocaleString();
+                    const istTime = lastUpdate.toLocaleString('en-IN', { 
+                        timeZone: 'Asia/Kolkata',
+                        dateStyle: 'medium',
+                        timeStyle: 'short'
+                    });
+                    document.getElementById('lastUpdated').textContent = istTime + ' IST';
 
                     document.getElementById('loadingIndicator').classList.add('hidden');
 

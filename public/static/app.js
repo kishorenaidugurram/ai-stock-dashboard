@@ -199,12 +199,20 @@ async function renderTopPicks() {
         section.id = 'aiTopPicksSection';
         section.className = 'mb-8';
         section.innerHTML = `
-            <div class="flex items-center justify-between mb-6">
-                <h2 class="text-2xl font-bold text-gray-800 flex items-center">
-                    <i class="fas fa-trophy text-yellow-500 mr-3"></i>
-                    Top AI Picks
-                </h2>
-                <span class="text-sm text-gray-500">Ranked by AI algorithm</span>
+            <div class="glass-card rounded-2xl p-6 mb-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-3xl font-black text-gray-800 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center text-white">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        Top AI Picks
+                    </h2>
+                    <span class="badge-modern gradient-purple text-white text-xs">
+                        <i class="fas fa-robot"></i>
+                        AI Ranked
+                    </span>
+                </div>
+                <p class="text-gray-600 text-sm">Best stocks ranked by AI algorithm based on risk, momentum, and upside potential</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="topAIPicksContainer"></div>
         `;
@@ -641,7 +649,6 @@ function initFilters() {
             />
             
             <button onclick="applyFilters()" class="btn-primary flex items-center gap-2 px-6 py-2">
-                <i class="fas fa-play"></i>
                 <span>Go</span>
             </button>
             
