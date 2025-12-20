@@ -1749,34 +1749,61 @@ app.get('/', (c) => {
                     // Render breakout stocks
                     const breakoutContainer = document.getElementById('breakoutStocks');
                     breakoutContainer.innerHTML = data.breakoutStocks.map(stock => \`
-                        <div class="premium-card p-4 card-animate" data-symbol="\${stock.symbol}">
-                            <div class="flex justify-between items-start mb-2">
-                                <div class="flex-1">
-                                    <h3 class="text-lg font-bold text-gray-800">\${stock.name}</h3>
-                                    <p class="text-gray-500 text-xs">\${stock.symbol}</p>
+                        <div class="premium-card p-6 card-animate" data-symbol="\${stock.symbol}">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800">\${stock.name}</h3>
+                                    <p class="text-gray-500 text-sm">\${stock.symbol}</p>
                                 </div>
-                                <div class="flex flex-col gap-1 items-end">
+                                <div class="flex flex-col gap-2 items-end">
                                     \${getFNOBadge(stock.symbol)}
-                                    <span class="badge-modern gradient-success text-white text-xs px-2 py-1">
+                                    <span class="badge-modern gradient-success text-white text-xs px-3 py-1 rounded-full">
                                         \${stock.recommendation}
                                     </span>
                                 </div>
                             </div>
                             
-                            <div class="grid grid-cols-3 gap-2 mb-3 text-center">
-                                <div class="bg-gray-50 rounded p-2">
-                                    <p class="text-gray-500 text-xs">Price</p>
-                                    <p class="text-sm font-bold text-gray-800">\${stock.price}</p>
+                            \${stock.socialSentiment ? \`
+                            <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-3 mb-4">
+                                <div class="flex items-center justify-between mb-2">
+                                    <div class="flex items-center gap-2">
+                                        <span class="sentiment-\${stock.socialSentiment.overall.toLowerCase()} social-badge">
+                                            \${stock.socialSentiment.overall} 
+                                            \${stock.socialSentiment.overall === 'Bullish' ? '📈' : stock.socialSentiment.overall === 'Bearish' ? '📉' : '➡️'}
+                                        </span>
+                                        <span class="text-xs text-gray-600">Score: <strong>\${stock.socialSentiment.score}/10</strong></span>
+                                    </div>
                                 </div>
-                                <div class="bg-green-50 rounded p-2">
-                                    <p class="text-gray-500 text-xs">Target</p>
-                                    <p class="text-sm font-bold text-green-600">\${stock.target}</p>
+                                <div class="flex items-center gap-3 text-xs mb-2">
+                                    <div class="flex items-center gap-1">
+                                        <i class="fab fa-twitter text-blue-400"></i>
+                                        <span>\${stock.socialSentiment.twitter.volume}</span>
+                                    </div>
+                                    <div class="flex items-center gap-1">
+                                        <i class="fab fa-reddit text-orange-500"></i>
+                                        <span>\${stock.socialSentiment.reddit.volume}</span>
+                                    </div>
                                 </div>
-                                <div class="bg-blue-50 rounded p-2">
-                                    <p class="text-gray-500 text-xs">Change</p>
-                                    <p class="text-sm font-bold text-green-600">\${stock.change}</p>
+                                <div class="text-xs text-gray-600">
+                                    <i class="fas fa-hashtag text-purple-500 mr-1"></i>
+                                    \${stock.socialSentiment.twitter.keywords.slice(0, 3).join(', ')}
                                 </div>
                             </div>
+                            \` : ''}
+                            
+                            <div class="grid grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <p class="text-gray-500 text-xs">Current Price</p>
+                                    <p class="text-lg font-bold text-gray-800">\${stock.price}</p>
+                                </div>
+                                <div>
+                                    <p class="text-gray-500 text-xs">Target</p>
+                                    <p class="text-lg font-bold text-green-600">\${stock.target}</p>
+                                </div>
+                                <div>
+                                    <p class="text-gray-500 text-xs">Change</p>
+                                    <p class="text-lg font-bold text-green-600">\${stock.change}</p>
+                                </div>
                                 <div>
                                     <p class="text-gray-500 text-xs">Volume</p>
                                     <p class="text-lg font-bold text-gray-800">\${stock.volume}</p>
@@ -1811,10 +1838,13 @@ app.get('/', (c) => {
                                     <h3 class="text-xl font-bold text-gray-800">\${rec.stock}</h3>
                                     <p class="text-gray-500 text-sm">\${rec.symbol}</p>
                                 </div>
-                                <span class="\${rec.recommendation === 'BUY' ? 'badge-modern gradient-success' : 'badge-modern gradient-danger'} 
-                                             text-white text-xs px-3 py-1 rounded-full">
-                                    \${rec.recommendation}
-                                </span>
+                                <div class="flex flex-col gap-2 items-end">
+                                    \${getFNOBadge(rec.symbol)}
+                                    <span class="\${rec.recommendation === 'BUY' ? 'badge-modern gradient-success' : 'badge-modern gradient-danger'} 
+                                                 text-white text-xs px-3 py-1 rounded-full">
+                                        \${rec.recommendation}
+                                    </span>
+                                </div>
                             </div>
                             
                             \${rec.socialSentiment ? \`
@@ -1932,9 +1962,12 @@ app.get('/', (c) => {
                                         </div>
                                         <p class="text-gray-500 text-sm">\${stock.symbol}</p>
                                     </div>
-                                    <span class="badge-modern gradient-\${stock.sentiment === 'Bullish' ? 'success' : stock.sentiment === 'Bearish' ? 'danger' : 'warning'} text-white">
-                                        \${stock.sentiment} \${stock.sentiment === 'Bullish' ? '📈' : stock.sentiment === 'Bearish' ? '📉' : '➡️'}
-                                    </span>
+                                    <div class="flex flex-col gap-2 items-end">
+                                        \${getFNOBadge(stock.symbol)}
+                                        <span class="badge-modern gradient-\${stock.sentiment === 'Bullish' ? 'success' : stock.sentiment === 'Bearish' ? 'danger' : 'warning'} text-white">
+                                            \${stock.sentiment} \${stock.sentiment === 'Bullish' ? '📈' : stock.sentiment === 'Bearish' ? '📉' : '➡️'}
+                                        </span>
+                                    </div>
                                 </div>
                                 
                                 <div class="mb-4">
