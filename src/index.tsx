@@ -2,8 +2,12 @@ import { Hono } from 'hono'
 import { cors } from 'hono/cors'
 import { serveStatic } from 'hono/cloudflare-workers'
 import stocksData from '../data/stocks-data.json'
+import TradingEdgeAI from './trading-edge-ai.js'
 
 const app = new Hono()
+
+// Initialize AI Trading Edge
+const tradingAI = new TradingEdgeAI(process.env.GENSPARK_API_KEY || 'e5fc86a6-d252-4a07-8479-6566d442162c')
 
 // Enable CORS for API routes
 app.use('/api/*', cors())
@@ -54,6 +58,190 @@ app.post('/api/refresh', async (c) => {
     message: 'Please use /api/trigger-update endpoint',
     lastUpdated: new Date().toISOString()
   });
+});
+
+// 🤖 AI-POWERED ENDPOINTS
+
+// Get AI analysis for all stocks
+app.get('/api/ai/analyze', (c) => {
+  try {
+    const allStocks = [
+      ...(stocksData.breakoutStocks || []),
+      ...(stocksData.brokerageRecommendations || [])
+    ];
+
+    const analyzed = allStocks.map(stock => ({
+      ...stock,
+      aiAnalysis: tradingAI.analyzeStock(stock)
+    }));
+
+    return c.json({
+      success: true,
+      stocks: analyzed,
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    return c.json({ success: false, error: error.message }, 500);
+  }
+});
+
+// Get daily AI-powered summary
+app.get('/api/ai/summary', (c) => {
+  try {
+    const allStocks = [
+      ...(stocksData.breakoutStocks || []),
+      ...(stocksData.brokerageRecommendations || [])
+    ];
+
+    const summary = tradingAI.generateDailySummary(allStocks);
+
+    return c.json({
+      success: true,
+      summary: summary,
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    return c.json({ success: false, error: error.message }, 500);
+  }
+});
+
+// Get top picks based on AI analysis
+app.get('/api/ai/top-picks', (c) => {
+  try {
+    const allStocks = [
+      ...(stocksData.breakoutStocks || []),
+      ...(stocksData.brokerageRecommendations || [])
+    ];
+
+    const analyzed = allStocks
+      .map(stock => ({
+        ...stock,
+        aiAnalysis: tradingAI.analyzeStock(stock)
+      }))
+      .filter(s => 
+        s.aiAnalysis.recommendation === 'STRONG BUY' || 
+        s.aiAnalysis.recommendation === 'BUY'
+      )
+      .sort((a, b) => {
+        // Sort by risk (lower first), then momentum (higher first)
+        if (a.aiAnalysis.riskScore !== b.aiAnalysis.riskScore) {
+          return a.aiAnalysis.riskScore - b.aiAnalysis.riskScore;
+        }
+        return b.aiAnalysis.momentum - a.aiAnalysis.momentum;
+      })
+      .slice(0, 10);
+
+    return c.json({
+      success: true,
+      topPicks: analyzed,
+      count: analyzed.length,
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    return c.json({ success: false, error: error.message }, 500);
+  }
+});
+
+// Check alerts
+app.get('/api/ai/alerts', (c) => {
+  try {
+    const allStocks = [
+      ...(stocksData.breakoutStocks || []),
+      ...(stocksData.brokerageRecommendations || [])
+    ];
+
+    const alerts = allStocks
+      .filter(stock => tradingAI.shouldAlert(stock, {
+        minUpside: 15,
+        maxRiskScore: 5,
+        minMomentum: 6,
+        requiredSentiment: ['bullish']
+      }))
+      .map(stock => ({
+        ...stock,
+        aiAnalysis: tradingAI.analyzeStock(stock),
+        alertReason: `High potential: ${stock.upside}% upside, Low risk, Strong momentum`
+      }));
+
+    return c.json({
+      success: true,
+      alerts: alerts,
+      count: alerts.length,
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    return c.json({ success: false, error: error.message }, 500);
+  }
+});
+
+// AI Chatbot endpoint
+app.post('/api/ai/chat', async (c) => {
+  try {
+    const { query } = await c.req.json();
+    
+    const allStocks = [
+      ...(stocksData.breakoutStocks || []),
+      ...(stocksData.brokerageRecommendations || [])
+    ];
+
+    // Simple keyword-based responses
+    const lowerQuery = query.toLowerCase();
+    let response = '';
+
+    if (lowerQuery.includes('best') || lowerQuery.includes('top')) {
+      const topPicks = allStocks
+        .map(s => ({ ...s, aiAnalysis: tradingAI.analyzeStock(s) }))
+        .filter(s => s.aiAnalysis.recommendation === 'STRONG BUY' || s.aiAnalysis.recommendation === 'BUY')
+        .sort((a, b) => b.aiAnalysis.momentum - a.aiAnalysis.momentum)
+        .slice(0, 3);
+      
+      response = `Top 3 Buy Recommendations:\n\n${topPicks.map((s, i) => 
+        `${i+1}. ${s.symbol} - ${s.company || 'N/A'}\n   ↗ ${s.upside} upside | Risk: ${s.aiAnalysis.riskScore}/10 | Momentum: ${s.aiAnalysis.momentum}/10\n   ${s.aiAnalysis.recommendation} | Source: ${s.source}`
+      ).join('\n\n')}`;
+    }
+    else if (lowerQuery.includes('risk')) {
+      const lowRisk = allStocks
+        .map(s => ({ ...s, aiAnalysis: tradingAI.analyzeStock(s) }))
+        .filter(s => s.aiAnalysis.riskScore <= 3)
+        .slice(0, 5);
+      
+      response = `Low Risk Stocks (Risk ≤ 3/10):\n\n${lowRisk.map(s => 
+        `• ${s.symbol} - Risk: ${s.aiAnalysis.riskScore}/10, Upside: ${s.upside}%`
+      ).join('\n')}`;
+    }
+    else if (lowerQuery.includes('upside') || lowerQuery.includes('potential')) {
+      const highUpside = allStocks
+        .filter(s => s.upside > 20)
+        .sort((a, b) => b.upside - a.upside)
+        .slice(0, 5);
+      
+      response = `Highest Upside Potential (>20%):\n\n${highUpside.map(s => 
+        `• ${s.symbol} - ${s.upside}% upside to ₹${s.targetPrice}\n  Source: ${s.source}`
+      ).join('\n')}`;
+    }
+    else {
+      const summary = tradingAI.generateDailySummary(allStocks);
+      response = `Market Overview:\n\n` +
+        `📊 Total Stocks: ${summary.totalStocks}\n` +
+        `💪 Market Sentiment: ${summary.marketSentiment}\n` +
+        `📈 Average Upside: ${summary.averageUpside}%\n` +
+        `⭐ High Confidence: ${summary.highConfidenceCount} stocks\n\n` +
+        `Ask me about "best stocks", "low risk", or "high upside"!`;
+    }
+
+    return c.json({
+      success: true,
+      query: query,
+      response: response,
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    return c.json({ 
+      success: false, 
+      response: 'Sorry, I encountered an error processing your request.',
+      error: error.message 
+    }, 500);
+  }
 });
 
 // Auto-update page route
