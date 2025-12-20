@@ -1,0 +1,54 @@
+name: Update Stock Dashboard Data
+
+on:
+  schedule:
+    - cron: '30 3 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install dependencies
+        run: |
+          cd scripts
+          npm install axios cheerio
+      
+      - name: Fetch latest stock data
+        run: node scripts/fetch-latest-stocks.js
+        env:
+          TZ: 'Asia/Kolkata'
+      
+      - name: Check if data changed
+        id: check_changes
+        run: |
+          git diff --quiet data/stocks-data.json || echo "changed=true" >> $GITHUB_OUTPUT
+      
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "GitHub Actions Bot"
+          git add data/stocks-data.json
+          git commit -m "chore: Update stock data - $(date +'%Y-%m-%d %H:%M IST')"
+          git push
+      
+      - name: Trigger Cloudflare Pages deployment
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          echo "✅ Stock data updated successfully!"
+          echo "📊 Cloudflare Pages will auto-deploy in ~2 minutes"
+      
+      - name: No changes detected
+        if: steps.check_changes.outputs.changed != 'true'
+        run: echo "ℹ️ No new stock data available - skipping update"
