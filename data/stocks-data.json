@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2025-12-20T09:19:22.811Z",
+  "lastUpdated": "2025-12-20T09:57:17.948Z",
   "dataQuality": {
-    "searchTimestamp": "2025-12-20T09:19:22.811Z",
+    "searchTimestamp": "2025-12-20T09:57:17.948Z",
     "dateRange": "Dec 20, 2025",
     "verificationStatus": "PREMIUM_SOURCES_ONLY",
     "totalSources": 8,
@@ -13,7 +13,7 @@
   },
   "socialSentiment": {
     "enabled": true,
-    "lastUpdated": "2025-12-20T09:19:22.811Z",
+    "lastUpdated": "2025-12-20T09:57:17.948Z",
     "sources": [
       "Twitter/X",
       "Reddit r/IndianStreetBets",
@@ -35,7 +35,7 @@
       "sourceUrl": "https://www.livemint.com/market/stock-market-news/stocks-to-buy-from-hdfc-bank-icici-bank-to-reliance-jefferies-suggests-these-25-stocks-as-its-bottom-up-top-ideas-11757652457019.html",
       "analyst": "Jefferies Research",
       "date": "Dec 20, 2025",
-      "publishedTime": "2025-12-20T08:28:00.000Z",
+      "publishedTime": "2025-12-20T05:17:00.000Z",
       "rationale": "ICICI Bank is among top picks with price target of ₹1,760, based on 2.7x Sep-27 adjusted PB and value of stake in subsidiaries. Best-in-class ROE and strong deposit franchise.",
       "upside": "26.8%",
       "socialSentiment": {
@@ -71,7 +71,7 @@
       "sourceUrl": "https://www.moneycontrol.com/news/business/stocks/buy-lodha-developers-target-of-rs-1888-motilal-oswal-3-13731739.html",
       "analyst": "Motilal Oswal Securities",
       "date": "Dec 20, 2025",
-      "publishedTime": "2025-12-20T08:27:00.000Z",
+      "publishedTime": "2025-12-20T02:32:00.000Z",
       "rationale": "Motilal Oswal bullish on Lodha Developers with buy rating and target price of Rs 1,888. Strong presales growth of 20% expected, robust pipeline in MMR region.",
       "upside": "19.6%",
       "socialSentiment": {
@@ -107,7 +107,7 @@
       "sourceUrl": "https://m.economictimes.com/markets/stocks/news/crompton-greaves-shares-jump-6-as-motilal-oswal-initiates-with-buy-call-check-target-upside-potential/articleshow/126054352.cms",
       "analyst": "Motilal Oswal Research",
       "date": "Dec 20, 2025",
-      "publishedTime": "2025-12-20T09:38:00.000Z",
+      "publishedTime": "2025-12-20T02:35:00.000Z",
       "rationale": "Motilal Oswal initiated coverage with Buy rating and target of ₹350. Bull case projects 77% upside potential to ₹460. Strong growth in consumer electricals segment.",
       "upside": "34.6%",
       "socialSentiment": {
@@ -143,7 +143,7 @@
       "sourceUrl": "https://www.businesstoday.in/markets/stocks/story/3-key-reasons-why-jefferies-values-groww-at-premium-over-angel-one-507435-2025-12-19",
       "analyst": "Jefferies India",
       "date": "Dec 20, 2025",
-      "publishedTime": "2025-12-20T10:24:00.000Z",
+      "publishedTime": "2025-12-20T05:01:00.000Z",
       "rationale": "Jefferies initiated coverage on Groww with Buy rating. Greater scope for operating leverage in Groww than competitors. Fintech platform growth accelerating.",
       "upside": "34.0%",
       "socialSentiment": {
@@ -179,7 +179,7 @@
       "sourceUrl": "https://m.economictimes.com/markets/stocks/news/stocks-to-buy-for-2026-adani-power-vrl-logistics-among-5-stocks-that-could-give-10-30-return-in-1-year/motilal-oswal-on-vrl-logistics-ltd/slideshow/126070767.cms",
       "analyst": "Motilal Oswal Securities",
       "date": "Dec 20, 2025",
-      "publishedTime": "2025-12-20T08:51:00.000Z",
+      "publishedTime": "2025-12-20T03:41:00.000Z",
       "rationale": "Motilal Oswal maintains Buy rating on VRL Logistics with target of Rs 350, indicating potential upside of 32%. Strong growth in logistics sector.",
       "upside": "32.1%",
       "socialSentiment": {
@@ -215,7 +215,7 @@
       "sourceUrl": "https://www.moneycontrol.com/news/business/stocks/buy-vishal-mega-mart-target-of-rs-170-motilal-oswal-13729784.html",
       "analyst": "Motilal Oswal Research",
       "date": "Dec 20, 2025",
-      "publishedTime": "2025-12-20T10:41:00.000Z",
+      "publishedTime": "2025-12-20T04:26:00.000Z",
       "rationale": "Motilal Oswal bullish on Vishal Mega Mart with buy rating and target of Rs 170. Strong value retail play with expansion in tier 2/3 cities.",
       "upside": "25.0%",
       "socialSentiment": {
