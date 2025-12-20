@@ -13,17 +13,42 @@ app.get('/api/stocks', (c) => {
   return c.json(stocksData);
 });
 
-// API endpoint to refresh data (would trigger web searches in production)
+// API endpoint to trigger dashboard update
+app.post('/api/trigger-update', async (c) => {
+  try {
+    // Log the update request
+    const timestamp = new Date().toISOString();
+    
+    // Return instructions for user
+    return c.json({
+      success: true,
+      status: 'update_requested',
+      message: 'Update request received! Please complete the update process.',
+      timestamp: timestamp,
+      instructions: {
+        step1: 'Copy this command to your clipboard',
+        command: 'Update the stock dashboard with latest data',
+        step2: 'Open GenSpark AI chat in a new tab',
+        step3: 'Paste the command and send it',
+        step4: 'Wait 2-3 minutes for AI to complete the update',
+        step5: 'Refresh this dashboard to see new data'
+      },
+      aiChatUrl: 'https://www.genspark.ai',
+      estimatedTime: '2-3 minutes'
+    });
+  } catch (error) {
+    return c.json({
+      success: false,
+      error: 'Failed to process update request'
+    }, 500);
+  }
+});
+
+// API endpoint for legacy refresh (kept for compatibility)
 app.post('/api/refresh', async (c) => {
-  // In production, this would:
-  // 1. Call WebSearch APIs for latest data
-  // 2. Parse the search results
-  // 3. Update the JSON file
-  // 4. Return the new data
-  
   return c.json({
     success: true,
-    message: 'Data refresh endpoint - would fetch latest data from web searches',
+    message: 'Please use /api/trigger-update endpoint',
     lastUpdated: new Date().toISOString()
   });
 });
@@ -124,8 +149,8 @@ app.get('/', (c) => {
                             <button onclick="refreshData()" class="refresh-btn text-white px-4 py-2 rounded text-sm">
                                 <i class="fas fa-sync-alt mr-1"></i> Refresh Display
                             </button>
-                            <button onclick="showUpdateInstructions()" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm">
-                                <i class="fas fa-search mr-1"></i> Update Data
+                            <button onclick="triggerAIUpdate()" class="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-4 py-2 rounded text-sm font-semibold shadow-lg">
+                                <i class="fas fa-robot mr-1"></i> AI Update
                             </button>
                         </div>
                     </div>
@@ -385,7 +410,99 @@ app.get('/', (c) => {
 
         <script src="https://cdn.jsdelivr.net/npm/axios@1.6.0/dist/axios.min.js"></script>
         <script>
-            // Show update instructions modal
+            // Trigger AI Update - Main function called from frontend button
+            async function triggerAIUpdate() {
+                try {
+                    // Call the API endpoint to request update
+                    const response = await axios.post('/api/trigger-update');
+                    const data = response.data;
+                    
+                    if (data.success) {
+                        // Copy command to clipboard automatically
+                        const command = data.instructions.command;
+                        await navigator.clipboard.writeText(command);
+                        
+                        // Open GenSpark AI in new tab
+                        window.open(data.aiChatUrl, '_blank');
+                        
+                        // Show success modal with instructions
+                        showAIUpdateModal(data);
+                    }
+                } catch (error) {
+                    console.error('Error triggering AI update:', error);
+                    alert('Error triggering update. Please try manually.');
+                }
+            }
+
+            // Show AI Update Modal with instructions
+            function showAIUpdateModal(data) {
+                const modalHTML = \`
+                    <div id="aiUpdateModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+                        <div class="bg-white rounded-lg max-w-lg w-full">
+                            <div class="p-6">
+                                <div class="text-center mb-6">
+                                    <div class="inline-block bg-gradient-to-r from-green-600 to-green-700 rounded-full p-4 mb-4">
+                                        <i class="fas fa-robot text-white text-4xl"></i>
+                                    </div>
+                                    <h2 class="text-2xl font-bold text-gray-800 mb-2">
+                                        AI Update Triggered!
+                                    </h2>
+                                    <p class="text-gray-600">GenSpark AI has opened in a new tab</p>
+                                </div>
+
+                                <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-4 mb-4">
+                                    <div class="flex items-start mb-3">
+                                        <i class="fas fa-check-circle text-green-600 text-2xl mr-3 mt-1"></i>
+                                        <div>
+                                            <h3 class="font-bold text-gray-800 mb-1">Command Copied!</h3>
+                                            <p class="text-sm text-gray-700">The update command has been copied to your clipboard.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white border-2 border-purple-200 rounded-lg p-4 mb-4">
+                                    <h3 class="font-bold text-gray-800 mb-2">📋 Next Steps:</h3>
+                                    <ol class="list-decimal list-inside space-y-2 text-gray-700 text-sm">
+                                        <li>Go to the <strong>GenSpark AI tab</strong> (just opened)</li>
+                                        <li><strong>Paste</strong> the command (Ctrl+V or Cmd+V)</li>
+                                        <li><strong>Press Send</strong></li>
+                                        <li>Wait <strong>\${data.estimatedTime}</strong> for AI to complete</li>
+                                        <li>Come back and <strong>refresh this page</strong></li>
+                                    </ol>
+                                </div>
+
+                                <div class="bg-yellow-50 border border-yellow-200 rounded p-3 mb-4">
+                                    <p class="text-xs text-gray-700">
+                                        <i class="fas fa-info-circle text-yellow-600 mr-1"></i>
+                                        <strong>Command in clipboard:</strong> "\${data.instructions.command}"
+                                    </p>
+                                </div>
+
+                                <div class="flex gap-3">
+                                    <button onclick="closeAIUpdateModal()" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded">
+                                        Got It!
+                                    </button>
+                                    <button onclick="window.open('\${data.aiChatUrl}', '_blank')" class="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-2 px-4 rounded">
+                                        <i class="fas fa-external-link-alt mr-1"></i> Open AI Again
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                \`;
+                
+                document.body.insertAdjacentHTML('beforeend', modalHTML);
+            }
+
+            // Close AI Update Modal
+            function closeAIUpdateModal() {
+                const modal = document.getElementById('aiUpdateModal');
+                if (modal) {
+                    modal.remove();
+                }
+            }
+
+            // Show update instructions modal (legacy)
             function showUpdateInstructions() {
                 document.getElementById('updateModal').classList.remove('hidden');
             }
