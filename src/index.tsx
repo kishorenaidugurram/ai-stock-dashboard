@@ -454,107 +454,373 @@ app.get('/', (c) => {
         <title>Stock Market Dashboard - NSE F&O & Brokerage Recommendations</title>
         <script src="https://cdn.tailwindcss.com"></script>
         <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
         <style>
-            @keyframes fadeIn {
-                from { opacity: 0; transform: translateY(20px); }
-                to { opacity: 1; transform: translateY(0); }
+            /* Modern Design System */
+            :root {
+                --primary: #6366f1;
+                --primary-dark: #4f46e5;
+                --secondary: #8b5cf6;
+                --success: #10b981;
+                --danger: #ef4444;
+                --warning: #f59e0b;
+                --info: #3b82f6;
+                --dark: #1e293b;
+                --light: #f8fafc;
             }
+            
+            * {
+                font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            }
+            
+            body {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                min-height: 100vh;
+            }
+            
+            /* Glassmorphism Effects */
+            .glass-card {
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(20px);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            }
+            
+            .glass-nav {
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            }
+            
+            /* Advanced Animations */
+            @keyframes slideUp {
+                from { 
+                    opacity: 0; 
+                    transform: translateY(30px);
+                }
+                to { 
+                    opacity: 1; 
+                    transform: translateY(0);
+                }
+            }
+            
+            @keyframes scaleIn {
+                from { 
+                    opacity: 0; 
+                    transform: scale(0.9);
+                }
+                to { 
+                    opacity: 1; 
+                    transform: scale(1);
+                }
+            }
+            
+            @keyframes shimmer {
+                0% { background-position: -1000px 0; }
+                100% { background-position: 1000px 0; }
+            }
+            
             .card-animate {
-                animation: fadeIn 0.5s ease-out forwards;
+                animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
             }
-            .gradient-bg {
+            
+            .scale-in {
+                animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            }
+            
+            /* Modern Card Hover Effects */
+            .premium-card {
+                background: white;
+                border-radius: 16px;
+                transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+                border: 1px solid rgba(0, 0, 0, 0.05);
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .premium-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+                transition: left 0.5s;
+            }
+            
+            .premium-card:hover::before {
+                left: 100%;
+            }
+            
+            .premium-card:hover {
+                transform: translateY(-8px) scale(1.02);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(99, 102, 241, 0.1);
+                border-color: rgba(99, 102, 241, 0.2);
+            }
+            
+            /* Gradient Backgrounds */
+            .gradient-primary {
                 background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             }
-            .card-hover:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            }
-            .card-hover {
-                transition: all 0.3s ease;
-            }
-            .badge-buy {
+            
+            .gradient-success {
                 background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             }
-            .badge-sell {
+            
+            .gradient-danger {
                 background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
             }
-            .source-link:hover {
-                text-decoration: underline;
+            
+            .gradient-warning {
+                background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
             }
-            .refresh-btn {
+            
+            .gradient-info {
                 background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
             }
-            .refresh-btn:hover {
-                background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            
+            .gradient-purple {
+                background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
             }
-            .sentiment-bullish {
+            
+            .gradient-teal {
+                background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+            }
+            
+            /* Modern Buttons */
+            .btn-primary {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                padding: 12px 24px;
+                border-radius: 12px;
+                font-weight: 600;
+                transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+            }
+            
+            .btn-primary:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 24px rgba(102, 126, 234, 0.5);
+            }
+            
+            .btn-success {
                 background: linear-gradient(135deg, #10b981 0%, #059669 100%);
                 color: white;
-            }
-            .sentiment-neutral {
-                background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-                color: white;
-            }
-            .sentiment-bearish {
-                background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-                color: white;
-            }
-            .social-badge {
-                display: inline-block;
-                padding: 0.25rem 0.75rem;
-                border-radius: 9999px;
-                font-size: 0.75rem;
+                padding: 12px 24px;
+                border-radius: 12px;
                 font-weight: 600;
+                transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
             }
-            .volume-high {
-                color: #10b981;
+            
+            .btn-success:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 24px rgba(16, 185, 129, 0.5);
             }
-            .volume-medium {
-                color: #fbbf24;
-            }
-            .volume-low {
-                color: #9ca3af;
-            }
+            
+            /* Navigation System */
             .nav-item {
+                position: relative;
+                padding: 16px 24px;
+                font-weight: 600;
+                color: #475569;
                 transition: all 0.3s ease;
                 cursor: pointer;
+                border-radius: 8px;
             }
+            
+            .nav-item::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%) scaleX(0);
+                width: 60%;
+                height: 3px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                border-radius: 4px 4px 0 0;
+                transition: transform 0.3s ease;
+            }
+            
             .nav-item:hover {
-                background: rgba(255, 255, 255, 0.1);
+                color: #667eea;
+                background: rgba(102, 126, 234, 0.05);
             }
+            
             .nav-item.active {
-                background: rgba(255, 255, 255, 0.2);
-                border-bottom: 3px solid white;
+                color: #667eea;
+                background: rgba(102, 126, 234, 0.1);
             }
+            
+            .nav-item.active::after {
+                transform: translateX(-50%) scaleX(1);
+            }
+            
+            /* Badges */
+            .badge-modern {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 0.75rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+            
+            /* Stat Cards */
+            .stat-card {
+                background: white;
+                border-radius: 16px;
+                padding: 24px;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+                transition: all 0.3s ease;
+                border: 1px solid rgba(0, 0, 0, 0.05);
+            }
+            
+            .stat-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+            }
+            
+            .stat-icon {
+                width: 56px;
+                height: 56px;
+                border-radius: 14px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+            }
+            
+            /* Page Views */
             .page-view {
                 display: none;
+                animation: slideUp 0.5s ease-out;
             }
+            
             .page-view.active {
                 display: block;
             }
+            
+            /* Progress Bars */
+            .progress-bar {
+                height: 8px;
+                background: #e5e7eb;
+                border-radius: 999px;
+                overflow: hidden;
+                position: relative;
+            }
+            
+            .progress-fill {
+                height: 100%;
+                border-radius: 999px;
+                transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .progress-fill::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+                animation: shimmer 2s infinite;
+            }
+            
+            /* Tooltips */
+            .tooltip {
+                position: relative;
+            }
+            
+            .tooltip::before {
+                content: attr(data-tooltip);
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 8px 12px;
+                background: #1e293b;
+                color: white;
+                border-radius: 8px;
+                font-size: 0.75rem;
+                white-space: nowrap;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.3s;
+                margin-bottom: 8px;
+            }
+            
+            .tooltip:hover::before {
+                opacity: 1;
+            }
+            
+            /* Scrollbar */
+            ::-webkit-scrollbar {
+                width: 8px;
+                height: 8px;
+            }
+            
+            ::-webkit-scrollbar-track {
+                background: #f1f5f9;
+            }
+            
+            ::-webkit-scrollbar-thumb {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                border-radius: 4px;
+            }
+            
+            ::-webkit-scrollbar-thumb:hover {
+                background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            }
         </style>
     </head>
-    <body class="bg-gray-50">
+    <body class="min-h-screen">
         <!-- Header -->
-        <header class="gradient-bg text-white shadow-lg">
-            <div class="max-w-7xl mx-auto px-4 py-6">
-                <div class="flex items-center justify-between flex-wrap gap-4">
-                    <div>
-                        <h1 class="text-3xl font-bold flex items-center">
-                            <i class="fas fa-chart-line mr-3"></i>
-                            Stock Market Dashboard
-                        </h1>
-                        <p class="text-purple-100 mt-2">NSE F&O Breakout Stocks & Leading Brokerage Recommendations</p>
+        <header class="gradient-primary text-white shadow-2xl relative overflow-hidden">
+            <!-- Animated Background Pattern -->
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-4 py-8 relative z-10">
+                <div class="flex items-center justify-between flex-wrap gap-6">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-4 mb-3">
+                            <div class="w-14 h-14 bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl flex items-center justify-center text-3xl">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div>
+                                <h1 class="text-4xl font-black tracking-tight">
+                                    Stock Market Dashboard
+                                </h1>
+                                <p class="text-indigo-100 text-sm mt-1 font-medium">
+                                    NSE F&O Breakout Stocks & Leading Brokerage Recommendations
+                                </p>
+                            </div>
+                        </div>
                     </div>
                     <div class="text-right">
-                        <div class="text-sm text-purple-100">Last Updated</div>
-                        <div class="text-lg font-semibold" id="lastUpdated"></div>
-                        <div class="flex gap-2 mt-2">
-                            <button onclick="refreshData()" class="refresh-btn text-white px-4 py-2 rounded text-sm">
-                                <i class="fas fa-sync-alt mr-1"></i> Refresh Display
+                        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-4 mb-3">
+                            <div class="text-xs text-indigo-100 font-semibold uppercase tracking-wider mb-1">Last Updated</div>
+                            <div class="text-2xl font-bold" id="lastUpdated">Loading...</div>
+                        </div>
+                        <div class="flex gap-3">
+                            <button onclick="refreshData()" class="btn-primary flex items-center gap-2">
+                                <i class="fas fa-sync-alt"></i>
+                                <span>Refresh</span>
                             </button>
-                            <button onclick="triggerAIUpdate()" class="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-4 py-2 rounded text-sm font-semibold shadow-lg">
-                                <i class="fas fa-robot mr-1"></i> AI Update
+                            <button onclick="triggerAIUpdate()" class="btn-success flex items-center gap-2">
+                                <i class="fas fa-robot"></i>
+                                <span>AI Update</span>
                             </button>
                         </div>
                     </div>
@@ -563,26 +829,26 @@ app.get('/', (c) => {
         </header>
 
         <!-- Navigation Bar -->
-        <nav class="bg-white shadow-md sticky top-0 z-40">
+        <nav class="glass-nav sticky top-0 z-40">
             <div class="max-w-7xl mx-auto px-4">
                 <div class="flex items-center justify-between">
-                    <div class="flex space-x-1">
-                        <button onclick="switchView('dashboard')" class="nav-item active px-6 py-4 text-gray-700 font-semibold" data-view="dashboard">
+                    <div class="flex items-center gap-2">
+                        <button onclick="switchView('dashboard')" class="nav-item active" data-view="dashboard">
                             <i class="fas fa-home mr-2"></i>Dashboard
                         </button>
-                        <button onclick="switchView('technical')" class="nav-item px-6 py-4 text-gray-700 font-semibold" data-view="technical">
+                        <button onclick="switchView('technical')" class="nav-item" data-view="technical">
                             <i class="fas fa-chart-line mr-2"></i>Technical Analysis
                         </button>
-                        <button onclick="switchView('ai-insights')" class="nav-item px-6 py-4 text-gray-700 font-semibold" data-view="ai-insights">
+                        <button onclick="switchView('ai-insights')" class="nav-item" data-view="ai-insights">
                             <i class="fas fa-robot mr-2"></i>AI Insights
                         </button>
-                        <button onclick="switchView('alerts')" class="nav-item px-6 py-4 text-gray-700 font-semibold" data-view="alerts">
+                        <button onclick="switchView('alerts')" class="nav-item" data-view="alerts">
                             <i class="fas fa-bell mr-2"></i>Alerts
                         </button>
                     </div>
-                    <div class="flex items-center gap-2">
-                        <span class="text-sm text-gray-600">View:</span>
-                        <select id="viewSelector" onchange="switchView(this.value)" class="px-3 py-2 border rounded text-sm">
+                    <div class="flex items-center gap-3 py-3">
+                        <span class="text-sm font-semibold text-gray-600">Quick View:</span>
+                        <select id="viewSelector" onchange="switchView(this.value)" class="px-4 py-2 border border-gray-200 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white shadow-sm">
                             <option value="dashboard">Dashboard</option>
                             <option value="technical">Technical</option>
                             <option value="ai-insights">AI Insights</option>
@@ -722,61 +988,69 @@ app.get('/', (c) => {
             <!-- Dashboard View (Default) -->
             <div id="view-dashboard" class="page-view active">
                 <!-- Market Stats -->
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-                <div class="bg-white rounded-lg shadow p-6 card-hover">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-500 text-sm">Total Breakout Stocks</p>
-                            <p class="text-3xl font-bold text-gray-800 mt-2" id="totalBreakout">0</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div class="stat-card scale-in" style="animation-delay: 0.1s">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm font-semibold uppercase tracking-wide mb-2">Total Breakout</p>
+                                <p class="text-4xl font-black text-gray-800" id="totalBreakout">0</p>
+                            </div>
+                            <div class="stat-icon gradient-info">
+                                <i class="fas fa-rocket text-white"></i>
+                            </div>
                         </div>
-                        <div class="bg-blue-100 rounded-full p-4">
-                            <i class="fas fa-rocket text-blue-600 text-2xl"></i>
+                    </div>
+                    <div class="stat-card scale-in" style="animation-delay: 0.2s">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm font-semibold uppercase tracking-wide mb-2">Buy Signals</p>
+                                <p class="text-4xl font-black text-green-600" id="totalBuy">0</p>
+                            </div>
+                            <div class="stat-icon gradient-success">
+                                <i class="fas fa-arrow-trend-up text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-card scale-in" style="animation-delay: 0.3s">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm font-semibold uppercase tracking-wide mb-2">Sell Signals</p>
+                                <p class="text-4xl font-black text-red-600" id="totalSell">0</p>
+                            </div>
+                            <div class="stat-icon gradient-danger">
+                                <i class="fas fa-arrow-trend-down text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-card scale-in" style="animation-delay: 0.4s">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm font-semibold uppercase tracking-wide mb-2">News Updates</p>
+                                <p class="text-4xl font-black text-purple-600" id="totalNews">0</p>
+                            </div>
+                            <div class="stat-icon gradient-purple">
+                                <i class="fas fa-newspaper text-white"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="bg-white rounded-lg shadow p-6 card-hover">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-500 text-sm">Buy Recommendations</p>
-                            <p class="text-3xl font-bold text-green-600 mt-2" id="totalBuy">0</p>
-                        </div>
-                        <div class="bg-green-100 rounded-full p-4">
-                            <i class="fas fa-arrow-trend-up text-green-600 text-2xl"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow p-6 card-hover">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-500 text-sm">Sell Recommendations</p>
-                            <p class="text-3xl font-bold text-red-600 mt-2" id="totalSell">0</p>
-                        </div>
-                        <div class="bg-red-100 rounded-full p-4">
-                            <i class="fas fa-arrow-trend-down text-red-600 text-2xl"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow p-6 card-hover">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-500 text-sm">News Updates</p>
-                            <p class="text-3xl font-bold text-purple-600 mt-2" id="totalNews">0</p>
-                        </div>
-                        <div class="bg-purple-100 rounded-full p-4">
-                            <i class="fas fa-newspaper text-purple-600 text-2xl"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Breakout Stocks Section -->
-            <section class="mb-8">
+                <!-- Breakout Stocks Section -->
+            <section class="mb-10">
                 <div class="flex items-center justify-between mb-6">
-                    <h2 class="text-2xl font-bold text-gray-800 flex items-center">
-                        <i class="fas fa-fire text-orange-500 mr-3"></i>
-                        NSE F&O Breakout Stocks
-                    </h2>
-                    <span class="text-sm text-gray-500">This week's trending stocks</span>
+                    <div>
+                        <h2 class="text-3xl font-black text-gray-800 flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center text-white">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            NSE F&O Breakout Stocks
+                        </h2>
+                        <p class="text-gray-500 text-sm ml-13">This week's trending momentum stocks</p>
+                    </div>
+                    <span class="badge-modern gradient-info text-white">
+                        <i class="fas fa-rocket"></i>
+                        <span id="breakoutCount">0</span> Stocks
+                    </span>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="breakoutStocks">
                     <!-- Cards will be dynamically inserted here -->
@@ -784,13 +1058,21 @@ app.get('/', (c) => {
             </section>
 
             <!-- Brokerage Recommendations Section -->
-            <section class="mb-8">
+            <section class="mb-10">
                 <div class="flex items-center justify-between mb-6">
-                    <h2 class="text-2xl font-bold text-gray-800 flex items-center">
-                        <i class="fas fa-building-columns text-blue-500 mr-3"></i>
-                        Leading Brokerage Recommendations
-                    </h2>
-                    <span class="text-sm text-gray-500">Latest analyst picks</span>
+                    <div>
+                        <h2 class="text-3xl font-black text-gray-800 flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center text-white">
+                                <i class="fas fa-building-columns"></i>
+                            </div>
+                            Leading Brokerage Recommendations
+                        </h2>
+                        <p class="text-gray-500 text-sm ml-13">Expert analyst picks and targets</p>
+                    </div>
+                    <span class="badge-modern gradient-primary text-white">
+                        <i class="fas fa-star"></i>
+                        <span id="brokerageCount">0</span> Picks
+                    </span>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="brokerageRecommendations">
                     <!-- Cards will be dynamically inserted here -->
@@ -798,12 +1080,17 @@ app.get('/', (c) => {
             </section>
 
             <!-- News Headlines Section -->
-            <section class="mb-8">
+            <section class="mb-10">
                 <div class="flex items-center justify-between mb-6">
-                    <h2 class="text-2xl font-bold text-gray-800 flex items-center">
-                        <i class="fas fa-newspaper text-indigo-500 mr-3"></i>
-                        Latest Market News
-                    </h2>
+                    <div>
+                        <h2 class="text-3xl font-black text-gray-800 flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center text-white">
+                                <i class="fas fa-newspaper"></i>
+                            </div>
+                            Latest Market News
+                        </h2>
+                        <p class="text-gray-500 text-sm ml-13">Breaking news and market updates</p>
+                    </div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="newsHeadlines">
                     <!-- Cards will be dynamically inserted here -->
@@ -813,16 +1100,19 @@ app.get('/', (c) => {
             <!-- Social Sentiment Section -->
             <section>
                 <div class="flex items-center justify-between mb-6">
-                    <h2 class="text-2xl font-bold text-gray-800 flex items-center">
-                        <i class="fab fa-twitter text-blue-400 mr-2"></i>
-                        <i class="fab fa-reddit text-orange-500 mr-3"></i>
-                        Trending on Social Media
-                    </h2>
-                    <span class="text-sm text-gray-500">Most discussed stocks today</span>
+                    <div>
+                        <h2 class="text-3xl font-black text-gray-800 flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-xl flex items-center justify-center text-white">
+                                <i class="fab fa-twitter"></i>
+                            </div>
+                            Trending on Social Media
+                        </h2>
+                        <p class="text-gray-500 text-sm ml-13">Most discussed stocks on Twitter, Reddit & StockTwits</p>
+                    </div>
                 </div>
-                <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6 mb-4">
-                    <p class="text-sm text-gray-600">
-                        <i class="fas fa-info-circle text-blue-500 mr-2"></i>
+                <div class="glass-card rounded-2xl p-6 mb-6">
+                    <p class="text-sm text-gray-600 flex items-center gap-2">
+                        <i class="fas fa-info-circle text-blue-500"></i>
                         Social sentiment tracked from Twitter/X, Reddit (r/IndianStreetBets, r/IndianStockMarket) and StockTwits
                     </p>
                 </div>
