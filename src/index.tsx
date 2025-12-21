@@ -1999,7 +1999,7 @@ app.get('/', (c) => {
                                     </div>
                                     <p class="text-xs text-gray-600">
                                         <i class="fas fa-hashtag text-blue-500 mr-1"></i>
-                                        <strong>Keywords:</strong> \${stock.topKeywords.join(', ')}
+                                        <strong>Keywords:</strong> \${stock.keywords ? stock.keywords.join(', ') : 'N/A'}
                                     </p>
                                 </div>
 
