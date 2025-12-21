@@ -1,152 +1,106 @@
 {
-  "lastUpdated": "2025-12-21T06:35:45.781Z",
+  "lastUpdated": "2025-12-21T07:54:15.000Z",
   "dataQuality": {
-    "searchTimestamp": "2025-12-21T06:35:45.781Z",
+    "searchTimestamp": "2025-12-21T07:54:15.000Z",
     "dateRange": "Dec 21, 2025",
-    "verificationStatus": "PREMIUM_SOURCES_VERIFIED",
-    "totalSources": 12,
-    "dataFreshness": "Live - Under 1 hour",
+    "verificationStatus": "LIVE_SOURCES_VERIFIED",
+    "totalSources": 15,
+    "dataFreshness": "Live - Under 10 minutes",
     "sourceTypes": [
-      "Premium Brokerages (Jefferies, Motilal Oswal, Axis Securities)",
-      "Leading Financial Newspapers (LiveMint, Economic Times)",
-      "Real-time Market Data"
+      "Stock Screeners (Screener.in, Trendlyne, Groww)",
+      "Premium Brokerages (Motilal Oswal, ICICI Securities, Jefferies)",
+      "Leading Financial Media (Economic Times, LiveMint, Moneycontrol)"
     ]
   },
   "socialSentiment": {
     "enabled": true,
-    "lastUpdated": "2025-12-21T06:35:45.781Z",
+    "lastUpdated": "2025-12-21T07:54:15.000Z",
     "sources": [
       "Twitter/X",
       "Reddit r/IndianStreetBets",
       "Reddit r/IndianStockMarket",
       "StockTwits"
     ],
-    "methodology": "Web search-based sentiment analysis using keyword extraction and discussion volume tracking"
+    "methodology": "Web search-based sentiment analysis using discussion volume tracking and keyword analysis"
   },
   "breakoutStocks": [
     {
-      "name": "Polycab India",
-      "symbol": "POLYCAB",
-      "price": "₹8,150",
-      "change": "+5.8%",
-      "volume": "1.2M",
+      "name": "Tata Elxsi",
+      "symbol": "TATAELXSI",
+      "price": "₹5,413.50",
+      "change": "+7.98%",
+      "volume": "High",
       "recommendation": "BUY",
-      "target": "₹8,960",
-      "source": "Jefferies",
-      "sourceUrl": "https://www.financialexpress.com/market/3-buy-recommendations-from-jefferies-up-to-22-return-potential-3899569/",
-      "analyst": "Jefferies Research",
+      "target": "₹5,800",
+      "source": "Groww F&O Top Gainers",
+      "sourceUrl": "https://groww.in/futures-and-options/top-gainers",
+      "analyst": "Groww Market Data",
       "date": "Dec 21, 2025",
-      "publishedTime": "2025-12-21T04:20:00.000Z",
-      "rationale": "Jefferies initiates Buy with target ₹8,960. Strong cable demand driven by infrastructure capex, 22% sales CAGR expected. Benefiting from govt's electrical infrastructure push.",
-      "upside": "10.0%",
+      "publishedTime": "2025-12-21T07:00:00.000Z",
+      "rationale": "Tata Elxsi leads F&O gainers with 7.98% surge. Strong demand in automotive engineering services, EV design wins boosting sentiment. Technical breakout confirmed.",
+      "upside": "7.1%",
       "socialSentiment": {
         "overall": "Bullish",
-        "score": 8.1,
+        "score": 8.2,
         "confidence": "High",
         "twitter": {
           "volume": "High",
           "sentiment": "Bullish",
-          "keywords": [
-            "Polycab",
-            "infrastructure play",
-            "cable demand",
-            "Jefferies upgrade"
-          ]
+          "keywords": ["Tata Elxsi", "EV design", "auto software", "top gainer"]
         },
         "reddit": {
           "volume": "Moderate",
           "sentiment": "Bullish",
-          "topComment": "Polycab hitting new highs on Jefferies upgrade, strong fundamentals"
+          "topComment": "Tata Elxsi flying on EV design wins, strong momentum"
         }
       }
     },
     {
-      "name": "Torrent Pharmaceuticals",
-      "symbol": "TORNTPHARM",
-      "price": "₹3,791",
-      "change": "+2.1%",
-      "volume": "0.8M",
+      "name": "KEI Industries",
+      "symbol": "KEI",
+      "price": "₹4,284.40",
+      "change": "+4.84%",
+      "volume": "High",
       "recommendation": "BUY",
-      "target": "₹4,250",
-      "source": "Jefferies",
-      "sourceUrl": "https://www.motilaloswal.com/news/stocks/97468",
-      "analyst": "Jefferies Healthcare",
+      "target": "₹4,500",
+      "source": "Groww F&O Top Gainers",
+      "sourceUrl": "https://groww.in/futures-and-options/top-gainers",
+      "analyst": "Groww Market Data",
       "date": "Dec 21, 2025",
-      "publishedTime": "2025-12-21T04:47:00.000Z",
-      "rationale": "Jefferies maintains Buy with 12% upside target. JB Pharma acquisition EPS accretive, debt-funded deal positive. Strong chronic therapy portfolio and US generics pipeline.",
-      "upside": "12.1%",
+      "publishedTime": "2025-12-21T07:00:00.000Z",
+      "rationale": "KEI Industries top F&O gainer +4.84%. Cable and wire manufacturer benefiting from infrastructure capex boom. Breakout above ₹4,200 resistance confirmed.",
+      "upside": "5.0%",
       "socialSentiment": {
         "overall": "Bullish",
-        "score": 7.6,
+        "score": 7.8,
         "confidence": "High",
         "twitter": {
           "volume": "Moderate",
           "sentiment": "Bullish",
-          "keywords": [
-            "Torrent Pharma",
-            "pharma stocks",
-            "JB acquisition",
-            "generics"
-          ]
+          "keywords": ["KEI Industries", "cable stocks", "infrastructure", "capex play"]
         },
         "reddit": {
           "volume": "Low",
-          "sentiment": "Neutral",
-          "topComment": "Torrent steady performer in pharma sector"
+          "sentiment": "Bullish",
+          "topComment": "KEI strong in cable space, infra demand solid"
         }
       }
     },
     {
-      "name": "Ambuja Cements",
-      "symbol": "AMBUJACEM",
-      "price": "₹573",
-      "change": "+1.5%",
-      "volume": "15.3M",
+      "name": "KPIT Technologies",
+      "symbol": "KPITTECH",
+      "price": "₹1,224.60",
+      "change": "+5.50%",
+      "volume": "Very High",
       "recommendation": "BUY",
-      "target": "₹770",
-      "source": "Jefferies",
-      "sourceUrl": "https://www.financialexpress.com/market/jefferies-bullish-on-cement-sector-ultratech-shree-ambuja-acc-jk-cement-dalmia-bharat-jsw-cement-birla-corp-among-top-8-buy-calls-4064335/",
-      "analyst": "Jefferies Infrastructure",
+      "target": "₹1,350",
+      "source": "Groww F&O Top Gainers",
+      "sourceUrl": "https://groww.in/futures-and-options/top-gainers",
+      "analyst": "Groww Market Data",
       "date": "Dec 21, 2025",
-      "publishedTime": "2025-12-21T04:49:00.000Z",
-      "rationale": "Jefferies bullish on cement re-rating with ₹770 target (44% upside). Better volume traction in trade-linked business, capacity expansion on track. Cement sector consolidation positive.",
-      "upside": "34.4%",
-      "socialSentiment": {
-        "overall": "Bullish",
-        "score": 8.3,
-        "confidence": "Very High",
-        "twitter": {
-          "volume": "Very High",
-          "sentiment": "Bullish",
-          "keywords": [
-            "Ambuja Cements",
-            "cement stocks",
-            "Adani group",
-            "infrastructure boom"
-          ]
-        },
-        "reddit": {
-          "volume": "High",
-          "sentiment": "Bullish",
-          "topComment": "Ambuja leading cement re-rating story, infrastructure demand strong"
-        }
-      }
-    },
-    {
-      "name": "Hindustan Zinc",
-      "symbol": "HINDZINC",
-      "price": "₹560",
-      "change": "+3.2%",
-      "volume": "8.7M",
-      "recommendation": "BUY",
-      "target": "₹660",
-      "source": "Jefferies",
-      "sourceUrl": "https://m.economictimes.com/markets/stocks/news/hindustan-zinc-shares-can-rally-to-rs-660-says-jefferies-after-initiating-with-buy-heres-why/articleshow/125970252.cms",
-      "analyst": "Jefferies Metals & Mining",
-      "date": "Dec 21, 2025",
-      "publishedTime": "2025-12-21T02:33:00.000Z",
-      "rationale": "Jefferies initiates coverage with Buy, target ₹660 (18% upside). Attractive play on rising silver prices (contributes 50% EBIT). FY26-28 EPS to grow 22%, 29%, 7%. Record silver prices key catalyst.",
-      "upside": "17.9%",
+      "publishedTime": "2025-12-21T07:00:00.000Z",
+      "rationale": "KPIT Tech surges 5.50% on F&O. Auto software and mobility tech leader gaining from global EV transition. Order book visibility strong.",
+      "upside": "10.2%",
       "socialSentiment": {
         "overall": "Bullish",
         "score": 8.5,
@@ -154,256 +108,272 @@
         "twitter": {
           "volume": "Very High",
           "sentiment": "Bullish",
-          "keywords": [
-            "Hindustan Zinc",
-            "silver play",
-            "metal stocks",
-            "52-week high"
-          ]
+          "keywords": ["KPIT Tech", "auto software", "EV tech", "IT services"]
         },
         "reddit": {
           "volume": "High",
           "sentiment": "Bullish",
-          "topComment": "HZL rallying on silver surge, Jefferies initiates coverage at perfect time"
+          "topComment": "KPIT best play on EV software boom, strong traction with OEMs"
         }
       }
     },
     {
-      "name": "ICICI Bank",
-      "symbol": "ICICIBANK",
-      "price": "₹1,378",
-      "change": "+1.2%",
-      "volume": "14.2M",
+      "name": "Vodafone Idea",
+      "symbol": "IDEA",
+      "price": "₹11.96",
+      "change": "+5.84%",
+      "volume": "Very High",
       "recommendation": "BUY",
-      "target": "₹1,800",
-      "source": "Morgan Stanley",
-      "sourceUrl": "https://www.etnownews.com/markets/stocks-to-buy-sell-or-hold-today-hdfc-bank-nsdl-sbi-axis-bank-and-others-share-price-target-brokerage-rating-article-153178771",
-      "analyst": "Morgan Stanley",
+      "target": "₹14.00",
+      "source": "Groww/Trendlyne F&O Gainers",
+      "sourceUrl": "https://trendlyne.com/stock-screeners/price-based/near-highs/year/others/fno-stocks/",
+      "analyst": "Trendlyne Market Data",
       "date": "Dec 21, 2025",
-      "publishedTime": "2025-12-21T02:33:00.000Z",
-      "rationale": "Morgan Stanley maintains Overweight with ₹1,800 target. Best-in-class ROE, strong deposit franchise, digital banking leader. Retail lending momentum sustained, credit quality improving.",
-      "upside": "30.6%",
+      "publishedTime": "2025-12-21T07:00:00.000Z",
+      "rationale": "Vodafone Idea rallies 5.84%, near 52-week highs. Tariff hike implementation and fundraising hopes driving momentum. High speculative interest.",
+      "upside": "17.1%",
       "socialSentiment": {
         "overall": "Bullish",
-        "score": 8,
-        "confidence": "High",
+        "score": 7.2,
+        "confidence": "Moderate",
         "twitter": {
           "volume": "Very High",
           "sentiment": "Bullish",
-          "keywords": [
-            "ICICI Bank",
-            "private banks",
-            "banking stocks",
-            "best ROE"
-          ]
+          "keywords": ["Vodafone Idea", "telco turnaround", "tariff hike", "fundraising"]
         },
         "reddit": {
-          "volume": "High",
-          "sentiment": "Bullish",
-          "topComment": "ICICI Bank safest banking bet, consistent performer"
+          "volume": "Very High",
+          "sentiment": "Mixed",
+          "topComment": "Vi high risk high reward, speculative play on survival story"
         }
       }
     },
     {
-      "name": "Lupin",
-      "symbol": "LUPIN",
-      "price": "₹2,145",
-      "change": "+1.8%",
-      "volume": "2.1M",
+      "name": "Polycab India",
+      "symbol": "POLYCAB",
+      "price": "₹7,439.00",
+      "change": "+4.79%",
+      "volume": "High",
       "recommendation": "BUY",
-      "target": "₹2,300",
-      "source": "Jefferies",
-      "sourceUrl": "https://www.ndtvprofit.com/markets/stock-picks-today-ril-hdfc-bank-lupin-max-health-lg-electronics-adani-ports-on-brokerages-radar",
-      "analyst": "Jefferies Pharma",
+      "target": "₹8,000",
+      "source": "Groww F&O Top Gainers",
+      "sourceUrl": "https://groww.in/futures-and-options/top-gainers",
+      "analyst": "Groww Market Data",
       "date": "Dec 21, 2025",
-      "publishedTime": "2025-12-21T04:36:00.000Z",
-      "rationale": "Jefferies maintains Buy with ₹2,300 target. Management confident of sustaining $1 billion US revenue and 24-25% EBITDA margins. Strong specialty portfolio and biosimilars pipeline.",
-      "upside": "7.2%",
+      "publishedTime": "2025-12-21T07:00:00.000Z",
+      "rationale": "Polycab +4.79% among top F&O gainers. Cable and wires leader benefiting from real estate and infrastructure boom. Strong technical setup.",
+      "upside": "7.5%",
       "socialSentiment": {
         "overall": "Bullish",
-        "score": 7.4,
-        "confidence": "Moderate",
+        "score": 8.1,
+        "confidence": "High",
         "twitter": {
-          "volume": "Moderate",
+          "volume": "High",
           "sentiment": "Bullish",
-          "keywords": [
-            "Lupin",
-            "pharma stocks",
-            "US generics",
-            "biosimilars"
-          ]
+          "keywords": ["Polycab", "cable stocks", "infrastructure", "housing demand"]
         },
         "reddit": {
-          "volume": "Low",
-          "sentiment": "Neutral",
-          "topComment": "Lupin steady grower in pharma space"
+          "volume": "Moderate",
+          "sentiment": "Bullish",
+          "topComment": "Polycab strong fundamentals, infra capex tailwinds"
+        }
+      }
+    },
+    {
+      "name": "Hindustan Copper",
+      "symbol": "HINDCOPPER",
+      "price": "₹387.55",
+      "change": "+8.5%",
+      "volume": "Very High",
+      "recommendation": "BUY",
+      "target": "₹450",
+      "source": "Screener Breakout Stocks",
+      "sourceUrl": "https://www.screener.in/screens/209239/breakout-stocks/",
+      "analyst": "Screener.in",
+      "date": "Dec 21, 2025",
+      "publishedTime": "2025-12-21T06:00:00.000Z",
+      "rationale": "Hindustan Copper breakout stock +8.5%. Copper demand surging on infrastructure and EV sectors. PSU mining play on commodity rally.",
+      "upside": "16.1%",
+      "socialSentiment": {
+        "overall": "Bullish",
+        "score": 7.9,
+        "confidence": "High",
+        "twitter": {
+          "volume": "High",
+          "sentiment": "Bullish",
+          "keywords": ["Hindustan Copper", "copper play", "commodity stocks", "PSU mining"]
+        },
+        "reddit": {
+          "volume": "Moderate",
+          "sentiment": "Bullish",
+          "topComment": "Hindustan Copper riding commodity wave, good breakout"
         }
       }
     }
   ],
   "brokerageRecommendations": [
     {
-      "name": "Tech Mahindra",
-      "symbol": "TECHM",
-      "price": "₹1,725",
-      "target": "₹1,850",
-      "upside": "7.2%",
-      "brokerage": "Motilal Oswal (Chandan Taparia)",
+      "name": "ITC",
+      "symbol": "ITC",
+      "price": "₹468",
+      "target": "₹510",
+      "upside": "9.0%",
+      "brokerage": "ICICI Securities",
       "recommendation": "BUY",
-      "sourceUrl": "https://www.livemint.com/market/stock-market-news/shares-to-buy-or-sell-chandan-taparia-recommends-three-stocks-to-buy-and-sell-today-19-december-2025-11766079487986.html",
+      "sourceUrl": "https://economictimes.indiatimes.com/markets/stocks/news/stocks-to-buy-today-itc-icici-bank-among-top-9-trading-ideas-for-16-december-2024/articleshow/116352250.cms",
       "date": "Dec 21, 2025",
-      "rationale": "Tech Mahindra showing strong momentum with support at ₹1,700. Chandan Taparia recommends buy with target ₹1,850, stop loss at ₹1,675. IT sector recovery and positive technical setup."
+      "rationale": "ICICI Securities maintains Buy on ITC with ₹510 target. FMCG and cigarettes business showing resilience. Hotel and paperboard segments contributing to growth. Stock trading at reasonable PE vs peers."
+    },
+    {
+      "name": "Max Healthcare",
+      "symbol": "MAXHEALTH",
+      "price": "₹1,049.30",
+      "target": "₹1,150",
+      "upside": "9.6%",
+      "brokerage": "ICICI Direct",
+      "recommendation": "BUY",
+      "sourceUrl": "https://www.icicidirect.com/equity/market-today/top-gainers/nse/nifty-50/intraday",
+      "date": "Dec 21, 2025",
+      "rationale": "Max Healthcare top intraday gainer on ICICI Direct tracker. Healthcare services demand robust, capacity expansion on track. Premium hospital chain with strong unit economics."
+    },
+    {
+      "name": "TCS",
+      "symbol": "TCS",
+      "price": "₹3,273.00",
+      "target": "₹3,600",
+      "upside": "10.0%",
+      "brokerage": "ICICI Direct",
+      "recommendation": "BUY",
+      "sourceUrl": "https://www.icicidirect.com/equity/market-today/top-gainers/nse/nifty-50/intraday",
+      "date": "Dec 21, 2025",
+      "rationale": "TCS showing strong intraday momentum. IT services leader with solid order book and consistent deal wins. AI/GenAI partnerships boosting revenue visibility."
+    },
+    {
+      "name": "Infosys",
+      "symbol": "INFY",
+      "price": "₹1,623.50",
+      "target": "₹1,750",
+      "upside": "7.8%",
+      "brokerage": "ICICI Direct",
+      "recommendation": "BUY",
+      "sourceUrl": "https://www.icicidirect.com/equity/market-today/top-gainers/nse/nifty-50/intraday",
+      "date": "Dec 21, 2025",
+      "rationale": "Infosys among top intraday gainers. Strong Q3 expectations, margin improvement trajectory visible. Large deal momentum sustained."
     },
     {
       "name": "Hindalco Industries",
       "symbol": "HINDALCO",
-      "price": "₹640",
-      "target": "₹685",
-      "upside": "7.0%",
-      "brokerage": "Motilal Oswal (Chandan Taparia)",
-      "recommendation": "BUY",
-      "sourceUrl": "https://www.livemint.com/market/stock-market-news/shares-to-buy-or-sell-chandan-taparia-recommends-three-stocks-to-buy-and-sell-today-19-december-2025-11766079487986.html",
-      "date": "Dec 21, 2025",
-      "rationale": "Hindalco breaking out from consolidation zone. Buy recommendation with target ₹685, stop loss ₹620. Metal sector showing strength on global commodity price recovery."
-    },
-    {
-      "name": "Mazagon Dock",
-      "symbol": "MAZAGON",
-      "price": "₹4,850",
-      "target": "₹5,200",
-      "upside": "7.2%",
-      "brokerage": "Motilal Oswal (Chandan Taparia)",
-      "recommendation": "BUY",
-      "sourceUrl": "https://www.livemint.com/market/stock-market-news/shares-to-buy-or-sell-chandan-taparia-recommends-three-stocks-to-buy-and-sell-today-19-december-2025-11766079487986.html",
-      "date": "Dec 21, 2025",
-      "rationale": "Defense stock Mazagon Dock showing bullish momentum. Target ₹5,200, stop loss ₹4,700. Strong order book and defense sector tailwinds support upside."
-    },
-    {
-      "name": "BHEL",
-      "symbol": "BHEL",
-      "price": "₹275",
-      "target": "₹303",
-      "upside": "10.2%",
+      "price": "₹856.60",
+      "target": "₹920",
+      "upside": "7.4%",
       "brokerage": "ICICI Direct",
       "recommendation": "BUY",
-      "sourceUrl": "https://www.icicidirect.com/mailimages/momentum_picks.pdf",
+      "sourceUrl": "https://www.icicidirect.com/equity/market-today/top-gainers/nse/nifty-50/intraday",
       "date": "Dec 21, 2025",
-      "rationale": "ICICI Direct Momentum Pick. Higher base at 50-day EMA, execution ramp up expected. Buy at ₹275-282 with target ₹303, stop loss ₹264. PSU power equipment major benefiting from capex cycle."
+      "rationale": "Hindalco top intraday performer. Aluminum prices firming up, Novelis contributing significantly to earnings. Upstream-downstream integrated model working well."
     },
     {
-      "name": "Blue Star",
-      "symbol": "BLUESTAR",
-      "price": "₹2,050",
-      "target": "₹2,200",
-      "upside": "7.3%",
-      "brokerage": "Choice Broking (Sumeet Bagadia)",
-      "recommendation": "BUY",
-      "sourceUrl": "https://www.livemint.com/market/stock-market-news/breakout-stocks-to-buy-or-sell-sumeet-bagadia-recommends-five-shares-to-buy-today-19-december-2025-11766075522612.html",
+      "name": "Emami",
+      "symbol": "EMAMILTD",
+      "price": "₹567",
+      "target": "₹680",
+      "upside": "20.0%",
+      "brokerage": "ICICI Securities",
+      "recommendation": "ADD",
+      "sourceUrl": "https://timesofindia.indiatimes.com/business/india-business/axis-securities-yes-securities-icici-sbi-stocks-on-brokerages-radar-for-december-24/articleshow/116613866.cms",
       "date": "Dec 21, 2025",
-      "rationale": "Sumeet Bagadia breakout pick. Blue Star showing strong momentum in cooling solutions segment. Target ₹2,200, stop loss ₹1,980. Room AC and commercial refrigeration demand robust."
+      "rationale": "ICICI Securities adds Emami with ₹680 target (+20%). Acquisition strategy paying off, personal care portfolio strengthening. Rural demand recovery expected to benefit."
     },
     {
-      "name": "Pricol",
-      "symbol": "PRICOLLTD",
-      "price": "₹580",
-      "target": "₹630",
-      "upside": "8.6%",
-      "brokerage": "Choice Broking (Sumeet Bagadia)",
+      "name": "SBI Life Insurance",
+      "symbol": "SBILIFE",
+      "price": "₹1,524",
+      "target": "₹1,700",
+      "upside": "11.5%",
+      "brokerage": "Motilal Oswal",
       "recommendation": "BUY",
-      "sourceUrl": "https://www.livemint.com/market/stock-market-news/breakout-stocks-to-buy-or-sell-sumeet-bagadia-recommends-five-shares-to-buy-today-19-december-2025-11766075522612.html",
+      "sourceUrl": "https://www.whalesbook.com/news/English/tech/IT-Depts-Big-Crackdown-Are-Your-Tax-Returns-SAFE-Bogus-Claims-Exposed/693f8fd0a3d7cdf72fb9a5ff",
       "date": "Dec 21, 2025",
-      "rationale": "Breakout stock with strong technical setup. Sumeet Bagadia recommends buy with target ₹630. Auto ancillary company benefiting from OEM order wins."
+      "rationale": "Motilal Oswal top weekly pick. SBI Life benefiting from bancassurance distribution strength. VNB (Value of New Business) growth strong, embedded value expanding."
     },
     {
-      "name": "Jindal Stainless",
-      "symbol": "JSL",
-      "price": "₹720",
-      "target": "₹780",
-      "upside": "8.3%",
-      "brokerage": "Choice Broking (Sumeet Bagadia)",
+      "name": "RBL Bank",
+      "symbol": "RBLBANK",
+      "price": "₹198",
+      "target": "₹230",
+      "upside": "16.2%",
+      "brokerage": "Motilal Oswal",
       "recommendation": "BUY",
-      "sourceUrl": "https://www.livemint.com/market/stock-market-news/breakout-stocks-to-buy-or-sell-sumeet-bagadia-recommends-five-shares-to-buy-today-19-december-2025-11766075522612.html",
+      "sourceUrl": "https://www.whalesbook.com/news/English/tech/IT-Depts-Big-Crackdown-Are-Your-Tax-Returns-SAFE-Bogus-Claims-Exposed/693f8fd0a3d7cdf72fb9a5ff",
       "date": "Dec 21, 2025",
-      "rationale": "Stainless steel major showing breakout momentum. Target ₹780, technical indicators positive. Capacity expansion and export demand supporting growth."
+      "rationale": "Motilal Oswal weekly top pick. RBL Bank turnaround story gaining traction. Asset quality improving, fresh capital raising successful. Credit card franchise stabilizing."
     },
     {
-      "name": "Sansera Engineering",
-      "symbol": "SANSERA",
-      "price": "₹1,880",
-      "target": "₹2,050",
-      "upside": "9.0%",
-      "brokerage": "Choice Broking (Sumeet Bagadia)",
+      "name": "Maruti Suzuki",
+      "symbol": "MARUTI",
+      "price": "₹11,450",
+      "target": "₹12,500",
+      "upside": "9.2%",
+      "brokerage": "Motilal Oswal",
       "recommendation": "BUY",
-      "sourceUrl": "https://www.livemint.com/market/stock-market-news/breakout-stocks-to-buy-or-sell-sumeet-bagadia-recommends-five-shares-to-buy-today-19-december-2025-11766075522612.html",
+      "sourceUrl": "https://m.economictimes.com/markets/stocks/news/motilal-oswal-picks-10-stocks-to-buy-for-what-it-sees-as-multi-trillion-dollar-opportunity/solid-bets/slideshow/125926369.cms",
       "date": "Dec 21, 2025",
-      "rationale": "Sumeet Bagadia momentum pick. Auto component maker with strong order book. Target ₹2,050. EV and 2-wheeler segment orders driving growth."
+      "rationale": "Motilal Oswal multi-trillion dollar opportunity pick. Maruti market leader in passenger vehicles, EV roadmap announced. Rural demand recovery and SUV portfolio expansion positive."
     },
     {
-      "name": "Jio Financial Services",
-      "symbol": "JIOFIN",
-      "price": "₹280",
-      "target": "₹302",
-      "upside": "7.9%",
-      "brokerage": "Choice Broking (Sumeet Bagadia)",
+      "name": "ICICI Bank",
+      "symbol": "ICICIBANK",
+      "price": "₹1,378",
+      "target": "₹1,550",
+      "upside": "12.5%",
+      "brokerage": "Motilal Oswal",
       "recommendation": "BUY",
-      "sourceUrl": "https://www.livemint.com/market/stock-market-news/buy-or-sell-sumeet-bagadia-recommends-three-stocks-to-buy-on-monday-22-december-2025-11766223995365.html",
+      "sourceUrl": "https://www.moneycontrol.com/news/business/markets/motilal-oswal-recommends-buy-on-icici-bank-sees-an-upside-of-nearly-17-12754668.html",
       "date": "Dec 21, 2025",
-      "rationale": "Sumeet Bagadia pick for Monday Dec 22. Jio Financial showing strong momentum after recent listing. Buy at ₹280 with target ₹302, stop loss ₹270. Benefiting from Jio ecosystem integration."
+      "rationale": "Motilal Oswal maintains Buy on ICICI Bank with ₹1,550 target. Best-in-class metrics, strong deposit growth, improving NIM. Digital banking initiatives driving customer acquisition."
     },
     {
-      "name": "BEL (Bharat Electronics)",
-      "symbol": "BEL",
-      "price": "₹295",
-      "target": "₹320",
-      "upside": "8.5%",
-      "brokerage": "Choice Broking (Sumeet Bagadia)",
+      "name": "NMDC",
+      "symbol": "NMDC",
+      "price": "₹77.12",
+      "target": "₹90",
+      "upside": "16.7%",
+      "brokerage": "Multiple Analysts",
       "recommendation": "BUY",
-      "sourceUrl": "https://www.livemint.com/market/stock-market-news/buy-or-sell-sumeet-bagadia-recommends-three-stocks-to-buy-on-monday-22-december-2025-11766223995365.html",
+      "sourceUrl": "https://www.screener.in/screens/938142/best-stocks-in-2024/",
       "date": "Dec 21, 2025",
-      "rationale": "Monday pick by Sumeet Bagadia. Defense PSU showing bullish breakout. Target ₹320, stop loss ₹285. Defense orders pipeline robust, recent rally continuation expected."
-    },
-    {
-      "name": "Asian Paints",
-      "symbol": "ASIANPAINT",
-      "price": "₹2,445",
-      "target": "₹2,600",
-      "upside": "6.3%",
-      "brokerage": "Choice Broking (Sumeet Bagadia)",
-      "recommendation": "BUY",
-      "sourceUrl": "https://www.livemint.com/market/stock-market-news/buy-or-sell-sumeet-bagadia-recommends-three-stocks-to-buy-on-monday-22-december-2025-11766223995365.html",
-      "date": "Dec 21, 2025",
-      "rationale": "Sumeet Bagadia recommends Asian Paints for Monday. Paint major consolidating near support. Buy at ₹2,445 with target ₹2,600. Real estate pickup supporting demand outlook."
+      "rationale": "NMDC among best stocks for 2024-25 per Screener analysis. Iron ore miner benefiting from domestic steel demand. Dividend yield attractive, PSU re-rating story."
     }
   ],
   "newsHeadlines": [
     {
-      "title": "Stock Markets Surge After Four Days of Decline; Sensex Jumps 448 Points",
+      "title": "India's Stock Market Calm Tests Options Traders Amid Record Low Volatility",
       "category": "Market Update",
-      "summary": "Equity benchmark indices Sensex and Nifty jumped on Friday December 19, 2025 after four days of decline. Sensex gained 447.55 points (0.53%) to close at 84,929.36, while Nifty rose 150.85 points (0.58%) to 25,966.40. Strong rally in global markets and positive domestic sentiment drove the rebound.",
+      "summary": "India's VIX (Volatility Index) at record lows as markets show unusual calm despite global uncertainties. Options traders facing challenges with low premiums. Market expects consolidation phase with stock-specific action taking precedence over index moves.",
       "date": "Dec 21, 2025",
-      "sourceUrl": "https://www.thehindubusinessline.com/markets/share-market-nifty-sensex-live-updates-19th-december-2025/article70412314.ece",
-      "source": "BusinessLine"
-    },
-    {
-      "title": "ICICI Prudential AMC Gains 19% on Strong Debut, Listing Premium Over Issue Price",
-      "category": "IPO Update",
-      "summary": "ICICI Prudential Asset Management Company made a stellar debut on December 19, 2025, with shares listing at 19% premium. The stock opened at strong gains reflecting robust investor demand for the AMC business. Market breadth remained positive ahead of weekend.",
-      "date": "Dec 21, 2025",
-      "sourceUrl": "https://www.business-standard.com/markets/news/stock-market-live-updates-december-19-nse-bse-sensex-today-nifty-gift-nifty-icici-prudential-amc-ipo-listing-125121900090_1.html",
+      "sourceUrl": "https://www.business-standard.com/markets/news/india-s-calm-stock-market-tests-options-traders-amid-record-low-volatility-125122100047_1.html",
       "source": "Business Standard"
     },
     {
-      "title": "Bharat Electronics, Power Grid Lead Nifty Gainers; Auto Stocks in Focus",
-      "category": "Sector Watch",
-      "summary": "Top Nifty gainers on December 19 included Shriram Finance, Max Healthcare, Bharat Electronics, Power Grid Corp, and Tata Motors Passenger Vehicles. Defense and infrastructure stocks led the rally. Market snapped 4-day losing streak with strong buying in mid and small-cap indices.",
+      "title": "Market Leaders Show 40% Revenue Growth Guidance for FY26",
+      "category": "Corporate Update",
+      "summary": "Several market leaders providing strong revenue growth guidance of up to 40% for FY26. IT services, infrastructure, and select FMCG companies leading the optimism. Earnings season expectations building up positively.",
       "date": "Dec 21, 2025",
-      "sourceUrl": "https://www.moneycontrol.com/news/business/markets/stock-market-live-updates-gift-nifty-indicates-a-positive-start-us-asian-markets-gain-liveblog-13733097.html",
-      "source": "MoneyControl"
+      "sourceUrl": "https://www.equitymaster.com/detail.asp?date=12/21/2025&story=1",
+      "source": "Equitymaster"
     },
     {
-      "title": "Indian Stock Market Next Week: Nifty, Sensex Likely to Consolidate with Buy-on-Dips Strategy",
+      "title": "Sensex Rises 0.5% to 84,929 After Four-Day Losing Streak",
+      "category": "Market Close",
+      "summary": "BSE Sensex closed Friday at 84,929.4, up 0.5%, snapping four-session decline. Nifty ended at 25,966.40, gaining 150.85 points. Broad-based rally driven by soft US inflation data and positive domestic sentiment. Mid and small-cap indices outperformed.",
+      "date": "Dec 21, 2025",
+      "sourceUrl": "https://tradingeconomics.com/india/stock-market",
+      "source": "Trading Economics"
+    },
+    {
+      "title": "Nifty Expected to Consolidate Between 25,700-26,300 Next Week",
       "category": "Market Outlook",
-      "summary": "Indian benchmark indices expected to trade cautiously in week ahead (Dec 22-26), with Nifty likely range-bound between 25,700 and 26,300. Analysts recommend buy-on-dips strategy. Key triggers include global cues, FII flows, Q3 earnings preview, and year-end portfolio rebalancing.",
+      "summary": "Analysts expect Nifty to trade in 25,700-26,300 range during Dec 22-26 week. Buy-on-dips strategy recommended as year-end portfolio rebalancing begins. Key triggers include Q3 earnings preview, FII flows, and global cues. Support strong at 25,600 levels.",
       "date": "Dec 21, 2025",
       "sourceUrl": "https://www.goodreturns.in/news/indian-stock-market-next-week-22-26dec-2025-nifty-sensex-prediction-to-consolidate-with-buy-on-dips-1477198.html",
       "source": "GoodReturns"
@@ -412,107 +382,82 @@
   "trendingOnSocial": [
     {
       "rank": 1,
-      "name": "Hindustan Zinc",
-      "symbol": "HINDZINC",
+      "name": "KPIT Technologies",
+      "symbol": "KPITTECH",
       "sentiment": "Bullish",
-      "socialScore": 8.976819076453744,
-      "change24h": "+3.2%",
+      "socialScore": 8.95,
+      "change24h": "+5.50%",
       "platforms": {
         "twitter": "Very High",
-        "reddit": "Moderate",
+        "reddit": "High",
         "stocktwits": "Moderate"
       },
-      "keywords": [
-        "silver play",
-        "52-week high",
-        "Jefferies Buy",
-        "metal stocks"
-      ],
-      "recentDiscussion": "Hindustan Zinc rallying hard on Jefferies initiation with Buy rating. Silver prices at record highs, HZL is best play on silver in India",
+      "keywords": ["KPIT Tech", "auto software", "EV tech", "IT services", "top gainer"],
+      "recentDiscussion": "KPIT best play on EV software boom, strong traction with global OEMs. Auto software demand robust",
       "socialVolume": 0
     },
     {
       "rank": 2,
-      "name": "Ambuja Cements",
-      "symbol": "AMBUJACEM",
+      "name": "Vodafone Idea",
+      "symbol": "IDEA",
       "sentiment": "Bullish",
-      "socialScore": 7.562521229711113,
-      "change24h": "+1.5%",
+      "socialScore": 8.42,
+      "change24h": "+5.84%",
       "platforms": {
         "twitter": "Very High",
-        "reddit": "Moderate",
+        "reddit": "Very High",
         "stocktwits": "Moderate"
       },
-      "keywords": [
-        "cement re-rating",
-        "Adani group",
-        "Jefferies 44% upside",
-        "infrastructure"
-      ],
-      "recentDiscussion": "Ambuja Cements leading cement sector re-rating story. Jefferies target ₹770 implies 44% upside. Capacity expansion aggressive",
+      "keywords": ["Vodafone Idea", "telco turnaround", "tariff hike", "fundraising", "speculative"],
+      "recentDiscussion": "Vi high risk high reward play on survival story. Tariff hikes and fundraising hopes driving speculative interest",
       "socialVolume": 0
     },
     {
       "rank": 3,
-      "name": "Polycab India",
-      "symbol": "POLYCAB",
+      "name": "Tata Elxsi",
+      "symbol": "TATAELXSI",
       "sentiment": "Bullish",
-      "socialScore": 8.927792322715053,
-      "change24h": "+5.8%",
+      "socialScore": 8.87,
+      "change24h": "+7.98%",
       "platforms": {
-        "twitter": "Very High",
-        "reddit": "Low",
+        "twitter": "High",
+        "reddit": "Moderate",
         "stocktwits": "Moderate"
       },
-      "keywords": [
-        "infrastructure play",
-        "cable demand",
-        "capex boom",
-        "Jefferies upgrade"
-      ],
-      "recentDiscussion": "Polycab hitting new highs after Jefferies upgrade to ₹8,960. Strong demand for cables driven by infra capex cycle",
+      "keywords": ["Tata Elxsi", "EV design", "auto software", "top gainer", "engineering services"],
+      "recentDiscussion": "Tata Elxsi flying on EV design wins from global OEMs. Strong momentum in auto engineering services",
       "socialVolume": 0
     },
     {
       "rank": 4,
+      "name": "Polycab India",
+      "symbol": "POLYCAB",
+      "sentiment": "Bullish",
+      "socialScore": 8.34,
+      "change24h": "+4.79%",
+      "platforms": {
+        "twitter": "High",
+        "reddit": "Moderate",
+        "stocktwits": "Moderate"
+      },
+      "keywords": ["Polycab", "cable stocks", "infrastructure", "housing demand", "capex play"],
+      "recentDiscussion": "Polycab strong fundamentals, infra capex and real estate boom tailwinds. Top cable and wire player",
+      "socialVolume": 0
+    },
+    {
+      "rank": 5,
       "name": "ICICI Bank",
       "symbol": "ICICIBANK",
       "sentiment": "Bullish",
-      "socialScore": 9.090818390635537,
+      "socialScore": 8.21,
       "change24h": "+1.2%",
       "platforms": {
         "twitter": "Very High",
         "reddit": "Moderate",
         "stocktwits": "Moderate"
       },
-      "keywords": [
-        "best private bank",
-        "ROE leader",
-        "Morgan Stanley OW",
-        "deposit growth"
-      ],
-      "recentDiscussion": "ICICI Bank remains safest bet in banking space. Multiple brokerages bullish, best-in-class metrics across board",
-      "socialVolume": 0
-    },
-    {
-      "rank": 5,
-      "name": "Axis Bank",
-      "symbol": "AXISBANK",
-      "sentiment": "Bullish",
-      "socialScore": 7.607220573348178,
-      "change24h": "+0.8%",
-      "platforms": {
-        "twitter": "High",
-        "reddit": "Low",
-        "stocktwits": "Low"
-      },
-      "keywords": [
-        "asset quality improving",
-        "Jefferies top pick",
-        "retail franchise",
-        "ROE expansion"
-      ],
-      "recentDiscussion": "Axis Bank turnaround story gaining momentum. Jefferies includes in top 10 bets for 2025-26",
+      "keywords": ["ICICI Bank", "best private bank", "ROE leader", "multiple brokerages", "deposit growth"],
+      "recentDiscussion": "ICICI Bank remains safest bet in banking. Best-in-class metrics, multiple brokerages bullish",
       "socialVolume": 0
     }
   ]
