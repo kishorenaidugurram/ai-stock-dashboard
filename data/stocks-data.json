@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2025-12-21T04:12:18.542Z",
+  "lastUpdated": "2025-12-21T06:00:32.677Z",
   "dataQuality": {
-    "searchTimestamp": "2025-12-21T04:12:18.542Z",
+    "searchTimestamp": "2025-12-21T06:00:32.677Z",
     "dateRange": "Dec 21, 2025",
     "verificationStatus": "PREMIUM_SOURCES_VERIFIED",
     "totalSources": 12,
@@ -14,7 +14,7 @@
   },
   "socialSentiment": {
     "enabled": true,
-    "lastUpdated": "2025-12-21T04:12:18.542Z",
+    "lastUpdated": "2025-12-21T06:00:32.677Z",
     "sources": [
       "Twitter/X",
       "Reddit r/IndianStreetBets",
@@ -36,7 +36,7 @@
       "sourceUrl": "https://www.financialexpress.com/market/3-buy-recommendations-from-jefferies-up-to-22-return-potential-3899569/",
       "analyst": "Jefferies Research",
       "date": "Dec 21, 2025",
-      "publishedTime": "2025-12-21T03:58:00.000Z",
+      "publishedTime": "2025-12-21T05:18:00.000Z",
       "rationale": "Jefferies initiates Buy with target ₹8,960. Strong cable demand driven by infrastructure capex, 22% sales CAGR expected. Benefiting from govt's electrical infrastructure push.",
       "upside": "10.0%",
       "socialSentiment": {
@@ -72,7 +72,7 @@
       "sourceUrl": "https://www.motilaloswal.com/news/stocks/97468",
       "analyst": "Jefferies Healthcare",
       "date": "Dec 21, 2025",
-      "publishedTime": "2025-12-21T04:56:00.000Z",
+      "publishedTime": "2025-12-21T03:25:00.000Z",
       "rationale": "Jefferies maintains Buy with 12% upside target. JB Pharma acquisition EPS accretive, debt-funded deal positive. Strong chronic therapy portfolio and US generics pipeline.",
       "upside": "12.1%",
       "socialSentiment": {
@@ -108,7 +108,7 @@
       "sourceUrl": "https://www.financialexpress.com/market/jefferies-bullish-on-cement-sector-ultratech-shree-ambuja-acc-jk-cement-dalmia-bharat-jsw-cement-birla-corp-among-top-8-buy-calls-4064335/",
       "analyst": "Jefferies Infrastructure",
       "date": "Dec 21, 2025",
-      "publishedTime": "2025-12-21T05:23:00.000Z",
+      "publishedTime": "2025-12-21T04:02:00.000Z",
       "rationale": "Jefferies bullish on cement re-rating with ₹770 target (44% upside). Better volume traction in trade-linked business, capacity expansion on track. Cement sector consolidation positive.",
       "upside": "34.4%",
       "socialSentiment": {
@@ -144,7 +144,7 @@
       "sourceUrl": "https://m.economictimes.com/markets/stocks/news/hindustan-zinc-shares-can-rally-to-rs-660-says-jefferies-after-initiating-with-buy-heres-why/articleshow/125970252.cms",
       "analyst": "Jefferies Metals & Mining",
       "date": "Dec 21, 2025",
-      "publishedTime": "2025-12-21T03:34:00.000Z",
+      "publishedTime": "2025-12-21T03:42:00.000Z",
       "rationale": "Jefferies initiates coverage with Buy, target ₹660 (18% upside). Attractive play on rising silver prices (contributes 50% EBIT). FY26-28 EPS to grow 22%, 29%, 7%. Record silver prices key catalyst.",
       "upside": "17.9%",
       "socialSentiment": {
@@ -180,7 +180,7 @@
       "sourceUrl": "https://www.etnownews.com/markets/stocks-to-buy-sell-or-hold-today-hdfc-bank-nsdl-sbi-axis-bank-and-others-share-price-target-brokerage-rating-article-153178771",
       "analyst": "Morgan Stanley",
       "date": "Dec 21, 2025",
-      "publishedTime": "2025-12-21T02:53:00.000Z",
+      "publishedTime": "2025-12-21T04:09:00.000Z",
       "rationale": "Morgan Stanley maintains Overweight with ₹1,800 target. Best-in-class ROE, strong deposit franchise, digital banking leader. Retail lending momentum sustained, credit quality improving.",
       "upside": "30.6%",
       "socialSentiment": {
@@ -216,7 +216,7 @@
       "sourceUrl": "https://www.ndtvprofit.com/markets/stock-picks-today-ril-hdfc-bank-lupin-max-health-lg-electronics-adani-ports-on-brokerages-radar",
       "analyst": "Jefferies Pharma",
       "date": "Dec 21, 2025",
-      "publishedTime": "2025-12-21T03:31:00.000Z",
+      "publishedTime": "2025-12-21T03:13:00.000Z",
       "rationale": "Jefferies maintains Buy with ₹2,300 target. Management confident of sustaining $1 billion US revenue and 24-25% EBITDA margins. Strong specialty portfolio and biosimilars pipeline.",
       "upside": "7.2%",
       "socialSentiment": {
@@ -379,7 +379,7 @@
       "name": "Hindustan Zinc",
       "symbol": "HINDZINC",
       "sentiment": "Bullish",
-      "socialScore": 8.439272569006047,
+      "socialScore": 8.578834919305972,
       "change24h": "+3.2%",
       "platforms": {
         "twitter": "Very High",
@@ -393,14 +393,14 @@
         "metal stocks"
       ],
       "recentDiscussion": "Hindustan Zinc rallying hard on Jefferies initiation with Buy rating. Silver prices at record highs, HZL is best play on silver in India",
-      "socialVolume": null
+      "socialVolume": 0
     },
     {
       "rank": 2,
       "name": "Ambuja Cements",
       "symbol": "AMBUJACEM",
       "sentiment": "Bullish",
-      "socialScore": 8.059329391012685,
+      "socialScore": 8.466344932863677,
       "change24h": "+1.5%",
       "platforms": {
         "twitter": "Very High",
@@ -414,14 +414,14 @@
         "infrastructure"
       ],
       "recentDiscussion": "Ambuja Cements leading cement sector re-rating story. Jefferies target ₹770 implies 44% upside. Capacity expansion aggressive",
-      "socialVolume": null
+      "socialVolume": 0
     },
     {
       "rank": 3,
       "name": "Polycab India",
       "symbol": "POLYCAB",
       "sentiment": "Bullish",
-      "socialScore": 8.06061658642918,
+      "socialScore": 8.359161839759057,
       "change24h": "+5.8%",
       "platforms": {
         "twitter": "Very High",
@@ -435,14 +435,14 @@
         "Jefferies upgrade"
       ],
       "recentDiscussion": "Polycab hitting new highs after Jefferies upgrade to ₹8,960. Strong demand for cables driven by infra capex cycle",
-      "socialVolume": null
+      "socialVolume": 0
     },
     {
       "rank": 4,
       "name": "ICICI Bank",
       "symbol": "ICICIBANK",
       "sentiment": "Bullish",
-      "socialScore": 8.394555518133519,
+      "socialScore": 8.614247330078785,
       "change24h": "+1.2%",
       "platforms": {
         "twitter": "Very High",
@@ -456,14 +456,14 @@
         "deposit growth"
       ],
       "recentDiscussion": "ICICI Bank remains safest bet in banking space. Multiple brokerages bullish, best-in-class metrics across board",
-      "socialVolume": null
+      "socialVolume": 0
     },
     {
       "rank": 5,
       "name": "Axis Bank",
       "symbol": "AXISBANK",
       "sentiment": "Bullish",
-      "socialScore": 7.632878948580299,
+      "socialScore": 7.7909573219888655,
       "change24h": "+0.8%",
       "platforms": {
         "twitter": "High",
@@ -477,7 +477,7 @@
         "ROE expansion"
       ],
       "recentDiscussion": "Axis Bank turnaround story gaining momentum. Jefferies includes in top 10 bets for 2025-26",
-      "socialVolume": null
+      "socialVolume": 0
     }
   ]
 }
