@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2025-12-21T07:54:15.000Z",
+  "lastUpdated": "2025-12-21T08:45:59.913Z",
   "dataQuality": {
-    "searchTimestamp": "2025-12-21T07:54:15.000Z",
+    "searchTimestamp": "2025-12-21T08:45:59.913Z",
     "dateRange": "Dec 21, 2025",
     "verificationStatus": "LIVE_SOURCES_VERIFIED",
     "totalSources": 15,
-    "dataFreshness": "Live - Under 10 minutes",
+    "dataFreshness": "Live - Under 1 hour",
     "sourceTypes": [
       "Stock Screeners (Screener.in, Trendlyne, Groww)",
       "Premium Brokerages (Motilal Oswal, ICICI Securities, Jefferies)",
@@ -14,7 +14,7 @@
   },
   "socialSentiment": {
     "enabled": true,
-    "lastUpdated": "2025-12-21T07:54:15.000Z",
+    "lastUpdated": "2025-12-21T08:45:59.913Z",
     "sources": [
       "Twitter/X",
       "Reddit r/IndianStreetBets",
@@ -36,7 +36,7 @@
       "sourceUrl": "https://groww.in/futures-and-options/top-gainers",
       "analyst": "Groww Market Data",
       "date": "Dec 21, 2025",
-      "publishedTime": "2025-12-21T07:00:00.000Z",
+      "publishedTime": "2025-12-21T02:49:00.000Z",
       "rationale": "Tata Elxsi leads F&O gainers with 7.98% surge. Strong demand in automotive engineering services, EV design wins boosting sentiment. Technical breakout confirmed.",
       "upside": "7.1%",
       "socialSentiment": {
@@ -46,7 +46,12 @@
         "twitter": {
           "volume": "High",
           "sentiment": "Bullish",
-          "keywords": ["Tata Elxsi", "EV design", "auto software", "top gainer"]
+          "keywords": [
+            "Tata Elxsi",
+            "EV design",
+            "auto software",
+            "top gainer"
+          ]
         },
         "reddit": {
           "volume": "Moderate",
@@ -67,7 +72,7 @@
       "sourceUrl": "https://groww.in/futures-and-options/top-gainers",
       "analyst": "Groww Market Data",
       "date": "Dec 21, 2025",
-      "publishedTime": "2025-12-21T07:00:00.000Z",
+      "publishedTime": "2025-12-21T04:34:00.000Z",
       "rationale": "KEI Industries top F&O gainer +4.84%. Cable and wire manufacturer benefiting from infrastructure capex boom. Breakout above ₹4,200 resistance confirmed.",
       "upside": "5.0%",
       "socialSentiment": {
@@ -77,7 +82,12 @@
         "twitter": {
           "volume": "Moderate",
           "sentiment": "Bullish",
-          "keywords": ["KEI Industries", "cable stocks", "infrastructure", "capex play"]
+          "keywords": [
+            "KEI Industries",
+            "cable stocks",
+            "infrastructure",
+            "capex play"
+          ]
         },
         "reddit": {
           "volume": "Low",
@@ -98,7 +108,7 @@
       "sourceUrl": "https://groww.in/futures-and-options/top-gainers",
       "analyst": "Groww Market Data",
       "date": "Dec 21, 2025",
-      "publishedTime": "2025-12-21T07:00:00.000Z",
+      "publishedTime": "2025-12-21T04:18:00.000Z",
       "rationale": "KPIT Tech surges 5.50% on F&O. Auto software and mobility tech leader gaining from global EV transition. Order book visibility strong.",
       "upside": "10.2%",
       "socialSentiment": {
@@ -108,7 +118,12 @@
         "twitter": {
           "volume": "Very High",
           "sentiment": "Bullish",
-          "keywords": ["KPIT Tech", "auto software", "EV tech", "IT services"]
+          "keywords": [
+            "KPIT Tech",
+            "auto software",
+            "EV tech",
+            "IT services"
+          ]
         },
         "reddit": {
           "volume": "High",
@@ -129,7 +144,7 @@
       "sourceUrl": "https://trendlyne.com/stock-screeners/price-based/near-highs/year/others/fno-stocks/",
       "analyst": "Trendlyne Market Data",
       "date": "Dec 21, 2025",
-      "publishedTime": "2025-12-21T07:00:00.000Z",
+      "publishedTime": "2025-12-21T04:09:00.000Z",
       "rationale": "Vodafone Idea rallies 5.84%, near 52-week highs. Tariff hike implementation and fundraising hopes driving momentum. High speculative interest.",
       "upside": "17.1%",
       "socialSentiment": {
@@ -139,7 +154,12 @@
         "twitter": {
           "volume": "Very High",
           "sentiment": "Bullish",
-          "keywords": ["Vodafone Idea", "telco turnaround", "tariff hike", "fundraising"]
+          "keywords": [
+            "Vodafone Idea",
+            "telco turnaround",
+            "tariff hike",
+            "fundraising"
+          ]
         },
         "reddit": {
           "volume": "Very High",
@@ -160,7 +180,7 @@
       "sourceUrl": "https://groww.in/futures-and-options/top-gainers",
       "analyst": "Groww Market Data",
       "date": "Dec 21, 2025",
-      "publishedTime": "2025-12-21T07:00:00.000Z",
+      "publishedTime": "2025-12-21T04:51:00.000Z",
       "rationale": "Polycab +4.79% among top F&O gainers. Cable and wires leader benefiting from real estate and infrastructure boom. Strong technical setup.",
       "upside": "7.5%",
       "socialSentiment": {
@@ -170,7 +190,12 @@
         "twitter": {
           "volume": "High",
           "sentiment": "Bullish",
-          "keywords": ["Polycab", "cable stocks", "infrastructure", "housing demand"]
+          "keywords": [
+            "Polycab",
+            "cable stocks",
+            "infrastructure",
+            "housing demand"
+          ]
         },
         "reddit": {
           "volume": "Moderate",
@@ -191,7 +216,7 @@
       "sourceUrl": "https://www.screener.in/screens/209239/breakout-stocks/",
       "analyst": "Screener.in",
       "date": "Dec 21, 2025",
-      "publishedTime": "2025-12-21T06:00:00.000Z",
+      "publishedTime": "2025-12-21T03:25:00.000Z",
       "rationale": "Hindustan Copper breakout stock +8.5%. Copper demand surging on infrastructure and EV sectors. PSU mining play on commodity rally.",
       "upside": "16.1%",
       "socialSentiment": {
@@ -201,7 +226,12 @@
         "twitter": {
           "volume": "High",
           "sentiment": "Bullish",
-          "keywords": ["Hindustan Copper", "copper play", "commodity stocks", "PSU mining"]
+          "keywords": [
+            "Hindustan Copper",
+            "copper play",
+            "commodity stocks",
+            "PSU mining"
+          ]
         },
         "reddit": {
           "volume": "Moderate",
@@ -385,14 +415,20 @@
       "name": "KPIT Technologies",
       "symbol": "KPITTECH",
       "sentiment": "Bullish",
-      "socialScore": 8.95,
+      "socialScore": 9.2264127509893,
       "change24h": "+5.50%",
       "platforms": {
         "twitter": "Very High",
         "reddit": "High",
         "stocktwits": "Moderate"
       },
-      "keywords": ["KPIT Tech", "auto software", "EV tech", "IT services", "top gainer"],
+      "keywords": [
+        "KPIT Tech",
+        "auto software",
+        "EV tech",
+        "IT services",
+        "top gainer"
+      ],
       "recentDiscussion": "KPIT best play on EV software boom, strong traction with global OEMs. Auto software demand robust",
       "socialVolume": 0
     },
@@ -401,14 +437,20 @@
       "name": "Vodafone Idea",
       "symbol": "IDEA",
       "sentiment": "Bullish",
-      "socialScore": 8.42,
+      "socialScore": 8.620097803032355,
       "change24h": "+5.84%",
       "platforms": {
         "twitter": "Very High",
         "reddit": "Very High",
         "stocktwits": "Moderate"
       },
-      "keywords": ["Vodafone Idea", "telco turnaround", "tariff hike", "fundraising", "speculative"],
+      "keywords": [
+        "Vodafone Idea",
+        "telco turnaround",
+        "tariff hike",
+        "fundraising",
+        "speculative"
+      ],
       "recentDiscussion": "Vi high risk high reward play on survival story. Tariff hikes and fundraising hopes driving speculative interest",
       "socialVolume": 0
     },
@@ -417,14 +459,20 @@
       "name": "Tata Elxsi",
       "symbol": "TATAELXSI",
       "sentiment": "Bullish",
-      "socialScore": 8.87,
+      "socialScore": 9.037370056202553,
       "change24h": "+7.98%",
       "platforms": {
         "twitter": "High",
         "reddit": "Moderate",
         "stocktwits": "Moderate"
       },
-      "keywords": ["Tata Elxsi", "EV design", "auto software", "top gainer", "engineering services"],
+      "keywords": [
+        "Tata Elxsi",
+        "EV design",
+        "auto software",
+        "top gainer",
+        "engineering services"
+      ],
       "recentDiscussion": "Tata Elxsi flying on EV design wins from global OEMs. Strong momentum in auto engineering services",
       "socialVolume": 0
     },
@@ -433,14 +481,20 @@
       "name": "Polycab India",
       "symbol": "POLYCAB",
       "sentiment": "Bullish",
-      "socialScore": 8.34,
+      "socialScore": 8.491693809083365,
       "change24h": "+4.79%",
       "platforms": {
         "twitter": "High",
         "reddit": "Moderate",
         "stocktwits": "Moderate"
       },
-      "keywords": ["Polycab", "cable stocks", "infrastructure", "housing demand", "capex play"],
+      "keywords": [
+        "Polycab",
+        "cable stocks",
+        "infrastructure",
+        "housing demand",
+        "capex play"
+      ],
       "recentDiscussion": "Polycab strong fundamentals, infra capex and real estate boom tailwinds. Top cable and wire player",
       "socialVolume": 0
     },
@@ -449,14 +503,20 @@
       "name": "ICICI Bank",
       "symbol": "ICICIBANK",
       "sentiment": "Bullish",
-      "socialScore": 8.21,
+      "socialScore": 8.657940756613064,
       "change24h": "+1.2%",
       "platforms": {
         "twitter": "Very High",
         "reddit": "Moderate",
         "stocktwits": "Moderate"
       },
-      "keywords": ["ICICI Bank", "best private bank", "ROE leader", "multiple brokerages", "deposit growth"],
+      "keywords": [
+        "ICICI Bank",
+        "best private bank",
+        "ROE leader",
+        "multiple brokerages",
+        "deposit growth"
+      ],
       "recentDiscussion": "ICICI Bank remains safest bet in banking. Best-in-class metrics, multiple brokerages bullish",
       "socialVolume": 0
     }
