@@ -1150,23 +1150,6 @@ app.get('/', (c) => {
         <main class="max-w-7xl mx-auto px-4 py-8">
             <!-- Dashboard View (Default) -->
             <div id="view-dashboard" class="page-view active">
-                
-                <!-- 🚨 EMERGENCY CHART TEST BUTTON 🚨 -->
-                <div class="mb-8 p-6 bg-red-50 border-4 border-red-500 rounded-2xl shadow-2xl animate-pulse">
-                    <h3 class="text-2xl font-black text-red-700 mb-3 flex items-center">
-                        <i class="fas fa-exclamation-triangle mr-3"></i>
-                        🚨 CLICK HERE TO TEST CHART 🚨
-                    </h3>
-                    <p class="text-gray-700 mb-4">If this button shows a chart modal, the system works. If not, we'll see errors in console.</p>
-                    <button 
-                        onclick="console.log('🔴 RED BUTTON CLICKED!'); window.showChart('RELIANCE', {name: 'Reliance Industries'})" 
-                        class="w-full bg-red-600 hover:bg-red-700 text-white text-xl font-black px-8 py-6 rounded-xl shadow-2xl transition transform hover:scale-105">
-                        <i class="fas fa-chart-line mr-3 text-3xl"></i>
-                        CLICK ME TO TEST CHART MODAL
-                    </button>
-                    <p class="text-xs text-gray-600 mt-3">Press F12, click Console tab, then click the button above</p>
-                </div>
-                
                 <!-- Market Stats -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                     <div class="stat-card scale-in" style="animation-delay: 0.1s">
@@ -1311,32 +1294,6 @@ app.get('/', (c) => {
                         Technical Analysis
                     </h2>
                     <p class="text-gray-600">Advanced technical indicators including breakout detection, volume analysis, pattern recognition, and momentum indicators.</p>
-                    
-                    <!-- Test Chart Button -->
-                    <div class="mt-4 p-4 bg-yellow-50 border-2 border-yellow-400 rounded-lg">
-                        <p class="text-sm text-gray-700 mb-2"><strong>🧪 Chart Test:</strong> Click the button below to test if the chart modal appears.</p>
-                        <button 
-                            onclick="window.showChart('RELIANCE', {name: 'Reliance Industries Ltd'})" 
-                            class="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-lg hover:opacity-90 transition font-semibold shadow-lg">
-                            <i class="fas fa-chart-candlestick mr-2"></i>
-                            🧪 Test Chart Modal (RELIANCE)
-                        </button>
-                        <script>
-                            // Debug info
-                            setTimeout(() => {
-                                console.log('=== Chart Debug Info ===');
-                                console.log('Plotly loaded:', typeof Plotly);
-                                console.log('TradingView loaded:', typeof TradingView);
-                                console.log('chartManager:', typeof window.chartManager);
-                                console.log('showChart:', typeof window.showChart);
-                                if (typeof window.chartManager !== 'undefined') {
-                                    console.log('✅ Chart system ready!');
-                                } else {
-                                    console.error('❌ Chart system NOT ready!');
-                                }
-                            }, 3000);
-                        </script>
-                    </div>
                 </div>
 
                 <!-- Technical Analysis Cards -->

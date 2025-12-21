@@ -292,16 +292,9 @@ class StockChartManager {
 
     // Show chart in modal
     async showChartModal(symbol, stockData) {
-        console.log('🎯 showChartModal called!');
-        console.log('  Symbol:', symbol);
-        console.log('  Stock data:', stockData);
-        console.log('  Plotly available:', typeof Plotly);
-        console.log('  Document body exists:', !!document.body);
-        
         // Check if modal already exists and remove it
         const existingModal = document.getElementById('chartModal');
         if (existingModal) {
-            console.log('⚠️ Removing existing modal');
             existingModal.remove();
         }
         
@@ -369,23 +362,10 @@ class StockChartManager {
             </div>
         `;
         
-        console.log('📝 Inserting modal HTML into document.body');
         document.body.insertAdjacentHTML('beforeend', modalHTML);
         
-        console.log('✅ Modal HTML inserted');
-        const modalElement = document.getElementById('chartModal');
-        console.log('📍 Modal element found:', !!modalElement);
-        if (modalElement) {
-            console.log('📐 Modal display style:', window.getComputedStyle(modalElement).display);
-            console.log('📐 Modal visibility:', window.getComputedStyle(modalElement).visibility);
-            console.log('📐 Modal z-index:', window.getComputedStyle(modalElement).zIndex);
-            console.log('📐 Modal position:', window.getComputedStyle(modalElement).position);
-        }
-        
-        console.log('📊 Creating Plotly chart...');
         // Create Plotly chart (async)
         const srLevels = await this.createCandlestickChart('plotlyChart', symbol, stockData);
-        console.log('✅ Plotly chart created');
         
         // Populate support levels
         const supportDiv = document.getElementById('supportLevels');
