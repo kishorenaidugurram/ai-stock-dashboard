@@ -1150,6 +1150,23 @@ app.get('/', (c) => {
         <main class="max-w-7xl mx-auto px-4 py-8">
             <!-- Dashboard View (Default) -->
             <div id="view-dashboard" class="page-view active">
+                
+                <!-- 🚨 EMERGENCY CHART TEST BUTTON 🚨 -->
+                <div class="mb-8 p-6 bg-red-50 border-4 border-red-500 rounded-2xl shadow-2xl animate-pulse">
+                    <h3 class="text-2xl font-black text-red-700 mb-3 flex items-center">
+                        <i class="fas fa-exclamation-triangle mr-3"></i>
+                        🚨 CLICK HERE TO TEST CHART 🚨
+                    </h3>
+                    <p class="text-gray-700 mb-4">If this button shows a chart modal, the system works. If not, we'll see errors in console.</p>
+                    <button 
+                        onclick="console.log('🔴 RED BUTTON CLICKED!'); window.showChart('RELIANCE', {name: 'Reliance Industries'})" 
+                        class="w-full bg-red-600 hover:bg-red-700 text-white text-xl font-black px-8 py-6 rounded-xl shadow-2xl transition transform hover:scale-105">
+                        <i class="fas fa-chart-line mr-3 text-3xl"></i>
+                        CLICK ME TO TEST CHART MODAL
+                    </button>
+                    <p class="text-xs text-gray-600 mt-3">Press F12, click Console tab, then click the button above</p>
+                </div>
+                
                 <!-- Market Stats -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                     <div class="stat-card scale-in" style="animation-delay: 0.1s">
@@ -1405,60 +1422,33 @@ app.get('/', (c) => {
 
             // Show AI Update Modal with instructions
             function showAIUpdateModal(data) {
-                const modalHTML = \`
-                    <div id="aiUpdateModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-                        <div class="bg-white rounded-lg max-w-lg w-full">
-                            <div class="p-6">
-                                <div class="text-center mb-6">
-                                    <div class="inline-block bg-gradient-to-r from-green-600 to-green-700 rounded-full p-4 mb-4">
-                                        <i class="fas fa-robot text-white text-4xl"></i>
-                                    </div>
-                                    <h2 class="text-2xl font-bold text-gray-800 mb-2">
-                                        AI Update Triggered!
-                                    </h2>
-                                    <p class="text-gray-600">GenSpark AI has opened in a new tab</p>
-                                </div>
-
-                                <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-4 mb-4">
-                                    <div class="flex items-start mb-3">
-                                        <i class="fas fa-check-circle text-green-600 text-2xl mr-3 mt-1"></i>
-                                        <div>
-                                            <h3 class="font-bold text-gray-800 mb-1">Command Copied!</h3>
-                                            <p class="text-sm text-gray-700">The update command has been copied to your clipboard.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="bg-white border-2 border-purple-200 rounded-lg p-4 mb-4">
-                                    <h3 class="font-bold text-gray-800 mb-2">📋 Next Steps:</h3>
-                                    <ol class="list-decimal list-inside space-y-2 text-gray-700 text-sm">
-                                        <li>Go to the <strong>GenSpark AI tab</strong> (just opened)</li>
-                                        <li><strong>Paste</strong> the command (Ctrl+V or Cmd+V)</li>
-                                        <li><strong>Press Send</strong></li>
-                                        <li>Wait <strong>\${data.estimatedTime}</strong> for AI to complete</li>
-                                        <li>Come back and <strong>refresh this page</strong></li>
-                                    </ol>
-                                </div>
-
-                                <div class="bg-yellow-50 border border-yellow-200 rounded p-3 mb-4">
-                                    <p class="text-xs text-gray-700">
-                                        <i class="fas fa-info-circle text-yellow-600 mr-1"></i>
-                                        <strong>Command in clipboard:</strong> "\${data.instructions.command}"
-                                    </p>
-                                </div>
-
-                                <div class="flex gap-3">
-                                    <button onclick="closeAIUpdateModal()" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded">
-                                        Got It!
-                                    </button>
-                                    <button onclick="window.open('\${data.aiChatUrl}', '_blank')" class="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-2 px-4 rounded">
-                                        <i class="fas fa-external-link-alt mr-1"></i> Open AI Again
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                \`;
+                const modalHTML = '<div id="aiUpdateModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">' +
+                    '<div class="bg-white rounded-lg max-w-lg w-full">' +
+                        '<div class="p-6">' +
+                            '<div class="text-center mb-6">' +
+                                '<div class="inline-block bg-gradient-to-r from-green-600 to-green-700 rounded-full p-4 mb-4">' +
+                                    '<i class="fas fa-robot text-white text-4xl"></i>' +
+                                '</div>' +
+                                '<h2 class="text-2xl font-bold text-gray-800 mb-2">AI Update Triggered!</h2>' +
+                                '<p class="text-gray-600">GenSpark AI has opened in a new tab</p>' +
+                            '</div>' +
+                            '<div class="bg-white border-2 border-purple-200 rounded-lg p-4 mb-4">' +
+                                '<h3 class="font-bold text-gray-800 mb-2">📋 Next Steps:</h3>' +
+                                '<ol class="list-decimal list-inside space-y-2 text-gray-700 text-sm">' +
+                                    '<li>Go to the <strong>GenSpark AI tab</strong> (just opened)</li>' +
+                                    '<li><strong>Paste</strong> the command (Ctrl+V or Cmd+V)</li>' +
+                                    '<li><strong>Press Send</strong></li>' +
+                                    '<li>Wait <strong>' + data.estimatedTime + '</strong> for AI to complete</li>' +
+                                    '<li>Come back and <strong>refresh this page</strong></li>' +
+                                '</ol>' +
+                            '</div>' +
+                            '<div class="flex gap-3">' +
+                                '<button onclick="closeAIUpdateModal()" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded">Got It!</button>' +
+                                '<button onclick="window.open(\'' + data.aiChatUrl + '\', \'_blank\')" class="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold py-2 px-4 rounded"><i class="fas fa-external-link-alt mr-1"></i> Open AI Again</button>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>';
                 
                 document.body.insertAdjacentHTML('beforeend', modalHTML);
             }

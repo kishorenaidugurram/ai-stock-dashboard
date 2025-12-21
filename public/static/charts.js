@@ -218,22 +218,28 @@ class StockChartManager {
         const layout = {
             title: {
                 text: `${symbol} - Candlestick Chart with Support/Resistance`,
-                font: { size: 18, family: 'Inter', weight: 700 }
+                font: { size: 18, family: 'Inter', weight: 700, color: '#ffffff' }
             },
             xaxis: {
                 rangeslider: { visible: false },
-                type: 'date'
+                type: 'date',
+                gridcolor: '#333333',
+                color: '#9ca3af'
             },
             yaxis: {
-                title: 'Price (₹)',
-                domain: [0.3, 1]
+                title: { text: 'Price (₹)', font: { color: '#9ca3af' } },
+                domain: [0.3, 1],
+                gridcolor: '#333333',
+                color: '#9ca3af'
             },
             yaxis2: {
-                title: 'Volume',
-                domain: [0, 0.25]
+                title: { text: 'Volume', font: { color: '#9ca3af' } },
+                domain: [0, 0.25],
+                gridcolor: '#333333',
+                color: '#9ca3af'
             },
-            paper_bgcolor: 'rgba(255, 255, 255, 0.95)',
-            plot_bgcolor: 'rgba(255, 255, 255, 0.95)',
+            paper_bgcolor: '#0a0a0a',
+            plot_bgcolor: '#0a0a0a',
             hovermode: 'x unified',
             showlegend: true,
             legend: {
@@ -241,7 +247,9 @@ class StockChartManager {
                 yanchor: 'bottom',
                 y: 1.02,
                 xanchor: 'right',
-                x: 1
+                x: 1,
+                font: { color: '#9ca3af' },
+                bgcolor: 'rgba(0,0,0,0)'
             }
         };
         
@@ -284,51 +292,63 @@ class StockChartManager {
 
     // Show chart in modal
     async showChartModal(symbol, stockData) {
-        console.log('🎯 showChartModal called with:', symbol, stockData);
+        console.log('🎯 showChartModal called!');
+        console.log('  Symbol:', symbol);
+        console.log('  Stock data:', stockData);
+        console.log('  Plotly available:', typeof Plotly);
+        console.log('  Document body exists:', !!document.body);
+        
+        // Check if modal already exists and remove it
+        const existingModal = document.getElementById('chartModal');
+        if (existingModal) {
+            console.log('⚠️ Removing existing modal');
+            existingModal.remove();
+        }
+        
         const modalHTML = `
-            <div id="chartModal" class="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center p-4" onclick="window.closeChartModal(event)">
-                <div class="glass-card rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
+            <div id="chartModal" class="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center p-4" onclick="window.closeChartModal(event)" style="display: flex !important; position: fixed !important; z-index: 9999 !important; backdrop-filter: blur(4px);">
+                <div class="rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto shadow-2xl" onclick="event.stopPropagation()" style="background: #1a1a1a; max-width: 1200px; border: 1px solid #333;">
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-6">
                             <div>
-                                <h2 class="text-3xl font-black text-gray-800">${symbol}</h2>
-                                <p class="text-gray-600 mt-1">${stockData?.name || 'Technical Chart'}</p>
+                                <h2 class="text-3xl font-black text-white">${symbol}</h2>
+                                <p class="text-gray-400 mt-1">${stockData?.name || 'Technical Chart'}</p>
                             </div>
-                            <button onclick="window.closeChartModal()" class="text-gray-400 hover:text-gray-600 text-2xl">
+                            <button onclick="window.closeChartModal()" class="text-gray-400 hover:text-white text-2xl transition">
                                 <i class="fas fa-times"></i>
                             </button>
                         </div>
                         
                         <!-- Chart Type Tabs -->
                         <div class="flex gap-2 mb-4">
-                            <button id="tabPlotly" onclick="window.switchChartTab('plotly', '${symbol}')" class="px-4 py-2 rounded-lg bg-purple-600 text-white font-semibold">
+                            <button id="tabPlotly" onclick="window.switchChartTab('plotly', '${symbol}')" class="px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 text-white font-semibold transition">
                                 <i class="fas fa-chart-candlestick mr-2"></i>Technical Analysis
                             </button>
-                            <button id="tabTradingView" onclick="window.switchChartTab('tradingview', '${symbol}')" class="px-4 py-2 rounded-lg bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300">
+                            <button id="tabTradingView" onclick="window.switchChartTab('tradingview', '${symbol}')" class="px-4 py-2 rounded-lg bg-gray-700 hover:bg-gray-600 text-gray-300 font-semibold transition">
                                 <i class="fas fa-chart-line mr-2"></i>TradingView Live
                             </button>
                         </div>
                         
                         <!-- Plotly Chart Container -->
                         <div id="plotlyChartContainer">
-                            <div id="plotlyChart" style="width: 100%; height: 600px;">
+                            <div id="plotlyChart" style="width: 100%; height: 600px; background: #0a0a0a; border-radius: 12px;">
                                 <div class="flex items-center justify-center h-full">
-                                    <i class="fas fa-spinner fa-spin text-4xl text-purple-600"></i>
-                                    <span class="ml-3 text-gray-600">Loading chart data...</span>
+                                    <i class="fas fa-spinner fa-spin text-4xl text-purple-500"></i>
+                                    <span class="ml-3 text-gray-400">Loading chart data...</span>
                                 </div>
                             </div>
                             
                             <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-                                <div class="glass-card rounded-xl p-4">
-                                    <div class="text-sm text-gray-600 mb-2">Support Levels</div>
+                                <div class="rounded-xl p-4" style="background: #0a0a0a; border: 1px solid #333;">
+                                    <div class="text-sm text-gray-400 mb-2">Support Levels</div>
                                     <div id="supportLevels" class="space-y-2"></div>
                                 </div>
-                                <div class="glass-card rounded-xl p-4">
-                                    <div class="text-sm text-gray-600 mb-2">Resistance Levels</div>
+                                <div class="rounded-xl p-4" style="background: #0a0a0a; border: 1px solid #333;">
+                                    <div class="text-sm text-gray-400 mb-2">Resistance Levels</div>
                                     <div id="resistanceLevels" class="space-y-2"></div>
                                 </div>
-                                <div class="glass-card rounded-xl p-4">
-                                    <div class="text-sm text-gray-600 mb-2">Key Metrics</div>
+                                <div class="rounded-xl p-4" style="background: #0a0a0a; border: 1px solid #333;">
+                                    <div class="text-sm text-gray-400 mb-2">Key Metrics</div>
                                     <div id="keyMetrics" class="space-y-2"></div>
                                 </div>
                             </div>
@@ -336,11 +356,11 @@ class StockChartManager {
                         
                         <!-- TradingView Chart Container (hidden by default) -->
                         <div id="tradingViewContainer" style="display: none;">
-                            <div id="tradingview_widget" style="height: 600px;"></div>
-                            <div class="mt-4 p-4 bg-blue-50 rounded-lg">
-                                <p class="text-sm text-gray-700">
-                                    <i class="fas fa-info-circle text-blue-600 mr-2"></i>
-                                    <strong>TradingView Live Chart:</strong> Real-time market data with advanced indicators and drawing tools.
+                            <div id="tradingview_widget" style="height: 600px; background: #0a0a0a; border-radius: 12px;"></div>
+                            <div class="mt-4 p-4 rounded-lg" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3);">
+                                <p class="text-sm text-gray-300">
+                                    <i class="fas fa-info-circle text-blue-400 mr-2"></i>
+                                    <strong class="text-white">TradingView Live Chart:</strong> Real-time market data with advanced indicators and drawing tools.
                                 </p>
                             </div>
                         </div>
@@ -349,22 +369,35 @@ class StockChartManager {
             </div>
         `;
         
+        console.log('📝 Inserting modal HTML into document.body');
         document.body.insertAdjacentHTML('beforeend', modalHTML);
         
+        console.log('✅ Modal HTML inserted');
+        const modalElement = document.getElementById('chartModal');
+        console.log('📍 Modal element found:', !!modalElement);
+        if (modalElement) {
+            console.log('📐 Modal display style:', window.getComputedStyle(modalElement).display);
+            console.log('📐 Modal visibility:', window.getComputedStyle(modalElement).visibility);
+            console.log('📐 Modal z-index:', window.getComputedStyle(modalElement).zIndex);
+            console.log('📐 Modal position:', window.getComputedStyle(modalElement).position);
+        }
+        
+        console.log('📊 Creating Plotly chart...');
         // Create Plotly chart (async)
         const srLevels = await this.createCandlestickChart('plotlyChart', symbol, stockData);
+        console.log('✅ Plotly chart created');
         
         // Populate support levels
         const supportDiv = document.getElementById('supportLevels');
         if (srLevels.support.length > 0) {
             supportDiv.innerHTML = srLevels.support.map(level => 
                 `<div class="flex justify-between items-center text-sm">
-                    <span class="text-gray-700">S:</span>
-                    <span class="font-bold text-green-600">₹${level.toFixed(2)}</span>
+                    <span class="text-gray-400">S:</span>
+                    <span class="font-bold text-green-400">₹${level.toFixed(2)}</span>
                 </div>`
             ).join('');
         } else {
-            supportDiv.innerHTML = '<div class="text-gray-400 text-sm">No support detected</div>';
+            supportDiv.innerHTML = '<div class="text-gray-500 text-sm">No support detected</div>';
         }
         
         // Populate resistance levels
@@ -372,12 +405,12 @@ class StockChartManager {
         if (srLevels.resistance.length > 0) {
             resistanceDiv.innerHTML = srLevels.resistance.map(level => 
                 `<div class="flex justify-between items-center text-sm">
-                    <span class="text-gray-700">R:</span>
-                    <span class="font-bold text-red-600">₹${level.toFixed(2)}</span>
+                    <span class="text-gray-400">R:</span>
+                    <span class="font-bold text-red-400">₹${level.toFixed(2)}</span>
                 </div>`
             ).join('');
         } else {
-            resistanceDiv.innerHTML = '<div class="text-gray-400 text-sm">No resistance detected</div>';
+            resistanceDiv.innerHTML = '<div class="text-gray-500 text-sm">No resistance detected</div>';
         }
         
         // Key metrics
@@ -390,18 +423,18 @@ class StockChartManager {
         metricsDiv.innerHTML = `
             <div class="text-sm">
                 <div class="flex justify-between mb-2">
-                    <span class="text-gray-700">Current:</span>
-                    <span class="font-bold text-purple-600">₹${srLevels.currentPrice.toFixed(2)}</span>
+                    <span class="text-gray-400">Current:</span>
+                    <span class="font-bold text-purple-400">₹${srLevels.currentPrice.toFixed(2)}</span>
                 </div>
                 ${nearest.support ? `
                 <div class="flex justify-between mb-2">
-                    <span class="text-gray-700">To Support:</span>
-                    <span class="font-bold text-green-600">${(((srLevels.currentPrice - nearest.support) / nearest.support) * 100).toFixed(2)}%</span>
+                    <span class="text-gray-400">To Support:</span>
+                    <span class="font-bold text-green-400">${(((srLevels.currentPrice - nearest.support) / nearest.support) * 100).toFixed(2)}%</span>
                 </div>` : ''}
                 ${nearest.resistance ? `
                 <div class="flex justify-between">
-                    <span class="text-gray-700">To Resistance:</span>
-                    <span class="font-bold text-red-600">${(((nearest.resistance - srLevels.currentPrice) / srLevels.currentPrice) * 100).toFixed(2)}%</span>
+                    <span class="text-gray-400">To Resistance:</span>
+                    <span class="font-bold text-red-400">${(((nearest.resistance - srLevels.currentPrice) / srLevels.currentPrice) * 100).toFixed(2)}%</span>
                 </div>` : ''}
             </div>
         `;
@@ -465,10 +498,10 @@ function loadTradingViewWidget(symbol) {
         "symbol": tvSymbol,
         "interval": "D",
         "timezone": "Asia/Kolkata",
-        "theme": "light",
+        "theme": "dark",
         "style": "1",
         "locale": "en",
-        "toolbar_bg": "#f1f3f6",
+        "toolbar_bg": "#0a0a0a",
         "enable_publishing": false,
         "allow_symbol_change": true,
         "container_id": "tradingview_widget",
