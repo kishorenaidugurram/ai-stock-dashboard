@@ -1786,7 +1786,7 @@ app.get('/', (c) => {
                                 </div>
                                 <div class="text-xs text-gray-600">
                                     <i class="fas fa-hashtag text-purple-500 mr-1"></i>
-                                    \${stock.socialSentiment.twitter.keywords.slice(0, 3).join(', ')}
+                                    \${stock.socialSentiment.twitter.keywords ? stock.socialSentiment.twitter.keywords.slice(0, 3).join(', ') : 'N/A'}
                                 </div>
                             </div>
                             \` : ''}
