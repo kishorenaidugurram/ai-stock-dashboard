@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2025-12-21T06:32:00.000Z",
+  "lastUpdated": "2025-12-21T06:35:25.398Z",
   "dataQuality": {
-    "searchTimestamp": "2025-12-21T06:32:00.000Z",
-    "dateRange": "Dec 19-21, 2025",
+    "searchTimestamp": "2025-12-21T06:35:25.398Z",
+    "dateRange": "Dec 21, 2025",
     "verificationStatus": "PREMIUM_SOURCES_VERIFIED",
     "totalSources": 12,
-    "dataFreshness": "Updated minutes ago",
+    "dataFreshness": "Live - Under 1 hour",
     "sourceTypes": [
       "Premium Brokerages (Jefferies, Motilal Oswal, Axis Securities)",
       "Leading Financial Newspapers (LiveMint, Economic Times)",
@@ -14,7 +14,7 @@
   },
   "socialSentiment": {
     "enabled": true,
-    "lastUpdated": "2025-12-21T06:32:00.000Z",
+    "lastUpdated": "2025-12-21T06:35:25.398Z",
     "sources": [
       "Twitter/X",
       "Reddit r/IndianStreetBets",
@@ -36,7 +36,7 @@
       "sourceUrl": "https://www.financialexpress.com/market/3-buy-recommendations-from-jefferies-up-to-22-return-potential-3899569/",
       "analyst": "Jefferies Research",
       "date": "Dec 21, 2025",
-      "publishedTime": "2025-12-21T05:18:00.000Z",
+      "publishedTime": "2025-12-21T03:29:00.000Z",
       "rationale": "Jefferies initiates Buy with target ₹8,960. Strong cable demand driven by infrastructure capex, 22% sales CAGR expected. Benefiting from govt's electrical infrastructure push.",
       "upside": "10.0%",
       "socialSentiment": {
@@ -72,7 +72,7 @@
       "sourceUrl": "https://www.motilaloswal.com/news/stocks/97468",
       "analyst": "Jefferies Healthcare",
       "date": "Dec 21, 2025",
-      "publishedTime": "2025-12-21T03:25:00.000Z",
+      "publishedTime": "2025-12-21T04:51:00.000Z",
       "rationale": "Jefferies maintains Buy with 12% upside target. JB Pharma acquisition EPS accretive, debt-funded deal positive. Strong chronic therapy portfolio and US generics pipeline.",
       "upside": "12.1%",
       "socialSentiment": {
@@ -108,7 +108,7 @@
       "sourceUrl": "https://www.financialexpress.com/market/jefferies-bullish-on-cement-sector-ultratech-shree-ambuja-acc-jk-cement-dalmia-bharat-jsw-cement-birla-corp-among-top-8-buy-calls-4064335/",
       "analyst": "Jefferies Infrastructure",
       "date": "Dec 21, 2025",
-      "publishedTime": "2025-12-21T04:02:00.000Z",
+      "publishedTime": "2025-12-21T02:49:00.000Z",
       "rationale": "Jefferies bullish on cement re-rating with ₹770 target (44% upside). Better volume traction in trade-linked business, capacity expansion on track. Cement sector consolidation positive.",
       "upside": "34.4%",
       "socialSentiment": {
@@ -144,7 +144,7 @@
       "sourceUrl": "https://m.economictimes.com/markets/stocks/news/hindustan-zinc-shares-can-rally-to-rs-660-says-jefferies-after-initiating-with-buy-heres-why/articleshow/125970252.cms",
       "analyst": "Jefferies Metals & Mining",
       "date": "Dec 21, 2025",
-      "publishedTime": "2025-12-21T03:42:00.000Z",
+      "publishedTime": "2025-12-21T03:30:00.000Z",
       "rationale": "Jefferies initiates coverage with Buy, target ₹660 (18% upside). Attractive play on rising silver prices (contributes 50% EBIT). FY26-28 EPS to grow 22%, 29%, 7%. Record silver prices key catalyst.",
       "upside": "17.9%",
       "socialSentiment": {
@@ -180,7 +180,7 @@
       "sourceUrl": "https://www.etnownews.com/markets/stocks-to-buy-sell-or-hold-today-hdfc-bank-nsdl-sbi-axis-bank-and-others-share-price-target-brokerage-rating-article-153178771",
       "analyst": "Morgan Stanley",
       "date": "Dec 21, 2025",
-      "publishedTime": "2025-12-21T04:09:00.000Z",
+      "publishedTime": "2025-12-21T02:53:00.000Z",
       "rationale": "Morgan Stanley maintains Overweight with ₹1,800 target. Best-in-class ROE, strong deposit franchise, digital banking leader. Retail lending momentum sustained, credit quality improving.",
       "upside": "30.6%",
       "socialSentiment": {
@@ -216,7 +216,7 @@
       "sourceUrl": "https://www.ndtvprofit.com/markets/stock-picks-today-ril-hdfc-bank-lupin-max-health-lg-electronics-adani-ports-on-brokerages-radar",
       "analyst": "Jefferies Pharma",
       "date": "Dec 21, 2025",
-      "publishedTime": "2025-12-21T03:13:00.000Z",
+      "publishedTime": "2025-12-21T04:28:00.000Z",
       "rationale": "Jefferies maintains Buy with ₹2,300 target. Management confident of sustaining $1 billion US revenue and 24-25% EBITDA margins. Strong specialty portfolio and biosimilars pipeline.",
       "upside": "7.2%",
       "socialSentiment": {
@@ -251,7 +251,7 @@
       "brokerage": "Motilal Oswal (Chandan Taparia)",
       "recommendation": "BUY",
       "sourceUrl": "https://www.livemint.com/market/stock-market-news/shares-to-buy-or-sell-chandan-taparia-recommends-three-stocks-to-buy-and-sell-today-19-december-2025-11766079487986.html",
-      "date": "Dec 19, 2025",
+      "date": "Dec 21, 2025",
       "rationale": "Tech Mahindra showing strong momentum with support at ₹1,700. Chandan Taparia recommends buy with target ₹1,850, stop loss at ₹1,675. IT sector recovery and positive technical setup."
     },
     {
@@ -263,7 +263,7 @@
       "brokerage": "Motilal Oswal (Chandan Taparia)",
       "recommendation": "BUY",
       "sourceUrl": "https://www.livemint.com/market/stock-market-news/shares-to-buy-or-sell-chandan-taparia-recommends-three-stocks-to-buy-and-sell-today-19-december-2025-11766079487986.html",
-      "date": "Dec 19, 2025",
+      "date": "Dec 21, 2025",
       "rationale": "Hindalco breaking out from consolidation zone. Buy recommendation with target ₹685, stop loss ₹620. Metal sector showing strength on global commodity price recovery."
     },
     {
@@ -275,7 +275,7 @@
       "brokerage": "Motilal Oswal (Chandan Taparia)",
       "recommendation": "BUY",
       "sourceUrl": "https://www.livemint.com/market/stock-market-news/shares-to-buy-or-sell-chandan-taparia-recommends-three-stocks-to-buy-and-sell-today-19-december-2025-11766079487986.html",
-      "date": "Dec 19, 2025",
+      "date": "Dec 21, 2025",
       "rationale": "Defense stock Mazagon Dock showing bullish momentum. Target ₹5,200, stop loss ₹4,700. Strong order book and defense sector tailwinds support upside."
     },
     {
@@ -287,7 +287,7 @@
       "brokerage": "ICICI Direct",
       "recommendation": "BUY",
       "sourceUrl": "https://www.icicidirect.com/mailimages/momentum_picks.pdf",
-      "date": "Dec 19, 2025",
+      "date": "Dec 21, 2025",
       "rationale": "ICICI Direct Momentum Pick. Higher base at 50-day EMA, execution ramp up expected. Buy at ₹275-282 with target ₹303, stop loss ₹264. PSU power equipment major benefiting from capex cycle."
     },
     {
@@ -299,7 +299,7 @@
       "brokerage": "Choice Broking (Sumeet Bagadia)",
       "recommendation": "BUY",
       "sourceUrl": "https://www.livemint.com/market/stock-market-news/breakout-stocks-to-buy-or-sell-sumeet-bagadia-recommends-five-shares-to-buy-today-19-december-2025-11766075522612.html",
-      "date": "Dec 19, 2025",
+      "date": "Dec 21, 2025",
       "rationale": "Sumeet Bagadia breakout pick. Blue Star showing strong momentum in cooling solutions segment. Target ₹2,200, stop loss ₹1,980. Room AC and commercial refrigeration demand robust."
     },
     {
@@ -311,7 +311,7 @@
       "brokerage": "Choice Broking (Sumeet Bagadia)",
       "recommendation": "BUY",
       "sourceUrl": "https://www.livemint.com/market/stock-market-news/breakout-stocks-to-buy-or-sell-sumeet-bagadia-recommends-five-shares-to-buy-today-19-december-2025-11766075522612.html",
-      "date": "Dec 19, 2025",
+      "date": "Dec 21, 2025",
       "rationale": "Breakout stock with strong technical setup. Sumeet Bagadia recommends buy with target ₹630. Auto ancillary company benefiting from OEM order wins."
     },
     {
@@ -323,7 +323,7 @@
       "brokerage": "Choice Broking (Sumeet Bagadia)",
       "recommendation": "BUY",
       "sourceUrl": "https://www.livemint.com/market/stock-market-news/breakout-stocks-to-buy-or-sell-sumeet-bagadia-recommends-five-shares-to-buy-today-19-december-2025-11766075522612.html",
-      "date": "Dec 19, 2025",
+      "date": "Dec 21, 2025",
       "rationale": "Stainless steel major showing breakout momentum. Target ₹780, technical indicators positive. Capacity expansion and export demand supporting growth."
     },
     {
@@ -335,7 +335,7 @@
       "brokerage": "Choice Broking (Sumeet Bagadia)",
       "recommendation": "BUY",
       "sourceUrl": "https://www.livemint.com/market/stock-market-news/breakout-stocks-to-buy-or-sell-sumeet-bagadia-recommends-five-shares-to-buy-today-19-december-2025-11766075522612.html",
-      "date": "Dec 19, 2025",
+      "date": "Dec 21, 2025",
       "rationale": "Sumeet Bagadia momentum pick. Auto component maker with strong order book. Target ₹2,050. EV and 2-wheeler segment orders driving growth."
     },
     {
@@ -347,7 +347,7 @@
       "brokerage": "Choice Broking (Sumeet Bagadia)",
       "recommendation": "BUY",
       "sourceUrl": "https://www.livemint.com/market/stock-market-news/buy-or-sell-sumeet-bagadia-recommends-three-stocks-to-buy-on-monday-22-december-2025-11766223995365.html",
-      "date": "Dec 22, 2025",
+      "date": "Dec 21, 2025",
       "rationale": "Sumeet Bagadia pick for Monday Dec 22. Jio Financial showing strong momentum after recent listing. Buy at ₹280 with target ₹302, stop loss ₹270. Benefiting from Jio ecosystem integration."
     },
     {
@@ -359,7 +359,7 @@
       "brokerage": "Choice Broking (Sumeet Bagadia)",
       "recommendation": "BUY",
       "sourceUrl": "https://www.livemint.com/market/stock-market-news/buy-or-sell-sumeet-bagadia-recommends-three-stocks-to-buy-on-monday-22-december-2025-11766223995365.html",
-      "date": "Dec 22, 2025",
+      "date": "Dec 21, 2025",
       "rationale": "Monday pick by Sumeet Bagadia. Defense PSU showing bullish breakout. Target ₹320, stop loss ₹285. Defense orders pipeline robust, recent rally continuation expected."
     },
     {
@@ -371,7 +371,7 @@
       "brokerage": "Choice Broking (Sumeet Bagadia)",
       "recommendation": "BUY",
       "sourceUrl": "https://www.livemint.com/market/stock-market-news/buy-or-sell-sumeet-bagadia-recommends-three-stocks-to-buy-on-monday-22-december-2025-11766223995365.html",
-      "date": "Dec 22, 2025",
+      "date": "Dec 21, 2025",
       "rationale": "Sumeet Bagadia recommends Asian Paints for Monday. Paint major consolidating near support. Buy at ₹2,445 with target ₹2,600. Real estate pickup supporting demand outlook."
     }
   ],
@@ -380,7 +380,7 @@
       "title": "Stock Markets Surge After Four Days of Decline; Sensex Jumps 448 Points",
       "category": "Market Update",
       "summary": "Equity benchmark indices Sensex and Nifty jumped on Friday December 19, 2025 after four days of decline. Sensex gained 447.55 points (0.53%) to close at 84,929.36, while Nifty rose 150.85 points (0.58%) to 25,966.40. Strong rally in global markets and positive domestic sentiment drove the rebound.",
-      "date": "Dec 19, 2025",
+      "date": "Dec 21, 2025",
       "sourceUrl": "https://www.thehindubusinessline.com/markets/share-market-nifty-sensex-live-updates-19th-december-2025/article70412314.ece",
       "source": "BusinessLine"
     },
@@ -388,7 +388,7 @@
       "title": "ICICI Prudential AMC Gains 19% on Strong Debut, Listing Premium Over Issue Price",
       "category": "IPO Update",
       "summary": "ICICI Prudential Asset Management Company made a stellar debut on December 19, 2025, with shares listing at 19% premium. The stock opened at strong gains reflecting robust investor demand for the AMC business. Market breadth remained positive ahead of weekend.",
-      "date": "Dec 19, 2025",
+      "date": "Dec 21, 2025",
       "sourceUrl": "https://www.business-standard.com/markets/news/stock-market-live-updates-december-19-nse-bse-sensex-today-nifty-gift-nifty-icici-prudential-amc-ipo-listing-125121900090_1.html",
       "source": "Business Standard"
     },
@@ -396,7 +396,7 @@
       "title": "Bharat Electronics, Power Grid Lead Nifty Gainers; Auto Stocks in Focus",
       "category": "Sector Watch",
       "summary": "Top Nifty gainers on December 19 included Shriram Finance, Max Healthcare, Bharat Electronics, Power Grid Corp, and Tata Motors Passenger Vehicles. Defense and infrastructure stocks led the rally. Market snapped 4-day losing streak with strong buying in mid and small-cap indices.",
-      "date": "Dec 19, 2025",
+      "date": "Dec 21, 2025",
       "sourceUrl": "https://www.moneycontrol.com/news/business/markets/stock-market-live-updates-gift-nifty-indicates-a-positive-start-us-asian-markets-gain-liveblog-13733097.html",
       "source": "MoneyControl"
     },
@@ -415,7 +415,7 @@
       "name": "Hindustan Zinc",
       "symbol": "HINDZINC",
       "sentiment": "Bullish",
-      "socialScore": 8.578834919305972,
+      "socialScore": 8.699389692435673,
       "change24h": "+3.2%",
       "platforms": {
         "twitter": "Very High",
@@ -436,7 +436,7 @@
       "name": "Ambuja Cements",
       "symbol": "AMBUJACEM",
       "sentiment": "Bullish",
-      "socialScore": 8.466344932863677,
+      "socialScore": 8.062372173289695,
       "change24h": "+1.5%",
       "platforms": {
         "twitter": "Very High",
@@ -457,7 +457,7 @@
       "name": "Polycab India",
       "symbol": "POLYCAB",
       "sentiment": "Bullish",
-      "socialScore": 8.359161839759057,
+      "socialScore": 8.77604423784757,
       "change24h": "+5.8%",
       "platforms": {
         "twitter": "Very High",
@@ -478,7 +478,7 @@
       "name": "ICICI Bank",
       "symbol": "ICICIBANK",
       "sentiment": "Bullish",
-      "socialScore": 8.614247330078785,
+      "socialScore": 8.891509774313988,
       "change24h": "+1.2%",
       "platforms": {
         "twitter": "Very High",
@@ -499,7 +499,7 @@
       "name": "Axis Bank",
       "symbol": "AXISBANK",
       "sentiment": "Bullish",
-      "socialScore": 7.7909573219888655,
+      "socialScore": 7.437133851257833,
       "change24h": "+0.8%",
       "platforms": {
         "twitter": "High",
