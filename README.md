@@ -1,7 +1,37 @@
-# Stock Market Dashboard - NSE F&O & Brokerage Recommendations
+# 🎨 StockEdge Pro - Premium Stock Analytics & AI Trading Insights
 
-## Project Overview
-A **dynamic, JSON-based stock market dashboard** showcasing NSE F&O breakout stocks and leading brokerage house recommendations from **December 13-20, 2025** with direct source links for further reading.
+## 🚀 **Production-Ready Premium Application**
+
+A **professional-grade stock market dashboard** with premium UI/UX, featuring NSE F&O breakout stocks, leading brokerage recommendations, and social sentiment tracking. **Ready to charge fees.**
+
+---
+
+## ✨ **Premium Features (NEW!)**
+
+### 🎨 **Professional Design System**
+- **Premium Branding**: "StockEdge Pro" with gradient logo
+- **Glassmorphism UI**: Frosted glass cards with backdrop blur
+- **Dark/Light Theme**: Smooth theme toggle with localStorage persistence
+- **Premium Typography**: Inter + Poppins fonts, 7 weight variations
+- **Advanced Animations**: Fade in, slide in, ripple effects, shimmer loaders
+- **800+ Lines Custom CSS**: Professional design system with 60+ design tokens
+
+### 🔍 **Power User Features**
+- **Global Search**: Real-time filtering with keyboard shortcut (Ctrl+K)
+- **Data Export**: JSON & CSV export with auto-dated filenames
+- **Notifications**: Toast notifications with gradients
+- **Keyboard Shortcuts**:
+  - `Ctrl/Cmd + K` - Focus search bar
+  - `Ctrl/Cmd + D` - Toggle dark mode
+
+### 💎 **UI Components**
+- **Premium Cards**: Hover lift animations, premium shadows
+- **Glass Navigation**: Semi-transparent with blur effect
+- **Skeleton Loaders**: Shimmer animations for loading states
+- **Gradient Buttons**: Ripple effects on click
+- **Professional Badges**: Success/Danger/Premium variants
+
+---
 
 ## 🎯 Key Features
 
@@ -49,9 +79,10 @@ Track what retail investors are saying on social media:
 
 ## 🔗 URLs
 
-- **Live Dashboard**: https://3000-icgc5fj3ctx0aeqev243p-18e660f9.sandbox.novita.ai
+- **Live Dashboard (Premium UI)**: https://3000-icgc5fj3ctx0aeqev243p-18e660f9.sandbox.novita.ai
 - **API Endpoint**: https://3000-icgc5fj3ctx0aeqev243p-18e660f9.sandbox.novita.ai/api/stocks
 - **JSON Data File**: `/data/stocks-data.json`
+- **Premium UI Documentation**: [PREMIUM_UI_UPGRADE.md](PREMIUM_UI_UPGRADE.md)
 
 ## 🔍 How Data Is Sourced
 
@@ -394,7 +425,8 @@ MIT License - Educational and informational purposes only
 
 ---
 
-**Built with ❤️ using Hono + Cloudflare Pages**
+**🎨 Built with Premium UI/UX using Hono + Cloudflare Pages**
 
+**Dashboard Version**: 2.0 (Premium Edition - Production Ready)  
+**Last UI Update**: December 21, 2025  
 **Last Data Update**: December 20, 2025
-**Dashboard Version**: 2.0 (JSON-Based Dynamic)
