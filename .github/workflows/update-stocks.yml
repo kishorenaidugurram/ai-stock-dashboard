@@ -2,8 +2,18 @@ name: Update Stock Dashboard Data
 
 on:
   schedule:
+    # 7:00 AM IST (1:30 AM UTC)
+    - cron: '30 1 * * *'
+    # 9:00 AM IST (3:30 AM UTC)
     - cron: '30 3 * * *'
+    # 2:00 PM IST (8:30 AM UTC)
+    - cron: '30 8 * * *'
+    # 4:00 PM IST (10:30 AM UTC)
+    - cron: '30 10 * * *'
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   update-data:
@@ -11,6 +21,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
