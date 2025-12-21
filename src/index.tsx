@@ -1836,7 +1836,7 @@ app.get('/', (c) => {
                         <div class="premium-card p-6 card-animate" data-symbol="\${rec.symbol}">
                             <div class="flex justify-between items-start mb-4">
                                 <div>
-                                    <h3 class="text-xl font-bold text-gray-800">\${rec.stock}</h3>
+                                    <h3 class="text-xl font-bold text-gray-800">\${rec.name}</h3>
                                     <p class="text-gray-500 text-sm">\${rec.symbol}</p>
                                 </div>
                                 <div class="flex flex-col gap-2 items-end">
@@ -1910,7 +1910,11 @@ app.get('/', (c) => {
                                 <a href="\${rec.sourceUrl}" target="_blank" 
                                    class="source-link text-blue-600 hover:text-blue-800 flex items-center text-sm">
                                     <i class="fas fa-external-link-alt mr-1"></i>
-                                    Read full report on \${rec.source}
+                                    Read full report on \${rec.sourceUrl.includes('livemint') ? 'LiveMint' : 
+                                                          rec.sourceUrl.includes('economictimes') ? 'Economic Times' : 
+                                                          rec.sourceUrl.includes('moneycontrol') ? 'MoneyControl' : 
+                                                          rec.sourceUrl.includes('motilaloswal') ? 'Motilal Oswal' : 
+                                                          'Source'}
                                 </a>
                             </div>
                         </div>
