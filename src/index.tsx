@@ -611,7 +611,7 @@ app.get('/', (c) => {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Stock Market Dashboard - NSE F&O & Brokerage Recommendations</title>
+        <title>StockEdge Pro - Premium Stock Analytics & AI Trading Insights</title>
         <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
         <script src="https://cdn.tailwindcss.com"></script>
         <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
@@ -958,15 +958,16 @@ app.get('/', (c) => {
                 <div class="flex items-center justify-between flex-wrap gap-6">
                     <div class="flex-1">
                         <div class="flex items-center gap-4 mb-3">
-                            <div class="w-14 h-14 bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl flex items-center justify-center text-3xl">
-                                <i class="fas fa-chart-line"></i>
+                            <div class="w-16 h-16 bg-gradient-to-br from-white to-indigo-100 backdrop-blur-sm rounded-2xl flex items-center justify-center text-3xl shadow-2xl border-2 border-white border-opacity-30">
+                                <i class="fas fa-chart-line text-indigo-600"></i>
                             </div>
                             <div>
-                                <h1 class="text-4xl font-black tracking-tight">
-                                    Stock Market Dashboard
+                                <h1 class="text-5xl font-black tracking-tight mb-1">
+                                    StockEdge <span class="text-indigo-200">Pro</span>
                                 </h1>
-                                <p class="text-indigo-100 text-sm mt-1 font-medium">
-                                    NSE F&O Breakout Stocks & Leading Brokerage Recommendations
+                                <p class="text-indigo-100 text-base font-semibold flex items-center gap-2">
+                                    <span class="inline-block w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                                    Premium Stock Analytics & AI Trading Insights
                                 </p>
                             </div>
                         </div>
@@ -1009,14 +1010,39 @@ app.get('/', (c) => {
                             <i class="fas fa-bell mr-2"></i>Alerts
                         </button>
                     </div>
-                    <div class="flex items-center gap-3 py-3">
-                        <span class="text-sm font-semibold text-gray-600">Quick View:</span>
-                        <select id="viewSelector" onchange="switchView(this.value)" class="px-4 py-2 border border-gray-200 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white shadow-sm">
-                            <option value="dashboard">Dashboard</option>
-                            <option value="technical">Technical</option>
-                            <option value="ai-insights">AI Insights</option>
-                            <option value="alerts">Alerts</option>
-                        </select>
+                    <div class="flex items-center gap-4 py-3">
+                        <!-- Premium Search Bar -->
+                        <div class="relative search-bar-nav">
+                            <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                            <input 
+                                type="text" 
+                                id="globalSearch" 
+                                placeholder="Search stocks..." 
+                                class="pl-11 pr-4 py-2.5 w-80 border border-gray-200 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white shadow-sm transition-all"
+                                oninput="globalSearch(this.value)"
+                            />
+                        </div>
+                        
+                        <!-- Theme Toggle -->
+                        <button 
+                            onclick="toggleTheme()" 
+                            class="p-2.5 rounded-xl bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all tooltip"
+                            data-tooltip="Toggle Dark Mode"
+                            id="themeToggle"
+                        >
+                            <i class="fas fa-moon text-gray-600"></i>
+                        </button>
+                        
+                        <!-- Notifications -->
+                        <button class="p-2.5 rounded-xl bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all relative tooltip" data-tooltip="Notifications">
+                            <i class="fas fa-bell text-gray-600"></i>
+                            <span class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center" id="notificationCount">2</span>
+                        </button>
+                        
+                        <!-- Export Menu -->
+                        <button class="p-2.5 rounded-xl bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all tooltip" data-tooltip="Export Data" onclick="showExportMenu()">
+                            <i class="fas fa-download text-gray-600"></i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -2098,6 +2124,216 @@ app.get('/', (c) => {
             async function refreshData() {
                 await loadData();
             }
+            
+            // ============================================
+            // PREMIUM FEATURES - Theme, Search, Export
+            // ============================================
+            
+            // Theme Toggle
+            function toggleTheme() {
+                const html = document.documentElement;
+                const currentTheme = html.getAttribute('data-theme') || 'light';
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                const themeIcon = document.querySelector('#themeToggle i');
+                
+                html.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                if (newTheme === 'dark') {
+                    themeIcon.className = 'fas fa-sun text-yellow-400';
+                    document.body.style.background = 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)';
+                } else {
+                    themeIcon.className = 'fas fa-moon text-gray-600';
+                    document.body.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                }
+            }
+            
+            // Initialize theme from localStorage
+            (function initTheme() {
+                const savedTheme = localStorage.getItem('theme') || 'light';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                const themeIcon = document.querySelector('#themeToggle i');
+                if (savedTheme === 'dark' && themeIcon) {
+                    themeIcon.className = 'fas fa-sun text-yellow-400';
+                    document.body.style.background = 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)';
+                }
+            })();
+            
+            // Global Search
+            let searchTimeout;
+            function globalSearch(query) {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    const lowerQuery = query.toLowerCase().trim();
+                    
+                    if (!lowerQuery) {
+                        // Show all cards
+                        document.querySelectorAll('.stock-card').forEach(card => {
+                            card.style.display = '';
+                        });
+                        return;
+                    }
+                    
+                    // Filter stock cards
+                    let visibleCount = 0;
+                    document.querySelectorAll('.stock-card').forEach(card => {
+                        const text = card.textContent.toLowerCase();
+                        if (text.includes(lowerQuery)) {
+                            card.style.display = '';
+                            card.style.animation = 'fadeIn 0.3s ease-out';
+                            visibleCount++;
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                    
+                    console.log("Search: " + query + " - " + visibleCount + " results");
+                }, 300);
+            }
+            
+            // Export Menu
+            function showExportMenu() {
+                const menu = document.createElement('div');
+                menu.id = 'exportMenu';
+                menu.className = 'fixed top-20 right-4 bg-white rounded-xl shadow-2xl border border-gray-200 p-4 z-50 animate-fade-in';
+                menu.innerHTML = '<h3 class="font-bold text-gray-800 mb-3 flex items-center">' +
+                    '<i class="fas fa-file-export text-indigo-600 mr-2"></i>Export Data</h3>' +
+                    '<div class="space-y-2">' +
+                    '<button onclick="exportJSON()" class="w-full flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all shadow-md">' +
+                    '<i class="fas fa-file-code"></i><span>Export as JSON</span></button>' +
+                    '<button onclick="exportCSV()" class="w-full flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg hover:from-green-600 hover:to-green-700 transition-all shadow-md">' +
+                    '<i class="fas fa-file-csv"></i><span>Export as CSV</span></button>' +
+                    '<button onclick="closeExportMenu()" class="w-full px-4 py-2.5 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-all">Cancel</button></div>';
+                
+                // Remove existing menu if any
+                const existingMenu = document.getElementById('exportMenu');
+                if (existingMenu) existingMenu.remove();
+                
+                document.body.appendChild(menu);
+                
+                // Close on click outside
+                setTimeout(() => {
+                    document.addEventListener('click', function closeOnOutside(e) {
+                        if (!menu.contains(e.target) && !e.target.closest('[data-tooltip="Export Data"]')) {
+                            menu.remove();
+                            document.removeEventListener('click', closeOnOutside);
+                        }
+                    });
+                }, 100);
+            }
+            
+            function closeExportMenu() {
+                const menu = document.getElementById('exportMenu');
+                if (menu) menu.remove();
+            }
+            
+            // Export as JSON
+            async function exportJSON() {
+                try {
+                    const response = await axios.get('/api/stocks');
+                    const data = response.data;
+                    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = "stockedge-pro-data-" + new Date().toISOString().split("T")[0] + ".json";
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    closeExportMenu();
+                    showNotification('✅ JSON exported successfully!', 'success');
+                } catch (error) {
+                    console.error('Export error:', error);
+                    showNotification('❌ Export failed', 'error');
+                }
+            }
+            
+            // Export as CSV
+            async function exportCSV() {
+                try {
+                    const response = await axios.get('/api/stocks');
+                    const data = response.data;
+                    
+                    // Combine all stocks
+                    const allStocks = [
+                        ...(data.breakoutStocks || []).map(s => ({ ...s, source: 'Breakout' })),
+                        ...(data.brokerageRecommendations || []).map(s => ({ ...s, source: 'Brokerage' }))
+                    ];
+                    
+                    if (allStocks.length === 0) {
+                        showNotification('⚠️ No data to export', 'warning');
+                        return;
+                    }
+                    
+                    // Create CSV
+                    const headers = ['Symbol', 'Name', 'Price', 'Change %', 'Target', 'Stop Loss', 'Source', 'Date'];
+                    const rows = allStocks.map(stock => [
+                        stock.symbol || '',
+                        stock.name || '',
+                        stock.price || '',
+                        stock.change || '',
+                        stock.target || '',
+                        stock.stopLoss || '',
+                        stock.source || '',
+                        stock.date || stock.entryDate || ''
+                    ]);
+                    
+                    const csvContent = [
+                        headers.join(','),
+                        ...rows.map(row => row.map(cell => '"' + cell + '"').join(","))
+                    ].join('\\n');
+                    
+                    const blob = new Blob([csvContent], { type: 'text/csv' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = "stockedge-pro-data-" + new Date().toISOString().split("T")[0] + ".csv";
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    closeExportMenu();
+                    showNotification('✅ CSV exported successfully!', 'success');
+                } catch (error) {
+                    console.error('Export error:', error);
+                    showNotification('❌ Export failed', 'error');
+                }
+            }
+            
+            // Notification System
+            function showNotification(message, type = 'info') {
+                const notification = document.createElement('div');
+                notification.className = "fixed top-4 right-4 z-[9999] px-6 py-4 rounded-xl shadow-2xl animate-fade-in " + (
+                    type === 'success' ? 'bg-gradient-to-r from-green-500 to-green-600' :
+                    type === 'error' ? 'bg-gradient-to-r from-red-500 to-red-600' :
+                    type === 'warning' ? 'bg-gradient-to-r from-yellow-500 to-yellow-600' :
+                    'bg-gradient-to-r from-blue-500 to-blue-600'
+                ) + " text-white font-semibold";
+                notification.textContent = message;
+                
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.style.animation = 'fadeOut 0.3s ease-out';
+                    setTimeout(() => notification.remove(), 300);
+                }, 3000);
+            }
+            
+            // Keyboard shortcuts
+            document.addEventListener('keydown', (e) => {
+                // Ctrl/Cmd + K for search focus
+                if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                    e.preventDefault();
+                    document.getElementById('globalSearch')?.focus();
+                }
+                
+                // Ctrl/Cmd + D for dark mode toggle
+                if ((e.ctrlKey || e.metaKey) && e.key === 'd') {
+                    e.preventDefault();
+                    toggleTheme();
+                }
+            });
 
             // Load data on page load
             loadData();
