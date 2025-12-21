@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chart Test</title>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <script src="https://s3.tradingview.com/tv.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        button { padding: 10px 20px; font-size: 16px; margin: 10px; cursor: pointer; }
+        .test-btn { background: #6366f1; color: white; border: none; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1>Direct Chart Test</h1>
+    <p>Click the button below to test the chart modal:</p>
+    
+    <button class="test-btn" onclick="testChart()">
+        <i class="fas fa-chart-line"></i> Test Chart Now
+    </button>
+    
+    <div id="status" style="margin-top: 20px; padding: 10px; background: #f0f0f0;"></div>
+    
+    <script src="http://localhost:3000/static/charts.js"></script>
+    <script>
+        function testChart() {
+            const status = document.getElementById('status');
+            status.innerHTML = '<p>Testing chart...</p>';
+            
+            console.log('=== Chart Test ===');
+            console.log('Plotly:', typeof Plotly);
+            console.log('TradingView:', typeof TradingView);
+            console.log('window.chartManager:', typeof window.chartManager);
+            console.log('window.showChart:', typeof window.showChart);
+            
+            status.innerHTML += '<p>Plotly: ' + typeof Plotly + '</p>';
+            status.innerHTML += '<p>chartManager: ' + typeof window.chartManager + '</p>';
+            status.innerHTML += '<p>showChart: ' + typeof window.showChart + '</p>';
+            
+            if (typeof window.chartManager !== 'undefined') {
+                status.innerHTML += '<p style="color: green;">✅ Calling showChartModal...</p>';
+                window.chartManager.showChartModal('RELIANCE', {name: 'Reliance Industries'});
+            } else {
+                status.innerHTML += '<p style="color: red;">❌ chartManager not found!</p>';
+            }
+        }
+        
+        // Auto-check after 2 seconds
+        setTimeout(() => {
+            console.log('=== Auto Check ===');
+            console.log('chartManager exists:', typeof window.chartManager);
+            if (typeof window.chartManager === 'undefined') {
+                document.getElementById('status').innerHTML = '<p style="color: red;">❌ charts.js did not load properly!</p>';
+            } else {
+                document.getElementById('status').innerHTML = '<p style="color: green;">✅ Chart system ready! Click the button above.</p>';
+            }
+        }, 2000);
+    </script>
+</body>
+</html>

@@ -522,6 +522,87 @@ app.get('/nsepcs', (c) => {
 </html>`);
 });
 
+// Test chart route
+app.get('/test-chart', (c) => {
+  return c.html(`<!DOCTYPE html>
+<html>
+<head>
+    <title>Chart Test</title>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <script src="https://s3.tradingview.com/tv.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: Arial, sans-serif; padding: 40px; background: #f5f5f5; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        button { padding: 15px 30px; font-size: 18px; margin: 10px; cursor: pointer; }
+        .test-btn { background: #6366f1; color: white; border: none; border-radius: 8px; font-weight: bold; }
+        .test-btn:hover { background: #4f46e5; }
+        #status { margin-top: 20px; padding: 15px; background: #f0f0f0; border-radius: 8px; font-family: monospace; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Direct Chart Test Page</h1>
+        <p>This is a minimal test page to verify the chart modal works independently.</p>
+        
+        <button class="test-btn" onclick="testChart()">
+            <i class="fas fa-chart-line"></i> Click Here to Test Chart
+        </button>
+        
+        <div id="status">Waiting...</div>
+    </div>
+    
+    <script src="/static/charts.js"></script>
+    <script>
+        function testChart() {
+            const status = document.getElementById('status');
+            status.innerHTML = '<p><strong>Testing chart...</strong></p>';
+            
+            console.log('=== Chart Test Started ===');
+            console.log('Plotly:', typeof Plotly);
+            console.log('TradingView:', typeof TradingView);
+            console.log('window.chartManager:', typeof window.chartManager);
+            console.log('window.showChart:', typeof window.showChart);
+            
+            status.innerHTML += '<p>✓ Plotly: <strong>' + typeof Plotly + '</strong></p>';
+            status.innerHTML += '<p>✓ TradingView: <strong>' + typeof TradingView + '</strong></p>';
+            status.innerHTML += '<p>✓ chartManager: <strong>' + typeof window.chartManager + '</strong></p>';
+            status.innerHTML += '<p>✓ showChart: <strong>' + typeof window.showChart + '</strong></p>';
+            
+            if (typeof window.chartManager !== 'undefined') {
+                status.innerHTML += '<p style="color: green; font-weight: bold;">✅ Calling showChartModal now...</p>';
+                try {
+                    window.chartManager.showChartModal('RELIANCE', {name: 'Reliance Industries Ltd'});
+                    status.innerHTML += '<p style="color: green;">✅ Function called successfully! Modal should appear.</p>';
+                } catch (error) {
+                    status.innerHTML += '<p style="color: red;">❌ Error: ' + error.message + '</p>';
+                    console.error('Error calling showChartModal:', error);
+                }
+            } else {
+                status.innerHTML += '<p style="color: red; font-weight: bold;">❌ chartManager not found!</p>';
+            }
+        }
+        
+        // Auto-check after page load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                console.log('=== Auto Check (2 seconds after load) ===');
+                const status = document.getElementById('status');
+                
+                if (typeof window.chartManager === 'undefined') {
+                    status.innerHTML = '<p style="color: red; font-weight: bold;">❌ charts.js did not load properly!</p>';
+                    status.innerHTML += '<p>Please check browser console for errors.</p>';
+                } else {
+                    status.innerHTML = '<p style="color: green; font-weight: bold;">✅ Chart system is ready!</p>';
+                    status.innerHTML += '<p>Click the button above to test the chart modal.</p>';
+                }
+            }, 2000);
+        });
+    </script>
+</body>
+</html>`);
+});
+
 // Main dashboard route
 app.get('/', (c) => {
   return c.html(`
