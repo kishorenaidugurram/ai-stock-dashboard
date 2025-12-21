@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quick Chart Test</title>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <script src="https://s3.tradingview.com/tv.js"></script>
+</head>
+<body style="background: #1a1a1a; color: white; padding: 40px; font-family: Arial;">
+    <h1>Quick Chart Test</h1>
+    <p>Testing if chart system works...</p>
+    <button onclick="testIt()" style="background: purple; color: white; padding: 20px; font-size: 20px; border: none; border-radius: 10px; cursor: pointer;">
+        CLICK TO TEST CHART
+    </button>
+    <div id="result" style="margin-top: 20px; padding: 20px; background: #0a0a0a; border-radius: 10px;"></div>
+    
+    <script src="https://3000-icgc5fj3ctx0aeqev243p-18e660f9.sandbox.novita.ai/static/charts.js"></script>
+    <script>
+        function testIt() {
+            document.getElementById('result').innerHTML = '<p>Testing...</p>';
+            console.log('Button clicked');
+            console.log('chartManager:', typeof window.chartManager);
+            
+            if (window.chartManager) {
+                document.getElementById('result').innerHTML += '<p style="color: green;">✓ chartManager found</p>';
+                try {
+                    window.chartManager.showChartModal('RELIANCE', {name: 'Reliance Industries'});
+                    document.getElementById('result').innerHTML += '<p style="color: green;">✓ Function called - modal should appear!</p>';
+                } catch(e) {
+                    document.getElementById('result').innerHTML += '<p style="color: red;">✗ Error: ' + e.message + '</p>';
+                }
+            } else {
+                document.getElementById('result').innerHTML += '<p style="color: red;">✗ chartManager NOT found</p>';
+            }
+        }
+        
+        setTimeout(() => {
+            const r = document.getElementById('result');
+            r.innerHTML = '<p>System check:</p>';
+            r.innerHTML += '<p>Plotly: ' + (typeof Plotly) + '</p>';
+            r.innerHTML += '<p>TradingView: ' + (typeof TradingView) + '</p>';
+            r.innerHTML += '<p>chartManager: ' + (typeof window.chartManager) + '</p>';
+            if (typeof window.chartManager === 'object') {
+                r.innerHTML += '<p style="color: green; font-weight: bold;">✓ Ready! Click button above.</p>';
+            } else {
+                r.innerHTML += '<p style="color: red; font-weight: bold;">✗ Chart system failed to load</p>';
+            }
+        }, 2000);
+    </script>
+</body>
+</html>

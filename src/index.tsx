@@ -1401,7 +1401,7 @@ app.get('/', (c) => {
                             '</div>' +
                             '<div class="flex gap-3">' +
                                 '<button onclick="closeAIUpdateModal()" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded">Got It!</button>' +
-                                '<button onclick="window.open(\'' + data.aiChatUrl + '\', \'_blank\')" class="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold py-2 px-4 rounded"><i class="fas fa-external-link-alt mr-1"></i> Open AI Again</button>' +
+                                '<button onclick="window.open(&quot;' + data.aiChatUrl + '&quot;, &quot;_blank&quot;)" class="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold py-2 px-4 rounded"><i class="fas fa-external-link-alt mr-1"></i> Open AI Again</button>' +
                             '</div>' +
                         '</div>' +
                     '</div>' +
