@@ -252,7 +252,26 @@ class StockChartManager {
             modeBarButtonsToRemove: ['pan2d', 'lasso2d', 'select2d']
         };
         
-        Plotly.newPlot(containerId, traces, layout, config);
+        // Check if Plotly is loaded
+        if (typeof Plotly === 'undefined') {
+            console.error('❌ Plotly is not loaded!');
+            const container = document.getElementById(containerId);
+            if (container) {
+                container.innerHTML = '<div class="flex items-center justify-center h-full text-red-600"><i class="fas fa-exclamation-triangle mr-2"></i>Plotly library not loaded</div>';
+            }
+            return srLevels;
+        }
+        
+        try {
+            Plotly.newPlot(containerId, traces, layout, config);
+            console.log('✅ Plotly chart created successfully');
+        } catch (error) {
+            console.error('❌ Error creating Plotly chart:', error);
+            const container = document.getElementById(containerId);
+            if (container) {
+                container.innerHTML = '<div class="flex items-center justify-center h-full text-red-600"><i class="fas fa-exclamation-triangle mr-2"></i>Error creating chart</div>';
+            }
+        }
         
         this.charts[symbol] = {
             containerId,
@@ -265,8 +284,9 @@ class StockChartManager {
 
     // Show chart in modal
     async showChartModal(symbol, stockData) {
+        console.log('🎯 showChartModal called with:', symbol, stockData);
         const modalHTML = `
-            <div id="chartModal" class="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center p-4" onclick="closeChartModal(event)">
+            <div id="chartModal" class="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center p-4" onclick="window.closeChartModal(event)">
                 <div class="glass-card rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-6">
@@ -274,17 +294,17 @@ class StockChartManager {
                                 <h2 class="text-3xl font-black text-gray-800">${symbol}</h2>
                                 <p class="text-gray-600 mt-1">${stockData?.name || 'Technical Chart'}</p>
                             </div>
-                            <button onclick="closeChartModal()" class="text-gray-400 hover:text-gray-600 text-2xl">
+                            <button onclick="window.closeChartModal()" class="text-gray-400 hover:text-gray-600 text-2xl">
                                 <i class="fas fa-times"></i>
                             </button>
                         </div>
                         
                         <!-- Chart Type Tabs -->
                         <div class="flex gap-2 mb-4">
-                            <button id="tabPlotly" onclick="switchChartTab('plotly', '${symbol}')" class="px-4 py-2 rounded-lg bg-purple-600 text-white font-semibold">
+                            <button id="tabPlotly" onclick="window.switchChartTab('plotly', '${symbol}')" class="px-4 py-2 rounded-lg bg-purple-600 text-white font-semibold">
                                 <i class="fas fa-chart-candlestick mr-2"></i>Technical Analysis
                             </button>
-                            <button id="tabTradingView" onclick="switchChartTab('tradingview', '${symbol}')" class="px-4 py-2 rounded-lg bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300">
+                            <button id="tabTradingView" onclick="window.switchChartTab('tradingview', '${symbol}')" class="px-4 py-2 rounded-lg bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300">
                                 <i class="fas fa-chart-line mr-2"></i>TradingView Live
                             </button>
                         </div>

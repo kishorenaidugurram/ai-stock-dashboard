@@ -1213,6 +1213,32 @@ app.get('/', (c) => {
                         Technical Analysis
                     </h2>
                     <p class="text-gray-600">Advanced technical indicators including breakout detection, volume analysis, pattern recognition, and momentum indicators.</p>
+                    
+                    <!-- Test Chart Button -->
+                    <div class="mt-4 p-4 bg-yellow-50 border-2 border-yellow-400 rounded-lg">
+                        <p class="text-sm text-gray-700 mb-2"><strong>🧪 Chart Test:</strong> Click the button below to test if the chart modal appears.</p>
+                        <button 
+                            onclick="window.showChart('RELIANCE', {name: 'Reliance Industries Ltd'})" 
+                            class="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-lg hover:opacity-90 transition font-semibold shadow-lg">
+                            <i class="fas fa-chart-candlestick mr-2"></i>
+                            🧪 Test Chart Modal (RELIANCE)
+                        </button>
+                        <script>
+                            // Debug info
+                            setTimeout(() => {
+                                console.log('=== Chart Debug Info ===');
+                                console.log('Plotly loaded:', typeof Plotly);
+                                console.log('TradingView loaded:', typeof TradingView);
+                                console.log('chartManager:', typeof window.chartManager);
+                                console.log('showChart:', typeof window.showChart);
+                                if (typeof window.chartManager !== 'undefined') {
+                                    console.log('✅ Chart system ready!');
+                                } else {
+                                    console.error('❌ Chart system NOT ready!');
+                                }
+                            }, 3000);
+                        </script>
+                    </div>
                 </div>
 
                 <!-- Technical Analysis Cards -->
