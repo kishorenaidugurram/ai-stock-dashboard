@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2025-12-21T06:00:32.677Z",
+  "lastUpdated": "2025-12-21T06:32:00.000Z",
   "dataQuality": {
-    "searchTimestamp": "2025-12-21T06:00:32.677Z",
-    "dateRange": "Dec 21, 2025",
+    "searchTimestamp": "2025-12-21T06:32:00.000Z",
+    "dateRange": "Dec 19-21, 2025",
     "verificationStatus": "PREMIUM_SOURCES_VERIFIED",
     "totalSources": 12,
-    "dataFreshness": "Live - Under 1 hour",
+    "dataFreshness": "Updated minutes ago",
     "sourceTypes": [
       "Premium Brokerages (Jefferies, Motilal Oswal, Axis Securities)",
       "Leading Financial Newspapers (LiveMint, Economic Times)",
@@ -14,7 +14,7 @@
   },
   "socialSentiment": {
     "enabled": true,
-    "lastUpdated": "2025-12-21T06:00:32.677Z",
+    "lastUpdated": "2025-12-21T06:32:00.000Z",
     "sources": [
       "Twitter/X",
       "Reddit r/IndianStreetBets",
@@ -337,6 +337,42 @@
       "sourceUrl": "https://www.livemint.com/market/stock-market-news/breakout-stocks-to-buy-or-sell-sumeet-bagadia-recommends-five-shares-to-buy-today-19-december-2025-11766075522612.html",
       "date": "Dec 19, 2025",
       "rationale": "Sumeet Bagadia momentum pick. Auto component maker with strong order book. Target ₹2,050. EV and 2-wheeler segment orders driving growth."
+    },
+    {
+      "name": "Jio Financial Services",
+      "symbol": "JIOFIN",
+      "price": "₹280",
+      "target": "₹302",
+      "upside": "7.9%",
+      "brokerage": "Choice Broking (Sumeet Bagadia)",
+      "recommendation": "BUY",
+      "sourceUrl": "https://www.livemint.com/market/stock-market-news/buy-or-sell-sumeet-bagadia-recommends-three-stocks-to-buy-on-monday-22-december-2025-11766223995365.html",
+      "date": "Dec 22, 2025",
+      "rationale": "Sumeet Bagadia pick for Monday Dec 22. Jio Financial showing strong momentum after recent listing. Buy at ₹280 with target ₹302, stop loss ₹270. Benefiting from Jio ecosystem integration."
+    },
+    {
+      "name": "BEL (Bharat Electronics)",
+      "symbol": "BEL",
+      "price": "₹295",
+      "target": "₹320",
+      "upside": "8.5%",
+      "brokerage": "Choice Broking (Sumeet Bagadia)",
+      "recommendation": "BUY",
+      "sourceUrl": "https://www.livemint.com/market/stock-market-news/buy-or-sell-sumeet-bagadia-recommends-three-stocks-to-buy-on-monday-22-december-2025-11766223995365.html",
+      "date": "Dec 22, 2025",
+      "rationale": "Monday pick by Sumeet Bagadia. Defense PSU showing bullish breakout. Target ₹320, stop loss ₹285. Defense orders pipeline robust, recent rally continuation expected."
+    },
+    {
+      "name": "Asian Paints",
+      "symbol": "ASIANPAINT",
+      "price": "₹2,445",
+      "target": "₹2,600",
+      "upside": "6.3%",
+      "brokerage": "Choice Broking (Sumeet Bagadia)",
+      "recommendation": "BUY",
+      "sourceUrl": "https://www.livemint.com/market/stock-market-news/buy-or-sell-sumeet-bagadia-recommends-three-stocks-to-buy-on-monday-22-december-2025-11766223995365.html",
+      "date": "Dec 22, 2025",
+      "rationale": "Sumeet Bagadia recommends Asian Paints for Monday. Paint major consolidating near support. Buy at ₹2,445 with target ₹2,600. Real estate pickup supporting demand outlook."
     }
   ],
   "newsHeadlines": [
