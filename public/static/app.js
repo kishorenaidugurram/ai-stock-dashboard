@@ -121,7 +121,7 @@ async function loadTechnicalView() {
                         ` : ''}
                         
                         <button 
-                            onclick="showChart('${stock.symbol}', '${stock.name}')" 
+                            onclick="window.chartManager.showChartModal('${stock.symbol}', {name: '${stock.name}'})" 
                             class="w-full mt-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-2 rounded-lg hover:opacity-90 transition font-semibold text-sm"
                         >
                             <i class="fas fa-chart-line mr-2"></i>

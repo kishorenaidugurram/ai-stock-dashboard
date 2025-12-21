@@ -536,6 +536,7 @@ app.get('/', (c) => {
         <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
         <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
         <style>
             /* Modern Design System */
             :root {

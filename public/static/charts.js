@@ -279,25 +279,49 @@ class StockChartManager {
                             </button>
                         </div>
                         
-                        <div id="plotlyChart" style="width: 100%; height: 600px;">
-                            <div class="flex items-center justify-center h-full">
-                                <i class="fas fa-spinner fa-spin text-4xl text-purple-600"></i>
-                                <span class="ml-3 text-gray-600">Loading chart data...</span>
+                        <!-- Chart Type Tabs -->
+                        <div class="flex gap-2 mb-4">
+                            <button id="tabPlotly" onclick="switchChartTab('plotly', '${symbol}')" class="px-4 py-2 rounded-lg bg-purple-600 text-white font-semibold">
+                                <i class="fas fa-chart-candlestick mr-2"></i>Technical Analysis
+                            </button>
+                            <button id="tabTradingView" onclick="switchChartTab('tradingview', '${symbol}')" class="px-4 py-2 rounded-lg bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300">
+                                <i class="fas fa-chart-line mr-2"></i>TradingView Live
+                            </button>
+                        </div>
+                        
+                        <!-- Plotly Chart Container -->
+                        <div id="plotlyChartContainer">
+                            <div id="plotlyChart" style="width: 100%; height: 600px;">
+                                <div class="flex items-center justify-center h-full">
+                                    <i class="fas fa-spinner fa-spin text-4xl text-purple-600"></i>
+                                    <span class="ml-3 text-gray-600">Loading chart data...</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="glass-card rounded-xl p-4">
+                                    <div class="text-sm text-gray-600 mb-2">Support Levels</div>
+                                    <div id="supportLevels" class="space-y-2"></div>
+                                </div>
+                                <div class="glass-card rounded-xl p-4">
+                                    <div class="text-sm text-gray-600 mb-2">Resistance Levels</div>
+                                    <div id="resistanceLevels" class="space-y-2"></div>
+                                </div>
+                                <div class="glass-card rounded-xl p-4">
+                                    <div class="text-sm text-gray-600 mb-2">Key Metrics</div>
+                                    <div id="keyMetrics" class="space-y-2"></div>
+                                </div>
                             </div>
                         </div>
                         
-                        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <div class="glass-card rounded-xl p-4">
-                                <div class="text-sm text-gray-600 mb-2">Support Levels</div>
-                                <div id="supportLevels" class="space-y-2"></div>
-                            </div>
-                            <div class="glass-card rounded-xl p-4">
-                                <div class="text-sm text-gray-600 mb-2">Resistance Levels</div>
-                                <div id="resistanceLevels" class="space-y-2"></div>
-                            </div>
-                            <div class="glass-card rounded-xl p-4">
-                                <div class="text-sm text-gray-600 mb-2">Key Metrics</div>
-                                <div id="keyMetrics" class="space-y-2"></div>
+                        <!-- TradingView Chart Container (hidden by default) -->
+                        <div id="tradingViewContainer" style="display: none;">
+                            <div id="tradingview_widget" style="height: 600px;"></div>
+                            <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+                                <p class="text-sm text-gray-700">
+                                    <i class="fas fa-info-circle text-blue-600 mr-2"></i>
+                                    <strong>TradingView Live Chart:</strong> Real-time market data with advanced indicators and drawing tools.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -307,7 +331,7 @@ class StockChartManager {
         
         document.body.insertAdjacentHTML('beforeend', modalHTML);
         
-        // Create chart (async)
+        // Create Plotly chart (async)
         const srLevels = await this.createCandlestickChart('plotlyChart', symbol, stockData);
         
         // Populate support levels
@@ -382,3 +406,61 @@ window.closeChartModal = function(event) {
         }
     }
 };
+
+// Switch between chart tabs
+window.switchChartTab = function(tabType, symbol) {
+    const plotlyTab = document.getElementById('tabPlotly');
+    const tradingViewTab = document.getElementById('tabTradingView');
+    const plotlyContainer = document.getElementById('plotlyChartContainer');
+    const tradingViewContainer = document.getElementById('tradingViewContainer');
+    
+    if (tabType === 'plotly') {
+        // Switch to Plotly
+        plotlyTab.className = 'px-4 py-2 rounded-lg bg-purple-600 text-white font-semibold';
+        tradingViewTab.className = 'px-4 py-2 rounded-lg bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300';
+        plotlyContainer.style.display = 'block';
+        tradingViewContainer.style.display = 'none';
+    } else {
+        // Switch to TradingView
+        plotlyTab.className = 'px-4 py-2 rounded-lg bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300';
+        tradingViewTab.className = 'px-4 py-2 rounded-lg bg-purple-600 text-white font-semibold';
+        plotlyContainer.style.display = 'none';
+        tradingViewContainer.style.display = 'block';
+        
+        // Load TradingView widget if not already loaded
+        if (!tradingViewContainer.dataset.loaded) {
+            loadTradingViewWidget(symbol);
+            tradingViewContainer.dataset.loaded = 'true';
+        }
+    }
+};
+
+// Load TradingView Widget
+function loadTradingViewWidget(symbol) {
+    // NSE symbols need .NS suffix for TradingView
+    const tvSymbol = `NSE:${symbol}`;
+    
+    new TradingView.widget({
+        "autosize": true,
+        "symbol": tvSymbol,
+        "interval": "D",
+        "timezone": "Asia/Kolkata",
+        "theme": "light",
+        "style": "1",
+        "locale": "en",
+        "toolbar_bg": "#f1f3f6",
+        "enable_publishing": false,
+        "allow_symbol_change": true,
+        "container_id": "tradingview_widget",
+        "studies": [
+            "RSI@tv-basicstudies",
+            "MACD@tv-basicstudies",
+            "Volume@tv-basicstudies"
+        ],
+        "hide_side_toolbar": false,
+        "details": true,
+        "hotlist": true,
+        "calendar": true,
+        "support_host": "https://www.tradingview.com"
+    });
+}
