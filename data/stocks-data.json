@@ -1,8 +1,8 @@
 {
-  "lastUpdated": "2025-12-23T10:48:39.393Z",
+  "lastUpdated": "2025-12-24T03:07:56.849Z",
   "dataQuality": {
-    "searchTimestamp": "2025-12-23T10:48:39.393Z",
-    "dateRange": "Dec 23, 2025",
+    "searchTimestamp": "2025-12-24T03:07:56.849Z",
+    "dateRange": "Dec 24, 2025",
     "verificationStatus": "LIVE_SOURCES_VERIFIED",
     "totalSources": 15,
     "dataFreshness": "Live - Under 1 hour",
@@ -14,7 +14,7 @@
   },
   "socialSentiment": {
     "enabled": true,
-    "lastUpdated": "2025-12-23T10:48:39.393Z",
+    "lastUpdated": "2025-12-24T03:07:56.849Z",
     "sources": [
       "Twitter/X",
       "Reddit r/IndianStreetBets",
@@ -35,8 +35,8 @@
       "source": "Groww F&O Top Gainers",
       "sourceUrl": "https://groww.in/futures-and-options/top-gainers",
       "analyst": "Groww Market Data",
-      "date": "Dec 23, 2025",
-      "publishedTime": "2025-12-23T03:45:00.000Z",
+      "date": "Dec 24, 2025",
+      "publishedTime": "2025-12-24T02:47:00.000Z",
       "rationale": "Tata Elxsi leads F&O gainers with 7.98% surge. Strong demand in automotive engineering services, EV design wins boosting sentiment. Technical breakout confirmed.",
       "upside": "7.1%",
       "socialSentiment": {
@@ -71,8 +71,8 @@
       "source": "Groww F&O Top Gainers",
       "sourceUrl": "https://groww.in/futures-and-options/top-gainers",
       "analyst": "Groww Market Data",
-      "date": "Dec 23, 2025",
-      "publishedTime": "2025-12-23T03:23:00.000Z",
+      "date": "Dec 24, 2025",
+      "publishedTime": "2025-12-24T05:24:00.000Z",
       "rationale": "KEI Industries top F&O gainer +4.84%. Cable and wire manufacturer benefiting from infrastructure capex boom. Breakout above ₹4,200 resistance confirmed.",
       "upside": "5.0%",
       "socialSentiment": {
@@ -107,8 +107,8 @@
       "source": "Groww F&O Top Gainers",
       "sourceUrl": "https://groww.in/futures-and-options/top-gainers",
       "analyst": "Groww Market Data",
-      "date": "Dec 23, 2025",
-      "publishedTime": "2025-12-23T03:58:00.000Z",
+      "date": "Dec 24, 2025",
+      "publishedTime": "2025-12-24T04:47:00.000Z",
       "rationale": "KPIT Tech surges 5.50% on F&O. Auto software and mobility tech leader gaining from global EV transition. Order book visibility strong.",
       "upside": "10.2%",
       "socialSentiment": {
@@ -143,8 +143,8 @@
       "source": "Groww/Trendlyne F&O Gainers",
       "sourceUrl": "https://trendlyne.com/stock-screeners/price-based/near-highs/year/others/fno-stocks/",
       "analyst": "Trendlyne Market Data",
-      "date": "Dec 23, 2025",
-      "publishedTime": "2025-12-23T04:09:00.000Z",
+      "date": "Dec 24, 2025",
+      "publishedTime": "2025-12-24T05:01:00.000Z",
       "rationale": "Vodafone Idea rallies 5.84%, near 52-week highs. Tariff hike implementation and fundraising hopes driving momentum. High speculative interest.",
       "upside": "17.1%",
       "socialSentiment": {
@@ -179,8 +179,8 @@
       "source": "Groww F&O Top Gainers",
       "sourceUrl": "https://groww.in/futures-and-options/top-gainers",
       "analyst": "Groww Market Data",
-      "date": "Dec 23, 2025",
-      "publishedTime": "2025-12-23T04:39:00.000Z",
+      "date": "Dec 24, 2025",
+      "publishedTime": "2025-12-24T02:39:00.000Z",
       "rationale": "Polycab +4.79% among top F&O gainers. Cable and wires leader benefiting from real estate and infrastructure boom. Strong technical setup.",
       "upside": "7.5%",
       "socialSentiment": {
@@ -215,8 +215,8 @@
       "source": "Screener Breakout Stocks",
       "sourceUrl": "https://www.screener.in/screens/209239/breakout-stocks/",
       "analyst": "Screener.in",
-      "date": "Dec 23, 2025",
-      "publishedTime": "2025-12-23T03:10:00.000Z",
+      "date": "Dec 24, 2025",
+      "publishedTime": "2025-12-24T05:10:00.000Z",
       "rationale": "Hindustan Copper breakout stock +8.5%. Copper demand surging on infrastructure and EV sectors. PSU mining play on commodity rally.",
       "upside": "16.1%",
       "socialSentiment": {
@@ -251,7 +251,7 @@
       "brokerage": "ICICI Securities",
       "recommendation": "BUY",
       "sourceUrl": "https://economictimes.indiatimes.com/markets/stocks/news/stocks-to-buy-today-itc-icici-bank-among-top-9-trading-ideas-for-16-december-2024/articleshow/116352250.cms",
-      "date": "Dec 23, 2025",
+      "date": "Dec 24, 2025",
       "rationale": "ICICI Securities maintains Buy on ITC with ₹510 target. FMCG and cigarettes business showing resilience. Hotel and paperboard segments contributing to growth. Stock trading at reasonable PE vs peers."
     },
     {
@@ -263,7 +263,7 @@
       "brokerage": "ICICI Direct",
       "recommendation": "BUY",
       "sourceUrl": "https://www.icicidirect.com/equity/market-today/top-gainers/nse/nifty-50/intraday",
-      "date": "Dec 23, 2025",
+      "date": "Dec 24, 2025",
       "rationale": "Max Healthcare top intraday gainer on ICICI Direct tracker. Healthcare services demand robust, capacity expansion on track. Premium hospital chain with strong unit economics."
     },
     {
@@ -275,7 +275,7 @@
       "brokerage": "ICICI Direct",
       "recommendation": "BUY",
       "sourceUrl": "https://www.icicidirect.com/equity/market-today/top-gainers/nse/nifty-50/intraday",
-      "date": "Dec 23, 2025",
+      "date": "Dec 24, 2025",
       "rationale": "TCS showing strong intraday momentum. IT services leader with solid order book and consistent deal wins. AI/GenAI partnerships boosting revenue visibility."
     },
     {
@@ -287,7 +287,7 @@
       "brokerage": "ICICI Direct",
       "recommendation": "BUY",
       "sourceUrl": "https://www.icicidirect.com/equity/market-today/top-gainers/nse/nifty-50/intraday",
-      "date": "Dec 23, 2025",
+      "date": "Dec 24, 2025",
       "rationale": "Infosys among top intraday gainers. Strong Q3 expectations, margin improvement trajectory visible. Large deal momentum sustained."
     },
     {
@@ -299,7 +299,7 @@
       "brokerage": "ICICI Direct",
       "recommendation": "BUY",
       "sourceUrl": "https://www.icicidirect.com/equity/market-today/top-gainers/nse/nifty-50/intraday",
-      "date": "Dec 23, 2025",
+      "date": "Dec 24, 2025",
       "rationale": "Hindalco top intraday performer. Aluminum prices firming up, Novelis contributing significantly to earnings. Upstream-downstream integrated model working well."
     },
     {
@@ -311,7 +311,7 @@
       "brokerage": "ICICI Securities",
       "recommendation": "ADD",
       "sourceUrl": "https://timesofindia.indiatimes.com/business/india-business/axis-securities-yes-securities-icici-sbi-stocks-on-brokerages-radar-for-december-24/articleshow/116613866.cms",
-      "date": "Dec 23, 2025",
+      "date": "Dec 24, 2025",
       "rationale": "ICICI Securities adds Emami with ₹680 target (+20%). Acquisition strategy paying off, personal care portfolio strengthening. Rural demand recovery expected to benefit."
     },
     {
@@ -323,7 +323,7 @@
       "brokerage": "Motilal Oswal",
       "recommendation": "BUY",
       "sourceUrl": "https://www.whalesbook.com/news/English/tech/IT-Depts-Big-Crackdown-Are-Your-Tax-Returns-SAFE-Bogus-Claims-Exposed/693f8fd0a3d7cdf72fb9a5ff",
-      "date": "Dec 23, 2025",
+      "date": "Dec 24, 2025",
       "rationale": "Motilal Oswal top weekly pick. SBI Life benefiting from bancassurance distribution strength. VNB (Value of New Business) growth strong, embedded value expanding."
     },
     {
@@ -335,7 +335,7 @@
       "brokerage": "Motilal Oswal",
       "recommendation": "BUY",
       "sourceUrl": "https://www.whalesbook.com/news/English/tech/IT-Depts-Big-Crackdown-Are-Your-Tax-Returns-SAFE-Bogus-Claims-Exposed/693f8fd0a3d7cdf72fb9a5ff",
-      "date": "Dec 23, 2025",
+      "date": "Dec 24, 2025",
       "rationale": "Motilal Oswal weekly top pick. RBL Bank turnaround story gaining traction. Asset quality improving, fresh capital raising successful. Credit card franchise stabilizing."
     },
     {
@@ -347,7 +347,7 @@
       "brokerage": "Motilal Oswal",
       "recommendation": "BUY",
       "sourceUrl": "https://m.economictimes.com/markets/stocks/news/motilal-oswal-picks-10-stocks-to-buy-for-what-it-sees-as-multi-trillion-dollar-opportunity/solid-bets/slideshow/125926369.cms",
-      "date": "Dec 23, 2025",
+      "date": "Dec 24, 2025",
       "rationale": "Motilal Oswal multi-trillion dollar opportunity pick. Maruti market leader in passenger vehicles, EV roadmap announced. Rural demand recovery and SUV portfolio expansion positive."
     },
     {
@@ -359,7 +359,7 @@
       "brokerage": "Motilal Oswal",
       "recommendation": "BUY",
       "sourceUrl": "https://www.moneycontrol.com/news/business/markets/motilal-oswal-recommends-buy-on-icici-bank-sees-an-upside-of-nearly-17-12754668.html",
-      "date": "Dec 23, 2025",
+      "date": "Dec 24, 2025",
       "rationale": "Motilal Oswal maintains Buy on ICICI Bank with ₹1,550 target. Best-in-class metrics, strong deposit growth, improving NIM. Digital banking initiatives driving customer acquisition."
     },
     {
@@ -371,7 +371,7 @@
       "brokerage": "Multiple Analysts",
       "recommendation": "BUY",
       "sourceUrl": "https://www.screener.in/screens/938142/best-stocks-in-2024/",
-      "date": "Dec 23, 2025",
+      "date": "Dec 24, 2025",
       "rationale": "NMDC among best stocks for 2024-25 per Screener analysis. Iron ore miner benefiting from domestic steel demand. Dividend yield attractive, PSU re-rating story."
     }
   ],
@@ -380,7 +380,7 @@
       "title": "India's Stock Market Calm Tests Options Traders Amid Record Low Volatility",
       "category": "Market Update",
       "summary": "India's VIX (Volatility Index) at record lows as markets show unusual calm despite global uncertainties. Options traders facing challenges with low premiums. Market expects consolidation phase with stock-specific action taking precedence over index moves.",
-      "date": "Dec 23, 2025",
+      "date": "Dec 24, 2025",
       "sourceUrl": "https://www.business-standard.com/markets/news/india-s-calm-stock-market-tests-options-traders-amid-record-low-volatility-125122100047_1.html",
       "source": "Business Standard"
     },
@@ -388,7 +388,7 @@
       "title": "Market Leaders Show 40% Revenue Growth Guidance for FY26",
       "category": "Corporate Update",
       "summary": "Several market leaders providing strong revenue growth guidance of up to 40% for FY26. IT services, infrastructure, and select FMCG companies leading the optimism. Earnings season expectations building up positively.",
-      "date": "Dec 23, 2025",
+      "date": "Dec 24, 2025",
       "sourceUrl": "https://www.equitymaster.com/detail.asp?date=12/21/2025&story=1",
       "source": "Equitymaster"
     },
@@ -396,7 +396,7 @@
       "title": "Sensex Rises 0.5% to 84,929 After Four-Day Losing Streak",
       "category": "Market Close",
       "summary": "BSE Sensex closed Friday at 84,929.4, up 0.5%, snapping four-session decline. Nifty ended at 25,966.40, gaining 150.85 points. Broad-based rally driven by soft US inflation data and positive domestic sentiment. Mid and small-cap indices outperformed.",
-      "date": "Dec 23, 2025",
+      "date": "Dec 24, 2025",
       "sourceUrl": "https://tradingeconomics.com/india/stock-market",
       "source": "Trading Economics"
     },
@@ -404,7 +404,7 @@
       "title": "Nifty Expected to Consolidate Between 25,700-26,300 Next Week",
       "category": "Market Outlook",
       "summary": "Analysts expect Nifty to trade in 25,700-26,300 range during Dec 22-26 week. Buy-on-dips strategy recommended as year-end portfolio rebalancing begins. Key triggers include Q3 earnings preview, FII flows, and global cues. Support strong at 25,600 levels.",
-      "date": "Dec 23, 2025",
+      "date": "Dec 24, 2025",
       "sourceUrl": "https://www.goodreturns.in/news/indian-stock-market-next-week-22-26dec-2025-nifty-sensex-prediction-to-consolidate-with-buy-on-dips-1477198.html",
       "source": "GoodReturns"
     }
@@ -415,7 +415,7 @@
       "name": "KPIT Technologies",
       "symbol": "KPITTECH",
       "sentiment": "Bullish",
-      "socialScore": 8.434307537866832,
+      "socialScore": 8.116698845501432,
       "change24h": "+5.50%",
       "platforms": {
         "twitter": "Very High",
@@ -437,7 +437,7 @@
       "name": "Vodafone Idea",
       "symbol": "IDEA",
       "sentiment": "Bullish",
-      "socialScore": 8.028628259822918,
+      "socialScore": 7.650910816290256,
       "change24h": "+5.84%",
       "platforms": {
         "twitter": "Very High",
@@ -459,7 +459,7 @@
       "name": "Tata Elxsi",
       "symbol": "TATAELXSI",
       "sentiment": "Bullish",
-      "socialScore": 8.491915254842194,
+      "socialScore": 8.805076388298964,
       "change24h": "+7.98%",
       "platforms": {
         "twitter": "High",
@@ -481,7 +481,7 @@
       "name": "Polycab India",
       "symbol": "POLYCAB",
       "sentiment": "Bullish",
-      "socialScore": 8.091249793490194,
+      "socialScore": 8.539213691002555,
       "change24h": "+4.79%",
       "platforms": {
         "twitter": "High",
@@ -503,7 +503,7 @@
       "name": "ICICI Bank",
       "symbol": "ICICIBANK",
       "sentiment": "Bullish",
-      "socialScore": 9.075057590232998,
+      "socialScore": 8.988059148763071,
       "change24h": "+1.2%",
       "platforms": {
         "twitter": "Very High",
