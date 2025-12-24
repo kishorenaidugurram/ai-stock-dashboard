@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2025-12-24T04:09:29.066Z",
+  "lastUpdated": "2025-12-24T08:51:05.546Z",
   "dataQuality": {
-    "searchTimestamp": "2025-12-24T04:09:29.066Z",
+    "searchTimestamp": "2025-12-24T08:51:05.546Z",
     "dateRange": "Dec 24, 2025",
     "verificationStatus": "LIVE_SOURCES_VERIFIED",
     "totalSources": 15,
@@ -14,7 +14,7 @@
   },
   "socialSentiment": {
     "enabled": true,
-    "lastUpdated": "2025-12-24T04:09:29.066Z",
+    "lastUpdated": "2025-12-24T08:51:05.546Z",
     "sources": [
       "Twitter/X",
       "Reddit r/IndianStreetBets",
@@ -36,7 +36,7 @@
       "sourceUrl": "https://groww.in/futures-and-options/top-gainers",
       "analyst": "Groww Market Data",
       "date": "Dec 24, 2025",
-      "publishedTime": "2025-12-24T03:44:00.000Z",
+      "publishedTime": "2025-12-24T05:12:00.000Z",
       "rationale": "Tata Elxsi leads F&O gainers with 7.98% surge. Strong demand in automotive engineering services, EV design wins boosting sentiment. Technical breakout confirmed.",
       "upside": "7.1%",
       "socialSentiment": {
@@ -72,7 +72,7 @@
       "sourceUrl": "https://groww.in/futures-and-options/top-gainers",
       "analyst": "Groww Market Data",
       "date": "Dec 24, 2025",
-      "publishedTime": "2025-12-24T05:28:00.000Z",
+      "publishedTime": "2025-12-24T05:22:00.000Z",
       "rationale": "KEI Industries top F&O gainer +4.84%. Cable and wire manufacturer benefiting from infrastructure capex boom. Breakout above ₹4,200 resistance confirmed.",
       "upside": "5.0%",
       "socialSentiment": {
@@ -108,7 +108,7 @@
       "sourceUrl": "https://groww.in/futures-and-options/top-gainers",
       "analyst": "Groww Market Data",
       "date": "Dec 24, 2025",
-      "publishedTime": "2025-12-24T03:07:00.000Z",
+      "publishedTime": "2025-12-24T04:00:00.000Z",
       "rationale": "KPIT Tech surges 5.50% on F&O. Auto software and mobility tech leader gaining from global EV transition. Order book visibility strong.",
       "upside": "10.2%",
       "socialSentiment": {
@@ -144,7 +144,7 @@
       "sourceUrl": "https://trendlyne.com/stock-screeners/price-based/near-highs/year/others/fno-stocks/",
       "analyst": "Trendlyne Market Data",
       "date": "Dec 24, 2025",
-      "publishedTime": "2025-12-24T03:30:00.000Z",
+      "publishedTime": "2025-12-24T04:24:00.000Z",
       "rationale": "Vodafone Idea rallies 5.84%, near 52-week highs. Tariff hike implementation and fundraising hopes driving momentum. High speculative interest.",
       "upside": "17.1%",
       "socialSentiment": {
@@ -180,7 +180,7 @@
       "sourceUrl": "https://groww.in/futures-and-options/top-gainers",
       "analyst": "Groww Market Data",
       "date": "Dec 24, 2025",
-      "publishedTime": "2025-12-24T04:43:00.000Z",
+      "publishedTime": "2025-12-24T03:28:00.000Z",
       "rationale": "Polycab +4.79% among top F&O gainers. Cable and wires leader benefiting from real estate and infrastructure boom. Strong technical setup.",
       "upside": "7.5%",
       "socialSentiment": {
@@ -216,7 +216,7 @@
       "sourceUrl": "https://www.screener.in/screens/209239/breakout-stocks/",
       "analyst": "Screener.in",
       "date": "Dec 24, 2025",
-      "publishedTime": "2025-12-24T04:34:00.000Z",
+      "publishedTime": "2025-12-24T03:26:00.000Z",
       "rationale": "Hindustan Copper breakout stock +8.5%. Copper demand surging on infrastructure and EV sectors. PSU mining play on commodity rally.",
       "upside": "16.1%",
       "socialSentiment": {
@@ -415,7 +415,7 @@
       "name": "KPIT Technologies",
       "symbol": "KPITTECH",
       "sentiment": "Bullish",
-      "socialScore": 7.6898713277562765,
+      "socialScore": 7.6795892567827035,
       "change24h": "+5.50%",
       "platforms": {
         "twitter": "Very High",
@@ -437,7 +437,7 @@
       "name": "Vodafone Idea",
       "symbol": "IDEA",
       "sentiment": "Bullish",
-      "socialScore": 7.700661782917733,
+      "socialScore": 7.583422947573225,
       "change24h": "+5.84%",
       "platforms": {
         "twitter": "Very High",
@@ -459,7 +459,7 @@
       "name": "Tata Elxsi",
       "symbol": "TATAELXSI",
       "sentiment": "Bullish",
-      "socialScore": 9.142588238448035,
+      "socialScore": 8.805295522049342,
       "change24h": "+7.98%",
       "platforms": {
         "twitter": "High",
@@ -481,7 +481,7 @@
       "name": "Polycab India",
       "symbol": "POLYCAB",
       "sentiment": "Bullish",
-      "socialScore": 8.772885824782156,
+      "socialScore": 8.361283955488394,
       "change24h": "+4.79%",
       "platforms": {
         "twitter": "High",
@@ -503,7 +503,7 @@
       "name": "ICICI Bank",
       "symbol": "ICICIBANK",
       "sentiment": "Bullish",
-      "socialScore": 8.619007512601424,
+      "socialScore": 8.85894447202406,
       "change24h": "+1.2%",
       "platforms": {
         "twitter": "Very High",
