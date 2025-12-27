@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2025-12-27T08:05:00.000Z",
+  "lastUpdated": "2025-12-27T08:47:06.734Z",
   "dataQuality": {
-    "searchTimestamp": "2025-12-27T08:05:00.000Z",
+    "searchTimestamp": "2025-12-27T08:47:06.734Z",
     "dateRange": "Dec 27, 2025",
     "verificationStatus": "LIVE_SOURCES_VERIFIED",
     "totalSources": 20,
-    "dataFreshness": "Live - Under 10 minutes",
+    "dataFreshness": "Live - Under 1 hour",
     "sourceTypes": [
       "Stock Screeners (Screener.in, Trendlyne, Groww, Dhan, NSE India)",
       "Premium Brokerages (Motilal Oswal, ICICI Securities, Axis Securities)",
@@ -14,7 +14,7 @@
   },
   "socialSentiment": {
     "enabled": true,
-    "lastUpdated": "2025-12-27T08:05:00.000Z",
+    "lastUpdated": "2025-12-27T08:47:06.734Z",
     "sources": [
       "Twitter/X",
       "Reddit r/IndianStreetBets",
@@ -36,7 +36,7 @@
       "sourceUrl": "https://www.nseindia.com/market-data/most-active-equities",
       "analyst": "NSE Market Data",
       "date": "Dec 27, 2025",
-      "publishedTime": "2025-12-27T07:30:00.000Z",
+      "publishedTime": "2025-12-27T05:03:00.000Z",
       "rationale": "Hindustan Copper leads breakout stocks with massive +9.09% surge to ₹476.25. Copper demand surging on infrastructure and EV sectors. PSU mining play on commodity rally. High volume at 96.35M shares confirms strong momentum.",
       "upside": "15.5%",
       "socialSentiment": {
@@ -46,7 +46,13 @@
         "twitter": {
           "volume": "Very High",
           "sentiment": "Bullish",
-          "keywords": ["Hindustan Copper", "breakout", "commodity rally", "PSU mining", "copper demand"]
+          "keywords": [
+            "Hindustan Copper",
+            "breakout",
+            "commodity rally",
+            "PSU mining",
+            "copper demand"
+          ]
         },
         "reddit": {
           "volume": "High",
@@ -67,7 +73,7 @@
       "sourceUrl": "https://www.thehindubusinessline.com/markets/share-market-nifty-sensex-live-updates-december-27-2024/article69029889.ece",
       "analyst": "Market Data",
       "date": "Dec 27, 2025",
-      "publishedTime": "2025-12-27T07:00:00.000Z",
+      "publishedTime": "2025-12-27T02:49:00.000Z",
       "rationale": "Dr Reddy's Labs leads Nifty gainers with +2.8% surge. Pharma sector outperformer with strong US FDA approvals pipeline. New drug launches driving growth. Export-focused business benefiting from rupee weakness.",
       "upside": "8.1%",
       "socialSentiment": {
@@ -77,7 +83,12 @@
         "twitter": {
           "volume": "High",
           "sentiment": "Bullish",
-          "keywords": ["Dr Reddy's", "pharma leader", "FDA approvals", "top gainer"]
+          "keywords": [
+            "Dr Reddy's",
+            "pharma leader",
+            "FDA approvals",
+            "top gainer"
+          ]
         },
         "reddit": {
           "volume": "Moderate",
@@ -98,17 +109,22 @@
       "sourceUrl": "https://www.thehindubusinessline.com/markets/share-market-nifty-sensex-live-updates-december-27-2024/article69029889.ece",
       "analyst": "Market Data",
       "date": "Dec 27, 2025",
-      "publishedTime": "2025-12-27T07:00:00.000Z",
+      "publishedTime": "2025-12-27T04:16:00.000Z",
       "rationale": "IndusInd Bank among top Nifty gainers +2.5%. Private bank showing asset quality improvement. Vehicle financing business gaining traction. Management changes stabilizing operations. Attractive valuation compared to peers.",
       "upside": "11.4%",
       "socialSentiment": {
         "overall": "Bullish",
-        "score": 8.0,
+        "score": 8,
         "confidence": "High",
         "twitter": {
           "volume": "High",
           "sentiment": "Bullish",
-          "keywords": ["IndusInd Bank", "turnaround story", "banking sector", "value play"]
+          "keywords": [
+            "IndusInd Bank",
+            "turnaround story",
+            "banking sector",
+            "value play"
+          ]
         },
         "reddit": {
           "volume": "Moderate",
@@ -129,7 +145,7 @@
       "sourceUrl": "https://m.economictimes.com/markets/stocks/live-blog/bse-sensex-today-live-nifty-stock-market-updates-27-december-2024/liveblog/116697287.cms",
       "analyst": "Market Data",
       "date": "Dec 27, 2025",
-      "publishedTime": "2025-12-27T07:00:00.000Z",
+      "publishedTime": "2025-12-27T02:47:00.000Z",
       "rationale": "M&M rallies 2% as auto sector shows strength. SUV portfolio firing on all cylinders - Scorpio N, XUV700, Thar maintaining strong demand. Tractor sales improving with rural recovery. EV and electric tractor plans progressing.",
       "upside": "9.1%",
       "socialSentiment": {
@@ -139,7 +155,14 @@
         "twitter": {
           "volume": "Very High",
           "sentiment": "Bullish",
-          "keywords": ["M&M", "SUV leader", "Scorpio", "XUV700", "Thar", "auto rally"]
+          "keywords": [
+            "M&M",
+            "SUV leader",
+            "Scorpio",
+            "XUV700",
+            "Thar",
+            "auto rally"
+          ]
         },
         "reddit": {
           "volume": "High",
@@ -160,7 +183,7 @@
       "sourceUrl": "https://www.moneycontrol.com/news/business/markets/stock-market-live-sensex-nifty-50-share-price-gift-nifty-latest-updates-27-12-2024-liveblog-12898541.html",
       "analyst": "Market Data",
       "date": "Dec 27, 2025",
-      "publishedTime": "2025-12-27T07:00:00.000Z",
+      "publishedTime": "2025-12-27T03:52:00.000Z",
       "rationale": "Eicher Motors gains 1.9% on strong Royal Enfield sales momentum. Premium motorcycle segment leader. New launches - Himalayan 450, Shotgun 650 driving volumes. Export growth accelerating. Margin expansion visible.",
       "upside": "8.9%",
       "socialSentiment": {
@@ -170,7 +193,12 @@
         "twitter": {
           "volume": "High",
           "sentiment": "Bullish",
-          "keywords": ["Eicher Motors", "Royal Enfield", "Himalayan", "premium bikes"]
+          "keywords": [
+            "Eicher Motors",
+            "Royal Enfield",
+            "Himalayan",
+            "premium bikes"
+          ]
         },
         "reddit": {
           "volume": "Moderate",
@@ -191,7 +219,7 @@
       "sourceUrl": "https://www.icicidirect.com/equity/market-today/top-gainers/nse/nifty-50/intraday",
       "analyst": "ICICI Direct",
       "date": "Dec 27, 2025",
-      "publishedTime": "2025-12-27T07:00:00.000Z",
+      "publishedTime": "2025-12-27T03:54:00.000Z",
       "rationale": "Bajaj Finance up 1.6%, leading NBFC gainers. Loan book growth accelerating, digital lending scaling rapidly. Asset quality stable, margins improving. Consumer durable financing strong. Premium NBFC showing resilience.",
       "upside": "11.9%",
       "socialSentiment": {
@@ -201,7 +229,12 @@
         "twitter": {
           "volume": "Very High",
           "sentiment": "Bullish",
-          "keywords": ["Bajaj Finance", "NBFC leader", "loan growth", "fintech"]
+          "keywords": [
+            "Bajaj Finance",
+            "NBFC leader",
+            "loan growth",
+            "fintech"
+          ]
         },
         "reddit": {
           "volume": "High",
@@ -385,14 +418,21 @@
       "name": "Hindustan Copper",
       "symbol": "HINDCOPPER",
       "sentiment": "Very Bullish",
-      "socialScore": 9.3,
+      "socialScore": 9.052844341266333,
       "change24h": "+9.09%",
       "platforms": {
         "twitter": "Very High",
         "reddit": "Very High",
         "stocktwits": "High"
       },
-      "keywords": ["Hindustan Copper", "breakout", "9% surge", "commodity rally", "PSU mining", "copper demand"],
+      "keywords": [
+        "Hindustan Copper",
+        "breakout",
+        "9% surge",
+        "commodity rally",
+        "PSU mining",
+        "copper demand"
+      ],
       "recentDiscussion": "Hindustan Copper massive 9% breakout today! Highest volume on NSE. Copper cycle turning, infrastructure boom driving demand. PSU re-rating in full swing",
       "socialVolume": 0
     },
@@ -401,14 +441,23 @@
       "name": "M&M (Mahindra & Mahindra)",
       "symbol": "M&M",
       "sentiment": "Bullish",
-      "socialScore": 8.8,
+      "socialScore": 8.835909767494439,
       "change24h": "+2.0%",
       "platforms": {
         "twitter": "Very High",
         "reddit": "High",
         "stocktwits": "High"
       },
-      "keywords": ["M&M", "Mahindra", "SUV leader", "Scorpio", "XUV700", "Thar", "auto rally", "rural recovery"],
+      "keywords": [
+        "M&M",
+        "Mahindra",
+        "SUV leader",
+        "Scorpio",
+        "XUV700",
+        "Thar",
+        "auto rally",
+        "rural recovery"
+      ],
       "recentDiscussion": "M&M killing it! Scorpio N, XUV700, Thar all sold out. Tractor sales picking up with rural recovery. Strong auto play",
       "socialVolume": 0
     },
@@ -417,14 +466,20 @@
       "name": "Dr Reddy's Laboratories",
       "symbol": "DRREDDY",
       "sentiment": "Bullish",
-      "socialScore": 8.5,
+      "socialScore": 8.473241596585998,
       "change24h": "+2.8%",
       "platforms": {
         "twitter": "High",
         "reddit": "Moderate",
         "stocktwits": "Moderate"
       },
-      "keywords": ["Dr Reddy's", "pharma leader", "Nifty gainer", "FDA approvals", "US generics"],
+      "keywords": [
+        "Dr Reddy's",
+        "pharma leader",
+        "Nifty gainer",
+        "FDA approvals",
+        "US generics"
+      ],
       "recentDiscussion": "Dr Reddy's leading pharma rally today. Strong US FDA pipeline, new approvals coming. Export-focused business benefiting",
       "socialVolume": 0
     },
@@ -433,14 +488,20 @@
       "name": "IndusInd Bank",
       "symbol": "INDUSINDBK",
       "sentiment": "Bullish",
-      "socialScore": 8.2,
+      "socialScore": 8.08053107566147,
       "change24h": "+2.5%",
       "platforms": {
         "twitter": "High",
         "reddit": "Moderate",
         "stocktwits": "Moderate"
       },
-      "keywords": ["IndusInd Bank", "turnaround story", "asset quality", "value play", "banking"],
+      "keywords": [
+        "IndusInd Bank",
+        "turnaround story",
+        "asset quality",
+        "value play",
+        "banking"
+      ],
       "recentDiscussion": "IndusInd Bank turnaround looking real. Asset quality improving, management changes working. Undervalued vs peers",
       "socialVolume": 0
     },
@@ -449,14 +510,20 @@
       "name": "Bajaj Finance",
       "symbol": "BAJFINANCE",
       "sentiment": "Bullish",
-      "socialScore": 8.6,
+      "socialScore": 8.94940685699383,
       "change24h": "+1.6%",
       "platforms": {
         "twitter": "Very High",
         "reddit": "High",
         "stocktwits": "High"
       },
-      "keywords": ["Bajaj Finance", "NBFC leader", "digital lending", "loan growth", "fintech"],
+      "keywords": [
+        "Bajaj Finance",
+        "NBFC leader",
+        "digital lending",
+        "loan growth",
+        "fintech"
+      ],
       "recentDiscussion": "Bajaj Finance solid NBFC play. Digital lending scaling fast, loan book growing. Premium quality asset",
       "socialVolume": 0
     }
