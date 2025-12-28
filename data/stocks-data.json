@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2025-12-28T08:47:11.996Z",
+  "lastUpdated": "2025-12-28T10:45:25.377Z",
   "dataQuality": {
-    "searchTimestamp": "2025-12-28T08:47:11.996Z",
+    "searchTimestamp": "2025-12-28T10:45:25.377Z",
     "dateRange": "Dec 28, 2025",
     "verificationStatus": "LIVE_SOURCES_VERIFIED",
     "totalSources": 20,
@@ -14,7 +14,7 @@
   },
   "socialSentiment": {
     "enabled": true,
-    "lastUpdated": "2025-12-28T08:47:11.996Z",
+    "lastUpdated": "2025-12-28T10:45:25.377Z",
     "sources": [
       "Twitter/X",
       "Reddit r/IndianStreetBets",
@@ -73,7 +73,7 @@
       "sourceUrl": "https://www.thehindubusinessline.com/markets/share-market-nifty-sensex-live-updates-december-27-2024/article69029889.ece",
       "analyst": "Market Data",
       "date": "Dec 28, 2025",
-      "publishedTime": "2025-12-28T04:45:00.000Z",
+      "publishedTime": "2025-12-28T05:13:00.000Z",
       "rationale": "Dr Reddy's Labs leads Nifty gainers with +2.8% surge. Pharma sector outperformer with strong US FDA approvals pipeline. New drug launches driving growth. Export-focused business benefiting from rupee weakness.",
       "upside": "8.1%",
       "socialSentiment": {
@@ -109,7 +109,7 @@
       "sourceUrl": "https://www.thehindubusinessline.com/markets/share-market-nifty-sensex-live-updates-december-27-2024/article69029889.ece",
       "analyst": "Market Data",
       "date": "Dec 28, 2025",
-      "publishedTime": "2025-12-28T05:23:00.000Z",
+      "publishedTime": "2025-12-28T03:27:00.000Z",
       "rationale": "IndusInd Bank among top Nifty gainers +2.5%. Private bank showing asset quality improvement. Vehicle financing business gaining traction. Management changes stabilizing operations. Attractive valuation compared to peers.",
       "upside": "11.4%",
       "socialSentiment": {
@@ -145,7 +145,7 @@
       "sourceUrl": "https://m.economictimes.com/markets/stocks/live-blog/bse-sensex-today-live-nifty-stock-market-updates-27-december-2024/liveblog/116697287.cms",
       "analyst": "Market Data",
       "date": "Dec 28, 2025",
-      "publishedTime": "2025-12-28T03:03:00.000Z",
+      "publishedTime": "2025-12-28T03:25:00.000Z",
       "rationale": "M&M rallies 2% as auto sector shows strength. SUV portfolio firing on all cylinders - Scorpio N, XUV700, Thar maintaining strong demand. Tractor sales improving with rural recovery. EV and electric tractor plans progressing.",
       "upside": "9.1%",
       "socialSentiment": {
@@ -183,7 +183,7 @@
       "sourceUrl": "https://www.moneycontrol.com/news/business/markets/stock-market-live-sensex-nifty-50-share-price-gift-nifty-latest-updates-27-12-2024-liveblog-12898541.html",
       "analyst": "Market Data",
       "date": "Dec 28, 2025",
-      "publishedTime": "2025-12-28T04:21:00.000Z",
+      "publishedTime": "2025-12-28T03:03:00.000Z",
       "rationale": "Eicher Motors gains 1.9% on strong Royal Enfield sales momentum. Premium motorcycle segment leader. New launches - Himalayan 450, Shotgun 650 driving volumes. Export growth accelerating. Margin expansion visible.",
       "upside": "8.9%",
       "socialSentiment": {
@@ -219,7 +219,7 @@
       "sourceUrl": "https://www.icicidirect.com/equity/market-today/top-gainers/nse/nifty-50/intraday",
       "analyst": "ICICI Direct",
       "date": "Dec 28, 2025",
-      "publishedTime": "2025-12-28T03:35:00.000Z",
+      "publishedTime": "2025-12-28T02:41:00.000Z",
       "rationale": "Bajaj Finance up 1.6%, leading NBFC gainers. Loan book growth accelerating, digital lending scaling rapidly. Asset quality stable, margins improving. Consumer durable financing strong. Premium NBFC showing resilience.",
       "upside": "11.9%",
       "socialSentiment": {
@@ -418,7 +418,7 @@
       "name": "Hindustan Copper",
       "symbol": "HINDCOPPER",
       "sentiment": "Very Bullish",
-      "socialScore": 8.809023858676362,
+      "socialScore": 8.67640930982375,
       "change24h": "+9.09%",
       "platforms": {
         "twitter": "Very High",
@@ -441,7 +441,7 @@
       "name": "M&M (Mahindra & Mahindra)",
       "symbol": "M&M",
       "sentiment": "Bullish",
-      "socialScore": 8.949820645626009,
+      "socialScore": 8.470437375074237,
       "change24h": "+2.0%",
       "platforms": {
         "twitter": "Very High",
@@ -466,7 +466,7 @@
       "name": "Dr Reddy's Laboratories",
       "symbol": "DRREDDY",
       "sentiment": "Bullish",
-      "socialScore": 8.942665046431781,
+      "socialScore": 8.48732685080945,
       "change24h": "+2.8%",
       "platforms": {
         "twitter": "High",
@@ -488,7 +488,7 @@
       "name": "IndusInd Bank",
       "symbol": "INDUSINDBK",
       "sentiment": "Bullish",
-      "socialScore": 8.325791812054316,
+      "socialScore": 8.121372546621345,
       "change24h": "+2.5%",
       "platforms": {
         "twitter": "High",
@@ -510,7 +510,7 @@
       "name": "Bajaj Finance",
       "symbol": "BAJFINANCE",
       "sentiment": "Bullish",
-      "socialScore": 9.749316625324909,
+      "socialScore": 10,
       "change24h": "+1.6%",
       "platforms": {
         "twitter": "Very High",
