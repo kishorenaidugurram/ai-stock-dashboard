@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-01-05T03:27:13.160Z",
+  "lastUpdated": "2026-01-05T04:40:46.630Z",
   "dataQuality": {
-    "searchTimestamp": "2026-01-05T03:27:13.160Z",
+    "searchTimestamp": "2026-01-05T04:40:46.630Z",
     "dateRange": "Jan 5, 2026",
     "verificationStatus": "LIVE_SOURCES_VERIFIED",
     "totalSources": 20,
@@ -14,7 +14,7 @@
   },
   "socialSentiment": {
     "enabled": true,
-    "lastUpdated": "2026-01-05T03:27:13.160Z",
+    "lastUpdated": "2026-01-05T04:40:46.630Z",
     "sources": [
       "Twitter/X",
       "Reddit r/IndianStreetBets",
@@ -36,7 +36,7 @@
       "sourceUrl": "https://www.nseindia.com/market-data/most-active-equities",
       "analyst": "NSE Market Data",
       "date": "Jan 5, 2026",
-      "publishedTime": "2026-01-05T03:59:00.000Z",
+      "publishedTime": "2026-01-05T02:32:00.000Z",
       "rationale": "Hindustan Copper leads breakout stocks with massive +9.09% surge to ₹476.25. Copper demand surging on infrastructure and EV sectors. PSU mining play on commodity rally. High volume at 96.35M shares confirms strong momentum.",
       "upside": "15.5%",
       "socialSentiment": {
@@ -73,7 +73,7 @@
       "sourceUrl": "https://www.thehindubusinessline.com/markets/share-market-nifty-sensex-live-updates-december-27-2024/article69029889.ece",
       "analyst": "Market Data",
       "date": "Jan 5, 2026",
-      "publishedTime": "2026-01-05T03:22:00.000Z",
+      "publishedTime": "2026-01-05T04:44:00.000Z",
       "rationale": "Dr Reddy's Labs leads Nifty gainers with +2.8% surge. Pharma sector outperformer with strong US FDA approvals pipeline. New drug launches driving growth. Export-focused business benefiting from rupee weakness.",
       "upside": "8.1%",
       "socialSentiment": {
@@ -109,7 +109,7 @@
       "sourceUrl": "https://www.thehindubusinessline.com/markets/share-market-nifty-sensex-live-updates-december-27-2024/article69029889.ece",
       "analyst": "Market Data",
       "date": "Jan 5, 2026",
-      "publishedTime": "2026-01-05T03:00:00.000Z",
+      "publishedTime": "2026-01-05T04:59:00.000Z",
       "rationale": "IndusInd Bank among top Nifty gainers +2.5%. Private bank showing asset quality improvement. Vehicle financing business gaining traction. Management changes stabilizing operations. Attractive valuation compared to peers.",
       "upside": "11.4%",
       "socialSentiment": {
@@ -145,7 +145,7 @@
       "sourceUrl": "https://m.economictimes.com/markets/stocks/live-blog/bse-sensex-today-live-nifty-stock-market-updates-27-december-2024/liveblog/116697287.cms",
       "analyst": "Market Data",
       "date": "Jan 5, 2026",
-      "publishedTime": "2026-01-05T03:04:00.000Z",
+      "publishedTime": "2026-01-05T04:21:00.000Z",
       "rationale": "M&M rallies 2% as auto sector shows strength. SUV portfolio firing on all cylinders - Scorpio N, XUV700, Thar maintaining strong demand. Tractor sales improving with rural recovery. EV and electric tractor plans progressing.",
       "upside": "9.1%",
       "socialSentiment": {
@@ -183,7 +183,7 @@
       "sourceUrl": "https://www.moneycontrol.com/news/business/markets/stock-market-live-sensex-nifty-50-share-price-gift-nifty-latest-updates-27-12-2024-liveblog-12898541.html",
       "analyst": "Market Data",
       "date": "Jan 5, 2026",
-      "publishedTime": "2026-01-05T02:47:00.000Z",
+      "publishedTime": "2026-01-05T02:36:00.000Z",
       "rationale": "Eicher Motors gains 1.9% on strong Royal Enfield sales momentum. Premium motorcycle segment leader. New launches - Himalayan 450, Shotgun 650 driving volumes. Export growth accelerating. Margin expansion visible.",
       "upside": "8.9%",
       "socialSentiment": {
@@ -219,7 +219,7 @@
       "sourceUrl": "https://www.icicidirect.com/equity/market-today/top-gainers/nse/nifty-50/intraday",
       "analyst": "ICICI Direct",
       "date": "Jan 5, 2026",
-      "publishedTime": "2026-01-05T02:40:00.000Z",
+      "publishedTime": "2026-01-05T04:49:00.000Z",
       "rationale": "Bajaj Finance up 1.6%, leading NBFC gainers. Loan book growth accelerating, digital lending scaling rapidly. Asset quality stable, margins improving. Consumer durable financing strong. Premium NBFC showing resilience.",
       "upside": "11.9%",
       "socialSentiment": {
@@ -418,7 +418,7 @@
       "name": "Hindustan Copper",
       "symbol": "HINDCOPPER",
       "sentiment": "Very Bullish",
-      "socialScore": 6.323167650894127,
+      "socialScore": 6.4461409121972135,
       "change24h": "+9.09%",
       "platforms": {
         "twitter": "Very High",
@@ -441,7 +441,7 @@
       "name": "M&M (Mahindra & Mahindra)",
       "symbol": "M&M",
       "sentiment": "Bullish",
-      "socialScore": 7.541659626954217,
+      "socialScore": 7.6825966068433145,
       "change24h": "+2.0%",
       "platforms": {
         "twitter": "Very High",
@@ -466,7 +466,7 @@
       "name": "Dr Reddy's Laboratories",
       "symbol": "DRREDDY",
       "sentiment": "Bullish",
-      "socialScore": 10,
+      "socialScore": 9.518934441802813,
       "change24h": "+2.8%",
       "platforms": {
         "twitter": "High",
@@ -488,7 +488,7 @@
       "name": "IndusInd Bank",
       "symbol": "INDUSINDBK",
       "sentiment": "Bullish",
-      "socialScore": 8.102605850644162,
+      "socialScore": 8.54464298912892,
       "change24h": "+2.5%",
       "platforms": {
         "twitter": "High",
@@ -510,7 +510,7 @@
       "name": "Bajaj Finance",
       "symbol": "BAJFINANCE",
       "sentiment": "Bullish",
-      "socialScore": 5.971888213279746,
+      "socialScore": 5.809411088903694,
       "change24h": "+1.6%",
       "platforms": {
         "twitter": "Very High",
