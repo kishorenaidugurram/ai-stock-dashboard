@@ -1,8 +1,8 @@
 {
-  "lastUpdated": "2026-02-22T10:52:21.439Z",
+  "lastUpdated": "2026-02-23T04:01:09.294Z",
   "dataQuality": {
-    "searchTimestamp": "2026-02-22T10:52:21.439Z",
-    "dateRange": "Feb 22, 2026",
+    "searchTimestamp": "2026-02-23T04:01:09.294Z",
+    "dateRange": "Feb 23, 2026",
     "verificationStatus": "LIVE_SOURCES_VERIFIED",
     "totalSources": 20,
     "dataFreshness": "Live - Under 1 hour",
@@ -14,7 +14,7 @@
   },
   "socialSentiment": {
     "enabled": true,
-    "lastUpdated": "2026-02-22T10:52:21.439Z",
+    "lastUpdated": "2026-02-23T04:01:09.294Z",
     "sources": [
       "Twitter/X",
       "Reddit r/IndianStreetBets",
@@ -35,8 +35,8 @@
       "source": "NSE India Most Active / Screener Breakout",
       "sourceUrl": "https://www.nseindia.com/market-data/most-active-equities",
       "analyst": "NSE Market Data",
-      "date": "Feb 22, 2026",
-      "publishedTime": "2026-02-22T05:21:00.000Z",
+      "date": "Feb 23, 2026",
+      "publishedTime": "2026-02-23T03:05:00.000Z",
       "rationale": "Hindustan Copper leads breakout stocks with massive +9.09% surge to ₹476.25. Copper demand surging on infrastructure and EV sectors. PSU mining play on commodity rally. High volume at 96.35M shares confirms strong momentum.",
       "upside": "15.5%",
       "socialSentiment": {
@@ -72,8 +72,8 @@
       "source": "Hindu Business Line / Moneycontrol Top Gainers",
       "sourceUrl": "https://www.thehindubusinessline.com/markets/share-market-nifty-sensex-live-updates-december-27-2024/article69029889.ece",
       "analyst": "Market Data",
-      "date": "Feb 22, 2026",
-      "publishedTime": "2026-02-22T04:49:00.000Z",
+      "date": "Feb 23, 2026",
+      "publishedTime": "2026-02-23T04:30:00.000Z",
       "rationale": "Dr Reddy's Labs leads Nifty gainers with +2.8% surge. Pharma sector outperformer with strong US FDA approvals pipeline. New drug launches driving growth. Export-focused business benefiting from rupee weakness.",
       "upside": "8.1%",
       "socialSentiment": {
@@ -108,8 +108,8 @@
       "source": "Hindu Business Line Top Gainers",
       "sourceUrl": "https://www.thehindubusinessline.com/markets/share-market-nifty-sensex-live-updates-december-27-2024/article69029889.ece",
       "analyst": "Market Data",
-      "date": "Feb 22, 2026",
-      "publishedTime": "2026-02-22T03:40:00.000Z",
+      "date": "Feb 23, 2026",
+      "publishedTime": "2026-02-23T05:28:00.000Z",
       "rationale": "IndusInd Bank among top Nifty gainers +2.5%. Private bank showing asset quality improvement. Vehicle financing business gaining traction. Management changes stabilizing operations. Attractive valuation compared to peers.",
       "upside": "11.4%",
       "socialSentiment": {
@@ -144,8 +144,8 @@
       "source": "Economic Times / Moneycontrol Top Gainers",
       "sourceUrl": "https://m.economictimes.com/markets/stocks/live-blog/bse-sensex-today-live-nifty-stock-market-updates-27-december-2024/liveblog/116697287.cms",
       "analyst": "Market Data",
-      "date": "Feb 22, 2026",
-      "publishedTime": "2026-02-22T03:42:00.000Z",
+      "date": "Feb 23, 2026",
+      "publishedTime": "2026-02-23T03:45:00.000Z",
       "rationale": "M&M rallies 2% as auto sector shows strength. SUV portfolio firing on all cylinders - Scorpio N, XUV700, Thar maintaining strong demand. Tractor sales improving with rural recovery. EV and electric tractor plans progressing.",
       "upside": "9.1%",
       "socialSentiment": {
@@ -182,8 +182,8 @@
       "source": "Moneycontrol Top Gainers",
       "sourceUrl": "https://www.moneycontrol.com/news/business/markets/stock-market-live-sensex-nifty-50-share-price-gift-nifty-latest-updates-27-12-2024-liveblog-12898541.html",
       "analyst": "Market Data",
-      "date": "Feb 22, 2026",
-      "publishedTime": "2026-02-22T03:12:00.000Z",
+      "date": "Feb 23, 2026",
+      "publishedTime": "2026-02-23T03:46:00.000Z",
       "rationale": "Eicher Motors gains 1.9% on strong Royal Enfield sales momentum. Premium motorcycle segment leader. New launches - Himalayan 450, Shotgun 650 driving volumes. Export growth accelerating. Margin expansion visible.",
       "upside": "8.9%",
       "socialSentiment": {
@@ -218,8 +218,8 @@
       "source": "ICICI Direct Top Intraday Gainers",
       "sourceUrl": "https://www.icicidirect.com/equity/market-today/top-gainers/nse/nifty-50/intraday",
       "analyst": "ICICI Direct",
-      "date": "Feb 22, 2026",
-      "publishedTime": "2026-02-22T04:20:00.000Z",
+      "date": "Feb 23, 2026",
+      "publishedTime": "2026-02-23T04:02:00.000Z",
       "rationale": "Bajaj Finance up 1.6%, leading NBFC gainers. Loan book growth accelerating, digital lending scaling rapidly. Asset quality stable, margins improving. Consumer durable financing strong. Premium NBFC showing resilience.",
       "upside": "11.9%",
       "socialSentiment": {
@@ -254,7 +254,7 @@
       "brokerage": "Motilal Oswal",
       "recommendation": "BUY",
       "sourceUrl": "https://informistmedia.com/EquityWire/41481/Equity-Alert-Motilal-Oswal-initiates-coverage-on-Midwest-with-buy-call",
-      "date": "Feb 22, 2026",
+      "date": "Feb 23, 2026",
       "rationale": "Motilal Oswal initiates coverage with BUY at ₹2,000 target (+26.6%). Gold exploration and mining company benefiting from high gold prices. Domestic mining opportunities expanding. Strong resource base and production ramp-up ahead."
     },
     {
@@ -266,7 +266,7 @@
       "brokerage": "Motilal Oswal",
       "recommendation": "BUY",
       "sourceUrl": "https://www.whalesbook.com/news/English/tech/%E0%B0%9C%E0%B1%86%E0%B0%AA%E0%B0%BF-%E0%B0%AE%E0%B1%8B%E0%B0%B0%E0%B1%8D%E0%B0%97%E0%B0%BE%E0%B0%A8%E0%B1%8D-%E0%B0%9A%E0%B1%87%E0%B0%B8%E0%B1%8D-%E0%B0%AD%E0%B0%BE%E0%B0%B0%E0%B0%A4%E0%B0%A6%E0%B1%87%E0%B0%B6%E0%B0%BE%E0%B0%A8%E0%B0%BF%E0%B0%95%E0%B0%BF-%E0%B0%98%E0%B0%A8%E0%B0%82%E0%B0%97%E0%B0%BE-%E0%B0%A4%E0%B0%BF%E0%B0%B0%E0%B0%BF%E0%B0%97%E0%B0%BF-%E0%B0%B5%E0%B0%B8%E0%B1%8D%E0%B0%A4%E0%B1%8B%E0%B0%82%E0%B0%A6%E0%B0%BF-10-%E0%B0%8F%E0%B0%B3%E0%B1%8D%E0%B0%B2%E0%B0%B2%E0%B1%8B-%E0%B0%A4%E0%B1%8A%E0%B0%B2%E0%B0%BF-%E0%B0%95%E0%B1%8A%E0%B0%A4%E0%B1%8D%E0%B0%A4-%E0%B0%AC%E0%B1%8D%E0%B0%B0%E0%B0%BE%E0%B0%82%E0%B0%9A%E0%B1%8D-%E0%B0%B5%E0%B1%83%E0%B0%A6%E0%B1%8D%E0%B0%A7%E0%B0%BF%E0%B0%AA%E0%B1%88-%E0%B0%8A%E0%B0%B9%E0%B0%BE%E0%B0%97%E0%B0%BE%E0%B0%A8%E0%B0%BE%E0%B0%B2%E0%B1%81/693fd9eaa3d7cdf72fba215c",
-      "date": "Feb 22, 2026",
+      "date": "Feb 23, 2026",
       "rationale": "Motilal Oswal maintains BUY with revised ₹8,000 target (+27%). AC component manufacturer benefiting from strong cooling sector demand. ODM business with major brands expanding. PLI scheme beneficiary. Strong order book visibility."
     },
     {
@@ -278,7 +278,7 @@
       "brokerage": "Motilal Oswal",
       "recommendation": "BUY",
       "sourceUrl": "https://www.whalesbook.com/news/English/brokerage-reports/Brokerages-Reveal-3-Indian-Stocks-to-BUY-Now-Big-Price-Targets-Unveiled/694e1312e10c98d0788ddba5",
-      "date": "Feb 22, 2026",
+      "date": "Feb 23, 2026",
       "rationale": "Motilal Oswal reaffirms BUY with ₹1,338 target (+19.5%). Bangalore-based real estate developer with strong residential pipeline. Premium segment focus, execution track record solid. Hospitality and retail segments contributing. Real estate upcycle beneficiary."
     },
     {
@@ -290,7 +290,7 @@
       "brokerage": "Multiple Brokerages",
       "recommendation": "BUY",
       "sourceUrl": "https://economictimes.indiatimes.com/markets/stocks/recos/marketnewslist/3053611.cms",
-      "date": "Feb 22, 2026",
+      "date": "Feb 23, 2026",
       "rationale": "Consensus BUY from Motilal Oswal, ICICI Securities, Axis Securities. ICICI Bank remains best-in-class private bank. Superior metrics - deposit growth, NIM stability, asset quality. Digital banking leadership. Safest banking play."
     },
     {
@@ -302,7 +302,7 @@
       "brokerage": "Multiple Brokerages",
       "recommendation": "BUY",
       "sourceUrl": "https://economictimes.indiatimes.com/markets/stocks/recos/marketnewslist/3053611.cms",
-      "date": "Feb 22, 2026",
+      "date": "Feb 23, 2026",
       "rationale": "Multiple brokerages including Motilal Oswal recommend BUY. HDFC Bank post-merger showing strong momentum. Deposit franchise unmatched, CASA ratio improving. Retail lending gaining share. Integration benefits emerging."
     },
     {
@@ -314,7 +314,7 @@
       "brokerage": "Axis Securities",
       "recommendation": "BUY",
       "sourceUrl": "https://www.motilaloswal.com/news/stocks/73773",
-      "date": "Feb 22, 2026",
+      "date": "Feb 23, 2026",
       "rationale": "Axis Securities top pick for December 2024. Bharti Airtel tariff hikes flowing through to revenues. 5G monetization underway with enterprise solutions. Market share gains from Vi continuing. Africa operations stabilizing. Premium telecom play."
     },
     {
@@ -326,7 +326,7 @@
       "brokerage": "Axis Securities",
       "recommendation": "BUY",
       "sourceUrl": "https://www.motilaloswal.com/news/stocks/73773",
-      "date": "Feb 22, 2026",
+      "date": "Feb 23, 2026",
       "rationale": "Axis Securities December pick. SBI showing strong credit growth with stable asset quality. NIM expansion visible, treasury gains adding to earnings. Largest bank benefiting from economic growth. Valuation attractive with ROE improvement trajectory."
     },
     {
@@ -338,7 +338,7 @@
       "brokerage": "Axis Securities",
       "recommendation": "BUY",
       "sourceUrl": "https://www.motilaloswal.com/news/stocks/73773",
-      "date": "Feb 22, 2026",
+      "date": "Feb 23, 2026",
       "rationale": "Axis Securities recommends BUY. Varun Beverages - PepsiCo's largest franchisee showing strong volume growth. Geographic expansion continuing - Africa, Sri Lanka opportunities. Summer season demand ahead. Margin improvement with scale benefits."
     },
     {
@@ -350,7 +350,7 @@
       "brokerage": "Motilal Oswal",
       "recommendation": "BUY",
       "sourceUrl": "https://insights.dsij.in/markets/reports/broker-reports/stock-tips/broker-detail",
-      "date": "Feb 22, 2026",
+      "date": "Feb 23, 2026",
       "rationale": "Motilal Oswal maintains BUY on Kajaria Ceramics. Tiles market leader benefiting from real estate revival and housing demand. Capacity expansion progressing, new product launches gaining traction. Building materials play on construction cycle."
     },
     {
@@ -362,7 +362,7 @@
       "brokerage": "ICICI Securities",
       "recommendation": "BUY",
       "sourceUrl": "https://insights.dsij.in/markets/reports/broker-reports/stock-tips/broker-detail",
-      "date": "Feb 22, 2026",
+      "date": "Feb 23, 2026",
       "rationale": "ICICI Securities recommends BUY with ₹600 target (+34.4%!). Gabriel India - auto ancillary leader in shock absorbers. Riding auto sector growth, content per vehicle rising. EV shock absorbers opportunity opening up. Strong replacement market presence."
     },
     {
@@ -374,7 +374,7 @@
       "brokerage": "ICICI Direct",
       "recommendation": "BUY",
       "sourceUrl": "https://www.icicidirect.com/equity/market-today/top-gainers/nse/nifty-50/intraday",
-      "date": "Feb 22, 2026",
+      "date": "Feb 23, 2026",
       "rationale": "ICICI Direct recommends BUY. Apollo Hospitals top intraday gainer. Largest healthcare chain showing strong occupancy across hospitals. Digital health initiatives - Apollo 24/7 scaling up. Pharmacy network expanding. Healthcare services demand structural story."
     }
   ],
@@ -383,7 +383,7 @@
       "title": "Sensex Rises 227 Points to 78,699; Nifty Ends Above 23,800 on Dec 27",
       "category": "Market Close",
       "summary": "BSE Sensex closed Friday at 78,699, up 227 points (+0.29%) for second consecutive day. Nifty ended at 23,813, gaining 63 points (+0.27%). Auto and pharma sectors led rally. Dr Reddy's, IndusInd Bank, M&M top gainers. Metals and PSU banks lagged.",
-      "date": "Feb 22, 2026",
+      "date": "Feb 23, 2026",
       "sourceUrl": "https://www.thehindubusinessline.com/markets/share-market-nifty-sensex-live-updates-december-27-2024/article69029889.ece",
       "source": "Hindu Business Line"
     },
@@ -391,7 +391,7 @@
       "title": "Auto Stocks Rally as M&M, Eicher Motors Lead Gains; Metals Drag",
       "category": "Sectoral Update",
       "summary": "Auto sector shows strong momentum with M&M (+2%), Eicher Motors (+1.9%), and Bajaj Auto gaining. Rural demand recovery and festive season sales driving optimism. Two-wheeler and tractor segments outperforming. Metal stocks underperform on China demand concerns.",
-      "date": "Feb 22, 2026",
+      "date": "Feb 23, 2026",
       "sourceUrl": "https://www.moneycontrol.com/news/business/markets/stock-market-live-sensex-nifty-50-share-price-gift-nifty-latest-updates-27-12-2024-liveblog-12898541.html",
       "source": "Moneycontrol"
     },
@@ -399,7 +399,7 @@
       "title": "Hindustan Copper Breaks Out with 9% Surge - Highest Volume Traded",
       "category": "Stock Focus",
       "summary": "Hindustan Copper leads NSE most active list with 9.09% rally to ₹476. Volume surge at 96.35 million shares signals strong institutional interest. Copper commodity rally and domestic mining push driving momentum. PSU re-rating theme continuing.",
-      "date": "Feb 22, 2026",
+      "date": "Feb 23, 2026",
       "sourceUrl": "https://www.nseindia.com/market-data/most-active-equities",
       "source": "NSE India"
     },
@@ -407,7 +407,7 @@
       "title": "Brokerages Bullish: Motilal Oswal Sees 27% Upside in Top Picks",
       "category": "Brokerage Calls",
       "summary": "Motilal Oswal initiates coverage on Midwest Gold (₹2,000 target, +26.6%) and Amber Enterprises (₹8,000 target, +27%). Brigade Enterprises reaffirmed BUY with ₹1,338 target. ICICI Securities bullish on Gabriel India with 34.4% upside potential. Large-cap banks - ICICI, HDFC consensus BUY across brokerages.",
-      "date": "Feb 22, 2026",
+      "date": "Feb 23, 2026",
       "sourceUrl": "https://www.whalesbook.com/news/English/brokerage-reports/Brokerages-Reveal-3-Indian-Stocks-to-BUY-Now-Big-Price-Targets-Unveiled/694e1312e10c98d0788ddba5",
       "source": "Whalesbook / Multiple Sources"
     }
@@ -418,7 +418,7 @@
       "name": "Hindustan Copper",
       "symbol": "HINDCOPPER",
       "sentiment": "Very Bullish",
-      "socialScore": 8.184306782997513,
+      "socialScore": 8.3857337827807,
       "change24h": "+9.09%",
       "platforms": {
         "twitter": "Very High",
@@ -441,7 +441,7 @@
       "name": "M&M (Mahindra & Mahindra)",
       "symbol": "M&M",
       "sentiment": "Bullish",
-      "socialScore": 7.4409534053161845,
+      "socialScore": 7.761333898478387,
       "change24h": "+2.0%",
       "platforms": {
         "twitter": "Very High",
@@ -466,7 +466,7 @@
       "name": "Dr Reddy's Laboratories",
       "symbol": "DRREDDY",
       "sentiment": "Bullish",
-      "socialScore": 8.782198130512333,
+      "socialScore": 9.017705916423983,
       "change24h": "+2.8%",
       "platforms": {
         "twitter": "High",
@@ -488,7 +488,7 @@
       "name": "IndusInd Bank",
       "symbol": "INDUSINDBK",
       "sentiment": "Bullish",
-      "socialScore": 7.234123654304767,
+      "socialScore": 7.153981153703288,
       "change24h": "+2.5%",
       "platforms": {
         "twitter": "High",
@@ -510,7 +510,7 @@
       "name": "Bajaj Finance",
       "symbol": "BAJFINANCE",
       "sentiment": "Bullish",
-      "socialScore": 7.045512780498391,
+      "socialScore": 6.902944636380447,
       "change24h": "+1.6%",
       "platforms": {
         "twitter": "Very High",
